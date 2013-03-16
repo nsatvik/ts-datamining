@@ -17,7 +17,7 @@ import java.math.*;
  */
 public class Sample 
 {
-	private ArrayList<Double> time_series_values;
+	private ArrayList<Double> time_series_values,normalised_time_series;
 	private String Sample_Name;
 	private double sum;
 	public Sample(String file_path, String sample_name)
@@ -49,7 +49,6 @@ public class Sample
 	 */
 	public Boolean Normalize()
 	{
-		ArrayList<Double> normalised_time_series;
 		normalised_time_series = new ArrayList<Double>();
 		double mean = meanCalculator();
 		double standardDeviation = standardDeviationCalculator();
@@ -87,10 +86,10 @@ public class Sample
 	}
 	public void displayTimeSeries(int limit)
 	{
-		System.out.println("Time\tValues");
+		System.out.println("Time\tValue\tNormalizedValue");
 		for(int i=0;i<time_series_values.size() && limit-->0;i++)
 		{
-			System.out.println(""+(i+1)+"\t"+time_series_values.get(i));
+			System.out.println(""+(i+1)+"\t"+time_series_values.get(i)+"\t"+normalised_time_series.get(i));
 		}
 	}
 	

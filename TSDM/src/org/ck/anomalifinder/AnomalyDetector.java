@@ -1,4 +1,4 @@
-package org.ck.anomalifier;
+package org.ck.anomalifinder;
 
 import org.ck.gui.Constants;
 

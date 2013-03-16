@@ -10,7 +10,8 @@ public class MainClass
 	{
 		System.out.println("Hello,World!");		
 		Sample sea_sample = new Sample(DataHolder.TRAINING_FILE_NAME,"Sea Level Data");
+		sea_sample.Normalize();
 		sea_sample.displayTimeSeries(10);
-		sea_sample.Normalize(); 
+		 
 	}
 }
