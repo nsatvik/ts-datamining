@@ -137,7 +137,13 @@ public class Sample
 		return timeSeriesValues.size();
 	}
 	
-	
+	/**
+	 * @return String containing the name of this time series
+	 */
+	public String getName()
+	{
+		return sampleName;
+	}
 	
 	
 	

@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<project name="tsdm" basedir="." default="usage">
+	<property file="build.properties"/>
+    <property name="src.dir" value="src"/>
+    <property name="web.dir" value="war"/>
+    <property name="build.dir" value="${web.dir}/WEB-INF/classes"/>
+    <property name="name" value="tsdm"/>
+
+    <path id="master-classpath">
+        <fileset dir="${web.dir}/WEB-INF/lib">
+            <include name="*.jar"/>
+        </fileset>
+        <pathelement path="${build.dir}"/>
+    </path>
+	
+	<target name="usage">
+        <echo message=""/>
+        <echo message="${name} build file"/>
+        <echo message="-----------------------------------"/>
+        <echo message=""/>
+        <echo message="Available targets are:"/>
+        <echo message=""/>
+        <echo message="deploy    --> Deploy application 
+          as directory"/>
+        <echo message="deploywar --> Deploy application 
+          as a WAR file"/>
+        <echo message=""/>
+    </target>
+
+    <target name="build" description="Compile source tree java files">
+        <mkdir dir="${build.dir}"/>
+        <javac destdir="${build.dir}" source="1.6" target="1.6" debug="true" deprecation="false" optimize="false" failonerror="true">
+            <src path="${src.dir}"/>
+            <classpath refid="master-classpath"/>
+        </javac>
+    </target>
+	
+	<target name="deploy" depends="build" 
+      description="Deploy application">
+        <copy todir="${deploy.path}/${name}" 
+          preservelastmodified="true">
+            <fileset dir="${web.dir}">
+                <include name="**/*.*"/>
+            </fileset>
+        </copy>
+    </target>
+	
+	<target name="deploywar" depends="build" 
+      description="Deploy application as a WAR file">
+        <war destfile="${name}.war"
+             webxml="${web.dir}/WEB-INF/web.xml">
+            <fileset dir="${web.dir}">
+                <include name="**/*.*"/>
+            </fileset>
+        </war>
+        <copy todir="${deploy.path}" preservelastmodified="true">
+            <fileset dir=".">
+                <include name="*.war"/>
+            </fileset>
+        </copy>
+    </target>
+ 
+    <target name="clean" description="Clean output directories">
+        <delete>
+            <fileset dir="${build.dir}">
+                <include name="**/*.class"/>
+            </fileset>
+        </delete>
+    </target>
+	
+	<target name="generate-javadoc">
+		<javadoc packagenames="org.*" sourcepath="${src.dir}" 
+			destdir="doc" version="true" windowtitle="Time Series Data Mining Tool">
+		  <doctitle><![CDATA[= Time Series Data Mining Tool =]]></doctitle>
+		  <bottom>
+			 <![CDATA[Copyright 2013. All Rights Reserved.]]>
+		  </bottom>
+		  <group title="gui packages" packages="org.ck.gui.*"/>
+		  <group title="sample packages" packages="org.ck.sample.*"/>
+		  <group title="similarity packages" packages="org.ck.similarity.*"/>
+		  <group title="anomilifinder packages" packages="org.ck.anomalifinder.*"/>
+		  <group title="forecaster packages" packages="org.ck.forecaster.*"/>
+		</javadoc>
+		<echo message="java doc has been generated!" />
+	</target>
+	
+	
+	<target name="build-jar">
+		<jar destfile="${web.dir}/lib/tsdm.jar"
+			 basedir="${build.dir}"
+			 includes="org/ck/**"
+			 excludes="**/Test.class">
+			 <manifest>
+				<attribute name="Main-Class" value="org.ck.gui.MainClass"/>
+			 </manifest>
+		</jar>
+	</target>
+	
+	
+	
+	<!-- ============================================================ -->
+    <!-- Tomcat tasks -->
+    <!-- ============================================================ -->
+
+    <path id="catalina-ant-classpath">
+        <!-- We need the Catalina jars for Tomcat -->
+        <!--  * for other app servers - check the docs -->
+        <fileset dir="${appserver.lib}">
+            <include name="catalina-ant.jar"/>
+        </fileset>
+    </path>
+
+    <taskdef name="install" 
+        classname="org.apache.catalina.ant.DeployTask">
+        <classpath refid="catalina-ant-classpath"/>
+    </taskdef>
+    <taskdef name="reload" 
+        classname="org.apache.catalina.ant.ReloadTask">
+        <classpath refid="catalina-ant-classpath"/>
+    </taskdef>
+    <taskdef name="list" 
+        classname="org.apache.catalina.ant.ListTask">
+        <classpath refid="catalina-ant-classpath"/>
+    </taskdef>
+    <taskdef name="start" 
+        classname="org.apache.catalina.ant.StartTask">
+        <classpath refid="catalina-ant-classpath"/>
+    </taskdef>
+    <taskdef name="stop" 
+         classname="org.apache.catalina.ant.StopTask">
+        <classpath refid="catalina-ant-classpath"/>
+    </taskdef>
+
+    <target name="reload" description="Reload application in Tomcat">
+        <reload url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${name}"/>
+    </target>
+</project>

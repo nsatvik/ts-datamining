@@ -12,12 +12,12 @@ public class MainClass
 {
 	public static void main(String args[])
 	{		
-		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,"Sea Level Data");				
+		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,"Sea Level Data");	
 		
-		displaySortedSimilarSeries(seaSample);		
+		System.out.println(getSortedSimilarSeries(seaSample));		
 	}
 
-	private static void displaySortedSimilarSeries(Sample seaSample)
+	public static String getSortedSimilarSeries(Sample seaSample)
 	{
 		DynamicTimeWarper dtw = new DynamicTimeWarper(seaSample.getSeriesSubset(0, 12));	
 		
@@ -25,8 +25,11 @@ public class MainClass
 		for(int i=0; i<seaSample.getNumOfValues(); i+=12)
 			similarityMap.put(dtw.getDistanceFrom(seaSample.getSeriesSubset(i, i + 12)), i / 12);
 		
-		System.out.println("Subset\tDTW Distance");
+		String output = "";
+		output += "Subset\tDTW Distance\n";
 		for(Double i : similarityMap.keySet())
-			System.out.println(similarityMap.get(i) + "\t" + i);
+			output += similarityMap.get(i) + "\t" + i + "\n";
+		
+		return output;
 	}
 }
