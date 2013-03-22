@@ -11,7 +11,7 @@ tmp/
 *~.nib
 local.properties
 .loadpath
-
+build.xml
 # External tool builders
 .externalToolBuilders/
 
