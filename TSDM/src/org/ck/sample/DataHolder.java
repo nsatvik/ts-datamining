@@ -6,6 +6,7 @@ import org.ck.gui.Constants.DatasetOptions;
 public class DataHolder implements Constants
 {
 	public static String TRAINING_FILE_NAME;
+	public static String SAMPLE_NAME;
 	static
 	{
 		setDataset(DatasetOptions.SEA_LEVEL_DATASET);
@@ -17,14 +18,17 @@ public class DataHolder implements Constants
 		switch(option)
 		{
 		case SEA_LEVEL_DATASET: TRAINING_FILE_NAME = "Training Data/Sea/sea-level-data.txt";
-							
-							break;
-		
-		case WINE_DATASET:	
-							break;
-		default :		
-		case WATER_DATASET: break;
-							
+								SAMPLE_NAME = "Sea Level Data";
+		break;
+		case ELECTRICITY_DATASET: TRAINING_FILE_NAME = "Training Data/Electricity/electricity-demand.txt";
+		SAMPLE_NAME = "Electricity Demand Data";
+		break;
+		case FINANCE_NIFTY_DATASET: TRAINING_FILE_NAME = "Training Data/Finance/nifty.txt";
+		SAMPLE_NAME = "Nifty Stock Index Data";
+		break;
+		case FINANCE_VIX_DATASET: TRAINING_FILE_NAME = "Training Data/Finance/vix.txt";
+		SAMPLE_NAME = "Vix Stock Index Data";
+		break;
 		}
 	}
 }

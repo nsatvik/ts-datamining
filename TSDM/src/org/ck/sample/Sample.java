@@ -193,5 +193,15 @@ public class Sample
 			sum+=timeSeriesValues.get(i);	
 		}
 		return sum/timeSeriesValues.size();
+	}
+	
+	/**
+	 * Return the actual normalized sample values
+	 * limit specifies the upper limit.
+	 * @param limit
+	 * @return list of values of size limit.
+	 */
+	public List<Double> getNormalizedSampleValues(int limit) {
+		return normalisedTimeSeries.subList(0, limit);
 	}		
 }

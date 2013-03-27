@@ -147,10 +147,12 @@
 			<div style="float: left;">
 				<% 
 					Sample seaSample = new Sample(PROJECT_PATH + DataHolder.TRAINING_FILE_NAME,"Sea Level Data");	
-					out.println("Name = " + seaSample.getName() + "\tNum of Values = " + seaSample.getNumOfValues());
-					String list = MainClass.getSortedSimilarSeries(seaSample).replaceAll("\n", "<br>");				
-					list = list.replaceAll("\t", "----------->");
-					out.println("<br>" + list);
+					LineGraphDrawer lgDrawer = new LineGraphDrawer();
+					lgDrawer.example1();
+					//out.println("Name = " + seaSample.getName() + "\tNum of Values = " + seaSample.getNumOfValues());
+					//String list = MainClass.getSortedSimilarSeries(seaSample).replaceAll("\n", "<br>");				
+					//list = list.replaceAll("\t", "----------->");
+					//out.println("<br>" + list);
 				%>
 			</div>
         </div>
