@@ -3,6 +3,7 @@ package org.ck.gui;
 import java.util.Map;
 import java.util.TreeMap;
 
+import org.ck.forecaster.MovingGeometricForecaster;
 import org.ck.sample.DataHolder;
 import org.ck.sample.Sample;
 import org.ck.similarity.DynamicTimeWarper;
@@ -16,6 +17,7 @@ public class MainClass
 		
 		System.out.println(getSortedSimilarSeries(seaSample));
 		testLineGraphDrawer(seaSample);
+		System.out.println(new MovingGeometricForecaster(DataHolder.TRAINING_FILE_NAME,"Sea Level Data").geometricMean());
 	}
 	
 	public static String testLineGraphDrawer(Sample sample)
