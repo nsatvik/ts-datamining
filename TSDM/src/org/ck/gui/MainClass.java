@@ -3,7 +3,6 @@ package org.ck.gui;
 import java.util.Map;
 import java.util.TreeMap;
 
-import org.ck.gui.Constants.DatasetOptions;
 import org.ck.sample.DataHolder;
 import org.ck.sample.Sample;
 import org.ck.similarity.DynamicTimeWarper;
@@ -12,14 +11,20 @@ import org.ck.similarity.DynamicTimeWarper;
 public class MainClass 
 {
 	public static void main(String args[])
-	{	
-		DataHolder.setDataset(DatasetOptions.ELECTRICITY_DATASET);
-		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
+	{		
+		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,"Sea Level Data");	
 		
-		//System.out.println(getSortedSimilarSeries(seaSample));
-		LineGraphDrawer lgd = new LineGraphDrawer(seaSample);
-		System.out.println(lgd.simpleExample());
+		System.out.println(getSortedSimilarSeries(seaSample));
+		testLineGraphDrawer(seaSample);
+	}
+	
+	public static String testLineGraphDrawer(Sample sample)
+	{
+		LineGraphDrawer lgd = new LineGraphDrawer(sample);
+		String exampleLink = lgd.example1();
+		System.out.println(exampleLink);
 		System.out.println("Open this link in a brower!");
+		return exampleLink;
 	}
 
 	public static String getSortedSimilarSeries(Sample seaSample)

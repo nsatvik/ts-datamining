@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 import java.math.*;
 
 
@@ -16,18 +17,19 @@ import java.math.*;
 public class Sample 
 {
 	private List<Double> timeSeriesValues, normalisedTimeSeries;
-	private String sampleName;	
+	private String sampleName;
+	private Logger log = Logger.getLogger(Sample.class.getName());
 	
 	/**
 	 * @param file_path - The path of the file that contains the time series values
 	 * @param sample_name - The name of the given time series
 	 */
 	public Sample(String file_path, String sample_name)
-	{
+	{		
 		File f = new File(file_path);
 		try
-		{
-			BufferedReader br = new BufferedReader(new FileReader(f));
+		{	
+			BufferedReader br = new BufferedReader(new FileReader(f));			
 			timeSeriesValues = new ArrayList<Double>();
 			this.sampleName = sample_name;
 			String line = null;
@@ -35,14 +37,19 @@ public class Sample
 			{
 				this.timeSeriesValues.add(Double.parseDouble(line));
 			}
-			
+			normalize();
 		}
 		catch(IOException ie)
 		{
+			log.info("IOException");
 			ie.printStackTrace();
 		}	
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}		
 		
-		normalize();
+		log.info("Initialized Sample");
 	}
 	
 	/**
@@ -193,15 +200,5 @@ public class Sample
 			sum+=timeSeriesValues.get(i);	
 		}
 		return sum/timeSeriesValues.size();
-	}
-	
-	/**
-	 * Return the actual normalized sample values
-	 * limit specifies the upper limit.
-	 * @param limit
-	 * @return list of values of size limit.
-	 */
-	public List<Double> getNormalizedSampleValues(int limit) {
-		return normalisedTimeSeries.subList(0, limit);
 	}		
 }

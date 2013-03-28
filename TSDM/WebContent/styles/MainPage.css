@@ -1,0 +1,12 @@
+@CHARSET "ISO-8859-1";
+
+#background-image
+{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:-10;
+	overflow: hidden;
+	width: 100%;
+	display:none;
+}
