@@ -200,5 +200,13 @@ public class Sample
 			sum+=timeSeriesValues.get(i);	
 		}
 		return sum/timeSeriesValues.size();
+	}
+
+	public void display(int start, int end) {
+		for(int i=start;i<=end;i++)
+		{
+			System.out.print(normalisedTimeSeries.get(i)+" ");
+		}
+		System.out.println();
 	}		
 }

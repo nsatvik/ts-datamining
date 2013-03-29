@@ -1,25 +1,42 @@
 package org.ck.gui;
 
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import org.ck.forecaster.MovingGeometricForecaster;
+import org.ck.gui.Constants.DatasetOptions;
 import org.ck.sample.DataHolder;
 import org.ck.sample.Sample;
+import org.ck.similarity.CommonSequenceFinder;
+import org.ck.similarity.CommonSequenceFinder.Tuple;
 import org.ck.similarity.DynamicTimeWarper;
 
 
 public class MainClass 
 {
 	public static void main(String args[])
-	{		
-		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,"Sea Level Data");	
+	{	
+		DataHolder.setDataset(DatasetOptions.WATER_LEVEL_DATASET);
+		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
 		
-		System.out.println(getSortedSimilarSeries(seaSample));
-		testLineGraphDrawer(seaSample);
-		System.out.println(new MovingGeometricForecaster(DataHolder.TRAINING_FILE_NAME,"Sea Level Data").geometricMean());
+		//System.out.println(getSortedSimilarSeries(seaSample));
+		//testLineGraphDrawer(seaSample);
+		testCommonSequenceFinder(seaSample);
+		//System.out.println(new MovingGeometricForecaster(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME).geometricMean());
 	}
 	
+	private static void testCommonSequenceFinder(Sample seaSample) {
+		CommonSequenceFinder csFinder = new CommonSequenceFinder(seaSample);
+		csFinder.findPatterns();
+		List<Tuple> similarPatterns = csFinder.getSimilarPatternList();
+		for(Tuple t : similarPatterns)
+		{
+			System.out.print(t.getValue(0)+"\t"+t.getValue(1)+"\t");
+			seaSample.display(t.getValue(0), t.getValue(1));
+		}
+		
+	}
+
 	public static String testLineGraphDrawer(Sample sample)
 	{
 		LineGraphDrawer lgd = new LineGraphDrawer(sample);
