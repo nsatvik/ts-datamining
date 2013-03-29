@@ -23,6 +23,6 @@ public class MovingAverageForecaster extends Forecaster {
 		 values = s.getTimeSeries();
 		// for (i)
 	//	return product;
-		 
+		 return 0;
 	 }
 }
