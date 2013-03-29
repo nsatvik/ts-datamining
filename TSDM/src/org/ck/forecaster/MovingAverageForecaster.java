@@ -16,13 +16,17 @@ public class MovingAverageForecaster extends Forecaster {
 		this.file_path = file_path;
 		this.sample_name = sample_name;
 	}
-	 public double movingAverage(int period) //To be implemented
+	public double getAverage(int index){
+		if(index == 0)
+			return values.get(0);
+		return ((values.get(index)+ getAverage(index-1))/2);
+	}
+	 public double movingAverage() 
 	 {
 		 values = new ArrayList<Double>();
 		 Sample s = new Sample(file_path, sample_name);
 		 values = s.getTimeSeries();
-		// for (i)
-	//	return product;
-		 return 0;
+		 return getAverage(values.size()-1);
+
 	 }
 }
