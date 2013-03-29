@@ -16,17 +16,17 @@ public class MovingGeometricForecaster extends Forecaster
 		this.file_path = file_path;
 		this.sample_name = sample_name;
 	}
-	
+	public double gma(int i){
+		if(i==0){
+			return values.get(0);
+		}
+		return Math.sqrt(values.get(i)*gma(i-1));
+	}
 	public double geometricMean()
 	{
 		values = new ArrayList<Double>();
-		Sample s = new Sample(file_path, sample_name); // I did'nt know what to use. So, I hard coded. Change it during the review.
+		Sample s = new Sample(file_path, sample_name);
 		values = s.getTimeSeries();
-		size = values.size();
-		for (int i = 0; i<values.size();i++)
-		{
-			product*= values.get(i);
-		}
-		return Math.pow(product, 1/values.size());		 
+		return gma(values.size()-1);		 
 	}
 }
