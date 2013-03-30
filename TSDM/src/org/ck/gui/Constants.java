@@ -14,4 +14,18 @@ public interface Constants
 		FINANCE_NIFTY_DATASET,
 		FINANCE_VIX_DATASET,
 	}
+	
+	enum TaskType
+	{
+		SIMILARITY,
+		FORTUNE_TELLER,
+		ANOMALY_DETECTIVE
+	}
+	
+	enum AlgorithmType
+	{
+		DTW,
+		SAX,
+		MOVING_AVERAGE
+	}
 }
