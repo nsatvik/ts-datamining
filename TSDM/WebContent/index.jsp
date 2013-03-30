@@ -31,14 +31,8 @@
         <div id="div_ajaxFiller">
             PlaceHolder for code that will be retrieved from JSP scripts through AJAX
 			<br>
-			<div style="float: left;">								
-				<% 					
-					Sample seaSample = new Sample(session.getServletContext().getRealPath("/") + DataHolder.TRAINING_FILE_NAME,"Sea Level Data");					
-					out.println("Name = " + seaSample.getName() + "\tNum of Values = " + seaSample.getNumOfValues());
-					String list = MainClass.getSortedSimilarSeries(seaSample).replaceAll("\n", "<br>");				
-					list = list.replaceAll("\t", "----------->");
-					out.println("<br>" + list);
-				%>
+			<div style="float: left;">					
+				This is bullshit
 			</div>
         </div>         
         

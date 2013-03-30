@@ -26,6 +26,7 @@ public interface Constants
 	{
 		DTW,
 		SAX,
-		MOVING_AVERAGE
+		MOVING_AVERAGE,
+		COMMON_SUBSEQUENCE
 	}
 }

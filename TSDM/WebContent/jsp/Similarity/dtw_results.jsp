@@ -12,7 +12,11 @@ Task Type Selected = ${testBean.taskType }
 <br/>
 Algorithm used = ${testBean.algorithmType }
 <br/>
+Dataset used = ${testBean.dataset }
+<br/>
 Sample = ${testBean.sample }
+<br/>
+Result = ${testBean.result }
 
 </body>
 </html>

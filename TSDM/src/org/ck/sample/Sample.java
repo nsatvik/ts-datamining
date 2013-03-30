@@ -26,6 +26,7 @@ public class Sample
 	 */
 	public Sample(String file_path, String sample_name)
 	{		
+		log.info(file_path);
 		File f = new File(file_path);
 		try
 		{	
