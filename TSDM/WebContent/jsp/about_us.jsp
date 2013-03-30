@@ -17,60 +17,46 @@
 
 <br /><br /><br /><br /><br />
 
-<div class="class_divs_aboutUs" style="width: 383px; float: left; height: 497px;">
-    <img src="http://www.thepickards.co.uk/images/pirate63.gif" style="height: 400px;"/>
+<div class="class_divs_aboutUs" style="width: 483px; float: left; height: 597px;">
+    <img src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-ash4/294733_179570838780602_7250814_n.jpg" style="height: 150px;"/>
 </div>
 
-<div id="div_aboutUs" class="class_divs_aboutUs" style="text-align: center; float: none; height: 700px;">
+<div id="div_aboutUs" class="class_divs_aboutUs" style="text-align: center; float: none; height: 800px;">
 
-    <h3>Section 1</h3>
+    <h3>The Members</h3>
     <div>
         <p>
-       Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-        et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-        faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-        mauris vel est.
-        </p>
+       Ola! Welcome to the 8th semester project of <a href="https://www.facebook.com/samir.sheriff.5">Samir Sheriff</a>,  <a href="https://www.facebook.com/nsatvik">Satvik N</a> and <a href="https://www.facebook.com/vaishakhbn">Vaishakh B N</a>
+       We are proud members of <a href="https://www.facebook.com/CodeKshetra"> Code Kshetra! </a>. Do visit our page for more details about our other projects. </p> 
+       <img src="https://lh6.googleusercontent.com/-b2gZH5wkT_Y/UVchP5Jnj0I/AAAAAAAAFOs/wzBIUtsaMbY/s653/samsatvai.jpg" style="height: 250px;"/>
+       
     </div>
-    <h3>Section 2</h3>
+    <h3>Project Hosting</h3>
     <div>
         <p>
-        Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-        inceptos himenaeos.
-
-        </p>
+        The Project has been hosted on <a href="www.github.com">GitHub</a> The complete project has been made available under the GNU GPL license.</p> 
+        <p>This means that it is open sourced. The code can be used and improved by anybody</p> 
+        <p> Follow the following <a href ="https://github.com/nsatvik/ts-datamining">link </a> to find the source code of the project and the complete reports and to see contributions of members in more detail.  
     </div>
-    <h3>Section 3</h3>
+    <h3>Our Inspiration</h3>
     <div>
         <p>
-        Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-        Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-        ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-        lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+        MARKS, MARKS AND MORE MARKS!! Sorry did you really think that this was our inspiration? No!! Do you remember the famous dialogue from the movie <a href="http://en.wikipedia.org/wiki/3_Idiots"> 3 idiots</a> "Success ke peeche mat bhaago.. Excellence ke peeche bhaago!" 
+       <!-- <object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/3K3Op-J-ykI?hl=en_US&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/3K3Op-J-ykI?hl=en_US&amp;version=3" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object> --> 
+        We kept that in mind and made this project. But on a serious note, we need marks too! :P
         </p>
-        <ul>
-            <li>List item one</li>
-            <li>List item two</li>
-            <li>List item three</li>
-        </ul>
     </div>
-    <h3>Section 4</h3>
+    <h3>Our Guides</h3>
     <div>
         <p>
-        Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-        et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-        faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-        mauris vel est.
-        </p>
-        <p>
-        Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-        inceptos himenaeos.
+        A big thank you to Ms. Shanta Rangaswamy, Dr. Shobha G and our awesome Head of the Department Prof. Srinath. Thank you for having faith in us! 
+       <img src="http://upload.wikimedia.org/wikipedia/en/a/a7/RVCE_New_Logo.JPG" style="height: 150px;"/>
         </p>
     </div>
+    <h3>So, You Like Us??</h3>
+    <p> If you really like this project, then please like us on <a href="https://www.facebook.com/CodeKshetra">Code Kshetra</a> which has the aim of bridging human intelligence and artificial intelligence. 
 </div>
-	
+
 	
 
 </body>
