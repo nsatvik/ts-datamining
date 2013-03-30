@@ -151,7 +151,13 @@ public class Sample
 	{
 		return sampleName;
 	}
-	
+	public double getStandardDeviation(){
+		return standardDeviationCalculator();
+	}
+	public double getMean()
+	{
+		return meanCalculator();
+	}
 	
 	
 	/**
