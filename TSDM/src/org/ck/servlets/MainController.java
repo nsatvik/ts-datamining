@@ -13,8 +13,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.ck.beans.GraphBean;
 import org.ck.beans.TimeSeriesBean;
 import org.ck.gui.Constants;
+import org.ck.gui.GraphDrawer;
 import org.ck.gui.Constants.DatasetOptions;
 import org.ck.sample.DataHolder;
 import org.ck.sample.Sample;
@@ -45,9 +47,11 @@ public class MainController extends HttpServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{				
 		TimeSeriesBean tsBean = initTimesSeriesBean(request);
+		GraphBean graphBean = initGraphBean(request, tsBean);
 		runAlgorithm(tsBean);
 		
-		request.getSession().setAttribute("testBean", tsBean);
+		request.getSession().setAttribute("tsBean", tsBean);
+		request.getSession().setAttribute("graphBean", graphBean);
 		
 		String address = PATH_PREFIX + "Similarity/dtw_results.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(address);
@@ -95,6 +99,25 @@ public class MainController extends HttpServlet
 	}
 	
 	/**
+	 * This method initializes a graph bean from request parameters.
+	 * The bean has scope = session
+	 * @param request
+	 * @param tsBean
+	 * @return
+	 */
+	private GraphBean initGraphBean(HttpServletRequest request,
+			TimeSeriesBean tsBean)
+	{
+		GraphDrawer graphDrawer = new GraphDrawer(tsBean.getSample());
+		GraphBean graphBean = (GraphBean) request.getSession().getAttribute("graphBean");
+		
+		if(graphBean == null)
+			graphBean = new GraphBean();
+		graphBean.setUrl(graphDrawer.graphSampleSubset(0, 59));
+		return graphBean;
+	}
+	
+	/**
 	 * This method initializes a time series bean from request parameters.
 	 * The bean has scope = session
 	 * @param request
@@ -102,7 +125,7 @@ public class MainController extends HttpServlet
 	 */
 	private TimeSeriesBean initTimesSeriesBean(HttpServletRequest request)
 	{
-		TimeSeriesBean tsBean = (TimeSeriesBean) request.getSession().getAttribute("testBean");
+		TimeSeriesBean tsBean = (TimeSeriesBean) request.getSession().getAttribute("tsBean");
 		
 		if(tsBean == null)
 			tsBean = new TimeSeriesBean();

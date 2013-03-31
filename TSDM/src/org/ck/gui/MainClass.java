@@ -39,7 +39,7 @@ public class MainClass
 
 	public static String testLineGraphDrawer(Sample sample)
 	{
-		LineGraphDrawer lgd = new LineGraphDrawer(sample);
+		GraphDrawer lgd = new GraphDrawer(sample);
 		String exampleLink = lgd.example1();
 		System.out.println(exampleLink);
 		System.out.println("Open this link in a brower!");

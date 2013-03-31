@@ -1,10 +1,12 @@
 package org.ck.gui;
+import java.text.DateFormatSymbols;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.logging.Level;
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.ck.sample.Sample;
-import org.junit.BeforeClass;
+import org.ck.servlets.MainController;
 import org.junit.Test;
 
 import com.googlecode.charts4j.AxisLabels;
@@ -24,17 +26,76 @@ import com.googlecode.charts4j.Plot;
 import com.googlecode.charts4j.Plots;
 import com.googlecode.charts4j.Shape;
 
-public class LineGraphDrawer {
+public class GraphDrawer {
 	
-	Sample sampleObj;
+	private Sample sample;
+	private Logger log = Logger.getLogger(GraphDrawer.class.getName());
+	
 	/**
 	 * Constructor of the Line Graph Drawer class
 	 * takes takes a sample object as the parameter
 	 * @param sample
 	 */
-	public LineGraphDrawer(Sample sample)
+	public GraphDrawer(Sample sample)
 	{
-		this.sampleObj = sample;
+		this.sample = sample;
+	}
+	
+	public String graphSampleSubset(int lowIndex, int highIndex)
+	{		
+        Line line1 = Plots.newLine(DataUtil.scale(sample.getSeriesSubset(lowIndex, highIndex).getNormalizedTimeSeries()), 
+        		Color.newColor("CA3D05"), sample.getName());
+        line1.setLineStyle(LineStyle.newLineStyle(3, 1, 0));
+        line1.addShapeMarkers(Shape.DIAMOND, Color.newColor("CA3D05"), 12);
+        line1.addShapeMarkers(Shape.DIAMOND, Color.WHITE, 8);
+        
+        Line line2 = Plots.newLine(DataUtil.scale(sample.getSeriesSubset(lowIndex + 12, highIndex + 12).getNormalizedTimeSeries()), 
+        		Color.SKYBLUE, sample.getName());
+        line2.setLineStyle(LineStyle.newLineStyle(3, 1, 0));
+        line2.addShapeMarkers(Shape.DIAMOND, Color.SKYBLUE, 12);
+        line2.addShapeMarkers(Shape.DIAMOND, Color.WHITE, 8);
+        
+        // Defining chart.
+        LineChart chart = GCharts.newLineChart(line1, line2);
+        chart.setSize(600, 450);
+        chart.setTitle("Time Series Graph", Color.WHITE, 14);
+        //chart.addHorizontalRangeMarker(40, 60, Color.newColor(Color.RED, 30));
+        //chart.addVerticalRangeMarker(70, 90, Color.newColor(Color.GREEN, 30));
+        //chart.setGrid(25, 25, 3, 2);
+
+        // Defining axis info and styles
+        //x-axis
+        AxisStyle axisStyle = AxisStyle.newAxisStyle(Color.WHITE, 12, AxisTextAlignment.CENTER);
+        String[] months = new DateFormatSymbols().getShortMonths();
+        List<String> monthsList = Arrays.asList(months);
+        AxisLabels xAxis = AxisLabelsFactory.newAxisLabels(monthsList);
+        xAxis.setAxisStyle(axisStyle);
+        AxisLabels xAxis2 = AxisLabelsFactory.newAxisLabels("Month", 50.0);
+        xAxis2.setAxisStyle(AxisStyle.newAxisStyle(Color.WHITE, 14, AxisTextAlignment.CENTER));
+        
+        //y-axis
+        AxisLabels yAxis = AxisLabelsFactory.newAxisLabels("", "25", "50", "75", "100");
+        yAxis.setAxisStyle(axisStyle);       
+        AxisLabels yAxis2 = AxisLabelsFactory.newAxisLabels("Level", 50.0);
+        yAxis2.setAxisStyle(AxisStyle.newAxisStyle(Color.WHITE, 14, AxisTextAlignment.CENTER));
+        yAxis2.setAxisStyle(axisStyle);
+
+        // Adding axis info to chart.
+        chart.addXAxisLabels(xAxis);        
+        chart.addXAxisLabels(xAxis2);
+        chart.addYAxisLabels(yAxis);
+        chart.addYAxisLabels(yAxis2);
+
+        // Defining background and chart fills.
+        chart.setBackgroundFill(Fills.newSolidFill(Color.newColor("1F1D1D")));
+        LinearGradientFill fill = Fills.newLinearGradientFill(0, Color.newColor("363433"), 100);
+        fill.addColorAndOffset(Color.newColor("2E2B2A"), 0);
+        chart.setAreaFill(fill);
+        String url = chart.toURLString();
+
+        // Internet application.
+        log.info("Graph API URL = " + url);
+        return url;
 	}
 	
 	public String simpleExample()

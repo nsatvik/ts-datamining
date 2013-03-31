@@ -25,8 +25,7 @@
 			%>
 		</select>
 		<br/>
-		<br/>
-		<input id="button_dtwViewSeries" class="TopMenuButtons" style="" type="button" value="View Series"/>
+		<br/>		
 		<input id="button_dtwCalc" class="TopMenuButtons" style="" type="button" value="Calculate"/>		
 	</div>
 		
@@ -43,9 +42,6 @@
 	        		 "dataset" : $("#dropdown option:selected").val()
 	        		}
 	        );
-	    });
-		$("#button_dtwViewSeries").button().click(function () {	        
-	        //$("#ajax_dtw_results").load("MainController");
 	    });
 	</script>
 	
