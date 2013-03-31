@@ -1,11 +1,9 @@
 package org.ck.similarity;
 
-import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.ck.sample.Sample;
-import org.ck.similarity.CommonSequenceFinder.Tuple;
 
 
 
@@ -95,6 +93,16 @@ public class CommonSequenceFinder {
 			return true;
 		
 		return false;
+	}
+	
+	/**
+	 * Find the time period of the sample
+	 * @param sampleValues
+	 */
+	private void findPeriodicity(List<Double> sampleValues)
+	{
+		List<Integer> commonSeq = new ArrayList<Integer>();
+		
 	}
 	public List<Tuple> getSimilarPatternList()
 	{
