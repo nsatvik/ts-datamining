@@ -32,6 +32,9 @@ public class DataHolder implements Constants
 		case FINANCE_VIX_DATASET: TRAINING_FILE_NAME = "Training Data/Finance/vix.txt";
 								  SAMPLE_NAME = "Vix Stock Index Data";
 								  break;
+		case ECG_DATASET: TRAINING_FILE_NAME = "Training Data/Medical/ecg-data.txt";
+		  SAMPLE_NAME = "ECG Data";
+		  break;
 		default:
 			break;
 		}

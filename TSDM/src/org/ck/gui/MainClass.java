@@ -1,13 +1,16 @@
 package org.ck.gui;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import org.ck.forecaster.nn.NeuralNetwork;
 import org.ck.gui.Constants.DatasetOptions;
 import org.ck.sample.DataHolder;
 import org.ck.sample.Sample;
 import org.ck.similarity.CommonSequenceFinder;
+import org.ck.similarity.TimePeriodFinder;
 import org.ck.similarity.CommonSequenceFinder.Tuple;
 import org.ck.similarity.DynamicTimeWarper;
 
@@ -21,10 +24,18 @@ public class MainClass
 		
 		//System.out.println(getSortedSimilarSeries(seaSample));
 		//testLineGraphDrawer(seaSample);
-		testCommonSequenceFinder(seaSample);
+		//testCommonSequenceFinder(seaSample);
 		//System.out.println(new MovingGeometricForecaster(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME).geometricMean());
+		testNeuralNetwork(seaSample);
 	}
 	
+	private static void testNeuralNetwork(Sample seaSample) {
+		NeuralNetwork nn = new NeuralNetwork(new int[]{10,15,15,1}, seaSample);
+		nn.train();
+		System.out.println("Actual Value : "+seaSample.getValue(11)+"\t Predicted Value : "+
+		nn.predict((ArrayList<Double>) seaSample.getSeriesSubset(10, 20).getNormalizedTimeSeries()));
+	}
+
 	private static void testCommonSequenceFinder(Sample seaSample) {
 		CommonSequenceFinder csFinder = new CommonSequenceFinder(seaSample);
 		csFinder.findPatterns();
@@ -34,7 +45,6 @@ public class MainClass
 			System.out.print(t.getValue(0)+"\t"+t.getValue(1)+"\t");
 			seaSample.display(t.getValue(0), t.getValue(1));
 		}
-		
 	}
 
 	public static String testLineGraphDrawer(Sample sample)

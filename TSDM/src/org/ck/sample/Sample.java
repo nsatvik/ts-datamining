@@ -182,6 +182,11 @@ public class Sample
 		return true;
 	}
 	
+	public double getValue(int index)
+	{
+		return normalisedTimeSeries.get(index);
+	}
+	
 	/**
 	 * @return the standard deviation of the given time series
 	 */
@@ -208,7 +213,11 @@ public class Sample
 		}
 		return sum/timeSeriesValues.size();
 	}
-
+	/**
+	 * Display the normalized time series between start and end.
+	 * @param start
+	 * @param end
+	 */
 	public void display(int start, int end) {
 		for(int i=start;i<=end;i++)
 		{

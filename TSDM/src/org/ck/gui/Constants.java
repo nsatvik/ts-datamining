@@ -13,6 +13,7 @@ public interface Constants
 		ELECTRICITY_DATASET,
 		FINANCE_NIFTY_DATASET,
 		FINANCE_VIX_DATASET,
+		ECG_DATASET
 	}
 	
 	enum TaskType

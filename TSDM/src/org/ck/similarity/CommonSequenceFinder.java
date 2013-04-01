@@ -94,16 +94,6 @@ public class CommonSequenceFinder {
 		
 		return false;
 	}
-	
-	/**
-	 * Find the time period of the sample
-	 * @param sampleValues
-	 */
-	private void findPeriodicity(List<Double> sampleValues)
-	{
-		List<Integer> commonSeq = new ArrayList<Integer>();
-		
-	}
 	public List<Tuple> getSimilarPatternList()
 	{
 		return this.patternList;
