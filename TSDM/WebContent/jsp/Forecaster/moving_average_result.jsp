@@ -7,6 +7,9 @@
 <title>Moving Average Graph</title>
 </head>
 <body>
-JHALLAH WALLAH!
+	JHALLAH WALLAH!
+	
+	<br/>
+	USE DISTINCT ELEMENT IDs TO AVOID CONFLICTS...
 </body>
 </html>

@@ -8,20 +8,21 @@
 </head>
 <body>
 <div>
-	Time Series Forecasting is a very important aspect of Time Series Analysis. Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..
+	Time Series Forecasting is a very important aspect of Time Series Analysis. 
+	Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..
 	
 	<br/>
 	<br/>
 	<br/>
 	<br/>
-	<div id="navigator">
-		<input id="button_view" class="TopMenuButtons" style="" type="button" value="View Algorithms"/>
+	<div id="forecast_navigator">
+		<input id="button_view_forecast" class="TopMenuButtons" style="" type="button" value="View Algorithms"/>
 	</div>
 </div>
 
 <script type="text/javascript">
-	$("#button_view").button().click(function () {	    
-	    $("#navigator").load("./jsp/Forecaster/navigator.jsp");
+	$("#button_view_forecast").button().click(function () {	    
+	    $("#forecast_navigator").load("./jsp/Forecaster/navigator.jsp");
 	});
 </script>
 

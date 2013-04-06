@@ -47,54 +47,69 @@ public class MainController extends HttpServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{				
 		TimeSeriesBean tsBean = initTimesSeriesBean(request);
-		GraphBean graphBean = initGraphBean(request, tsBean);
-		runAlgorithm(tsBean);
+		//GraphBean graphBean = initGraphBean(request, tsBean);
 		
-		request.getSession().setAttribute("tsBean", tsBean);
-		request.getSession().setAttribute("graphBean", graphBean);
+		runAlgorithm(tsBean, request, response);	
 		
-		String address = PATH_PREFIX + "Similarity/dtw_results.jsp";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-		dispatcher.forward(request, response);
+		//If control comes here, that means no forwarding took place
+		response.getWriter().println("NOT FORWARDED");
 	}
 
 	/**
 	 * Categorizes tsBean based on Task
 	 * @param tsBean
+	 * @param response 
+	 * @param request 
+	 * @throws IOException 
+	 * @throws ServletException 
 	 */
-	private void runAlgorithm(TimeSeriesBean tsBean)
+	private void runAlgorithm(TimeSeriesBean tsBean, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
+		String address = "";
+		
 		switch(tsBean.getTaskType())
 		{
 		case SIMILARITY:
 			runSimilarityAlgorithm(tsBean);
+			address = PATH_PREFIX + "Similarity/dtw_results.jsp";
 			break;
 		case FORTUNE_TELLER:
+			address = PATH_PREFIX + "Forecaster/moving_average_result.jsp";
 			runFortuneTellingAlgorithm(tsBean);
 			break;
 		case ANOMALY_DETECTIVE:
 			break;
 		default:
 			//Forward to errorPage.jsp ---- to be created
+			address = PATH_PREFIX + "../error_page.jsp";
+		}
+		
+		request.getSession().setAttribute("tsBean", tsBean);
+		
+		if(!address.isEmpty())
+		{
+			RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+			dispatcher.forward(request, response);
 		}
 	}
 
-	private void runFortuneTellingAlgorithm(TimeSeriesBean tsBean) {
-		// TODO Auto-generated method stub
-		switch(tsBean.getAlgorithmType()){
+	/**
+	 * Runs a Fortune Telling algorithm, to predict your future and help YOU decide
+	 * 		how to go about your life. Pay me Rs. 100
+	 * @param tsBean
+	 */
+	private void runFortuneTellingAlgorithm(TimeSeriesBean tsBean) 
+	{
+		log.info("Fortune Telling Algo");
+		switch(tsBean.getAlgorithmType())
+		{
 		case MOVING_AVERAGE:
 			AlgorithmUtils.runMovingAverageSmoother(tsBean);
 			break;
-		default:
-			runErrorPage();
-				
+		default:				
 		}
 	}
 
-	private void runErrorPage() {
-		
-		
-	}
 
 	/**
 	 * Runs a similarity algorithm 

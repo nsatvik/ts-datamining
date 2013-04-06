@@ -12,6 +12,7 @@ import org.ck.beans.TimeSeriesBean;
 import org.ck.sample.Sample;
 import org.ck.similarity.DynamicTimeWarper;
 import org.ck.smoothers.SimpleMovingAverageSmoother;
+import org.ck.smoothers.SmoothingFilter;
 
 import com.sun.org.apache.bcel.internal.generic.L2D;
 
@@ -42,23 +43,27 @@ public class AlgorithmUtils
 		
 		tsBean.setResult(output);
 	}
+	
+	/**
+	 * Runs a Simple Moving Average Smoother to predict a future value of the given time series
+	 * @param tsBean
+	 */
 	public static void runMovingAverageSmoother(TimeSeriesBean tsBean)
 	{
 		double predictedValue;
 		Sample sample = tsBean.getSample();
-		SimpleMovingAverageSmoother sms = new SimpleMovingAverageSmoother(sample, 12);
-		sms.calculateSmoothedValues();
+		SmoothingFilter sms = new SimpleMovingAverageSmoother(sample, 12);		
 		List<Double> smoothList = new ArrayList<Double>();
 		smoothList = sms.getSmoothedValues();
 		predictedValue = sms.getAverage();
 		String output = "";
 		output += "Set\tMoving Average\n";
 		int i = 0;
-		while(i<=smoothList.size())
+		while(i < smoothList.size())
 		{
 			output += smoothList.get(i) + "&nbsp" + i + "<br/>";
-		i++;
-		tsBean.setResult(output);
+			i++;			
 		}
+		tsBean.setResult(output);
 	}
 }

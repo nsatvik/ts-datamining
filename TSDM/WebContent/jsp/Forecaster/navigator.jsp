@@ -8,8 +8,8 @@
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <script>
 $(function() {
-	$( "#tabs_sim_nav" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
-	$( "#tabs_sim_nav li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+	$( "#tabs_forecast_nav" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+	$( "#tabs_forecast_nav li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
 });
 </script>
 <style>
@@ -22,7 +22,7 @@ $(function() {
 </style>
 </head>
 <body>
-<div id="tabs_sim_nav">
+<div id="tabs_forecast_nav">
 	<ul>
 		<li><a href="./jsp/Forecaster/moving_average.jsp">Moving Average Method</a></li>
 		<li><a href="./jsp/Forecaster/moving_geometric.jsp">Moving Geometric Average Method</a></li>
