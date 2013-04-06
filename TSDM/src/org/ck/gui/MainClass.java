@@ -8,6 +8,7 @@ import java.util.TreeMap;
 import org.ck.anomalifinder.Cusum_VmaskApproch;
 import org.ck.forecaster.nn.NeuralNetwork;
 import org.ck.gui.Constants.DatasetOptions;
+import org.ck.sample.Approximator;
 import org.ck.sample.DataHolder;
 import org.ck.sample.Sample;
 import org.ck.similarity.CommonSequenceFinder;
@@ -23,14 +24,64 @@ public class MainClass
 		DataHolder.setDataset(DatasetOptions.ECG_DATASET);
 		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
 		
+		//use your respective methods for testing
+		//satvik();
+		//vaishakh();
+		samir();
+		
+		
+	}
+	
+	private static void samir()
+	{
+		DataHolder.setDataset(DatasetOptions.SEA_LEVEL_DATASET);
+		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);
+		//System.out.println(seaSample.getSmoothTimeSeries());
+		
+		/*List<Double> list = new ArrayList<Double>();
+		list.add(4.2);
+		list.add(9.2);
+		list.add(14.8);
+		list.add(15.0);
+		list.add(17.0);
+		list.add(18.0);
+		list.add(19.7);
+		list.add(20.0);
+		list.add(20.8);
+		list.add(21.3);
+		list.add(21.6);
+		list.add(20.6);
+		list.add(16.9);
+		list.add(12.8);
+		list.add(13.6);
+		
+		Approximator paa = new Approximator(seaSample.getTimeSeries(), 10);*/
+		
+		System.out.println(Approximator.getApproximatedSeries(seaSample.getTimeSeries(), 10));
+		
+	}
+
+	private static void vaishakh()
+	{
+		DataHolder.setDataset(DatasetOptions.ECG_DATASET);
+		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
 		//System.out.println(getSortedSimilarSeries(seaSample));
 		//testLineGraphDrawer(seaSample);
 		//testCommonSequenceFinder(seaSample);
 		//System.out.println(new MovingGeometricForecaster(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME).geometricMean());
+				
+		
+	}
+
+	private static void satvik()
+	{
+		DataHolder.setDataset(DatasetOptions.ECG_DATASET);
+		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
 		//testNeuralNetwork(seaSample);
 		testCusum(seaSample);
+		
 	}
-	
+
 	private static void testCusum(Sample seaSample) {
 		Cusum_VmaskApproch finder = new Cusum_VmaskApproch(seaSample);
 		finder.setHval(1.5);

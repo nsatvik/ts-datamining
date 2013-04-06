@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.logging.Logger;
 import java.math.*;
 
+import org.ck.gui.Constants;
 import org.ck.smoothers.ExponentialMovingAverageSmoother;
 import org.ck.smoothers.SmoothingFilter;
 
@@ -17,10 +18,11 @@ import org.ck.smoothers.SmoothingFilter;
 /**
  * This class keeps track of all dimensions of a given time-series
  */
-public class Sample 
+public class Sample implements Constants
 {
 	private List<Double> timeSeriesValues, normalisedTimeSeries;
 	private List<Double> smoothTimeSeriesValues, smoothNormalisedTimeSeries;
+	private List<Double> paaSmoothTimeSeriesValues, paaSmoothNormalisedTimeSeries;
 	private String sampleName;
 	private Logger log = Logger.getLogger(Sample.class.getName());
 		
@@ -36,6 +38,7 @@ public class Sample
 		initFromFile(file_path);
 		normalisedTimeSeries = normalize(timeSeriesValues);
 		smoothenValues();	
+		performPAA();
 		
 		log.info("Initialized Sample");
 	}
@@ -141,6 +144,22 @@ public class Sample
 	}
 	
 	/**
+	 * @return List of all un-normalized PAA smooth time series values
+	 */
+	public List<Double> getPaaTimeSeries()
+	{
+		return paaSmoothTimeSeriesValues;
+	}
+	
+	/**
+	 * @return List of all normalized smooth time series values
+	 */
+	public List<Double> getPaaNormalizedTimeSeries()
+	{
+		return paaSmoothNormalisedTimeSeries;
+	}
+	
+	/**
 	 * @return Integer containing the number of values in the time series
 	 */
 	public int getNumOfValues()
@@ -176,6 +195,15 @@ public class Sample
 		SmoothingFilter smoothingFilter = new ExponentialMovingAverageSmoother(this, 0.5);
 		smoothTimeSeriesValues = smoothingFilter.getSmoothedValues();
 		smoothNormalisedTimeSeries = normalize(smoothTimeSeriesValues);
+	}
+	
+	/**
+	 * Performs Piece-Wise Aggregate Approximation on the time series
+	 */
+	private void performPAA()
+	{
+		paaSmoothTimeSeriesValues = Approximator.getApproximatedSeries(smoothTimeSeriesValues, PAA_WINDOW_SIZE);
+		paaSmoothNormalisedTimeSeries = Approximator.getApproximatedSeries(smoothNormalisedTimeSeries, PAA_WINDOW_SIZE);
 	}
 	
 	
