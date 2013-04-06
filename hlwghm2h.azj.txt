@@ -1,0 +1,14 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   TSDM/WebContent/jsp/Forecaster/main.jsp
+#	new file:   TSDM/WebContent/jsp/Forecaster/moving_average.jsp
+#	new file:   TSDM/WebContent/jsp/Forecaster/moving_average_result.jsp
+#	new file:   TSDM/WebContent/jsp/Forecaster/moving_geometric.jsp
+#	new file:   TSDM/WebContent/jsp/Forecaster/navigator.jsp
+#
+

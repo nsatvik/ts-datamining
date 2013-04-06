@@ -1,11 +1,19 @@
 package org.ck.servlets;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.TreeMap;
 
 import org.ck.beans.TimeSeriesBean;
 import org.ck.sample.Sample;
 import org.ck.similarity.DynamicTimeWarper;
+import org.ck.smoothers.SimpleMovingAverageSmoother;
+
+import com.sun.org.apache.bcel.internal.generic.L2D;
 
 /**
  * 
@@ -34,5 +42,23 @@ public class AlgorithmUtils
 		
 		tsBean.setResult(output);
 	}
-
+	public static void runMovingAverageSmoother(TimeSeriesBean tsBean)
+	{
+		double predictedValue;
+		Sample sample = tsBean.getSample();
+		SimpleMovingAverageSmoother sms = new SimpleMovingAverageSmoother(sample, 12);
+		sms.calculateSmoothedValues();
+		List<Double> smoothList = new ArrayList<Double>();
+		smoothList = sms.getSmoothedValues();
+		predictedValue = sms.getAverage();
+		String output = "";
+		output += "Set\tMoving Average\n";
+		int i = 0;
+		while(i<=smoothList.size())
+		{
+			output += smoothList.get(i) + "&nbsp" + i + "<br/>";
+		i++;
+		tsBean.setResult(output);
+		}
+	}
 }

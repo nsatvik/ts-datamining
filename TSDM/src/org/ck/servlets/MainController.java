@@ -70,12 +70,30 @@ public class MainController extends HttpServlet
 			runSimilarityAlgorithm(tsBean);
 			break;
 		case FORTUNE_TELLER:
+			runFortuneTellingAlgorithm(tsBean);
 			break;
 		case ANOMALY_DETECTIVE:
 			break;
 		default:
 			//Forward to errorPage.jsp ---- to be created
 		}
+	}
+
+	private void runFortuneTellingAlgorithm(TimeSeriesBean tsBean) {
+		// TODO Auto-generated method stub
+		switch(tsBean.getAlgorithmType()){
+		case MOVING_AVERAGE:
+			AlgorithmUtils.runMovingAverageSmoother(tsBean);
+			break;
+		default:
+			runErrorPage();
+				
+		}
+	}
+
+	private void runErrorPage() {
+		
+		
 	}
 
 	/**
