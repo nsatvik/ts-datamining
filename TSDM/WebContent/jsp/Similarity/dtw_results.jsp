@@ -63,7 +63,7 @@
 			var dataArray = [];
 			var i = 0;
 			dataArray.push(['Month', 'Level']);
-			<c:forEach items="${tsBean.sample.timeSeries}" var="timeValuePair">
+			<c:forEach items="${tsBean.sample.smoothTimeSeries}" var="timeValuePair">
 				// IMPORTANT : '' + ++i will be replaced with appropriate names from the Sample Object -- Restructuring required
 				var dataTuple = ['' + ++i, ${timeValuePair}];		
 				dataArray.push(dataTuple);
@@ -77,7 +77,7 @@
 			data.addColumn('date', 'Date');
 	        data.addColumn('number', 'Sold Pencils');	        
 	        data.addRows([
-				<c:forEach items="${tsBean.sample.timeSeries}" var="timeValuePair">
+				<c:forEach items="${tsBean.sample.smoothTimeSeries}" var="timeValuePair">
 					[new Date(++i * 10000000), ${timeValuePair}],
 				</c:forEach>
 	          [new Date(i), ${tsBean.sample.timeSeries[5]}]

@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.logging.Logger;
 import java.math.*;
 
+import org.ck.smoothers.ExponentialMovingAverageSmoother;
+import org.ck.smoothers.SmoothingFilter;
+
 
 /**
  * This class keeps track of all dimensions of a given time-series
@@ -17,9 +20,10 @@ import java.math.*;
 public class Sample 
 {
 	private List<Double> timeSeriesValues, normalisedTimeSeries;
+	private List<Double> smoothTimeSeriesValues, smoothNormalisedTimeSeries;
 	private String sampleName;
 	private Logger log = Logger.getLogger(Sample.class.getName());
-	
+		
 	/**
 	 * @param file_path - The path of the file that contains the time series values
 	 * @param sample_name - The name of the given time series
@@ -27,28 +31,11 @@ public class Sample
 	public Sample(String file_path, String sample_name)
 	{		
 		log.info(file_path);
-		File f = new File(file_path);
-		try
-		{	
-			BufferedReader br = new BufferedReader(new FileReader(f));			
-			timeSeriesValues = new ArrayList<Double>();
-			this.sampleName = sample_name;
-			String line = null;
-			while((line = br.readLine())!=null)
-			{
-				this.timeSeriesValues.add(Double.parseDouble(line));
-			}
-			normalize();
-		}
-		catch(IOException ie)
-		{
-			log.info("IOException");
-			ie.printStackTrace();
-		}	
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}		
+		this.sampleName = sample_name;
+		
+		initFromFile(file_path);
+		normalisedTimeSeries = normalize(timeSeriesValues);
+		smoothenValues();	
 		
 		log.info("Initialized Sample");
 	}
@@ -138,6 +125,22 @@ public class Sample
 	}
 	
 	/**
+	 * @return List of all un-normalized smooth time series values
+	 */
+	public List<Double> getSmoothTimeSeries()
+	{
+		return smoothTimeSeriesValues;
+	}
+	
+	/**
+	 * @return List of all normalized smooth time series values
+	 */
+	public List<Double> getSmoothNormalizedTimeSeries()
+	{
+		return smoothNormalisedTimeSeries;
+	}
+	
+	/**
 	 * @return Integer containing the number of values in the time series
 	 */
 	public int getNumOfValues()
@@ -160,26 +163,42 @@ public class Sample
 		return meanCalculator();
 	}
 	
+	/**
+	 * Uses a smoothing filter to smoothen the given time series
+	 * A smoothing filter might be any one of the following:
+	 * 		1) Simple
+	 * 		2) Geometric
+	 * 		3) Exponential
+	 * 		4) To be decided...
+	 */
+	private void smoothenValues()
+	{
+		SmoothingFilter smoothingFilter = new ExponentialMovingAverageSmoother(this, 0.5);
+		smoothTimeSeriesValues = smoothingFilter.getSmoothedValues();
+		smoothNormalisedTimeSeries = normalize(smoothTimeSeriesValues);
+	}
+	
 	
 	/**
 	 * Implement  (val - mean)/sigma for all values in the list to normalize.
 	 * The functions have been tested with a smaller data set.
 	 * It returns proper mean, std deviation and normalised values. Returns NaN when 0/0 occurs. 
 	 * Wrote this comment because they ask us to do unit testing.
-	 * @return
+	 * @param timeSeries The series to be normalized
+	 * @return Normalized Series
 	 */
-	private boolean normalize()
+	private List<Double> normalize(List<Double> timeSeries)
 	{
-		normalisedTimeSeries = new ArrayList<Double>();
+		List<Double> normalizedValues = new ArrayList<Double>();
 		double mean = meanCalculator();
 		double standardDeviation = standardDeviationCalculator();
 
-		for (double i : timeSeriesValues)
+		for (double i : timeSeries)
 		{
-			normalisedTimeSeries.add((i-mean)/standardDeviation);
+			normalizedValues.add((i-mean)/standardDeviation);
 		}
 		
-		return true;
+		return normalizedValues;
 	}
 	
 	public double getValue(int index)
@@ -224,5 +243,33 @@ public class Sample
 			System.out.print(normalisedTimeSeries.get(i)+" ");
 		}
 		System.out.println();
-	}		
+	}	
+	
+	/**
+	 * Initializes timeSeriesValues (List<Double>) with values from file with filename = file_Path
+	 * @param file_path
+	 */
+	private void initFromFile(String file_path)
+	{
+		try
+		{	
+			File f = new File(file_path);
+			BufferedReader br = new BufferedReader(new FileReader(f));			
+			timeSeriesValues = new ArrayList<Double>();			
+			String line = null;
+			while((line = br.readLine())!=null)
+			{
+				this.timeSeriesValues.add(Double.parseDouble(line));
+			}			
+		}
+		catch(IOException ie)
+		{
+			log.info("IOException");
+			ie.printStackTrace();
+		}	
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 }
