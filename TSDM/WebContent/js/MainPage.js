@@ -69,6 +69,11 @@ $(document).ready(function () {
 	        removeUnnecessaryWidgets();                
 	        $("#div_ajaxFiller").load("./ServerScripts/DebugScripts/Debug.php");                
 	    });
+	    $("#button_Donate").button().click(function () {
+	        removeUnnecessaryWidgets();                
+	        //$("#div_ajaxFiller").load("./ServerScripts/DebugScripts/Debug.php");
+	        alert("We'll be collecting soon!");
+	    });
 	}
 	
 	

@@ -29,15 +29,16 @@
     <div style="text-align: center;">                
         <div id="div_mainMenu">
             <input id="button_home" class="TopMenuButtons" style="width: 10%" type="button" value="Home"/>            
-            <input id="button_aboutUs" class="TopMenuButtons" style="width: 10%" type="button" value="About Us"/>   
+            <input id="button_aboutUs" class="TopMenuButtons" style="width: 10%" type="button" value="About Us"/>
+            <input id="button_Donate" class="TopMenuButtons" style="width: 10%" type="button" value="Donate"/>   
         </div>
         
 
         <div id="div_ajaxFiller">
-            PlaceHolder for code that will be retrieved from JSP scripts through AJAX
+            Welcome To the RV All In One Time Series Data Mining Tool!
 			<br>
 			<div style="float: left;">					
-				This is bullshit
+				This is bullshit.
 			</div>
         </div>         
         

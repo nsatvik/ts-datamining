@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import org.ck.anomalifinder.Cusum_VmaskApproch;
 import org.ck.forecaster.nn.NeuralNetwork;
 import org.ck.gui.Constants.DatasetOptions;
 import org.ck.sample.DataHolder;
@@ -19,16 +20,25 @@ public class MainClass
 {
 	public static void main(String args[])
 	{	
-		DataHolder.setDataset(DatasetOptions.WATER_LEVEL_DATASET);
+		DataHolder.setDataset(DatasetOptions.ECG_DATASET);
 		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
 		
 		//System.out.println(getSortedSimilarSeries(seaSample));
 		//testLineGraphDrawer(seaSample);
 		//testCommonSequenceFinder(seaSample);
 		//System.out.println(new MovingGeometricForecaster(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME).geometricMean());
-		testNeuralNetwork(seaSample);
+		//testNeuralNetwork(seaSample);
+		testCusum(seaSample);
 	}
 	
+	private static void testCusum(Sample seaSample) {
+		Cusum_VmaskApproch finder = new Cusum_VmaskApproch(seaSample);
+		finder.setHval(1.5);
+		finder.computeCusumSereis();
+		System.out.println(finder.getDefectiveDataPoints());
+		
+	}
+
 	private static void testNeuralNetwork(Sample seaSample) {
 		NeuralNetwork nn = new NeuralNetwork(new int[]{10,15,15,1}, seaSample);
 		nn.train();
