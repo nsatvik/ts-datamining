@@ -10,6 +10,7 @@ import org.ck.forecaster.nn.NeuralNetwork;
 import org.ck.gui.Constants.DatasetOptions;
 import org.ck.sample.Approximator;
 import org.ck.sample.DataHolder;
+import org.ck.sample.Discretizer;
 import org.ck.sample.Sample;
 import org.ck.similarity.CommonSequenceFinder;
 import org.ck.similarity.TimePeriodFinder;
@@ -38,8 +39,8 @@ public class MainClass
 		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);
 		//System.out.println(seaSample.getSmoothTimeSeries());
 		
-		/*List<Double> list = new ArrayList<Double>();
-		list.add(4.2);
+		List<Double> list = new ArrayList<Double>();
+		/*list.add(4.2);
 		list.add(9.2);
 		list.add(14.8);
 		list.add(15.0);
@@ -53,12 +54,16 @@ public class MainClass
 		list.add(20.6);
 		list.add(16.9);
 		list.add(12.8);
-		list.add(13.6);
+		list.add(13.6);*/
+		list.add(-0.9338);
+		list.add(0.53135);
+		list.add(0.34767);
 		
-		Approximator paa = new Approximator(seaSample.getTimeSeries(), 10);*/
+		//Approximator paa = new Approximator(seaSample.getTimeSeries(), 10);*/
 		
-		System.out.println(Approximator.getApproximatedSeries(seaSample.getTimeSeries(), 10));
-		
+		/*List<Double> paaTimeSeries = Approximator.getApproximatedSeries(seaSample.getNormalizedTimeSeries(), 10);
+		System.out.println(paaTimeSeries);
+		System.out.println(Discretizer.getInstance().convertSeriesToString(paaTimeSeries, 7));*/
 	}
 
 	private static void vaishakh()

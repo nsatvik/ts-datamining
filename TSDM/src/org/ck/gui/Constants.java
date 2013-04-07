@@ -5,6 +5,7 @@ public interface Constants
 	public static final int I_AM_A_CONSTANT = 2;
 	public static final int INFINITY = Integer.MAX_VALUE;
 	public static final int PAA_WINDOW_SIZE = 10;
+	public static final int SAX_ALPHA_SIZE = 3;
 	
 	
 	enum DatasetOptions

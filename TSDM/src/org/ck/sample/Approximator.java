@@ -5,19 +5,39 @@ import java.util.List;
 
 public class Approximator
 {	
-	private static double portionSize;
+	/**
+	 * n/w
+	 */
+	private double portionSize;
+	/**
+	 * PAA Segments, before average operation
+	 */
+	private List<List<Double>> segments;	
+	/**
+	 * This list will contain fewer values (dimension reduction)
+	 */
+	private List<Double> averagePAA;		
+	/**
+	 * This list will contain the same amount of values as the timeSeries
+	 */
+	private List<Double> averageVisualPAA;  	
+	
+	public Approximator(List<Double> timeSeries, int windowSize)
+	{
+		portionSize = (double)timeSeries.size() / windowSize;
+		getApproximatedSeries(timeSeries, windowSize);	
+	}
 	
 	/**
-	 * Returns a piece-wise approximation of the time series, where the size of each segment is equal 
+	 * Calculates a piece-wise approximation of the time series, where the size of each segment is equal 
 	 * 	to windowSize.
 	 * @param timeSeries
 	 * @param windowSize
-	 * @return
 	 */
-	public static List<Double> getApproximatedSeries(List<Double> timeSeries, int windowSize)
+	public void getApproximatedSeries(List<Double> timeSeries, int windowSize)
 	{	
-		List<List<Double>> segments = formGroups(timeSeries, windowSize);
-		return averageOut(timeSeries.size(), windowSize, segments);		
+		segments = formGroups(timeSeries, windowSize);
+		averageOut(timeSeries.size(), windowSize, segments);		
 	}	
 	
 	/**
@@ -36,10 +56,9 @@ public class Approximator
 	 * @param windowSize w
 	 * @return 
 	 */
-	private static List<List<Double>> formGroups(List<Double> timeSeries, int windowSize)
+	private List<List<Double>> formGroups(List<Double> timeSeries, int windowSize)
 	{
-		int N = timeSeries.size();
-		portionSize = (double)N / windowSize;
+		int N = timeSeries.size();		
 		List<List<Double>> paa = new ArrayList<List<Double>>();
 		
 		//Case 1
@@ -84,9 +103,16 @@ public class Approximator
 		return paa;
 	}
 	
-	private static List<Double> averageOut(int N, int windowSize, List<List<Double>> segments)
+	/**
+	 * Replaces all values with average values
+	 * @param N
+	 * @param windowSize
+	 * @param segments
+	 */
+	private void averageOut(int N, int windowSize, List<List<Double>> segments)
 	{
-		List<Double> averagePAA = new ArrayList<Double>();
+		averagePAA = new ArrayList<Double>();
+		averageVisualPAA = new ArrayList<Double>();
 		boolean isFirstIteration = true;
 		for(List<Double> list : segments)
 		{
@@ -94,16 +120,40 @@ public class Approximator
 			for(double num : list)			
 				sum += num;
 			
-			double avg = sum / list.size();			
+			double avg = sum / list.size();
 			
+			//The following code is required for visualization of step-segments
 			int i = (N % windowSize == 0 || isFirstIteration) ? 0 : 1;
 			isFirstIteration = false;
-			for(; i<list.size(); i++)			
-				averagePAA.add(avg);	
+			for(; i<list.size(); i++)							
+				averageVisualPAA.add(avg);			
+			
+			//For calculation
+			averagePAA.add(avg);
 		}
+	}
+
+	/**
+	 * @return the segments
+	 */
+	public List<List<Double>> getSegments()
+	{
+		return segments;
+	}
+
+	/**
+	 * @return the averagePAA
+	 */
+	public List<Double> getAveragePAA()
+	{
 		return averagePAA;
 	}
 
-	
-	
+	/**
+	 * @return the averageVisualPAA
+	 */
+	public List<Double> getAverageVisualPAA()
+	{
+		return averageVisualPAA;
+	}	
 }

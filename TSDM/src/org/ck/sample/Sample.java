@@ -23,6 +23,8 @@ public class Sample implements Constants
 	private List<Double> timeSeriesValues, normalisedTimeSeries;
 	private List<Double> smoothTimeSeriesValues, smoothNormalisedTimeSeries;
 	private List<Double> paaSmoothTimeSeriesValues, paaSmoothNormalisedTimeSeries;
+	private List<Double> visualPAASmoothTimeSeriesValues, visualPAASmoothNormalisedTimeSeries;
+	String saxWord;
 	private String sampleName;
 	private Logger log = Logger.getLogger(Sample.class.getName());
 		
@@ -39,9 +41,11 @@ public class Sample implements Constants
 		normalisedTimeSeries = normalize(timeSeriesValues);
 		smoothenValues();	
 		performPAA();
+		runSAXEngine();
 		
 		log.info("Initialized Sample");
 	}
+	
 	
 	/**
 	 * Copy Constructor
@@ -160,6 +164,30 @@ public class Sample implements Constants
 	}
 	
 	/**
+	 * @return List of all un-normalized PAA smooth time series values
+	 */
+	public List<Double> getVisualPAATimeSeries()
+	{
+		return visualPAASmoothTimeSeriesValues;
+	}
+	
+	/**
+	 * @return List of all normalized smooth time series values
+	 */
+	public List<Double> getVisualPAANormalizedTimeSeries()
+	{
+		return visualPAASmoothNormalisedTimeSeries;
+	}
+	
+	/**
+	 * @return SAX Representation of the PAA Normalized time series
+	 */
+	public String getSaxString()
+	{
+		return saxWord;
+	}
+	
+	/**
 	 * @return Integer containing the number of values in the time series
 	 */
 	public int getNumOfValues()
@@ -183,6 +211,14 @@ public class Sample implements Constants
 	}
 	
 	/**
+	 * Runs the SAX Algorithm to get a string representation of the time series (using PAA Normalized values only)
+	 */
+	private void runSAXEngine()
+	{
+		saxWord = Discretizer.getInstance().convertSeriesToString(paaSmoothNormalisedTimeSeries, SAX_ALPHA_SIZE);	
+	}
+	
+	/**
 	 * Uses a smoothing filter to smoothen the given time series
 	 * A smoothing filter might be any one of the following:
 	 * 		1) Simple
@@ -202,8 +238,13 @@ public class Sample implements Constants
 	 */
 	private void performPAA()
 	{
-		paaSmoothTimeSeriesValues = Approximator.getApproximatedSeries(smoothTimeSeriesValues, PAA_WINDOW_SIZE);
-		paaSmoothNormalisedTimeSeries = Approximator.getApproximatedSeries(smoothNormalisedTimeSeries, PAA_WINDOW_SIZE);
+		Approximator approximator = new Approximator(smoothTimeSeriesValues, PAA_WINDOW_SIZE);
+		paaSmoothTimeSeriesValues = approximator.getAveragePAA();
+		visualPAASmoothTimeSeriesValues = approximator.getAverageVisualPAA();
+		
+		approximator = new Approximator(smoothNormalisedTimeSeries, PAA_WINDOW_SIZE);
+		paaSmoothNormalisedTimeSeries = approximator.getAveragePAA();
+		visualPAASmoothNormalisedTimeSeries = approximator.getAverageVisualPAA();
 	}
 	
 	
@@ -215,7 +256,7 @@ public class Sample implements Constants
 	 * @param timeSeries The series to be normalized
 	 * @return Normalized Series
 	 */
-	private List<Double> normalize(List<Double> timeSeries)
+	public List<Double> normalize(List<Double> timeSeries)
 	{
 		List<Double> normalizedValues = new ArrayList<Double>();
 		double mean = meanCalculator();

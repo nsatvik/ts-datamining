@@ -14,6 +14,8 @@
 		${tsBean.algorithmType } <br /> Dataset used = ${tsBean.dataset } <br />
 		Sample = ${tsBean.sample.normalizedTimeSeries[0] } <br />
 		<!-- Result = ${tsBean.result } -->
+		<br/>
+		SAX String : ${tsBean.sample.saxString }
 		
 		
 		
@@ -63,7 +65,7 @@
 			var dataArray = [];
 			var i = 0;
 			dataArray.push(['Month', 'Level']);
-			<c:forEach items="${tsBean.sample.paaTimeSeries}" var="timeValuePair">
+			<c:forEach items="${tsBean.sample.visualPAATimeSeries}" var="timeValuePair">
 				// IMPORTANT : '' + ++i will be replaced with appropriate names from the Sample Object -- Restructuring required
 				var dataTuple = ['' + ++i, ${timeValuePair}];		
 				dataArray.push(dataTuple);
@@ -77,7 +79,7 @@
 			data.addColumn('date', 'Date');
 	        data.addColumn('number', 'Sold Pencils');	        
 	        data.addRows([
-				<c:forEach items="${tsBean.sample.paaTimeSeries}" var="timeValuePair">
+				<c:forEach items="${tsBean.sample.visualPAATimeSeries}" var="timeValuePair">
 					[new Date(++i * 10000000), ${timeValuePair}],
 				</c:forEach>
 	          [new Date(i), ${tsBean.sample.timeSeries[5]}]
