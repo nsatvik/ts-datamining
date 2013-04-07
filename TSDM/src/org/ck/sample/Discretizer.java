@@ -1,5 +1,6 @@
 package org.ck.sample;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.Map;
  */
 public class Discretizer
 {
-	private Map<Integer, List<Double>> breakpointMap;
+	private Map<Integer, List<Double>> breakpointMap;	
 	private static Discretizer singleInstance;
 
 	/**
@@ -20,7 +21,33 @@ public class Discretizer
 	 */
 	private Discretizer() 
 	{
-		initBreakpointMap();
+		initBreakpointMap();	
+	}
+
+	/**
+	 * A lookup table used by the MINDIST function. This
+		table is for an alphabet of cardinality of alphaSize. 
+	 * @param alphaSize
+	 * @return A 2-D Lookup Table
+	 */
+	private double[][] initMinDistTable(int alphaSize)
+	{
+		List<Double> betaTable = breakpointMap.get(alphaSize);		
+		double minDistTable[][] = new double[alphaSize][alphaSize];
+		
+		for(int r=0; r<minDistTable.length; r++)
+		{
+			for(int c=0; c<minDistTable[0].length; c++)
+			{
+				if(Math.abs(r - c) <= 1)
+					minDistTable[r][c] = 0;
+				else
+					minDistTable[r][c] = betaTable.get(Math.max(r, c) - 1) - betaTable.get(Math.min(r, c));
+				System.out.print(minDistTable[r][c] + "\t");
+			}
+			System.out.println();
+		}
+		return minDistTable;
 	}
 
 	/**
@@ -80,6 +107,29 @@ public class Discretizer
 		}
 		return word;
 	}
+	
+	/**
+	 * Finds the SAX distance between two SAX strings
+	 * @param word1
+	 * @param word2
+	 * @param n
+	 * @param w
+	 * @param alphaSize
+	 * @return double
+	 */
+	public double findDistance(String word1, String word2, int n, int w, int alphaSize)
+	{
+		double[][] minDistTable = initMinDistTable(alphaSize);
+		
+		double sum = 0;
+		int length = Math.min(word1.length(), word2.length());
+		for(int i=0; i<length; i++)
+		{
+			sum += Math.pow(minDistTable[word1.charAt(i) - 'a'][word2.charAt(i) - 'a'], 2);
+		}
+		
+		return Math.sqrt((double)n / w) * Math.sqrt(sum);
+	}
 
 	/**
 	 * Converts a number into a character from an alphabet of size alphaSize
@@ -98,4 +148,6 @@ public class Discretizer
 		}
 		return "" + (char)('a' + i);
 	}
+	
+	
 }

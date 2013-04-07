@@ -56,6 +56,9 @@ public class Sample implements Constants
 		timeSeriesValues = sample.timeSeriesValues;
 		normalisedTimeSeries = sample.normalisedTimeSeries;
 		sampleName = sample.sampleName;
+		smoothenValues();	
+		performPAA();
+		runSAXEngine();
 	}
 	
 	/**
@@ -69,6 +72,9 @@ public class Sample implements Constants
 		this.timeSeriesValues = timeSeriesValues;
 		this.normalisedTimeSeries = normalisedTimeSeries;
 		this.sampleName = sampleName;
+		smoothenValues();	
+		performPAA();
+		runSAXEngine();
 	}
 	
 	/**
@@ -202,12 +208,25 @@ public class Sample implements Constants
 	{
 		return sampleName;
 	}
-	public double getStandardDeviation(){
+	
+	public double getStandardDeviation()
+	{
 		return standardDeviationCalculator();
 	}
+	
 	public double getMean()
 	{
 		return meanCalculator();
+	}
+	
+	/**
+	 * Finds out the similarity between this sample and another sample, using MINDIST (as defined in the SAX paper)
+	 * @param sample
+	 * @return double
+	 */
+	public double compareToUsingSAX(Sample sample)
+	{
+		return Discretizer.getInstance().findDistance(this.saxWord, sample.saxWord, getNumOfValues(), PAA_WINDOW_SIZE, SAX_ALPHA_SIZE);
 	}
 	
 	/**

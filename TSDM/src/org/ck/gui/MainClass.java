@@ -36,34 +36,14 @@ public class MainClass
 	private static void samir()
 	{
 		DataHolder.setDataset(DatasetOptions.SEA_LEVEL_DATASET);
-		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);
-		//System.out.println(seaSample.getSmoothTimeSeries());
+		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);		
 		
-		List<Double> list = new ArrayList<Double>();
-		/*list.add(4.2);
-		list.add(9.2);
-		list.add(14.8);
-		list.add(15.0);
-		list.add(17.0);
-		list.add(18.0);
-		list.add(19.7);
-		list.add(20.0);
-		list.add(20.8);
-		list.add(21.3);
-		list.add(21.6);
-		list.add(20.6);
-		list.add(16.9);
-		list.add(12.8);
-		list.add(13.6);*/
-		list.add(-0.9338);
-		list.add(0.53135);
-		list.add(0.34767);
+		DataHolder.setDataset(DatasetOptions.FINANCE_VIX_DATASET);
+		Sample sample2 = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME).getSeriesSubset(0, 1400);
 		
-		//Approximator paa = new Approximator(seaSample.getTimeSeries(), 10);*/
-		
-		/*List<Double> paaTimeSeries = Approximator.getApproximatedSeries(seaSample.getNormalizedTimeSeries(), 10);
-		System.out.println(paaTimeSeries);
-		System.out.println(Discretizer.getInstance().convertSeriesToString(paaTimeSeries, 7));*/
+		System.out.println(seaSample.getSaxString());
+		System.out.println(sample2.getSaxString());
+		System.out.println(seaSample.compareToUsingSAX(sample2));
 	}
 
 	private static void vaishakh()
