@@ -28,7 +28,7 @@
         <p>
        Ola! Welcome to the 8th semester project of <a href="https://www.facebook.com/samir.sheriff.5">Samir Sheriff</a>,  <a href="https://www.facebook.com/nsatvik">Satvik N</a> and <a href="https://www.facebook.com/vaishakhbn">Vaishakh B N</a>
        We are proud members of <a href="https://www.facebook.com/CodeKshetra"> Code Kshetra! </a>. Do visit our page for more details about our other projects. </p> 
-       <img src="https://lh6.googleusercontent.com/-b2gZH5wkT_Y/UVchP5Jnj0I/AAAAAAAAFOs/wzBIUtsaMbY/s653/samsatvai.jpg" style="height: 250px;"/>
+       <img src="./images/developers.jpg" style="height: 250px;"/>
        
     </div>
     <h3>Project Hosting</h3>

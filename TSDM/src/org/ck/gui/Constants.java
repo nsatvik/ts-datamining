@@ -30,6 +30,7 @@ public interface Constants
 		DTW,
 		SAX,
 		MOVING_AVERAGE,
-		COMMON_SUBSEQUENCE
+		COMMON_SUBSEQUENCE,
+		CUSUM
 	}
 }

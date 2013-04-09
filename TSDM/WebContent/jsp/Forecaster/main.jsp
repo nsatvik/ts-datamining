@@ -8,8 +8,6 @@
 </head>
 <body>
 <div>
-	Time Series Forecasting is a very important aspect of Time Series Analysis. 
-	Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..Blah Blah Blah..
 	
 	<br/>
 	<br/>

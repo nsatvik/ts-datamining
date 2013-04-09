@@ -8,12 +8,9 @@ import java.util.TreeMap;
 import org.ck.anomalifinder.Cusum_VmaskApproch;
 import org.ck.forecaster.nn.NeuralNetwork;
 import org.ck.gui.Constants.DatasetOptions;
-import org.ck.sample.Approximator;
 import org.ck.sample.DataHolder;
-import org.ck.sample.Discretizer;
 import org.ck.sample.Sample;
 import org.ck.similarity.CommonSequenceFinder;
-import org.ck.similarity.TimePeriodFinder;
 import org.ck.similarity.CommonSequenceFinder.Tuple;
 import org.ck.similarity.DynamicTimeWarper;
 
@@ -23,7 +20,7 @@ public class MainClass
 	public static void main(String args[])
 	{	
 		DataHolder.setDataset(DatasetOptions.ECG_DATASET);
-		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
+		//Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
 		
 		//use your respective methods for testing
 		//satvik();

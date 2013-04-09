@@ -11,7 +11,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Time Series Data Mining Tool</title>    
-    <title>TSSV</title>
+    <title>TSDM Tool</title>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/dot-luv/jquery-ui.css" />
     <link rel="stylesheet" href="./styles/MainPage.css"/>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -37,7 +37,7 @@
         <div id="div_ajaxFiller">
             Welcome To the RV All In One Time Series Data Mining Tool!
 			<br>
-			<div style="float: left;">					
+			<div style="float: left; color:white;">					
 				This is bullshit.
 			</div>
         </div>         
