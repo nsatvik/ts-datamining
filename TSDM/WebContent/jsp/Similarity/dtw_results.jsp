@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="org.ck.gui.Constants" %>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -9,8 +10,19 @@
 </head>
 <body>
 
+	
 	<div style="float: left;">
-		Task Type Selected = ${tsBean.taskType } <br /> Algorithm used =
+		<p>
+			<label for="sample_range">Range:</label> <input type="text"
+				id="sample_range" style="width:55%; color: #f6931f; font-weight: bold;" readonly />
+		</p>
+		<div id="slider-range"></div>
+		<br/>
+		<input id="button_updateGraph" type="button" value="Update Graph"/>
+		
+		<br/>
+		<br /> Task Type Selected = ${tsBean.taskType } <br /> 
+		Sub Task Type = ${tsBean.subTaskType } <br/> Algorithm used =
 		${tsBean.algorithmType } <br /> Dataset used = ${tsBean.dataset } <br />
 		Sample = ${tsBean.sample.normalizedTimeSeries[0] } <br />
 		<!-- Result = ${tsBean.result } -->
@@ -21,73 +33,57 @@
 		
 	</div>
 
-	<div>
-		<!-- GRAPH <br /> <img alt="charts4j" src="${graphBean.url }" /> -->
-	</div>
-	
-	<div id="line_chart_div" style="width: 900px; height: 500px; float: left;">
-		HAHA
-	</div>
-	
-	<div id="annotated_timeline_div" style="width: 900px; height: 500px; float: right;">
-		HUHU
-	</div>
-	
-	
-    <script type="text/javascript">    	
-	    google.load("visualization", "1", {callback : function(){drawLineChart();}, packages:["corechart"]});
-	    function drawLineChart() { 		    	
-	      	var data = google.visualization.arrayToDataTable(getDataArrayForLineChart());
-	      
-		    var options = {
-		        title: 'Time Series'
-		      };
-		  
-	     	var chart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
-	     	chart.draw(data, options);
-	    }
-    </script>
-    
-    <script type="text/javascript">    	
-	    google.load("visualization", "1", {callback : function(){drawAnnotatedTimeline();}, packages:["annotatedtimeline"]});
-	    function drawAnnotatedTimeline() { 		    	
-	    	
-	    	var data = getDataArrayForTimeline();
-	        
-	        var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('annotated_timeline_div'));
-	        chart.draw(data, {displayAnnotations: true});
+	<div id="div_dtwUpdate">
+		<div>
+			<!-- GRAPH <br /> <img alt="charts4j" src="${graphBean.url }" /> -->
+		</div>
 
-	    }
-    </script>
+		<div id="line_chart_div"
+			style="width: 900px; height: 500px; float: left;">HAHA</div>
+
+		<div id="annotated_timeline_div"
+			style="width: 900px; height: 500px; float: right;">HUHU</div>
+	</div>
 	
 	<script type="text/javascript">
-		function getDataArrayForLineChart(){
-			var dataArray = [];
-			var i = 0;
-			dataArray.push(['Month', 'Level']);
-			<c:forEach items="${tsBean.sample.visualPAATimeSeries}" var="timeValuePair">
-				// IMPORTANT : '' + ++i will be replaced with appropriate names from the Sample Object -- Restructuring required
-				var dataTuple = ['' + ++i, ${timeValuePair}];		
-				dataArray.push(dataTuple);
-			</c:forEach>
-			return dataArray;		
-		}
+		$(function() {
+			$( "#slider-range" ).slider({
+								range : true,
+								min : 0,
+								max : ${tsBean.sample.numOfValues},
+								values : [ 0, 1400],
+								slide : function(event, ui) {
+									$("#sample_range").val(
+											"" + ui.values[0] + " to "
+													+ ui.values[1]);
+								},
+								change : function(event, ui) {
+									$("#button_updateGraph").trigger("click");	
+								}
+							});
+			$("#sample_range").val(
+					"" + $("#slider-range").slider("values", 0) + " to "
+							+ $("#slider-range").slider("values", 1));
+		});
+	</script>
+	
+	<script type="text/javascript">
+		$("#button_updateGraph").button().click(function(){
+			$("#hidden_params").val($("#sample_range").val());
+			 $("#div_dtwUpdate").load("MainController", 
+		        		{"taskType" : "<%=Constants.TaskType.SIMILARITY %>",
+				 		 "subTaskType" : "<%=Constants.SubTaskType.UPDATE_GRAPH %>",
+		        		 "algorithmType" : "<%=Constants.AlgorithmType.DTW %>",
+		        		 "dataset" : $("#dropdown option:selected").val(),
+		        		 "params" : $("#hidden_params").val()
+		        		}
+		        );
+		});
 		
-		function getDataArrayForTimeline(){
-			var i = 0;
-			var data = new google.visualization.DataTable();
-			data.addColumn('date', 'Date');
-	        data.addColumn('number', 'Sold Pencils');	        
-	        data.addRows([
-				<c:forEach items="${tsBean.sample.visualPAATimeSeries}" var="timeValuePair">
-					[new Date(++i * 10000000), ${timeValuePair}],
-				</c:forEach>
-	          [new Date(i), ${tsBean.sample.timeSeries[5]}]
-	        ]);
-	        
-			return data;
-					
-		}
+		
+		$(function(){
+			$("#button_updateGraph").trigger("click");
+		});	
 	</script>
 	
 </body>

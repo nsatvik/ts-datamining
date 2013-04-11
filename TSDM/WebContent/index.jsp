@@ -42,6 +42,7 @@
 			</div>
         </div>         
         
+        <input id="hidden_params" type="text" value="Hidden Values"/>
 
     </div>
     

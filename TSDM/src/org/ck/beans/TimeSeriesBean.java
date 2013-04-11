@@ -18,8 +18,12 @@ public class TimeSeriesBean implements Serializable, Constants
 	
 	private Sample sample;
 	private TaskType taskType = TaskType.SIMILARITY;
+	private SubTaskType subTaskType = SubTaskType.NONE;
 	private AlgorithmType algorithmType = AlgorithmType.DTW;
 	private DatasetOptions dataset = DatasetOptions.SEA_LEVEL_DATASET;
+	
+	private String params = "";		//Required for processing user-defined queries
+	
 	private String result = "TBD";
 	
 	public Sample getSample()
@@ -32,6 +36,11 @@ public class TimeSeriesBean implements Serializable, Constants
 		return taskType;
 	}
 	
+	public SubTaskType getSubTaskType()
+	{
+		return subTaskType;
+	}
+
 	public AlgorithmType getAlgorithmType()
 	{
 		return algorithmType;
@@ -47,23 +56,35 @@ public class TimeSeriesBean implements Serializable, Constants
 		this.sample = sample;
 	}
 	
-	public void setTaskType(TaskType taskType)
+	public void setTaskType(String taskType)
 	{
-		this.taskType = taskType;
+		if(taskType == null)
+			return; 
+		this.taskType = TaskType.valueOf(taskType);
 	}
 	
-	public void setAlgorithmType(AlgorithmType algorithmType)
+	public void setSubTaskType(String subTaskType)
 	{
-		this.algorithmType = algorithmType;
+		if(subTaskType == null)
+			return; 		
+		this.subTaskType = SubTaskType.valueOf(subTaskType);
 	}
 	
-	public void setDataset(DatasetOptions dataset)
+	public void setAlgorithmType(String algorithmType)
+	{
+		if(algorithmType == null)
+			return;		
+		this.algorithmType = AlgorithmType.valueOf(algorithmType);
+	}
+	
+	public void setDataset(String dataset)
 	{
 		if(this.dataset.equals(dataset))
 			return;
 		
-		this.dataset = dataset;		
-		//sample = new Sample(DataHolder.TRAINING_FILE_NAME, DataHolder.SAMPLE_NAME);
+		if(dataset == null)
+			return;		
+		this.dataset = DatasetOptions.valueOf(dataset);		
 	}
 
 	public String getResult()
@@ -75,4 +96,23 @@ public class TimeSeriesBean implements Serializable, Constants
 	{
 		this.result = result;
 	}	
+	
+	public String getParams()
+	{
+		return params;
+	}
+
+	public void setParams(String params)
+	{
+		this.params = params;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return "TimeSeriesBean [sample=" + sample + ", taskType=" + taskType
+				+ ", subTaskType=" + subTaskType + ", algorithmType="
+				+ algorithmType + ", dataset=" + dataset + ", params=" + params
+				+ ", result=" + result + "]";
+	}
 }

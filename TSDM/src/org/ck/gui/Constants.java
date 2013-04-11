@@ -6,7 +6,7 @@ public interface Constants
 	public static final int INFINITY = Integer.MAX_VALUE;
 	public static final int PAA_WINDOW_SIZE = 11;
 	public static final int SAX_ALPHA_SIZE = 6;
-	
+	public static final String PATH_PREFIX = "/jsp/";
 	
 	enum DatasetOptions
 	{
@@ -25,6 +25,12 @@ public interface Constants
 		ANOMALY_DETECTIVE
 	}
 	
+	enum SubTaskType
+	{
+		NONE, 
+		UPDATE_GRAPH
+	}
+	
 	enum AlgorithmType
 	{
 		DTW,
@@ -32,5 +38,5 @@ public interface Constants
 		MOVING_AVERAGE,
 		COMMON_SUBSEQUENCE,
 		CUSUM
-	}
+	}	
 }

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -28,10 +29,10 @@ import org.ck.similarity.DynamicTimeWarper;
  * 		and forwards them to other jsp pages
  */
 @WebServlet("/MainController")
-public class MainController extends HttpServlet 
+public class MainController extends HttpServlet implements Constants
 {
 	private static final long serialVersionUID = 1L;
-	private static final String PATH_PREFIX = "/jsp/";
+	
 	private Logger log = Logger.getLogger(MainController.class.getName());
        
     /**
@@ -70,12 +71,10 @@ public class MainController extends HttpServlet
 		switch(tsBean.getTaskType())
 		{
 		case SIMILARITY:
-			runSimilarityAlgorithm(tsBean);
-			address = PATH_PREFIX + "Similarity/dtw_results.jsp";
+			address = runSimilarityAlgorithm(tsBean);			
 			break;
 		case FORTUNE_TELLER:
-			address = PATH_PREFIX + "Forecaster/moving_average_result.jsp";
-			runFortuneTellingAlgorithm(tsBean);
+			address = runFortuneTellingAlgorithm(tsBean);
 			break;
 		case ANOMALY_DETECTIVE:
 			break;
@@ -98,16 +97,16 @@ public class MainController extends HttpServlet
 	 * 		how to go about your life. Pay me Rs. 100
 	 * @param tsBean
 	 */
-	private void runFortuneTellingAlgorithm(TimeSeriesBean tsBean) 
+	private String runFortuneTellingAlgorithm(TimeSeriesBean tsBean) 
 	{
 		log.info("Fortune Telling Algo");
 		switch(tsBean.getAlgorithmType())
 		{
 		case MOVING_AVERAGE:
-			AlgorithmUtils.runMovingAverageSmoother(tsBean);
-			break;
+			return AlgorithmUtils.runMovingAverageSmoother(tsBean);			
 		default:				
 		}
+		return "";
 	}
 
 
@@ -115,20 +114,20 @@ public class MainController extends HttpServlet
 	 * Runs a similarity algorithm 
 	 * @param tsBean
 	 */
-	private void runSimilarityAlgorithm(TimeSeriesBean tsBean)
+	private String runSimilarityAlgorithm(TimeSeriesBean tsBean)
 	{
 		switch(tsBean.getAlgorithmType())
 		{
 		case DTW:
-			AlgorithmUtils.runDTWAlgorithm(tsBean);
-			break;
+			return AlgorithmUtils.runDTWAlgorithm(tsBean);			
 		case SAX:
 			break;
 		case COMMON_SUBSEQUENCE:
 			break;
 		default:
-			//Forward to errorPage.jsp ---- to be created
+			//Forward to errorPage.jsp ---- to be created			
 		}
+		return "";
 	}
 	
 	/**
@@ -163,17 +162,18 @@ public class MainController extends HttpServlet
 		if(tsBean == null)
 			tsBean = new TimeSeriesBean();
 		
-		tsBean.setTaskType(Constants.TaskType.valueOf(request.getParameter("taskType")));
-		tsBean.setAlgorithmType(Constants.AlgorithmType.valueOf(request.getParameter("algorithmType")));
-		tsBean.setDataset(Constants.DatasetOptions.valueOf(request.getParameter("dataset")));
+		tsBean.setTaskType(request.getParameter("taskType"));
+		tsBean.setAlgorithmType(request.getParameter("algorithmType"));
+		tsBean.setDataset(request.getParameter("dataset"));
+		tsBean.setSubTaskType(request.getParameter("subTaskType"));
+		tsBean.setParams(request.getParameter("params"));
 		
 		DataHolder.setDataset(tsBean.getDataset());
 		tsBean.setSample(new Sample(request.getServletContext().getRealPath("/") 
 				+ DataHolder.TRAINING_FILE_NAME, 
 				DataHolder.SAMPLE_NAME));
 		
-		log.info("I AM HERE");
-		log.info(DataHolder.TRAINING_FILE_NAME);
+		log.log(Level.INFO, tsBean.toString());
 		return tsBean;
 	}
 
