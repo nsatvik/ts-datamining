@@ -1,7 +1,10 @@
+<%@page import="org.ck.beans.TimeSeriesBean"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="java.util.ArrayList" %>
 <%@page import="org.ck.gui.Constants" %>
+<%@page import="org.ck.sample.Sample" %>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,13 +13,13 @@
 <title>DTW Update Results</title>
 </head>
 <body>
-HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 
 <br /> Task Type Selected = ${tsBean.taskType } <br /> 
 		Algorithm used =
-		${tsBean.algorithmType } <br /> Dataset used = ${tsBean.dataset } <br />
-		Sample Size = ${tsBean.sample.numOfValues } <br />
-		<!-- Result = ${tsBean.result } -->
+		${tsBean.algorithmType } <br /> Dataset used = ${tsBean.dataset } <br />		
+		<br/>		
+		 Results sorted by Similarity <br/>
+		  ${tsBean.result } 
 		<br/>
 		SAX String : ${tsBean.sample.saxString }
 
@@ -25,10 +28,11 @@ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 	</div>
 
 	<div id="line_chart_div"
-		style="width: 900px; height: 500px; float: left;">HAHA</div>
+		style="width: 1600px; height: 500px; float: right;">		
+	</div>
 
-	<div id="annotated_timeline_div"
-		style="width: 900px; height: 500px; float: right;">HUHU</div>
+	<!-- <div id="annotated_timeline_div"
+		style="width: 900px; height: 500px; float: right;">HUHU</div> -->
 	
 	
 
@@ -36,16 +40,42 @@ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 		function getDataArrayForLineChart(){
 			var dataArray = [];
 			var i = 0;
-			dataArray.push(['Month', 'Level']);
-			<c:forEach items="${tsBean.sample.smoothTimeSeries}" var="timeValuePair">
-				// IMPORTANT : '' + ++i will be replaced with appropriate names from the Sample Object -- Restructuring required
-				var dataTuple = ['' + ++i, ${timeValuePair}];		
+			<%
+				TimeSeriesBean tsBean = (TimeSeriesBean)request.getSession().getAttribute("tsBean");
+				ArrayList<Sample> subSamples = tsBean.getSubSamples();
+			%>
+			dataArray.push(['Month' 
+			                <%			                	
+			                	for(int i=0; i<subSamples.size(); i++)
+			                		out.print(", " + "'Sample " + (i+1) + "'");
+			                %>
+			                ]);
+						
+			<%
+			double indices[] = new double[subSamples.size()];
+			Sample baseSample = subSamples.get(0);			//The sample that all other samples will be compared to
+			for(int i=0; i<baseSample.getNumOfValues(); i++)
+			{
+				%>var dataTuple = ['' + <%out.print(i);%> , 
+						<%
+						out.print(baseSample.getSmoothNormalizedTimeSeries().get(i));
+						for(int j=1; j<subSamples.size(); j++)
+						{
+							out.print(", " + subSamples.get(j).getSmoothNormalizedTimeSeries().get((int)indices[j]));
+							indices[j] += (double)subSamples.get(j).getNumOfValues() / baseSample.getNumOfValues();
+						}
+						%>
+						
+						
+						];
 				dataArray.push(dataTuple);
-			</c:forEach>
+		<%	}
+			%>
+			
 			return dataArray;		
 		};
 		
-		function getDataArrayForTimeline(){
+		/*function getDataArrayForTimeline(){
 			var i = 0;
 			var data = new google.visualization.DataTable();
 			data.addColumn('date', 'Date');
@@ -58,7 +88,7 @@ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 	        ]);
 	        
 			return data;					
-		};
+		};*/
 	</script>
 
 	<script type="text/javascript">    	
@@ -76,7 +106,7 @@ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
     </script>
     
     <script type="text/javascript">    	
-	    google.load("visualization", "1", {callback : function(){drawAnnotatedTimeline();}, packages:["annotatedtimeline"]});
+	    /*google.load("visualization", "1", {callback : function(){drawAnnotatedTimeline();}, packages:["annotatedtimeline"]});
 	    function drawAnnotatedTimeline() { 		    	
 	    	
 	    	var data = getDataArrayForTimeline();
@@ -84,7 +114,7 @@ HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
 	        var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('annotated_timeline_div'));
 	        chart.draw(data, {displayAnnotations: true});
 
-	    };
+	    };*/
     </script>
 	
 	

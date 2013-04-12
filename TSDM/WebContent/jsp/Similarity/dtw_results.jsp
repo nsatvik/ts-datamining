@@ -14,20 +14,18 @@
 	<div style="float: left;">
 		<p>
 			<label for="sample_range">Range:</label> <input type="text"
-				id="sample_range" style="width:55%; color: #f6931f; font-weight: bold;" readonly />
+				id="sample_range" style="width:55%; color: #f6931f; font-weight: bold;" value="0 to 1400" readonly />
 		</p>
 		<div id="slider-range"></div>
-		<br/>
-		<input id="button_updateGraph" type="button" value="Update Graph"/>
+		<br/>		
+		<input id="button_addSlider" type="button" value="Add Slider"/>
+		  
+		<div id="div_sliders">
+		</div>
 		
-		<br/>
-		<br /> Task Type Selected = ${tsBean.taskType } <br /> 
-		Sub Task Type = ${tsBean.subTaskType } <br/> Algorithm used =
-		${tsBean.algorithmType } <br /> Dataset used = ${tsBean.dataset } <br />
-		Sample = ${tsBean.sample.normalizedTimeSeries[0] } <br />
-		<!-- Result = ${tsBean.result } -->
-		<br/>
-		SAX String : ${tsBean.sample.saxString }
+		<input id="button_removeSlider" type="button" value="Remove Slider"/>
+		
+		
 		
 		
 		
@@ -46,30 +44,20 @@
 	</div>
 	
 	<script type="text/javascript">
-		$(function() {
-			$( "#slider-range" ).slider({
-								range : true,
-								min : 0,
-								max : ${tsBean.sample.numOfValues},
-								values : [ 0, 1400],
-								slide : function(event, ui) {
-									$("#sample_range").val(
-											"" + ui.values[0] + " to "
-													+ ui.values[1]);
-								},
-								change : function(event, ui) {
-									$("#button_updateGraph").trigger("click");	
-								}
-							});
-			$("#sample_range").val(
-					"" + $("#slider-range").slider("values", 0) + " to "
-							+ $("#slider-range").slider("values", 1));
-		});
-	</script>
+		//These two functions are used to update and redraw the graphs
+		
+		var gatherRanges = function(){
+			var str = $("#sample_range").val();
+			for(var i=1; i<subSliderID; i++){
+				str += ";" + $("#subRange_" + i).val();
+			};
+			
+			$("#hidden_params").val(str);
+		};
 	
-	<script type="text/javascript">
-		$("#button_updateGraph").button().click(function(){
-			$("#hidden_params").val($("#sample_range").val());
+		var updateGraph = function(){
+			gatherRanges();		
+			
 			 $("#div_dtwUpdate").load("MainController", 
 		        		{"taskType" : "<%=Constants.TaskType.SIMILARITY %>",
 				 		 "subTaskType" : "<%=Constants.SubTaskType.UPDATE_GRAPH %>",
@@ -78,12 +66,79 @@
 		        		 "params" : $("#hidden_params").val()
 		        		}
 		        );
+		};		
+		
+		updateGraph();	
+		
+		//A unique number for slider ids
+		var subSliderID = 1;
+	
+		//These two functions can be used to initialize a slider with id = sliderID, and connect its output to a text box with id = rangeBoxID
+			
+		var createSlider = function(sliderID, rangeBoxID) {
+			$( "#" + sliderID ).slider({
+								range : true,
+								min : 0,
+								max : ${tsBean.sample.numOfValues},
+								values : [ 0, ${tsBean.sample.numOfValues}],
+								create: function( event, ui ) {
+									initRangeBox(sliderID, rangeBoxID);									
+								},
+								slide : function(event, ui) {
+									$("#" + rangeBoxID).val(
+											"" + ui.values[0] + " to "
+													+ ui.values[1]);
+								},
+								change : function(event, ui) {
+									updateGraph();	
+								}
+							});			
+		};
+		
+		var initRangeBox = function(sliderID, rangeBoxID){
+			$("#" + rangeBoxID).val(
+					"" + $("#" + sliderID).slider("values", 0) + " to "
+							+ $("#" + sliderID).slider("values", 1));
+		}
+		
+		createSlider("slider-range", "sample_range");			
+	</script>
+	
+	<script type="text/javascript">
+	
+		
+	</script>
+	
+	<script type="text/javascript">
+		$("#button_addSlider").button().click(function(){
+			$("#div_sliders").append(function(index){
+				return '<p>'
+						+ '<label id="subLabel_' + subSliderID + '" for="subRange_' + subSliderID + '">Range:</label> <input type="text"'
+					 	+ 'id="subRange_' + subSliderID + '" style="width:55%; color: #f6931f; font-weight: bold;" readonly />'						
+						+ '<div id="subSlider_' + subSliderID + '"></div>'
+						+ '</p>';
+			});
+			createSlider('subSlider_' + subSliderID, 'subRange_' + subSliderID);
+			subSliderID++;
+			updateGraph();
 		});
 		
+		$("#button_removeSlider").button().click(function(){
+			subSliderID--;
+			$("#subSlider_" + subSliderID).remove();
+			$("#subRange_" + subSliderID).remove();
+			$("#subLabel_" + subSliderID).remove();
+			updateGraph();
+		});
 		
-		$(function(){
-			$("#button_updateGraph").trigger("click");
-		});	
+		$("#dropdown").change(function(){
+			 $("#ajax_dtw_results").load("MainController", 
+		        		{"taskType" : "<%=Constants.TaskType.SIMILARITY %>",
+		        		 "algorithmType" : "<%=Constants.AlgorithmType.DTW %>",
+		        		 "dataset" : $("#dropdown option:selected").val()
+		        		}
+		        );
+		});
 	</script>
 	
 </body>

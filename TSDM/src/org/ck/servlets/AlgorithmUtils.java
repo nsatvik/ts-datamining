@@ -36,30 +36,38 @@ public class AlgorithmUtils implements Constants
 		switch(tsBean.getSubTaskType())
 		{
 		case UPDATE_GRAPH:
-			StringTokenizer tokens = new StringTokenizer(tsBean.getParams(), " to ");
-			int min = Integer.parseInt(tokens.nextToken());
-			int max = Integer.parseInt(tokens.nextToken());
-			Logger.getLogger(AlgorithmUtils.class).log(Level.WARNING, "" + min + "\t" + max);
-			tsBean.setSample(tsBean.getSample().getSeriesSubset(min, max));
+			//Add sub-samples to compare against
+			String[] ranges = tsBean.getParams().split(";");
+			ArrayList<Sample> subSamples = tsBean.getSubSamples();
+			subSamples.clear();
+			for(int i=0; i<ranges.length; i++)
+			{
+				StringTokenizer tokens = new StringTokenizer(ranges[i], " to ");
+				int min = Integer.parseInt(tokens.nextToken());
+				int max = Integer.parseInt(tokens.nextToken());
+				Logger.getLogger(AlgorithmUtils.class).log(Level.WARNING, "" + min + "\t" + max);
+				subSamples.add(tsBean.getSample().getSeriesSubset(min, max));				
+			}			
+			tsBean.setSubSamples(subSamples);
 			tsBean.setSubTaskType("" + SubTaskType.NONE);		//RESETTING SubTaskType...Never Forget to reset
+			
+			DynamicTimeWarper dtw = new DynamicTimeWarper(subSamples.get(0));
+			
+			Map<Double, String> similarityMap = new TreeMap<Double, String>();
+			for(int i=0; i<subSamples.size(); i++)
+				similarityMap.put(dtw.getDistanceFrom(subSamples.get(i)), "Sample " + i);
+			
+			String output = "";			
+			for(Double i : similarityMap.keySet())
+				output += similarityMap.get(i) + "&nbsp" + i + "<br/>";
+			
+			tsBean.setResult(output);
+			
 			return PATH_PREFIX + "Similarity/dtw_update.jsp";
-		}
-		
-		Sample sample = tsBean.getSample();
-		DynamicTimeWarper dtw = new DynamicTimeWarper(sample.getSeriesSubset(0, 12));	
-		
-		Map<Double, Integer> similarityMap = new TreeMap<Double, Integer>();
-		for(int i=0; i<sample.getNumOfValues(); i+=12)
-			similarityMap.put(dtw.getDistanceFrom(sample.getSeriesSubset(i, i + 12)), i / 12);
-		
-		String output = "";
-		output += "Subset\tDTW Distance\n";
-		for(Double i : similarityMap.keySet())
-			output += similarityMap.get(i) + "&nbsp" + i + "<br/>";
-		
-		tsBean.setResult(output);
-		
-		return PATH_PREFIX + "Similarity/dtw_results.jsp";
+			
+		default:
+			return PATH_PREFIX + "Similarity/dtw_results.jsp";
+		}		
 	}
 	
 	/**

@@ -5,6 +5,8 @@ import java.io.Serializable;
 import org.ck.gui.Constants;
 import org.ck.sample.DataHolder;
 import org.ck.sample.Sample;
+
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 /**
@@ -21,6 +23,8 @@ public class TimeSeriesBean implements Serializable, Constants
 	private SubTaskType subTaskType = SubTaskType.NONE;
 	private AlgorithmType algorithmType = AlgorithmType.DTW;
 	private DatasetOptions dataset = DatasetOptions.SEA_LEVEL_DATASET;
+	
+	private ArrayList<Sample> subSamples = new ArrayList<Sample>();		//Holds samples that are to be compared to Sample
 	
 	private String params = "";		//Required for processing user-defined queries
 	
@@ -105,6 +109,16 @@ public class TimeSeriesBean implements Serializable, Constants
 	public void setParams(String params)
 	{
 		this.params = params;
+	}
+	
+	public ArrayList<Sample> getSubSamples()
+	{
+		return subSamples;
+	}
+
+	public void setSubSamples(ArrayList<Sample> subSamples)
+	{
+		this.subSamples = subSamples;
 	}
 	
 	@Override
