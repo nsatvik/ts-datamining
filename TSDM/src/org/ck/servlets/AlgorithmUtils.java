@@ -10,6 +10,7 @@ import java.util.StringTokenizer;
 import java.util.TreeMap;
 import java.util.logging.Level;
 
+import org.ck.anomalifinder.Cusum_VmaskApproch;
 import org.ck.beans.TimeSeriesBean;
 import org.ck.gui.Constants;
 import org.ck.sample.Sample;
@@ -76,12 +77,12 @@ public class AlgorithmUtils implements Constants
 	 */
 	public static String runMovingAverageSmoother(TimeSeriesBean tsBean)
 	{
-		double predictedValue;
+		//double predictedValue;
 		Sample sample = tsBean.getSample();
 		SmoothingFilter sms = new SimpleMovingAverageSmoother(sample, 12);		
 		List<Double> smoothList = new ArrayList<Double>();
 		smoothList = sms.getSmoothedValues();
-		predictedValue = sms.getAverage();
+		//predictedValue = sms.getAverage();
 		String output = "";
 		output += "Set\tMoving Average\n";
 		int i = 0;
@@ -93,5 +94,36 @@ public class AlgorithmUtils implements Constants
 		tsBean.setResult(output);
 		
 		return PATH_PREFIX + "Forecaster/moving_average_result.jsp";
+	}
+	
+	/**
+	 * Runs the Cusum V Mask Algorithm
+	 * @param tsBean
+	 * @return
+	 */
+	public static String runCusumAnomalyDetAlgo(TimeSeriesBean tsBean) {
+		switch(tsBean.getSubTaskType())
+		{
+		case UPDATE_GRAPH:
+			Sample sample = tsBean.getSample();
+			Cusum_VmaskApproch cusumAnoFinder = new Cusum_VmaskApproch(sample);		
+			cusumAnoFinder.setHval(3.0); //Need to add slider to set this value.
+			cusumAnoFinder.computeCusumSereis();
+			List<Integer> defectiveList = new ArrayList<Integer>();
+			defectiveList = cusumAnoFinder.getDefectiveDataPoints();
+			String output = "";
+			output += "Index\tValue\n";
+			int i = 0;
+			while(i < defectiveList.size())
+			{
+				int index = defectiveList.get(i);
+				output +=  index + "&nbsp" + sample.getValue(index) + "<br/>";
+				i++;			
+			}
+			tsBean.setResult(output);
+			return PATH_PREFIX + "Anomaly/cusum_update.jsp";
+		default:
+			return PATH_PREFIX + "Anomaly/cusum_results.jsp";
+		}
 	}
 }

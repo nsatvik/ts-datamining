@@ -70,13 +70,15 @@ public class Cusum_VmaskApproch {
 	public List<Integer> getDefectiveDataPoints()
 	{
 		List<Integer> defectivePoints = new ArrayList<Integer>();
-		System.out.println(this.cumulatedTimeSeries);
+		//System.out.println(this.cumulatedTimeSeries);
 		for(int i=0;i<this.cumulatedTimeSeries.size();++i)
 		{
 			
 			if(this.cusumHiSeries.get(i)>this.h || this.cusumLowSeries.get(i)>(this.h))
 			{
-				defectivePoints.add(i);
+				//defectivePoints.add(i);
+				for(int j=0;j<this.sampleSize;++j)
+					defectivePoints.add(i+j);
 			}
 		}
 		return defectivePoints;

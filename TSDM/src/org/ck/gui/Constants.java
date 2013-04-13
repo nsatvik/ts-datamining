@@ -37,6 +37,6 @@ public interface Constants
 		SAX,
 		MOVING_AVERAGE,
 		COMMON_SUBSEQUENCE,
-		CUSUM
+		CUSUM, MARKOV_MODEL_TECHNIQUE
 	}	
 }

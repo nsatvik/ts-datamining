@@ -77,6 +77,8 @@ public class MainController extends HttpServlet implements Constants
 			address = runFortuneTellingAlgorithm(tsBean);
 			break;
 		case ANOMALY_DETECTIVE:
+			
+			address = runAnomalyDetectorAlgorithm(tsBean);
 			break;
 		default:
 			//Forward to errorPage.jsp ---- to be created
@@ -91,6 +93,7 @@ public class MainController extends HttpServlet implements Constants
 			dispatcher.forward(request, response);
 		}
 	}
+
 
 	/**
 	 * Runs a Fortune Telling algorithm, to predict your future and help YOU decide
@@ -176,5 +179,22 @@ public class MainController extends HttpServlet implements Constants
 		log.log(Level.INFO, tsBean.toString());
 		return tsBean;
 	}
-
+	/**
+	 * Run the Anomaly Detection algorithm and return the address of the page!
+	 * @param tsBean
+	 * @return
+	 */
+	private String runAnomalyDetectorAlgorithm(TimeSeriesBean tsBean) {
+		switch(tsBean.getAlgorithmType())
+		{
+		case CUSUM:
+			return AlgorithmUtils.runCusumAnomalyDetAlgo(tsBean);
+			
+		case MARKOV_MODEL_TECHNIQUE: return "";
+			
+		default:
+			return PATH_PREFIX+"error_page.jsp";
+		}
+		
+	}
 }
