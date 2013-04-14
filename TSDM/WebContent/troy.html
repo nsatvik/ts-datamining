@@ -23,10 +23,11 @@
 
 			// Create the data table.
 			var data = new google.visualization.DataTable();
-			data.addColumn('string', 'Time');
+			data.addColumn('number', 'Time');
 			data.addColumn('number', 'Value');
-			data.addRows([ [ 'Mushrooms', 3 ], [ 'Onions', 1 ],
-					[ 'Olives', 1 ], [ 'Zucchini', 1 ], [ 'Pepperoni', 2 ] ]);
+			data.addColumn('number', 'Value2');
+			data.addRows([ [ 1, 3, 0 ], [ 1, 3,1 ],
+			               [ 3, 10,41 ],[ 4, 11,44 ],[ 5, 4,14 ],[ 6, 7,6 ],[ 7, 8,1 ] ]);
 
 			// Set chart options
 			var options = {

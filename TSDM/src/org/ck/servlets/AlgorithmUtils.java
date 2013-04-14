@@ -143,15 +143,22 @@ public class AlgorithmUtils implements Constants
 			cusumAnoFinder.computeCusumSereis();
 			List<Integer> defectiveList = new ArrayList<Integer>();
 			defectiveList = cusumAnoFinder.getDefectiveDataPoints();
-			String output = "";
-			output += "Index\tValue\n";
+			String output = "[";
+			//output += "Index\tValue\n";
 			int i = 0;
-			while(i < defectiveList.size())
+			int j = 0;
+			while(i < sample.getNumOfValues())
 			{
-				int index = defectiveList.get(i);
-				output +=  index + "&nbsp" + sample.getValue(index) + "<br/>";
+				if( j<defectiveList.size())
+				{
+					output += "["+i+", 0 ,"+sample.getValue(i)+"],";
+					++j;
+				}
+				else
+					output += "["+i+","+sample.getValue(i)+",0],";
 				i++;			
 			}
+			output += "["+i+",0,0]";
 			tsBean.setResult(output);
 			return PATH_PREFIX + "Anomaly/cusum_update.jsp";
 		default:

@@ -13,13 +13,11 @@
 <title>Cusum Update Results</title>
 </head>
 <body>
-<p>Satvik: Cusum Update Page </p>
+
 <br /> Task Type Selected = ${tsBean.taskType } <br /> 
 		Algorithm used =
 		${tsBean.algorithmType } <br /> Dataset used = ${tsBean.dataset } <br />		
 		<br/>		
-		 Algorithm Output String <br/>
-		  ${tsBean.result } }
 
 	<div>
 		<!-- GRAPH <br /> <img alt="charts4j" src="${graphBean.url }" /> -->
@@ -31,19 +29,42 @@
 
 	<!-- <div id="annotated_timeline_div"
 		style="width: 900px; height: 500px; float: right;">HUHU</div> -->
-	<%
-		TimeSeriesBean tsBean = (TimeSeriesBean) request.getSession()
-				.getAttribute("tsBean");
-		out.println("Output String <br/>"+tsBean.getResult());
-		
-	%>
 	<p> Satvik's Master Piece Graph Coming Soon! </p>
-	<!-- 
 	<script type="text/javascript">
 		function getDataArrayForLineChart(){
 			var dataArray = [];
 			var i = 0;
-			
+			<%
+				TimeSeriesBean tsBean = (TimeSeriesBean)request.getSession().getAttribute("tsBean");
+				ArrayList<Sample> subSamples = tsBean.getSubSamples();
+			%>
+			dataArray.push(['Month' 
+			                <%			                	
+			                	for(int i=0; i<subSamples.size(); i++)
+			                		out.print(", " + "'Sample " + (i+1) + "'");
+			                %>
+			                ]);
+						
+			<%
+			double indices[] = new double[subSamples.size()];
+			Sample baseSample = subSamples.get(0);			//The sample that all other samples will be compared to
+			for(int i=0; i<baseSample.getNumOfValues(); i++)
+			{
+				%>var dataTuple = ['' + <%out.print(i);%> , 
+						<%
+						out.print(baseSample.getSmoothNormalizedTimeSeries().get(i));
+						for(int j=1; j<subSamples.size(); j++)
+						{
+							out.print(", " + subSamples.get(j).getSmoothNormalizedTimeSeries().get((int)indices[j]));
+							indices[j] += (double)subSamples.get(j).getNumOfValues() / baseSample.getNumOfValues();
+						}
+						%>
+						
+						
+						];
+				dataArray.push(dataTuple);
+		<%	}
+			%>
 			
 			return dataArray;		
 		};
@@ -77,8 +98,8 @@
 	     	chart.draw(data, options);
 	    };
     </script>
-    
-    <script type="text/javascript">    	
+
+	<script type="text/javascript">    	
 	    /*google.load("visualization", "1", {callback : function(){drawAnnotatedTimeline();}, packages:["annotatedtimeline"]});
 	    function drawAnnotatedTimeline() { 		    	
 	    	
@@ -89,8 +110,5 @@
 
 	    };*/
     </script>
-	
-	
- -->
 </body>
 </html>

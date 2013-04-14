@@ -14,27 +14,25 @@
 </head>
 <body>
 
-<br /> Task Type Selected = ${tsBean.taskType } <br /> 
-		Algorithm used =
-		${tsBean.algorithmType } <br /> Dataset used = ${tsBean.dataset } <br />		
-		<br/>		
-		 Results sorted by Similarity <br/>
-		  ${tsBean.result } 
-		<br/>
-		SAX String : ${tsBean.sample.saxString }
+	<br /> Task Type Selected = ${tsBean.taskType }
+	<br /> Algorithm used = ${tsBean.algorithmType }
+	<br /> Dataset used = ${tsBean.dataset }
+	<br />
+	<br /> Results sorted by Similarity
+	<br /> ${tsBean.result }
+	<br /> SAX String : ${tsBean.sample.saxString }
 
 	<div>
 		<!-- GRAPH <br /> <img alt="charts4j" src="${graphBean.url }" /> -->
 	</div>
 
 	<div id="line_chart_div"
-		style="width: 1600px; height: 500px; float: right;">		
-	</div>
+		style="width: 1600px; height: 500px; float: right;"></div>
 
 	<!-- <div id="annotated_timeline_div"
 		style="width: 900px; height: 500px; float: right;">HUHU</div> -->
-	
-	
+
+
 
 	<script type="text/javascript">
 		function getDataArrayForLineChart(){
@@ -104,8 +102,8 @@
 	     	chart.draw(data, options);
 	    };
     </script>
-    
-    <script type="text/javascript">    	
+
+	<script type="text/javascript">    	
 	    /*google.load("visualization", "1", {callback : function(){drawAnnotatedTimeline();}, packages:["annotatedtimeline"]});
 	    function drawAnnotatedTimeline() { 		    	
 	    	
@@ -116,8 +114,8 @@
 
 	    };*/
     </script>
-	
-	
+
+
 
 </body>
 </html>
