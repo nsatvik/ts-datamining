@@ -84,15 +84,13 @@ public class AlgorithmUtils implements Constants
 		SmoothingFilter sms = new SimpleMovingAverageSmoother(sample, 12);		
 		List<Double> smoothList = new ArrayList<Double>();
 		smoothList = sms.getSmoothedValues();
-<<<<<<< HEAD
-		predictedValue = sms.getAverage(sample.getNumOfValues()-1,sample.getNumOfValues()-2);
+
+		double predictedValue = sms.getAverage(sample.getNumOfValues()-1,sample.getNumOfValues()-2);
 		tsBean.setPredictedValue(predictedValue);
 		System.out.println("::::::::::::::::::");
 		//PrintWriter out = new PrintWriter(System.out);
 		//out.println("::::::The simple Moving Average is :::::: "+predictedValue);
-=======
-		//predictedValue = sms.getAverage();
->>>>>>> e90174e958ed8f244a8e967b4a935d9c09f45d60
+
 		String output = "";
 		output += "Set\tMoving Average\n";
 		int i = 0;
@@ -105,7 +103,7 @@ public class AlgorithmUtils implements Constants
 		
 		return PATH_PREFIX + "Forecaster/moving_average_result.jsp";
 	}
-<<<<<<< HEAD
+
 	public static String runExponentialSmoother(TimeSeriesBean tsBean)
 	{
 		
@@ -126,9 +124,9 @@ public class AlgorithmUtils implements Constants
 		return PATH_PREFIX + "Forecaster/moving_exponential.jsp";
 		
 	}
-	}
+	
 
-=======
+
 	
 	/**
 	 * Runs the Cusum V Mask Algorithm
@@ -159,6 +157,7 @@ public class AlgorithmUtils implements Constants
 		default:
 			return PATH_PREFIX + "Anomaly/cusum_results.jsp";
 		}
+	
+
 	}
 }
->>>>>>> e90174e958ed8f244a8e967b4a935d9c09f45d60
