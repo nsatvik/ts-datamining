@@ -7,7 +7,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>Moving Average Graph</title>
+<title>Moving Exponential</title>
 </head>
 <body>
 	The next value in the time series according to Mr. Fortune Finder is, 

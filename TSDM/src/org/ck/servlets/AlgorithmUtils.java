@@ -1,5 +1,6 @@
 package org.ck.servlets;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -14,6 +15,7 @@ import org.ck.beans.TimeSeriesBean;
 import org.ck.gui.Constants;
 import org.ck.sample.Sample;
 import org.ck.similarity.DynamicTimeWarper;
+import org.ck.smoothers.ExponentialMovingAverageSmoother;
 import org.ck.smoothers.SimpleMovingAverageSmoother;
 import org.ck.smoothers.SmoothingFilter;
 
@@ -36,30 +38,38 @@ public class AlgorithmUtils implements Constants
 		switch(tsBean.getSubTaskType())
 		{
 		case UPDATE_GRAPH:
-			StringTokenizer tokens = new StringTokenizer(tsBean.getParams(), " to ");
-			int min = Integer.parseInt(tokens.nextToken());
-			int max = Integer.parseInt(tokens.nextToken());
-			Logger.getLogger(AlgorithmUtils.class).log(Level.WARNING, "" + min + "\t" + max);
-			tsBean.setSample(tsBean.getSample().getSeriesSubset(min, max));
+			//Add sub-samples to compare against
+			String[] ranges = tsBean.getParams().split(";");
+			ArrayList<Sample> subSamples = tsBean.getSubSamples();
+			subSamples.clear();
+			for(int i=0; i<ranges.length; i++)
+			{
+				StringTokenizer tokens = new StringTokenizer(ranges[i], " to ");
+				int min = Integer.parseInt(tokens.nextToken());
+				int max = Integer.parseInt(tokens.nextToken());
+				Logger.getLogger(AlgorithmUtils.class).log(Level.WARNING, "" + min + "\t" + max);
+				subSamples.add(tsBean.getSample().getSeriesSubset(min, max));				
+			}			
+			tsBean.setSubSamples(subSamples);
 			tsBean.setSubTaskType("" + SubTaskType.NONE);		//RESETTING SubTaskType...Never Forget to reset
+			
+			DynamicTimeWarper dtw = new DynamicTimeWarper(subSamples.get(0));
+			
+			Map<Double, String> similarityMap = new TreeMap<Double, String>();
+			for(int i=0; i<subSamples.size(); i++)
+				similarityMap.put(dtw.getDistanceFrom(subSamples.get(i)), "Sample " + i);
+			
+			String output = "";			
+			for(Double i : similarityMap.keySet())
+				output += similarityMap.get(i) + "&nbsp" + i + "<br/>";
+			
+			tsBean.setResult(output);
+			
 			return PATH_PREFIX + "Similarity/dtw_update.jsp";
-		}
-		
-		Sample sample = tsBean.getSample();
-		DynamicTimeWarper dtw = new DynamicTimeWarper(sample.getSeriesSubset(0, 12));	
-		
-		Map<Double, Integer> similarityMap = new TreeMap<Double, Integer>();
-		for(int i=0; i<sample.getNumOfValues(); i+=12)
-			similarityMap.put(dtw.getDistanceFrom(sample.getSeriesSubset(i, i + 12)), i / 12);
-		
-		String output = "";
-		output += "Subset\tDTW Distance\n";
-		for(Double i : similarityMap.keySet())
-			output += similarityMap.get(i) + "&nbsp" + i + "<br/>";
-		
-		tsBean.setResult(output);
-		
-		return PATH_PREFIX + "Similarity/dtw_results.jsp";
+			
+		default:
+			return PATH_PREFIX + "Similarity/dtw_results.jsp";
+		}		
 	}
 	
 	/**
@@ -73,7 +83,11 @@ public class AlgorithmUtils implements Constants
 		SmoothingFilter sms = new SimpleMovingAverageSmoother(sample, 12);		
 		List<Double> smoothList = new ArrayList<Double>();
 		smoothList = sms.getSmoothedValues();
-		predictedValue = sms.getAverage();
+		predictedValue = sms.getAverage(sample.getNumOfValues()-1,sample.getNumOfValues()-2);
+		tsBean.setPredictedValue(predictedValue);
+		System.out.println("::::::::::::::::::");
+		//PrintWriter out = new PrintWriter(System.out);
+		//out.println("::::::The simple Moving Average is :::::: "+predictedValue);
 		String output = "";
 		output += "Set\tMoving Average\n";
 		int i = 0;
@@ -86,4 +100,25 @@ public class AlgorithmUtils implements Constants
 		
 		return PATH_PREFIX + "Forecaster/moving_average_result.jsp";
 	}
-}
+	public static String runExponentialSmoother(TimeSeriesBean tsBean)
+	{
+		
+		Sample sample = tsBean.getSample();
+		SmoothingFilter sms = new ExponentialMovingAverageSmoother(sample, 1);		
+		List<Double> smoothList = new ArrayList<Double>();
+		smoothList = sms.getSmoothedValues();
+		String output = "";
+		output += "Set\tMoving Exponential\n";
+		int i = 0;
+		while(i < smoothList.size())
+		{
+			output += smoothList.get(i) + "&nbsp" + i + "<br/>";
+			i++;			
+		}
+		tsBean.setResult(output);
+		
+		return PATH_PREFIX + "Forecaster/moving_exponential.jsp";
+		
+	}
+	}
+

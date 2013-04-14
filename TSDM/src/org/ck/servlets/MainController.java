@@ -103,7 +103,10 @@ public class MainController extends HttpServlet implements Constants
 		switch(tsBean.getAlgorithmType())
 		{
 		case MOVING_AVERAGE:
-			return AlgorithmUtils.runMovingAverageSmoother(tsBean);			
+			return AlgorithmUtils.runMovingAverageSmoother(tsBean);	
+		case MOVING_EXPONENTIAL:
+			return AlgorithmUtils.runExponentialSmoother(tsBean);
+			
 		default:				
 		}
 		return "";
