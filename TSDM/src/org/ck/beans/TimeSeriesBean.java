@@ -1,13 +1,11 @@
 package org.ck.beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.ck.gui.Constants;
-import org.ck.sample.DataHolder;
 import org.ck.sample.Sample;
-
-import java.util.ArrayList;
-import java.util.logging.Logger;
 
 /**
  * This bean stores information about requested values and results of calculations 
@@ -29,6 +27,10 @@ public class TimeSeriesBean implements Serializable, Constants
 	private String params = "";		//Required for processing user-defined queries
 	
 	private String result = "TBD";
+	
+	//This List of objects can be used to store and send custom data structures of any type to JSP Pages 
+	// IMPORTANT - REMEMBER TO ALWAYS TYPECAST THIS OBJECT PROPERLY IN THE RESPECTIVE JSP PAGE
+	private List<Object> resultObjects = new ArrayList<Object>();		
 	
 	private double pred = 0;
 	
@@ -128,6 +130,43 @@ public class TimeSeriesBean implements Serializable, Constants
 	public void setSubSamples(ArrayList<Sample> subSamples)
 	{
 		this.subSamples = subSamples;
+	}
+	
+	/**
+	 * @return List of Objects
+	 */
+	public Object getResultObjects()
+	{
+		return resultObjects;
+	}
+	
+	/**
+	 * Sets the list of result objects
+	 * @param resultObjects
+	 */
+	public void setResultObjects(List<Object> resultObjects)
+	{
+		this.resultObjects.clear();
+		this.resultObjects = resultObjects;
+	}
+	
+	/**
+	 * Clears the current list of result objects and adds resultObject to the cleared list
+	 * @param resultObject
+	 */
+	public void setResultObject(Object resultObject)
+	{
+		this.resultObjects.clear();
+		addResultObject(resultObject);
+	}
+	
+	/**
+	 * Appends resultObject to the current list of result objects
+	 * @param resultObject
+	 */
+	public void addResultObject(Object resultObject)
+	{
+		this.resultObjects.add(resultObject);
 	}
 	
 	@Override

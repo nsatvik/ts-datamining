@@ -209,6 +209,15 @@ public class Sample implements Constants
 		return sampleName;
 	}
 	
+	/**
+	 * Sets the name of this sample object
+	 * @param sampleName
+	 */
+	public void setName(String sampleName)
+	{
+		this.sampleName = sampleName; 
+	}
+	
 	public double getStandardDeviation()
 	{
 		return standardDeviationCalculator();
@@ -224,7 +233,7 @@ public class Sample implements Constants
 	 * @param sample
 	 * @return double
 	 */
-	public double compareToUsingSAX(Sample sample)
+	public double getDistanceUsingSAX(Sample sample)
 	{
 		return Discretizer.getInstance().findDistance(this.saxWord, sample.saxWord, getNumOfValues(), PAA_WINDOW_SIZE, SAX_ALPHA_SIZE);
 	}

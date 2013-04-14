@@ -14,20 +14,33 @@
 </head>
 <body>
 
-	<br /> Task Type Selected = ${tsBean.taskType }
+	<!-- <br /> Task Type Selected = ${tsBean.taskType }
 	<br /> Algorithm used = ${tsBean.algorithmType }
 	<br /> Dataset used = ${tsBean.dataset }
 	<br />
 	<br /> Results sorted by Similarity
 	<br /> ${tsBean.result }
 	<br /> SAX String : ${tsBean.sample.saxString }
+	-->
 
 	<div>
 		<!-- GRAPH <br /> <img alt="charts4j" src="${graphBean.url }" /> -->
 	</div>
-
+	
+	<div id="dtw_table_div"
+		style="width: 1600px; float: right; color: blue;">		
+	</div>
+	<div id="sax_table_div"
+		style="width: 1600px; float: right; color: blue;">		
+	</div>
+	
 	<div id="line_chart_div"
 		style="width: 1600px; height: 500px; float: right;"></div>
+	
+	
+	
+
+	
 
 	<!-- <div id="annotated_timeline_div"
 		style="width: 900px; height: 500px; float: right;">HUHU</div> -->
@@ -35,6 +48,33 @@
 
 
 	<script type="text/javascript">
+		function getDataArrayForDTWDataTable(){
+			var dataArray = [];
+			dataArray.push(['Sample Name', 'DTW Distance']);
+			
+			
+			<c:forEach items="${tsBean.resultObjects[0]}" var="sample">
+				var dataTuple = ["${sample.value.name}", "${sample.key}"];
+				dataArray.push(dataTuple);
+			</c:forEach>	
+			
+			return dataArray;
+		}
+		
+		function getDataArrayForSAXDataTable(){
+			var dataArray = [];
+			dataArray.push(['Sample Name', 'SAX String', 'SAX Distance']);
+			
+			
+			<c:forEach items="${tsBean.resultObjects[1]}" var="sample">
+				var dataTuple = ["${sample.value.name}", "${sample.value.saxString}", "${sample.key}"];
+				dataArray.push(dataTuple);
+			</c:forEach>	
+			
+			return dataArray;
+		}
+	
+	
 		function getDataArrayForLineChart(){
 			var dataArray = [];
 			var i = 0;
@@ -71,23 +111,34 @@
 			%>
 			
 			return dataArray;		
-		};
-		
-		/*function getDataArrayForTimeline(){
-			var i = 0;
-			var data = new google.visualization.DataTable();
-			data.addColumn('date', 'Date');
-	        data.addColumn('number', 'Sold Pencils');	        
-	        data.addRows([
-				<c:forEach items="${tsBean.sample.visualPAATimeSeries}" var="timeValuePair">
-					[new Date(++i * 10000000), ${timeValuePair}],
-				</c:forEach>
-	          [new Date(i), ${tsBean.sample.timeSeries[5]}]
-	        ]);
-	        
-			return data;					
-		};*/
+		};	
 	</script>
+	
+	<script type="text/javascript">    	
+	    google.load("visualization", "1", {callback : function(){drawDTWDataTable();}, packages:['table']});	    
+	    function drawDTWDataTable() { 		    	
+	      	var data = google.visualization.arrayToDataTable(getDataArrayForDTWDataTable());
+	      
+		    var options = {
+		    	title: "DTW Data"	     
+		      };
+		  
+	     	var table = new google.visualization.Table(document.getElementById('dtw_table_div'));
+	     	table.draw(data, options);	     	
+	    };
+	    
+	    google.load("visualization", "1", {callback : function(){drawSAXDataTable();}, packages:['table']});	    
+	    function drawSAXDataTable() { 		    	
+	      	var data = google.visualization.arrayToDataTable(getDataArrayForSAXDataTable());
+	      
+		    var options = {
+		    	title: "SAX Data"	     
+		      };
+		  
+	     	var table = new google.visualization.Table(document.getElementById('sax_table_div'));
+	     	table.draw(data, options);	     	
+	    };
+    </script>
 
 	<script type="text/javascript">    	
 	    google.load("visualization", "1", {callback : function(){drawLineChart();}, packages:["corechart"]});
@@ -100,22 +151,8 @@
 		  
 	     	var chart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
 	     	chart.draw(data, options);
-	    };
+	    };	    
     </script>
-
-	<script type="text/javascript">    	
-	    /*google.load("visualization", "1", {callback : function(){drawAnnotatedTimeline();}, packages:["annotatedtimeline"]});
-	    function drawAnnotatedTimeline() { 		    	
-	    	
-	    	var data = getDataArrayForTimeline();
-	        
-	        var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('annotated_timeline_div'));
-	        chart.draw(data, {displayAnnotations: true});
-
-	    };*/
-    </script>
-
-
 
 </body>
 </html>

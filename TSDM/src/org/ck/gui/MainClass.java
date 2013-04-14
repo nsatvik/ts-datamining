@@ -40,7 +40,7 @@ public class MainClass
 		
 		System.out.println(seaSample.getSaxString());
 		System.out.println(sample2.getSaxString());
-		System.out.println(seaSample.compareToUsingSAX(sample2));
+		System.out.println(seaSample.getDistanceUsingSAX(sample2));
 	}
 
 	private static void vaishakh()

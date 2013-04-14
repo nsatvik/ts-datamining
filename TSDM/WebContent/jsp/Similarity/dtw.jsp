@@ -9,12 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Dynamic Time Warping</title>
 </head>
-<body>
-	<%=Constants.TaskType.SIMILARITY %>
-	<br/>
-	<%=Constants.AlgorithmType.DTW %>
-	<br/>
-	
+<body>	
 	<div>
 		<label>Select Data Set</label>
 		<select id="dropdown" class="TopMenuButtons">
@@ -29,8 +24,7 @@
 		<input id="button_dtwCalc" class="TopMenuButtons" style="" type="button" value="Calculate"/>		
 	</div>
 		
-	<p id="ajax_dtw_results">
-		hehe	
+	<p id="ajax_dtw_results">		
 	</p>
 	
 	

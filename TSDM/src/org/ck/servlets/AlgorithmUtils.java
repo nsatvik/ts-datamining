@@ -49,22 +49,25 @@ public class AlgorithmUtils implements Constants
 				int min = Integer.parseInt(tokens.nextToken());
 				int max = Integer.parseInt(tokens.nextToken());
 				Logger.getLogger(AlgorithmUtils.class).log(Level.WARNING, "" + min + "\t" + max);
-				subSamples.add(tsBean.getSample().getSeriesSubset(min, max));				
+				Sample subSample = tsBean.getSample().getSeriesSubset(min, max);
+				subSample.setName("Sample " + i);
+				subSamples.add(subSample);	
 			}			
 			tsBean.setSubSamples(subSamples);
 			tsBean.setSubTaskType("" + SubTaskType.NONE);		//RESETTING SubTaskType...Never Forget to reset
 			
 			DynamicTimeWarper dtw = new DynamicTimeWarper(subSamples.get(0));
 			
-			Map<Double, String> similarityMap = new TreeMap<Double, String>();
+			Map<Double, Sample> similarityMap = new TreeMap<Double, Sample>();
+			Map<Double, Sample> similaritySAXMap = new TreeMap<Double, Sample>();
 			for(int i=0; i<subSamples.size(); i++)
-				similarityMap.put(dtw.getDistanceFrom(subSamples.get(i)), "Sample " + i);
-			
-			String output = "";			
-			for(Double i : similarityMap.keySet())
-				output += similarityMap.get(i) + "&nbsp" + i + "<br/>";
-			
-			tsBean.setResult(output);
+			{
+				similarityMap.put(dtw.getDistanceFrom(subSamples.get(i)), subSamples.get(i));
+				similaritySAXMap.put(subSamples.get(0).getDistanceUsingSAX(subSamples.get(i)), subSamples.get(i));
+			}
+					
+			tsBean.setResultObject(similarityMap);
+			tsBean.addResultObject(similaritySAXMap);
 			
 			return PATH_PREFIX + "Similarity/dtw_update.jsp";
 			
