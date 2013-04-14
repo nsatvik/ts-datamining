@@ -37,7 +37,11 @@ public interface Constants
 		SAX,
 		MOVING_AVERAGE,
 		COMMON_SUBSEQUENCE,
+<<<<<<< HEAD
 		CUSUM,
 		MOVING_EXPONENTIAL
+=======
+		CUSUM, MARKOV_MODEL_TECHNIQUE
+>>>>>>> e90174e958ed8f244a8e967b4a935d9c09f45d60
 	}	
 }

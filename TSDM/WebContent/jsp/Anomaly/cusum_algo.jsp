@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>CUSUM Anamoly Detection Algorithm</title>
+<title>CUSUM Anomaly Detection Algorithm</title>
 </head>
 <body>
 	<div>
@@ -18,14 +18,15 @@
 				for(int i=0; i<datasets.length; i++)
 					out.println("<option value=\"" + datasets[i] + "\">" + datasets[i] + "</option>");
 			%>
-		</select> <br /> <br /> <input id="button_movingAvgCalc" class="TopMenuButtons"
+		</select> <br /> <br /> <input id="button_cusumAlgoCalc" class="TopMenuButtons"
 			style="" type="button" value="Calculate" />
 	</div>
-	<p id="ajax_cusum_algo_result"></p>
+	<p id="ajax_cusum_algo_result">
+	Algorithm Results will appear here!</p>
 	
 	<script type="text/javascript">
 		$("#button_cusumAlgoCalc").button().click(function () {			
-	        $("#ajax_moving_average_result").load("MainController", 
+	        $("#ajax_cusum_algo_result").load("MainController", 
 	        		{"taskType" : "<%=Constants.TaskType.ANOMALY_DETECTIVE %>",
 	        		 "algorithmType" : "<%=Constants.AlgorithmType.CUSUM %>",
 	        		 "dataset" : $("#dropdown_cusum_algo option:selected").val()
