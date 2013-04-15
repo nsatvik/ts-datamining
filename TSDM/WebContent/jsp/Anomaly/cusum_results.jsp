@@ -32,9 +32,7 @@
 	</div>
 
 	<div id="div_cusumUpdate">
-		<div>
-			<!-- GRAPH <br /> <img alt="charts4j" src="${graphBean.url }" /> -->
-		</div>
+		
 
 		<div id="line_chart_div"
 			style="width: 900px; height: 500px; float: left;">Time Series Graph Appears Here!</div>

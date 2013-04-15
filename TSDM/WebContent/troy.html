@@ -26,8 +26,7 @@
 			data.addColumn('number', 'Time');
 			data.addColumn('number', 'Value');
 			data.addColumn('number', 'Value2');
-			data.addRows([ [ 1, 3, 0 ], [ 1, 3,1 ],
-			               [ 3, 10,41 ],[ 4, 11,44 ],[ 5, 4,14 ],[ 6, 7,6 ],[ 7, 8,1 ] ]);
+			data.addRows([[ 0,-1.3382422126395963, 0],[ 1,0,-1.376596681557371],[ 2,0,-0.9163430545440788],[ 3,-0.5327983653663355, 0],[ 4,0,-0.18760814510636642],[ 5,0.9246714535090893, 0]]);
 
 			// Set chart options
 			var options = {
@@ -37,7 +36,7 @@
 			};
 
 			// Instantiate and draw our chart, passing in some options.
-			var chart = new google.visualization.LineChart(document
+			var chart = new google.visualization.ScatterChart(document
 					.getElementById('chart_div'));
 			chart.draw(data, options);
 		}

@@ -23,9 +23,9 @@ public class MainClass
 		//Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
 		
 		//use your respective methods for testing
-		//satvik();
+		satvik();
 		//vaishakh();
-		samir();
+		//samir();
 		
 		
 	}
@@ -68,8 +68,27 @@ public class MainClass
 		Cusum_VmaskApproch finder = new Cusum_VmaskApproch(seaSample);
 		finder.setHval(1.5);
 		finder.computeCusumSereis();
-		System.out.println(finder.getDefectiveDataPoints());
-		
+		List<Integer> defectiveList = finder.getDefectiveDataPoints();
+		System.out.println(defectiveList);
+		String output = "[";
+		for(int i=0,j=0;i<seaSample.getNumOfValues();++i)
+		{
+			
+			int k = -1;
+			if(j<defectiveList.size())
+				k = defectiveList.get(j);
+			
+			if(k==i)
+			{
+				output += "[ "+i+",0,"+seaSample.getValue(i)+"],";
+				System.out.println("k==i"+i);
+				++j;
+			}
+			else
+				output += "[ "+i+","+seaSample.getValue(i)+", 0],";
+		}
+		output += "[0,0,0]]";
+		System.out.println(output);
 	}
 
 	private static void testNeuralNetwork(Sample seaSample) {

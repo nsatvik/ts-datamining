@@ -141,27 +141,30 @@ public class AlgorithmUtils implements Constants
 		{
 		case UPDATE_GRAPH:
 			Sample sample = tsBean.getSample();
-			Cusum_VmaskApproch cusumAnoFinder = new Cusum_VmaskApproch(sample);		
-			cusumAnoFinder.setHval(3.0); //Need to add slider to set this value.
-			cusumAnoFinder.computeCusumSereis();
-			List<Integer> defectiveList = new ArrayList<Integer>();
-			defectiveList = cusumAnoFinder.getDefectiveDataPoints();
+			Cusum_VmaskApproch finder = new Cusum_VmaskApproch(sample);
+			finder.setHval(2);
+			finder.computeCusumSereis();
+			List<Integer> defectiveList = finder.getDefectiveDataPoints();
+			System.out.println(defectiveList);
 			String output = "[";
-			//output += "Index\tValue\n";
-			int i = 0;
-			int j = 0;
-			while(i < sample.getNumOfValues())
+			for(int i=0,j=0;i<sample.getNumOfValues();++i)
 			{
-				if( j<defectiveList.size())
+				
+				int k = -1;
+				if(j<defectiveList.size())
+					k = defectiveList.get(j);
+				
+				if(k==i)
 				{
-					output += "["+i+", 0 ,"+sample.getValue(i)+"],";
+					output += "[ "+i+",0,"+sample.getValue(i)+"],";
+					System.out.println("k==i"+i);
 					++j;
 				}
 				else
-					output += "["+i+","+sample.getValue(i)+",0],";
-				i++;			
+					output += "[ "+i+","+sample.getValue(i)+", 0],";
 			}
-			output += "["+i+",0,0]";
+			output += "[0,0,0]]";
+			System.out.println(output);
 			tsBean.setResult(output);
 			return PATH_PREFIX + "Anomaly/cusum_update.jsp";
 		default:

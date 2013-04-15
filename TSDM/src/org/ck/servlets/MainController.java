@@ -193,7 +193,7 @@ public class MainController extends HttpServlet implements Constants
 		case CUSUM:
 			return AlgorithmUtils.runCusumAnomalyDetAlgo(tsBean);
 			
-		case MARKOV_MODEL_TECHNIQUE: return "";
+		case MARKOV_MODEL_TECHNIQUE: return PATH_PREFIX+"error_page.jsp";
 			
 		default:
 			return PATH_PREFIX+"error_page.jsp";
