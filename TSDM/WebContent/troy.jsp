@@ -1,4 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -6,6 +8,7 @@
 </head>
 <body>
 	<h1>Sample Page for Testing!</h1>
+	<% out.println("TEst"); %>
 	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 	<script type="text/javascript">
 		//Load the Visualization API and the piechart package.
@@ -26,7 +29,7 @@
 			data.addColumn('number', 'Time');
 			data.addColumn('number', 'Value');
 			data.addColumn('number', 'Value2');
-			data.addRows([[ 0,-1.3382422126395963, 0],[ 1,0,-1.376596681557371],[ 2,0,-0.9163430545440788],[ 3,-0.5327983653663355, 0],[ 4,0,-0.18760814510636642],[ 5,0.9246714535090893, 0]]);
+			data.addRows(<%out.println("[[ 0,-1.3382422126395963, 0],[ 1,0,-1.376596681557371],[ 2,0,-0.9163430545440788],[ 3,-0.5327983653663355, 0],[ 4,0,-0.18760814510636642],[ 5,0.9246714535090893, 0]]");%>);
 
 			// Set chart options
 			var options = {
@@ -36,7 +39,7 @@
 			};
 
 			// Instantiate and draw our chart, passing in some options.
-			var chart = new google.visualization.ScatterChart(document
+			var chart = new google.visualization.LineChart(document
 					.getElementById('chart_div'));
 			chart.draw(data, options);
 		}

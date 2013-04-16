@@ -57,7 +57,7 @@ public class MainClass
 
 	private static void satvik()
 	{
-		DataHolder.setDataset(DatasetOptions.ECG_DATASET);
+		DataHolder.setDataset(DatasetOptions.FINANCE_NIFTY_DATASET);
 		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
 		//testNeuralNetwork(seaSample);
 		testCusum(seaSample);

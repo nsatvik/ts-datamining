@@ -10,7 +10,7 @@
 <title>Moving Average Graph</title>
 </head>
 <body>
-	The next value in the time series according to Mr. Fortune Finder is, 
+	 
 	 
 	
 	<div style="float: left;">
@@ -21,12 +21,12 @@
 		<br />
 	</div>
 	<div id="line_chart_div" style="width: 900px; height: 500px; float: left;">
-		HAHA
+		
 		
 	</div>
 	
 	<div id="annotated_timeline_div" style="width: 900px; height: 500px; float: right;">
-		HUHU
+		
 	</div>
 	
 	

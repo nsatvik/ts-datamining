@@ -134,18 +134,19 @@ public class AlgorithmUtils implements Constants
 	/**
 	 * Runs the Cusum V Mask Algorithm
 	 * @param tsBean
+	 * @param threshold 
 	 * @return
 	 */
-	public static String runCusumAnomalyDetAlgo(TimeSeriesBean tsBean) {
+	public static String runCusumAnomalyDetAlgo(TimeSeriesBean tsBean, double threshold) {
 		switch(tsBean.getSubTaskType())
 		{
-		case UPDATE_GRAPH:
+		default:
 			Sample sample = tsBean.getSample();
 			Cusum_VmaskApproch finder = new Cusum_VmaskApproch(sample);
-			finder.setHval(2);
+			finder.setHval(threshold);
 			finder.computeCusumSereis();
 			List<Integer> defectiveList = finder.getDefectiveDataPoints();
-			System.out.println(defectiveList);
+			
 			String output = "[";
 			for(int i=0,j=0;i<sample.getNumOfValues();++i)
 			{
@@ -157,18 +158,18 @@ public class AlgorithmUtils implements Constants
 				if(k==i)
 				{
 					output += "[ "+i+",0,"+sample.getValue(i)+"],";
-					System.out.println("k==i"+i);
 					++j;
 				}
 				else
 					output += "[ "+i+","+sample.getValue(i)+", 0],";
 			}
-			output += "[0,0,0]]";
-			System.out.println(output);
+			output = output.substring(0,output.length()-1);
+			output += "]";
+			
 			tsBean.setResult(output);
-			return PATH_PREFIX + "Anomaly/cusum_update.jsp";
-		default:
 			return PATH_PREFIX + "Anomaly/cusum_results.jsp";
+		case UPDATE_GRAPH:
+			return PATH_PREFIX + "Anomaly/cusum_update.jsp";
 		}
 	
 

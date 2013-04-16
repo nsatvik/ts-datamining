@@ -2,131 +2,90 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="org.ck.beans.TimeSeriesBean"%>
 <%@page import="org.ck.gui.Constants" %>
+<%@page import="java.util.ArrayList" %>
+<%@page import="org.ck.sample.Sample" %>
+
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Insert title here</title>
+	<title>Cusum Algorithm Results</title>
+	 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 </head>
 <body>
 
+		<label for="threshold">Threshold Value : </label>
+		 <div id="slider"></div>
+		<br />
+		
+		<div id="line_chart_div" style="width: 900px; height: 500px; margin-left: auto; margin-right: auto;"> 	</div>
 	
-	<div style="float: left;">
-		<p>
-			<label for="sample_range">Range:</label> <input type="text"
-				id="sample_range" style="width:55%; color: #f6931f; font-weight: bold;" value="0 to 1400" readonly />
-		</p>
-		<div id="slider-range"></div>
-		<br/>		
-		<input id="button_addSlider" type="button" value="Add Slider"/>
+		<div id="annotated_timeline_div" style="width: 900px; height: 500px; float: right;">	</div>
+		
+	<%
+		TimeSeriesBean tsBean = (TimeSeriesBean) request.getSession()
+				.getAttribute("tsBean");
+		//out.println("Output String <br/>"+tsBean.getResult());
+	%>
+		<script>
+  			$(function() {
+   				 $( "#slider" ).slider({
+					range: "max",
+					min: 1,
+					max: 10,
+					value: 0.5,
+					slide: function ( event, ui ) {
+				        $( "#threshold" ).val( ui.value );
+				      }
+   				 });
+			  });
+  		</script>
+	 <script type="text/javascript">    	
+	    google.load("visualization", "1", {callback : function(){drawLineChart();}, packages:["corechart"]});
+	    function drawLineChart() { 		    	
+	      	//var data = google.visualization.arrayToDataTable(getDataArrayForLineChart());
+	      var data = new google.visualization.DataTable();
+			data.addColumn('number', 'Time');
+			data.addColumn('number', 'Data Points');
+			data.addColumn('number', 'Anomalous Data Points');
+			data.addRows(<%out.print(tsBean.getResult());%>);
+		    var options = {
+		        title: 'Anomaly Detector'
+		      };
 		  
-		<div id="div_sliders">
-		</div>
-		
-		<input id="button_removeSlider" type="button" value="Remove Slider"/>
-		
-		
-		
-		
-		
-	</div>
+	     	var chart = new google.visualization.ScatterChart(document.getElementById('line_chart_div'));
+	     	chart.draw(data, options);
+	    }
+    </script>
+    
+    <script type="text/javascript">    	
+	    google.load("visualization", "1", {callback : function(){drawAnnotatedTimeline();}, packages:["annotatedtimeline"]});
+	    function drawAnnotatedTimeline() { 		    	
+	    	
+	    	var data = new google.visualization.DataTable();
+			data.addColumn('number', 'Time');
+			data.addColumn('number', 'Data Point');
+			data.addColumn('number', 'Anomalous Data Point');
+			data.addRows(<%out.print(tsBean.getResult()); %>);
+	        //data.addRows([[ 0,-1.3382422126395963, 0],[ 1,0,-1.376596681557371],[ 2,0,-0.9163430545440788]]);
+	        var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('annotated_timeline_div'));
+	        chart.draw(data, {displayAnnotations: true});
 
-	<div id="div_cusumUpdate">
-		
-
-		<div id="line_chart_div"
-			style="width: 900px; height: 500px; float: left;">Time Series Graph Appears Here!</div>
-
-	</div>
-	<script type="text/javascript">
-		//These two functions are used to update and redraw the graphs
-		var gatherRanges = function(){
-			var str = $("#sample_range").val();
-			for(var i=1; i<subSliderID; i++){
-				str += ";" + $("#subRange_" + i).val();
-			};
-			
-			$("#hidden_params").val(str);
-		};
-	
-		var updateGraph = function(){
-			gatherRanges();		
-			
-			 $("#div_cusumUpdate").load("MainController", 
-		        		{"taskType" : "<%=Constants.TaskType.ANOMALY_DETECTIVE %>",
-				 		 "subTaskType" : "<%=Constants.SubTaskType.UPDATE_GRAPH %>",
-		        		 "algorithmType" : "<%=Constants.AlgorithmType.CUSUM %>",
-		        		 "dataset" : $("#dropdown option:selected").val(),
-		        		 "params" : $("#hidden_params").val()
-		        		}
-		        );
-		};		
-		
-		updateGraph();	
-		
-		//A unique number for slider ids
-		var subSliderID = 1;
-	
-		//These two functions can be used to initialize a slider with id = sliderID, and connect its output to a text box with id = rangeBoxID
-			
-		var createSlider = function(sliderID, rangeBoxID) {
-			$( "#" + sliderID ).slider({
-								range : true,
-								min : 0,
-								max : ${tsBean.sample.numOfValues},
-								values : [ 0, ${tsBean.sample.numOfValues}],
-								create: function( event, ui ) {
-									initRangeBox(sliderID, rangeBoxID);									
-								},
-								slide : function(event, ui) {
-									$("#" + rangeBoxID).val(
-											"" + ui.values[0] + " to "
-													+ ui.values[1]);
-								},
-								change : function(event, ui) {
-									updateGraph();	
-								}
-							});			
-		};
-		
-		var initRangeBox = function(sliderID, rangeBoxID){
-			$("#" + rangeBoxID).val(
-					"" + $("#" + sliderID).slider("values", 0) + " to "
-							+ $("#" + sliderID).slider("values", 1));
-		}
-		
-		createSlider("slider-range", "sample_range");
-	</script>
-	<script type="text/javascript">
-		$("#button_addSlider").button().click(function(){
-			$("#div_sliders").append(function(index){
-				return '<p>'
-						+ '<label id="subLabel_' + subSliderID + '" for="subRange_' + subSliderID + '">Range:</label> <input type="text"'
-					 	+ 'id="subRange_' + subSliderID + '" style="width:55%; color: #f6931f; font-weight: bold;" readonly />'						
-						+ '<div id="subSlider_' + subSliderID + '"></div>'
-						+ '</p>';
-			});
-			createSlider('subSlider_' + subSliderID, 'subRange_' + subSliderID);
-			subSliderID++;
-			updateGraph();
-		});
-		
-		$("#button_removeSlider").button().click(function(){
-			subSliderID--;
-			$("#subSlider_" + subSliderID).remove();
-			$("#subRange_" + subSliderID).remove();
-			$("#subLabel_" + subSliderID).remove();
-			updateGraph();
-		});
-		
+	    }
+    </script>
+    <script type="text/javascript">		
 		$("#dropdown").change(function(){
 			 $("#ajax_cusum_algo_results").load("MainController", 
 		        		{"taskType" : "<%=Constants.TaskType.ANOMALY_DETECTIVE %>",
 		        		 "algorithmType" : "<%=Constants.AlgorithmType.CUSUM %>",
-		        		 "dataset" : $("#dropdown option:selected").val()
+		        		 "dataset" : $("#dropdown option:selected").val(),
+		        		 "anomaly_threshold" : $("#anomaly_threshold").val()
 		        		}
 		        );
 		});
 	</script>
+    
 </body>
 </html>

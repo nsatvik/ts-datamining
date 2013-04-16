@@ -78,7 +78,7 @@ public class MainController extends HttpServlet implements Constants
 			break;
 		case ANOMALY_DETECTIVE:
 			
-			address = runAnomalyDetectorAlgorithm(tsBean);
+			address = runAnomalyDetectorAlgorithm(tsBean,Double.parseDouble("1.5"));
 			break;
 		default:
 			//Forward to errorPage.jsp ---- to be created
@@ -185,13 +185,14 @@ public class MainController extends HttpServlet implements Constants
 	/**
 	 * Run the Anomaly Detection algorithm and return the address of the page!
 	 * @param tsBean
+	 * @param threshold 
 	 * @return
 	 */
-	private String runAnomalyDetectorAlgorithm(TimeSeriesBean tsBean) {
+	private String runAnomalyDetectorAlgorithm(TimeSeriesBean tsBean, double threshold) {
 		switch(tsBean.getAlgorithmType())
 		{
 		case CUSUM:
-			return AlgorithmUtils.runCusumAnomalyDetAlgo(tsBean);
+			return AlgorithmUtils.runCusumAnomalyDetAlgo(tsBean,threshold);
 			
 		case MARKOV_MODEL_TECHNIQUE: return PATH_PREFIX+"error_page.jsp";
 			
