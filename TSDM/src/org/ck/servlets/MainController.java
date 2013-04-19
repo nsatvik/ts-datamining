@@ -78,7 +78,7 @@ public class MainController extends HttpServlet implements Constants
 			break;
 		case ANOMALY_DETECTIVE:
 			
-			address = runAnomalyDetectorAlgorithm(tsBean,Double.parseDouble("1.5"));
+			address = runAnomalyDetectorAlgorithm(tsBean,Double.parseDouble(request.getParameter("anomalyThreshold")));
 			break;
 		default:
 			//Forward to errorPage.jsp ---- to be created

@@ -30,7 +30,8 @@
 			data.addColumn('number', 'Value');
 			data.addColumn('number', 'Value2');
 			data.addRows(<%out.println("[[ 0,-1.3382422126395963, 0],[ 1,0,-1.376596681557371],[ 2,0,-0.9163430545440788],[ 3,-0.5327983653663355, 0],[ 4,0,-0.18760814510636642],[ 5,0.9246714535090893, 0]]");%>);
-
+			
+			document.write(new Date(2013,3,4));
 			// Set chart options
 			var options = {
 				'title' : 'Time Series Graph',

@@ -1,6 +1,7 @@
 package org.ck.gui;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -60,7 +61,9 @@ public class MainClass
 		DataHolder.setDataset(DatasetOptions.FINANCE_NIFTY_DATASET);
 		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
 		//testNeuralNetwork(seaSample);
-		testCusum(seaSample);
+		//testCusum(seaSample);
+		Date date = new Date(2013, 07, 27, 9, 30);
+		System.out.println(date);
 		
 	}
 

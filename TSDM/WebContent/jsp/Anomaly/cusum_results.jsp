@@ -12,13 +12,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Cusum Algorithm Results</title>
 	 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  
 </head>
 <body>
-
-		<label for="threshold">Threshold Value : </label>
-		 <div id="slider"></div>
-		<br />
 		
 		<div id="line_chart_div" style="width: 900px; height: 500px; margin-left: auto; margin-right: auto;"> 	</div>
 	
@@ -29,19 +25,7 @@
 				.getAttribute("tsBean");
 		//out.println("Output String <br/>"+tsBean.getResult());
 	%>
-		<script>
-  			$(function() {
-   				 $( "#slider" ).slider({
-					range: "max",
-					min: 1,
-					max: 10,
-					value: 0.5,
-					slide: function ( event, ui ) {
-				        $( "#threshold" ).val( ui.value );
-				      }
-   				 });
-			  });
-  		</script>
+		
 	 <script type="text/javascript">    	
 	    google.load("visualization", "1", {callback : function(){drawLineChart();}, packages:["corechart"]});
 	    function drawLineChart() { 		    	
@@ -81,7 +65,7 @@
 		        		{"taskType" : "<%=Constants.TaskType.ANOMALY_DETECTIVE %>",
 		        		 "algorithmType" : "<%=Constants.AlgorithmType.CUSUM %>",
 		        		 "dataset" : $("#dropdown option:selected").val(),
-		        		 "anomaly_threshold" : $("#anomaly_threshold").val()
+		        		 "anomalyThreshold" : $("#slider").val()
 		        		}
 		        );
 		});

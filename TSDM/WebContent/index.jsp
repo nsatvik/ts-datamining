@@ -38,7 +38,7 @@
             Welcome To the RV All In One Time Series Data Mining Tool!
 			<br>
 			<div style="float: left; color:white;">					
-				This is bullshit.
+				
 			</div>
         </div>         
         

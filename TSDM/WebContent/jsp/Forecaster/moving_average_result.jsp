@@ -76,7 +76,7 @@
 	        data.addColumn('number', 'Value');	        
 	        data.addRows([
 				<c:forEach items="${tsBean.sample.paaTimeSeries}" var="timeValuePair">
-					[new Date(++i * 10000000), ${timeValuePair}],
+					[new Date(++i * 10), ${timeValuePair}],
 				</c:forEach>
 	          [new Date(i), ${tsBean.sample.timeSeries[5]}]
 	        ]);
