@@ -1,0 +1,47 @@
+\contentsline {paragraph}{}{i}{section*.2}
+\contentsline {section}{ACKNOWLEDGEMENT}{i}{section*.4}
+\contentsline {section}{ABSTRACT}{ii}{section*.5}
+\contentsline {section}{CONTENTS}{ii}{section*.5}
+\contentsline {section}{LIST OF FIGURES}{v}{chapter*.6}
+\contentsline {section}{LIST OF TABLES}{vi}{chapter*.7}
+\contentsline {chapter}{\numberline {1}INTRODUCTION}{vii}{chapter.1}
+\contentsline {section}{\numberline {1.1}DEFINITIONS AND USAGE}{vii}{section.1.1}
+\contentsline {section}{\numberline {1.2}PURPOSE}{vii}{section.1.2}
+\contentsline {section}{\numberline {1.3}SCOPE}{viii}{section.1.3}
+\contentsline {chapter}{\numberline {2}REQUIREMENT SPECIFICATION}{x}{chapter.2}
+\contentsline {subsubsection}{Software Requirements}{x}{section*.9}
+\contentsline {subsubsection}{Hardware Requirements}{x}{section*.10}
+\contentsline {chapter}{\numberline {3}Decision Tree Learning}{xi}{chapter.3}
+\contentsline {section}{\numberline {3.1}Definition}{xi}{section.3.1}
+\contentsline {section}{\numberline {3.2}The Basic Idea}{xi}{section.3.2}
+\contentsline {section}{\numberline {3.3}Building the Decision Tree}{xiii}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}ID3 Algorithm}{xiii}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Choosing the best attribute for a given node}{xiv}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Entropy - a measure of homogeneity of the set of examples}{xv}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Information gain measures the expected reduction in entropy}{xvi}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Discretization}{xvii}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}Limitation of Decision Tree Methods}{xviii}{subsection.3.3.6}
+\contentsline {chapter}{\numberline {4}Genetic Algorithms}{xix}{chapter.4}
+\contentsline {section}{\numberline {4.1}The Algorithm}{xix}{section.4.1}
+\contentsline {section}{\numberline {4.2}Genetic Operators}{xx}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Generation Zero}{xx}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Survival of the Fittest}{xx}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}The Next Generation}{xxi}{subsection.4.2.3}
+\contentsline {subsubsection}{Selection}{xxi}{section*.15}
+\contentsline {subsubsection}{Crossover}{xxii}{section*.17}
+\contentsline {subsubsection}{Mutation}{xxii}{section*.19}
+\contentsline {chapter}{\numberline {5}Decision Trees and Genetic Algorithms}{xxiv}{chapter.5}
+\contentsline {section}{\numberline {5.1}Representation of Chromosomes}{xxv}{section.5.1}
+\contentsline {section}{\numberline {5.2}Population}{xxv}{section.5.2}
+\contentsline {section}{\numberline {5.3}Advantages}{xxvi}{section.5.3}
+\contentsline {chapter}{\numberline {6}Our State-of-the-art Object-Oriented System}{xxvii}{chapter.6}
+\contentsline {section}{\numberline {6.1}org.ck.sample}{xxviii}{section.6.1}
+\contentsline {section}{\numberline {6.2}org.ck.dt}{xxviii}{section.6.2}
+\contentsline {section}{\numberline {6.3}org.ck.ga}{xxx}{section.6.3}
+\contentsline {section}{\numberline {6.4}org.ck.gui}{xxx}{section.6.4}
+\contentsline {chapter}{\numberline {7}CONCLUSION AND FUTURE WORK}{xxxii}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary}{xxxii}{section.7.1}
+\contentsline {section}{\numberline {7.2}Limitations}{xxxiii}{section.7.2}
+\contentsline {section}{\numberline {7.3}Future enhancements}{xxxiii}{section.7.3}
+\contentsline {section}{BIBLIOGRAPHY}{xxxiii}{Item.42}
+\contentsline {section*}{APPENDICES}{xxxv}{chapter*.23}

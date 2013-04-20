@@ -141,31 +141,29 @@ Signature of Guide
 \section*{ACKNOWLEDGEMENT}
 \addcontentsline{toc}{section}{ACKNOWLEDGEMENT}
 \end{center}
-The euphoria and satisfaction of the completion of the project will be incomplete
-without thanking the persons responsible for this venture.
+Any achievement, be it scholastic or otherwise does not depend solely on the individual efforts but on the guidance, encouragement and cooperation of intellectuals, elders and friends. A number of personalities, in their own capacities have helped me in carrying out this project work. We would like to take this opportunity to thank them all.
 
+First and foremost we would like to thank Dr. B. S. Satyanarayana, Principal, R.V.C.E, Bengaluru, for his moral support towards completing my project work.
 
-We acknowledge RVCE (Autonomous under VTU) for providing an opportunity to
-create a mini-project in the 5th semester. We express our gratitude towards \textbf{Prof. B.S. Satyanarayana}, principal, R.V.C.E for constant encouragement and facilitates extended in completion of this project. We would like to thank \textbf{Prof. N.K.Srinath}, HOD, CSE
-Dept. for providing excellent lab facilites for the completion of the project. We would
-personally like to thank our project guides \textbf{Mrs. Shantha Rangaswamy and Dr. G. Shobha} and also the lab in charge, for providing timely assistance \& guidance at the time.
+We deeply express my sincere gratitude to our guides Ms. Shanta Rangaswamy, Assistant Professor and Dr. Shobha G, Professor, Department of CSE, R.V.C.E, Bengaluru, for their able guidance, regular source of encouragement and assistance throughout this project. 
 
+We would like to thank Dr. N. K. Srinath, Head of Department, Computer Science & Engineering, R.V.C.E, Bengaluru, for his valuable suggestions and expert advice.
 
+We thank our Parents, and all the Faculty members of Department of Computer Science & Engineering for their constant support and encouragement.
 
-We are indebted to the co-operation given by the lab administrators and lab assistants,
-who have played a major role in bringing out the mini-project in the present form.
-Bangalore
-
-
-
+Last, but not the least, We would like to thank our peers and friends who provided me with valuable suggestions to improve our project.
 \begin{flushright}
 Samir Sheriff\\
-7th semester, CSE\\
+8th semester, CSE\\
 USN:1RV09CS093\\
 
 Satvik N\\
-7th semester, CSE\\
+8th semester, CSE\\
 USN:1RV09CS095\\
+
+Vaishakh B N\\ 
+8th semester, CSE\\
+USN:1RV09CS114\\
 
 \end{flushright}
 
@@ -177,27 +175,32 @@ USN:1RV09CS095\\
 \section*{ABSTRACT}
 \addcontentsline{toc}{section}{ABSTRACT}
 \end{center} 
-Machine Learning techniques have been applied to the field of classification for more than a decade. Machine Learning techniques can learn normal and anomalous patterns from training data and generate classifiers, which
-can be used to capture characteristics of interest. In general, the input data to classifiers is an extremely large set of features, but not all of features are relevant to the classes to be classified.
-Hence, the learner must generalize from the given examples in order to produce a useful output in new cases. 
+A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of signal processing it is used for signal detection and estimation, while in the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting. This project is aimed making a time series data mining tool which can be used to accomplish the above goals. 
 
-A major focus of machine learning research is the design of algorithms that recognize complex patterns and make intelligent decisions based on input data. Our Project, titled ``\textbf{Decision Tree Classifier with Genetic Algorithm-based Feature Selection}” is aimed at developing a complete program that constructs an optimal decision tree, based on any kind of data set, divided into training and testing examples, by selecting only a subset of features to classify data. 
+@TODO Data sets names to be added 
 
-Although our program works with generic data samples, it must be noted that when we started this project, our main intention was to classify ground water samples into two classes, namely Potable and Non-Potable Water. However, thanks to the miracle of Object-Oriented Programming Concepts, we were able to extend this project.
+The project makes use of quite a few data sets in for time series analysis. these include Rainfall Data from Sita Nadi, electricity consumption data from XYZ city, ECG data and Sea Level Data. Anomaly detection, forecasting, Similarity detection is performed on these data sets using the algorithms available in literature. 
+
+@TODO Key findings and results come here
+
 
 
 
 %------Table Of Contents
 \addcontentsline{toc}{section}{CONTENTS}
 \tableofcontents
-%\listoffigures
-%\listoftables
+
+\newpage
+\addcontentsline{toc}{section}{LIST OF FIGURES}
+\listoffigures
+
+\newpage
+\addcontentsline{toc}{section}{LIST OF TABLES}
+\listoftables
 
 
 \newpage
 
-\pagenumbering{arabic}
-\setcounter{page}{1}
 
 \pagestyle{fancy}
 \lhead{\scriptsize{Introduction}}
@@ -210,19 +213,24 @@ Although our program works with generic data samples, it must be noted that when
 \renewcommand{\footrulewidth}{0.4pt}
 
 \chapter{INTRODUCTION}
-
-
-Machine learning, a branch of artificial intelligence, is about the construction and study of systems that can learn from data. The core of machine learning deals with representation and generalization. Representation of data instances and functions evaluated on these instances are part of all machine learning systems. There is a wide variety of machine learning tasks and successful applications. 
-
-
-
-
-
+A time series is a set of observations Xt , each one being recorded at a specific time t. Discrete-time time series is one in which the set T of times at which observations are made is a discrete set. Continuous-time time series are obtained when observations are recorded continuously over some time interval, e.g., when T0 belongs [0,1]. Examples of time series are the daily closing value of the ECG readings and the annual flow volume of the Nile River at Aswan. Time series are very frequently plotted via line charts. Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data. Time series forecasting is the use of a model to predict future values based on previously observed values.  
+\section{DEFINITIONS AND USAGE}
+Definition of Time Series: An ordered sequence of values of a variable at equally spaced time intervals.
+@TODO ADD DETAILS OF THIS SECTION
+\section{PURPOSE}
+The ability to model and perform decision modelling and analysis is an essential feature of many real-world applications ranging from emergency medical treatment in intensive care units to military command and control systems. Existing formalisms and methods of inference have not been effective in real-time applications where trade-offs between decision quality and computational tractability are essential. The purpose of this project is to fill the void that exists and help in proper analysis of time varying data.
 
 \section{SCOPE}
-
-The machine learning concepts we have used in our project are listed below,
+The scope of a time series data mining tool is two fold. The first  is to obtain an understanding of the underlying forces and structure that produced the observed data. The second is to 
+fit a model and proceed to forecasting, monitoring or even feedback and feed forward control. The time series data mining tool can be used in the following fields. 
 \begin{itemize}
+\item{\textbf{Economic Forecasting}
+\item{\textbf{Sales Forecasting}}
+\item{\textbf{Rainfall Analysis}}
+\item{\textbf{Stock Market Analysis}}
+\item{\textbf{Yield Projections}}
+\item{\textbf{Process and Quality Control}}
+\item{\textbf{Census Analysis}}
 
 
 \item{\textbf{Supervised learning}}  is the machine learning task of inferring a function from labeled training data. The training data consist of a set of training examples. In supervised learning, each example is a pair consisting of an input object (typically a vector) and a desired output value (also called the supervisory signal). A supervised learning algorithm analyzes the training data and produces an inferred function, which is called a classifier (if the output is discrete; see classification) or a regression function (if the output is continuous; see regression). The inferred function should predict the correct output value for any valid input object. This requires the learning algorithm to generalize from the training data to unseen situations in a "reasonable" way.
@@ -805,8 +813,8 @@ feature set.}
 \section*{Appendices}
 \section*{Appendix A : Source Code}
 
-\lstinputlisting[language=Java, caption=DecisionTreeConstructor.java, breaklines=true]{../../src/org/ck/dt/DecisionTreeConstructor.java}
-\lstinputlisting[language=Java, caption=DecisionTreeClassifier.java, breaklines=true]{../../src/org/ck/dt/DecisionTreeClassifier.java}
+%\lstinputlisting[language=Java, caption=DecisionTreeConstructor.java, breaklines=true]{../../src/org/ck/dt/DecisionTreeConstructor.java}
+%\lstinputlisting[language=Java, caption=DecisionTreeClassifier.java, breaklines=true]{../../src/org/ck/dt/DecisionTreeClassifier.java}
 
 
 \newpage
