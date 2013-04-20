@@ -1,22 +1,22 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Sample Decision Tree\relax }}{xii}{figure.caption.11}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces ID3 Algorithm\relax }}{xiv}{figure.caption.12}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces The entropy function relative to a binary classification, as the proportion of positive examples p$_{p}$ varies between 0 and 1.\relax }}{xvi}{figure.caption.13}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Sample Decision Tree\relax }}{xi}{figure.caption.11}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces ID3 Algorithm\relax }}{xiii}{figure.caption.12}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces The entropy function relative to a binary classification, as the proportion of positive examples p$_{p}$ varies between 0 and 1.\relax }}{xv}{figure.caption.13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Random Genome\relax }}{xx}{figure.caption.14}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Roulette Selection Pseudo-Code\relax }}{xxi}{figure.caption.16}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Crossover\relax }}{xxii}{figure.caption.18}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Mutation\relax }}{xxiii}{figure.caption.20}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Random Genome\relax }}{xix}{figure.caption.14}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Roulette Selection Pseudo-Code\relax }}{xx}{figure.caption.16}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Crossover\relax }}{xxi}{figure.caption.18}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Mutation\relax }}{xxii}{figure.caption.20}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The data flow in DT/GA Hybrid Classifier Algorithm.\relax }}{xxiv}{figure.caption.21}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Sample Representation\relax }}{xxv}{figure.caption.22}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The data flow in DT/GA Hybrid Classifier Algorithm.\relax }}{xxiii}{figure.caption.21}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Sample Representation\relax }}{xxiv}{figure.caption.22}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Application Window - Welcome Screen\relax }}{xxxvi}{figure.caption.27}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Decision Tree Constructor Window.\relax }}{xxxvi}{figure.caption.28}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Decision Tree Classifier Window.\relax }}{xxxvii}{figure.caption.29}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Decision Tree Construction with GA based Feature Selector.\relax }}{xxxvii}{figure.caption.30}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Decision Tree Construction with manual feature selection.\relax }}{xxxviii}{figure.caption.31}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces The project source code on github public repository.\relax }}{xxxviii}{figure.caption.32}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Application Window - Welcome Screen\relax }}{xxxv}{figure.caption.27}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Decision Tree Constructor Window.\relax }}{xxxv}{figure.caption.28}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Decision Tree Classifier Window.\relax }}{xxxvi}{figure.caption.29}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Decision Tree Construction with GA based Feature Selector.\relax }}{xxxvi}{figure.caption.30}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Decision Tree Construction with manual feature selection.\relax }}{xxxvii}{figure.caption.31}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces The project source code on github public repository.\relax }}{xxxvii}{figure.caption.32}

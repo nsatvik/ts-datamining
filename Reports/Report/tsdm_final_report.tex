@@ -67,7 +67,7 @@ showstringspaces=false
 %{\bfseries\large R V College of Engineering}\\
 %{\normalsize (Autonomous Institute, Affiliated to VTU)}\\
 %{\bfseries\normalsize BANGALORE - 560059}\\ 
-%{\bfseries\large Sept 2012 - Jan 2013}
+%{\bfseries\large Jan 2013 - June 2013}
 %\end{center}
 %\end{titlepage}
 
@@ -147,9 +147,9 @@ First and foremost we would like to thank Dr. B. S. Satyanarayana, Principal, R.
 
 We deeply express my sincere gratitude to our guides Ms. Shanta Rangaswamy, Assistant Professor and Dr. Shobha G, Professor, Department of CSE, R.V.C.E, Bengaluru, for their able guidance, regular source of encouragement and assistance throughout this project. 
 
-We would like to thank Dr. N. K. Srinath, Head of Department, Computer Science & Engineering, R.V.C.E, Bengaluru, for his valuable suggestions and expert advice.
+We would like to thank Dr. N. K. Srinath, Head of Department, Computer Science \& Engineering, R.V.C.E, Bengaluru, for his valuable suggestions and expert advice.
 
-We thank our Parents, and all the Faculty members of Department of Computer Science & Engineering for their constant support and encouragement.
+We thank our Parents, and all the Faculty members of Department of Computer Science \& Engineering for their constant support and encouragement.
 
 Last, but not the least, We would like to thank our peers and friends who provided me with valuable suggestions to improve our project.
 \begin{flushright}
@@ -175,7 +175,7 @@ USN:1RV09CS114\\
 \section*{ABSTRACT}
 \addcontentsline{toc}{section}{ABSTRACT}
 \end{center} 
-A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of signal processing it is used for signal detection and estimation, while in the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting. This project is aimed making a time series data mining tool which can be used to accomplish the above goals. 
+A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of signal processing it is used for signal detection and estimation, while in the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting. This project is aimed making a time series data mining tool which can be used to accomplish the above goals. 
 
 @TODO Data sets names to be added 
 
@@ -205,10 +205,10 @@ The project makes use of quite a few data sets in for time series analysis. thes
 \pagestyle{fancy}
 \lhead{\scriptsize{Introduction}}
 \chead{}
-\rhead{\scriptsize{DT Classifier with GA based feature selector.}}
+\rhead{\scriptsize{Time Series Data Mining Tool}}
 \lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
 \rfoot{\small{\thepage}}
-\cfoot{\scriptsize{Sept 2012 - Jan 2013}}
+\cfoot{\scriptsize{Jan 2013 - June 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
@@ -216,15 +216,15 @@ The project makes use of quite a few data sets in for time series analysis. thes
 A time series is a set of observations Xt , each one being recorded at a specific time t. Discrete-time time series is one in which the set T of times at which observations are made is a discrete set. Continuous-time time series are obtained when observations are recorded continuously over some time interval, e.g., when T0 belongs [0,1]. Examples of time series are the daily closing value of the ECG readings and the annual flow volume of the Nile River at Aswan. Time series are very frequently plotted via line charts. Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data. Time series forecasting is the use of a model to predict future values based on previously observed values.  
 \section{DEFINITIONS AND USAGE}
 Definition of Time Series: An ordered sequence of values of a variable at equally spaced time intervals.
-@TODO ADD DETAILS OF THIS SECTION
+\@ TODO ADD DETAILS OF THIS SECTION
 \section{PURPOSE}
-The ability to model and perform decision modelling and analysis is an essential feature of many real-world applications ranging from emergency medical treatment in intensive care units to military command and control systems. Existing formalisms and methods of inference have not been effective in real-time applications where trade-offs between decision quality and computational tractability are essential. The purpose of this project is to fill the void that exists and help in proper analysis of time varying data.
+The ability to model and perform decision modeling and analysis is an essential feature of many real-world applications ranging from emergency medical treatment in intensive care units to military command and control systems. Existing formalisms and methods of inference have not been effective in real-time applications where trade-offs between decision quality and computational tractability are essential. The purpose of this project is to fill the void that exists and help in proper analysis of time varying data.
 
 \section{SCOPE}
 The scope of a time series data mining tool is two fold. The first  is to obtain an understanding of the underlying forces and structure that produced the observed data. The second is to 
 fit a model and proceed to forecasting, monitoring or even feedback and feed forward control. The time series data mining tool can be used in the following fields. 
 \begin{itemize}
-\item{\textbf{Economic Forecasting}
+\item{\textbf{Economic Forecasting}}
 \item{\textbf{Sales Forecasting}}
 \item{\textbf{Rainfall Analysis}}
 \item{\textbf{Stock Market Analysis}}
@@ -232,23 +232,16 @@ fit a model and proceed to forecasting, monitoring or even feedback and feed for
 \item{\textbf{Process and Quality Control}}
 \item{\textbf{Census Analysis}}
 
-
-\item{\textbf{Supervised learning}}  is the machine learning task of inferring a function from labeled training data. The training data consist of a set of training examples. In supervised learning, each example is a pair consisting of an input object (typically a vector) and a desired output value (also called the supervisory signal). A supervised learning algorithm analyzes the training data and produces an inferred function, which is called a classifier (if the output is discrete; see classification) or a regression function (if the output is continuous; see regression). The inferred function should predict the correct output value for any valid input object. This requires the learning algorithm to generalize from the training data to unseen situations in a "reasonable" way.
-
-\item{\textbf{Decision tree learning}}, used in statistics, data mining and machine learning, uses a decision tree as a predictive model which maps observations about an item to conclusions about the item's target value. The goal is to create a model that predicts the value of a target variable based on several input variables.
-
-\item A {\textbf{Genetic Algorithms}} is a search heuristic that mimics the process of natural evolution. This heuristic is routinely used to generate useful solutions to optimization and search problems. Genetic algorithms belong to the larger class of evolutionary algorithms (EA), which generate solutions to optimization problems using techniques inspired by natural evolution, such as inheritance, mutation, selection, and crossover.
-
 \end{itemize}
 
 
 \pagestyle{fancy}
 \lhead{\scriptsize{Software Requirements Specification}}
 \chead{}
-\rhead{\scriptsize{Decision Tree Classifier with GA-based Feature Selection}}
+\rhead{\scriptsize{Time Series Data Mining Tool}}
 \lfoot{\scriptsize{Dept. of CSE, R V C E, Bangalore.}}
 \rfoot{\small{\thepage}}
-\cfoot{\scriptsize{Sept 2012 - Jan 2013}}
+\cfoot{\scriptsize{Jan 2013 - June 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \chapter{REQUIREMENT SPECIFICATION}
@@ -274,10 +267,10 @@ Software Requirement Specification (SRS) is an important part of the  software d
 \pagestyle{fancy}
 \lhead{\scriptsize{Decision Tree Learning}}
 \chead{}
-\rhead{\scriptsize{Decision Tree Classifier with GA-based Feature Selection}}
+\rhead{\scriptsize{Time Series Data Mining Tool}}
 \lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
 \rfoot{\small{\thepage}}
-\cfoot{\scriptsize{Sept 2012 - Jan 2013}}
+\cfoot{\scriptsize{Jan 2013 - June 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \chapter{Decision Tree Learning}
@@ -430,10 +423,10 @@ The weaknesses of decision tree methods
 \pagestyle{fancy}
 \lhead{\scriptsize{Genetic Algorithms}}
 \chead{}
-\rhead{\scriptsize{DT Classifier with GA based feature selector.}}
+\rhead{\scriptsize{Time Series Data Mining Tool}}
 \lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
 \rfoot{\small{\thepage}}
-\cfoot{\scriptsize{Sept 2012 - Jan 2013}}
+\cfoot{\scriptsize{Jan 2013 - June 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
@@ -541,7 +534,7 @@ The purpose of mutation in GAs is preserving and introducing diversity. Mutation
 \rhead{\scriptsize{DT classifier with GA based feature selection}}
 \lfoot{\scriptsize{Dept. of CSE, R V C E, Bangalore.}}
 \rfoot{\small{\thepage}}
-\cfoot{\scriptsize{Sept 2012 - Jan 2013}}
+\cfoot{\scriptsize{Jan 2013 - June 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \chapter{Decision Trees and Genetic Algorithms}
@@ -605,10 +598,10 @@ Such a hybrid learning system will identify significantly better feature subsets
 \pagestyle{fancy}
 \lhead{\scriptsize{Conclusion}}
 \chead{}
-\rhead{\scriptsize{DT Classifier with GA based feature selector.}}
+\rhead{\scriptsize{Time Series Data Mining Tool}}
 \lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
 \rfoot{\small{\thepage}}
-\cfoot{\scriptsize{Sept 2012 - Jan 2013}}
+\cfoot{\scriptsize{Jan 2013 - June 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \chapter{Our State-of-the-art Object-Oriented System}
@@ -734,10 +727,10 @@ We have organized the code in this package in such a way that all the options \t
 \pagestyle{fancy}
 \lhead{\scriptsize{Conclusion}}
 \chead{}
-\rhead{\scriptsize{DT Classifier with GA based feature selector.}}
+\rhead{\scriptsize{Time Series Data Mining Tool}}
 \lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
 \rfoot{\small{\thepage}}
-\cfoot{\scriptsize{Sept 2012 - Jan 2013}}
+\cfoot{\scriptsize{Jan 2013 - June 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \chapter{CONCLUSION AND FUTURE WORK}
@@ -763,7 +756,7 @@ These are a few limitations of this application.
 
 \item{The GA feature selector takes a considerable amount time to optimize the Decision Tree depending on the size of the training and testing samples.}
 \item{The GA optimizer may take a long time to converge or may not converge at all, which usually results in the application crashing, due to high memory usage.}
-\item{ The Decision Tree classifier with GA-based feature selection requires the use of accurate as well as a large number of training and testing samples. The efficiency of the Decision Tree constructed is solely based on the input training and testing samples.}
+\item{ The Time Series Data Mining Tool requires the use of accurate as well as a large number of training and testing samples. The efficiency of the Decision Tree constructed is solely based on the input training and testing samples.}
 
 \end{enumerate}
 \section{Future enhancements}
@@ -802,10 +795,10 @@ feature set.}
 \pagestyle{fancy}
 \lhead{\scriptsize{Appendix A: Source Code}}
 \chead{}
-\rhead{\scriptsize{DT Classifier with GA based feature selector.}}
+\rhead{\scriptsize{Time Series Data Mining Tool}}
 \lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
 \rfoot{\small{\thepage}}
-\cfoot{\scriptsize{Sept 2012 - Jan 2013}}
+\cfoot{\scriptsize{Jan 2013 - June 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
@@ -821,10 +814,10 @@ feature set.}
 \pagestyle{fancy}
 \lhead{\scriptsize{Appendix B: Screen shots}}
 \chead{}
-\rhead{\scriptsize{DT Classifier with GA based feature selector.}}
+\rhead{\scriptsize{Time Series Data Mining Tool}}
 \lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
 \rfoot{\small{\thepage}}
-\cfoot{\scriptsize{Sept 2012 - Jan 2013}}
+\cfoot{\scriptsize{Jan 2013 - June 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
