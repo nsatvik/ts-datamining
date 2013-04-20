@@ -13,7 +13,7 @@ public class Cusum_VmaskApproch {
 	private List<Double> cusumLowSeries;
 	private double h,k; //h and k are parameters of the V mask.
 	
-	private double sampleSize=12;
+	private double sampleSize=10;
 	private double thresholdMean = 0; //Threshold Mean
 	private double thresholdSD = 1;//Threshold Standard deviation
 	
@@ -46,12 +46,14 @@ public class Cusum_VmaskApproch {
 		while(i<dataSampleTimeSeries.size())
 		{
 			double sum = 0;
-			for(int j=0;j<this.sampleSize&&(i+j)<dataSampleTimeSeries.size();++j)
+			int count = 0;
+			for(int j=0;j<this.sampleSize &&(i+j)<dataSampleTimeSeries.size();++j)
 			{
 				sum += this.dataSampleTimeSeries.get(i+j);
+				++count;
 			}
-			this.cumulatedTimeSeries.add(sum/this.sampleSize);
-			i += this.sampleSize;
+			this.cumulatedTimeSeries.add(sum/count);
+			i += count;
 		}
 		
 	}
@@ -66,19 +68,23 @@ public class Cusum_VmaskApproch {
 	{
 		this.k = kVal;
 	}
-	
+	public void setSampleSize(int size)
+	{
+		this.sampleSize = size;
+	}
 	public List<Integer> getDefectiveDataPoints()
 	{
 		List<Integer> defectivePoints = new ArrayList<Integer>();
-		//System.out.println(this.cumulatedTimeSeries);
+		System.out.println(this.cumulatedTimeSeries);
 		for(int i=0;i<this.cumulatedTimeSeries.size();++i)
 		{
 			
-			if(this.cusumHiSeries.get(i)>this.h || this.cusumLowSeries.get(i)>(this.h))
+			if(this.cusumHiSeries.get(i)>this.h || this.cusumLowSeries.get(i)<(-this.h))
 			{
 				//defectivePoints.add(i);
 				for(int j=0;j<this.sampleSize;++j)
 					defectivePoints.add(i+j);
+				
 			}
 		}
 		return defectivePoints;

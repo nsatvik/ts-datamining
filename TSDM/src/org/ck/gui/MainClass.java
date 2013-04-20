@@ -61,20 +61,21 @@ public class MainClass
 		DataHolder.setDataset(DatasetOptions.FINANCE_NIFTY_DATASET);
 		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
 		//testNeuralNetwork(seaSample);
-		//testCusum(seaSample);
-		Date date = new Date(2013, 07, 27, 9, 30);
-		System.out.println(date);
+		testCusum(seaSample);
+		
 		
 	}
 
 	private static void testCusum(Sample seaSample) {
 		Cusum_VmaskApproch finder = new Cusum_VmaskApproch(seaSample);
-		finder.setHval(1.5);
+		finder.setHval(0.5);
+		finder.setSampleSize(15);
 		finder.computeCusumSereis();
 		List<Integer> defectiveList = finder.getDefectiveDataPoints();
 		System.out.println(defectiveList);
 		String output = "[";
-		for(int i=0,j=0;i<seaSample.getNumOfValues();++i)
+		int i,j;
+		for(i=0,j=0;i<seaSample.getNumOfValues();++i)
 		{
 			
 			int k = -1;
@@ -83,12 +84,12 @@ public class MainClass
 			
 			if(k==i)
 			{
-				output += "[ "+i+",0,"+seaSample.getValue(i)+"],";
+				output += "[ new Date("+i+"+100),0,"+seaSample.getValue(i)+"],";
 				System.out.println("k==i"+i);
 				++j;
 			}
 			else
-				output += "[ "+i+","+seaSample.getValue(i)+", 0],";
+				output += "[ new Date("+i+"+100),"+seaSample.getValue(i)+", 0],";
 		}
 		output += "[0,0,0]]";
 		System.out.println(output);

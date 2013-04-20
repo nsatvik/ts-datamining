@@ -109,7 +109,8 @@ public class MainController extends HttpServlet implements Constants
 			return AlgorithmUtils.runMovingAverageSmoother(tsBean);	
 		case MOVING_EXPONENTIAL:
 			return AlgorithmUtils.runExponentialSmoother(tsBean);
-			
+		case NARX_NN:
+			return AlgorithmUtils.runNARXneuralNetworkAlgo(tsBean);
 		default:				
 		}
 		return "";

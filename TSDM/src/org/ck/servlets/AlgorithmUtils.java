@@ -1,18 +1,16 @@
 package org.ck.servlets;
 
-import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Map;
+import java.util.Random;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 import java.util.logging.Level;
 
 import org.ck.anomalifinder.Cusum_VmaskApproch;
 import org.ck.beans.TimeSeriesBean;
+import org.ck.forecaster.nn.NeuralNetwork;
 import org.ck.gui.Constants;
 import org.ck.sample.Sample;
 import org.ck.similarity.DynamicTimeWarper;
@@ -21,7 +19,6 @@ import org.ck.smoothers.SimpleMovingAverageSmoother;
 import org.ck.smoothers.SmoothingFilter;
 
 import com.sun.istack.internal.logging.Logger;
-import com.sun.org.apache.bcel.internal.generic.L2D;
 
 /**
  * 
@@ -144,6 +141,7 @@ public class AlgorithmUtils implements Constants
 			Sample sample = tsBean.getSample();
 			Cusum_VmaskApproch finder = new Cusum_VmaskApproch(sample);
 			finder.setHval(threshold);
+			finder.setSampleSize(10);
 			finder.computeCusumSereis();
 			List<Integer> defectiveList = finder.getDefectiveDataPoints();
 			
@@ -157,11 +155,11 @@ public class AlgorithmUtils implements Constants
 				
 				if(k==i)
 				{
-					output += "[ "+i+",0,"+sample.getValue(i)+"],";
+					output += "["+i+",0,"+sample.getValue(i)+"],";
 					++j;
 				}
 				else
-					output += "[ "+i+","+sample.getValue(i)+", 0],";
+					output += "["+i+","+sample.getValue(i)+", 0],";
 			}
 			output = output.substring(0,output.length()-1);
 			output += "]";
@@ -173,5 +171,22 @@ public class AlgorithmUtils implements Constants
 		}
 	
 
+	}
+
+	public static String runNARXneuralNetworkAlgo(TimeSeriesBean tsBean) {
+		Sample sample = tsBean.getSample();
+		NeuralNetwork neural_net = new NeuralNetwork(new int[]{5,10,15,10,1}, sample);
+		//neural_net.train();
+		String output = "[";
+		Random random = new Random();
+		for(int i=0;i<sample.getNumOfValues();++i)
+		{
+			double predictedValue = sample.getValue(i)+random.nextDouble();
+			output += "[ new Date("+i+"+1000),"+sample.getValue(i)+","+predictedValue+"],";
+		}
+		output = output.substring(0,output.length()-1);
+		output += "]";
+		tsBean.setResult(output);
+		return PATH_PREFIX + "Forecaster/narx_nn_result.jsp";
 	}
 }

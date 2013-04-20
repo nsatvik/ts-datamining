@@ -39,7 +39,7 @@
 		        title: 'Anomaly Detector'
 		      };
 		  
-	     	var chart = new google.visualization.ScatterChart(document.getElementById('line_chart_div'));
+	     	var chart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
 	     	chart.draw(data, options);
 	    }
     </script>
@@ -65,7 +65,7 @@
 		        		{"taskType" : "<%=Constants.TaskType.ANOMALY_DETECTIVE %>",
 		        		 "algorithmType" : "<%=Constants.AlgorithmType.CUSUM %>",
 		        		 "dataset" : $("#dropdown option:selected").val(),
-		        		 "anomalyThreshold" : $("#slider").val()
+		        		 "anomalyThreshold" : $("#threshold").val()
 		        		}
 		        );
 		});
