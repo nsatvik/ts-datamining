@@ -20,11 +20,12 @@ $(function() {
 </script>
 </head>
 <body>
-	<div id="tabs_all_nav">
+	<div style="margin-top: 1%;" id="tabs_all_nav">
 	<ul>
 		<li><a href="./jsp/Similarity/main.jsp">Similarity Detective</a></li>		
 		<li><a href="./jsp/Forecaster/main.jsp">Fortune-Teller</a></li>
 		<li><a href="./jsp/Anomaly/main.jsp">Anomaly Detective</a></li>
+		<li><a href="./jsp/PatternFinder/main.jsp">Temporal Pattern Detective</a></li>
 	</ul>
 	
 	</div>

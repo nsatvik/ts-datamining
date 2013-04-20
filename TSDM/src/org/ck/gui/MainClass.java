@@ -14,6 +14,7 @@ import org.ck.sample.Sample;
 import org.ck.similarity.CommonSequenceFinder;
 import org.ck.similarity.CommonSequenceFinder.Tuple;
 import org.ck.similarity.DynamicTimeWarper;
+import org.ck.tsdm.TSDM;
 
 
 public class MainClass 
@@ -24,9 +25,9 @@ public class MainClass
 		//Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
 		
 		//use your respective methods for testing
-		satvik();
+		//satvik();
 		//vaishakh();
-		//samir();
+		samir();
 		
 		
 	}
@@ -36,12 +37,15 @@ public class MainClass
 		DataHolder.setDataset(DatasetOptions.SEA_LEVEL_DATASET);
 		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);		
 		
-		DataHolder.setDataset(DatasetOptions.FINANCE_VIX_DATASET);
+		/*DataHolder.setDataset(DatasetOptions.FINANCE_VIX_DATASET);
 		Sample sample2 = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME).getSeriesSubset(0, 1400);
 		
 		System.out.println(seaSample.getSaxString());
 		System.out.println(sample2.getSaxString());
-		System.out.println(seaSample.getDistanceUsingSAX(sample2));
+		System.out.println(seaSample.getDistanceUsingSAX(sample2));*/
+		
+		TSDM tsdm = new TSDM(seaSample);
+		System.out.println(tsdm.toString());
 	}
 
 	private static void vaishakh()

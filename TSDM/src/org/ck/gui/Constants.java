@@ -22,7 +22,8 @@ public interface Constants
 	{
 		SIMILARITY,
 		FORTUNE_TELLER,
-		ANOMALY_DETECTIVE
+		ANOMALY_DETECTIVE, 
+		TEMPORAL_PATTERN_MINER
 	}
 	
 	enum SubTaskType
@@ -40,7 +41,7 @@ public interface Constants
 		NARX_NN,
 		CUSUM,
 		MOVING_EXPONENTIAL,
-		MARKOV_MODEL_TECHNIQUE
-
+		MARKOV_MODEL_TECHNIQUE,
+		TSDM
 	}	
 }

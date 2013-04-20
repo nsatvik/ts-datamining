@@ -17,6 +17,7 @@ import org.ck.similarity.DynamicTimeWarper;
 import org.ck.smoothers.ExponentialMovingAverageSmoother;
 import org.ck.smoothers.SimpleMovingAverageSmoother;
 import org.ck.smoothers.SmoothingFilter;
+import org.ck.tsdm.TSDM;
 
 import com.sun.istack.internal.logging.Logger;
 
@@ -188,5 +189,18 @@ public class AlgorithmUtils implements Constants
 		output += "]";
 		tsBean.setResult(output);
 		return PATH_PREFIX + "Forecaster/narx_nn_result.jsp";
+	}
+
+	/**
+	 * Runs the TSDM Algorithm to retrieve temporal Patterns
+	 * @param tsBean
+	 * @return
+	 */
+	public static String runTSDMAlgorithm(TimeSeriesBean tsBean)
+	{
+		TSDM tsdm = new TSDM(tsBean.getSample());
+		tsBean.setResultObject(tsdm);
+		
+		return PATH_PREFIX + "PatternFinder/tsdm_results.jsp";
 	}
 }

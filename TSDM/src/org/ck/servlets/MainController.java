@@ -76,9 +76,11 @@ public class MainController extends HttpServlet implements Constants
 		case FORTUNE_TELLER:
 			address = runFortuneTellingAlgorithm(tsBean);
 			break;
-		case ANOMALY_DETECTIVE:
-			
+		case ANOMALY_DETECTIVE:			
 			address = runAnomalyDetectorAlgorithm(tsBean,Double.parseDouble(request.getParameter("anomalyThreshold")));
+			break;
+		case TEMPORAL_PATTERN_MINER:
+			address = runTemporalMinerAlgorithm(tsBean);
 			break;
 		default:
 			//Forward to errorPage.jsp ---- to be created
@@ -93,7 +95,6 @@ public class MainController extends HttpServlet implements Constants
 			dispatcher.forward(request, response);
 		}
 	}
-
 
 	/**
 	 * Runs a Fortune Telling algorithm, to predict your future and help YOU decide
@@ -129,8 +130,29 @@ public class MainController extends HttpServlet implements Constants
 			return AlgorithmUtils.runDTWAlgorithm(tsBean);			
 		case SAX:
 			break;
+		case TSDM:
+			log.info("TEMPORAL PATTERN MINING");
+			return AlgorithmUtils.runDTWAlgorithm(tsBean);			
 		case COMMON_SUBSEQUENCE:
 			break;
+		default:
+			//Forward to errorPage.jsp ---- to be created			
+		}
+		return "";
+	}
+	
+	/**
+	 * Runs the TSDM Framework algorithm for temporal pattern detection
+	 * @param tsBean
+	 * @return
+	 */
+	private String runTemporalMinerAlgorithm(TimeSeriesBean tsBean)
+	{
+		switch(tsBean.getAlgorithmType())
+		{
+		case TSDM:
+			log.info("TEMPORAL PATTERN MINING");
+			return AlgorithmUtils.runTSDMAlgorithm(tsBean);	
 		default:
 			//Forward to errorPage.jsp ---- to be created			
 		}
