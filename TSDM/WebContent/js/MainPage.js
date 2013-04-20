@@ -71,8 +71,8 @@ $(document).ready(function () {
 	    });
 	    $("#button_Donate").button().click(function () {
 	        removeUnnecessaryWidgets();                
-	        //$("#div_ajaxFiller").load("./ServerScripts/DebugScripts/Debug.php");
-	        alert("We'll be collecting soon!");
+	        $("#div_ajaxFiller").load("./jsp/error_page.jsp");
+	        
 	    });
 	}
 	

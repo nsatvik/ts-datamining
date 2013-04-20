@@ -16,11 +16,9 @@
 		too, it is naat a good.. Until we fix it, you can enjoy this beautiful
 		video of Mr. Manju, one of the great politician and an all time
 		inspiration for Samir.<br/> <img src="./images/keep-calm.png"
-			alt="Smiley face" height="200" width="200">
+			alt="Smiley face" height="600" width="450">
 	</div>
-	<br />
-	<br />
-	<br />
+	
 	<div >
 	<center>
 		<object width="960" height="720">
