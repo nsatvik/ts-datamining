@@ -229,4 +229,43 @@ public class AlgorithmUtils implements Constants
 		
 		return PATH_PREFIX + "PatternFinder/tsdm_results.jsp";
 	}
+
+	public static String runStatisticalAnomalyDetetorAlgo(
+			TimeSeriesBean tsBean, double threshold) {
+		//double predictedValue;
+		Sample sample = tsBean.getSample();
+		SmoothingFilter sms = new SimpleMovingAverageSmoother(sample, 12);		
+		List<Double> smoothList = sms.getSmoothedValues();
+
+		double predictedValue = sms.getAverage(sample.getNumOfValues()-1,sample.getNumOfValues()-2);
+		tsBean.setPredictedValue(predictedValue);
+		//System.out.println("::::::::::::::::::");
+		//PrintWriter out = new PrintWriter(System.out);
+		//out.println("::::::The simple Moving Average is :::::: "+predictedValue);
+
+		String output = "[";
+		String defectValueData = "[";
+		
+		int i = 0;
+		for(i=0;i<sample.getNumOfValues();++i)
+		{
+			double val = smoothList.get(i);
+			output += "["+(i+1)+","+sample.getValue(i)+","+(val-threshold)+","+val+","+(val+threshold)+"],";
+			if((sample.getValue(i)>(val+threshold)) || (sample.getValue(i)<(val-threshold)))
+			{
+				defectValueData += "["+(i+1)+",0,"+sample.getValue(i)+"],";
+			}
+			else
+				defectValueData += "["+(i+1)+","+sample.getValue(i)+",0],";
+		}
+		output = output.substring(0, output.length()-1);
+		defectValueData = defectValueData.substring(0, defectValueData.length()-1);
+		output += "]";
+		defectValueData += "]";
+		System.out.println("Output : "+output);
+		tsBean.setResult(output);
+		tsBean.setMapData(defectValueData);
+
+		return PATH_PREFIX + "Anomaly/stat_approach_result.jsp";
+	}
 }

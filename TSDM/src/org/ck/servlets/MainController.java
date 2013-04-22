@@ -220,6 +220,7 @@ public class MainController extends HttpServlet implements Constants
 			return AlgorithmUtils.runCusumAnomalyDetAlgo(tsBean,threshold);
 			
 		case MARKOV_MODEL_TECHNIQUE: return PATH_PREFIX+"error_page.jsp";
+		case STATISTICAL_APPROACH: return AlgorithmUtils.runStatisticalAnomalyDetetorAlgo(tsBean,threshold);
 			
 		default:
 			return PATH_PREFIX+"error_page.jsp";

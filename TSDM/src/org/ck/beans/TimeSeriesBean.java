@@ -25,7 +25,7 @@ public class TimeSeriesBean implements Serializable, Constants
 	private ArrayList<Sample> subSamples = new ArrayList<Sample>();		//Holds samples that are to be compared to Sample
 	
 	private String params = "";		//Required for processing user-defined queries
-	
+	private String mapData = "";
 	private String result = "TBD";
 	
 	//This List of objects can be used to store and send custom data structures of any type to JSP Pages 
@@ -176,5 +176,13 @@ public class TimeSeriesBean implements Serializable, Constants
 				+ ", subTaskType=" + subTaskType + ", algorithmType="
 				+ algorithmType + ", dataset=" + dataset + ", params=" + params
 				+ ", result=" + result + "]";
+	}
+	public void setMapData(String mapData) {
+		this.mapData = mapData;
+		
+	}
+	public String getMapData()
+	{
+		return this.mapData;
 	}
 }

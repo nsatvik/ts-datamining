@@ -8,7 +8,10 @@
 </head>
 <body>
 <div>
-	
+	Time series forecasting is the use of a model to predict future values based on previously observed values.
+	 While regression analysis is often employed in such a way as to test theories that the current values
+	  of one or more independent time series affect the current value of another time series,
+	 this type of analysis of time series is not called "time series analysis".
 	<br/>
 	<br/>
 	<br/>
