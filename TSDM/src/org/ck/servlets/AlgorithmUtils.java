@@ -15,6 +15,7 @@ import org.ck.gui.Constants;
 import org.ck.sample.Sample;
 import org.ck.similarity.DynamicTimeWarper;
 import org.ck.smoothers.ExponentialMovingAverageSmoother;
+import org.ck.smoothers.GeometricMovingAverageSmoother;
 import org.ck.smoothers.SimpleMovingAverageSmoother;
 import org.ck.smoothers.SmoothingFilter;
 import org.ck.tsdm.TSDM;
@@ -83,23 +84,24 @@ public class AlgorithmUtils implements Constants
 		//double predictedValue;
 		Sample sample = tsBean.getSample();
 		SmoothingFilter sms = new SimpleMovingAverageSmoother(sample, 12);		
-		List<Double> smoothList = new ArrayList<Double>();
-		smoothList = sms.getSmoothedValues();
+		List<Double> smoothList = sms.getSmoothedValues();
 
 		double predictedValue = sms.getAverage(sample.getNumOfValues()-1,sample.getNumOfValues()-2);
 		tsBean.setPredictedValue(predictedValue);
-		System.out.println("::::::::::::::::::");
+		//System.out.println("::::::::::::::::::");
 		//PrintWriter out = new PrintWriter(System.out);
 		//out.println("::::::The simple Moving Average is :::::: "+predictedValue);
 
 		String output = "";
-		output += "Set\tMoving Average\n";
+		output += "[";
 		int i = 0;
-		while(i < smoothList.size())
+		for(i=0;i<sample.getNumOfValues();++i)
 		{
-			output += smoothList.get(i) + "&nbsp" + i + "<br/>";
-			i++;			
+			output += "["+(i+1)+","+sample.getValue(i)+","+smoothList.get(i)+"],";
 		}
+		output = output.substring(0, output.length()-1);
+		output += "]";
+		System.out.println("Output : "+output);
 		tsBean.setResult(output);
 		
 		return PATH_PREFIX + "Forecaster/moving_average_result.jsp";
@@ -109,20 +111,44 @@ public class AlgorithmUtils implements Constants
 	{
 		
 		Sample sample = tsBean.getSample();
-		SmoothingFilter sms = new ExponentialMovingAverageSmoother(sample, 1);		
+		SmoothingFilter sms = new ExponentialMovingAverageSmoother(sample, 0.5);		
 		List<Double> smoothList = new ArrayList<Double>();
 		smoothList = sms.getSmoothedValues();
 		String output = "";
-		output += "Set\tMoving Exponential\n";
+		output += "[";
 		int i = 0;
-		while(i < smoothList.size())
+		for(i=0;i<sample.getNumOfValues();++i)
 		{
-			output += smoothList.get(i) + "&nbsp" + i + "<br/>";
-			i++;			
+			output += "["+(i+1)+","+sample.getValue(i)+","+smoothList.get(i)+"],";
 		}
+		output = output.substring(0, output.length()-1);
+		output += "]";
+		//System.out.println("Output : "+output);
 		tsBean.setResult(output);
 		
-		return PATH_PREFIX + "Forecaster/moving_exponential.jsp";
+		return PATH_PREFIX + "Forecaster/moving_exponential_result.jsp";
+		
+	}
+	public static String runGeometricMovingAverageSmoother(TimeSeriesBean tsBean)
+	{
+		
+		Sample sample = tsBean.getSample();
+		SmoothingFilter sms = new GeometricMovingAverageSmoother(sample, 1);		
+		List<Double> smoothList = new ArrayList<Double>();
+		smoothList = sms.getSmoothedValues();
+		String output = "";
+		output += "[";
+		int i = 0;
+		for(i=0;i<sample.getNumOfValues();++i)
+		{
+			output += "["+(i+1)+","+sample.getValue(i)+","+smoothList.get(i)+"],";
+		}
+		output = output.substring(0, output.length()-1);
+		output += "]";
+		//System.out.println("Output : "+output);
+		tsBean.setResult(output);
+		
+		return PATH_PREFIX + "Forecaster/moving_geometric_result.jsp";
 		
 	}
 	

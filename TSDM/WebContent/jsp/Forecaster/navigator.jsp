@@ -26,6 +26,7 @@ $(function() {
 	<ul>
 		<li><a href="./jsp/Forecaster/narx_neural_net.jsp">NARX Neural Network</a></li>
 		<li><a href="./jsp/Forecaster/moving_average.jsp">Moving Average Method</a></li>
+		<li><a href="./jsp/Forecaster/moving_exponential.jsp">Moving Exponential Average Method</a></li>
 		<li><a href="./jsp/Forecaster/moving_geometric.jsp">Moving Geometric Average Method</a></li>
 		
 	</ul>	

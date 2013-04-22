@@ -41,6 +41,7 @@ public interface Constants
 		NARX_NN,
 		CUSUM,
 		MOVING_EXPONENTIAL,
+		MOVING_GEOMETRIC,
 		MARKOV_MODEL_TECHNIQUE,
 		TSDM
 	}	

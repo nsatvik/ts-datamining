@@ -12,24 +12,24 @@
 </head>
 <body>
 	<div>
-		<label>Select Data Set</label> <select id="dropdown_moving_geo"
+		<label>Select Data Set</label> <select id="dropdown_moving_Expo"
 			class="TopMenuButtons">
 			<%
 				Constants.DatasetOptions[] datasets = Constants.DatasetOptions.values();
 				for(int i=0; i<datasets.length; i++)
 					out.println("<option value=\"" + datasets[i] + "\">" + datasets[i] + "</option>");
 			%>
-		</select> <br /> <br /> <input id="button_movinggeoCalc" class="TopMenuButtons"
+		</select> <br /> <br /> <input id="button_movingExpoCalc" class="TopMenuButtons"
 			style="" type="button" value="Calculate" />
 	</div>
-	<p id="ajax_moving_geometric_result"></p>
+	<p id="ajax_moving_exponential_result"></p>
 	
 	<script type="text/javascript">
-		$("#button_movinggeoCalc").button().click(function () {			
-	        $("#ajax_moving_geometric_result").load("MainController", 
+		$("#button_movingExpoCalc").button().click(function () {			
+	        $("#ajax_moving_exponential_result").load("MainController", 
 	        		{"taskType" : "<%=Constants.TaskType.FORTUNE_TELLER %>",
-	        		 "algorithmType" : "<%=Constants.AlgorithmType.MOVING_GEOMETRIC%>",
-	        		 "dataset" : $("#dropdown_moving_geo option:selected").val()
+	        		 "algorithmType" : "<%=Constants.AlgorithmType.MOVING_EXPONENTIAL%>",
+	        		 "dataset" : $("#dropdown_moving_Expo option:selected").val()
 	        		}
 	        );
 	    });

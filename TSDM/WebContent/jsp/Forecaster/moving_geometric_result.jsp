@@ -1,9 +1,9 @@
+<%@page import="org.ck.servlets.AlgorithmUtils"%>
 <%@page import="org.ck.beans.TimeSeriesBean"%>
 <%@page import="org.ck.gui.Constants" %>
 <%@page import="java.util.ArrayList" %>
 <%@page import="org.ck.sample.Sample" %>
 <%@page import="org.ck.smoothers.SmoothingFilter"%>
-<%@page import="org.ck.servlets.AlgorithmUtils"%>
 <%@page import="org.ck.smoothers.SimpleMovingAverageSmoother" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -36,13 +36,12 @@
 				.getAttribute("tsBean");
 		//out.println("Output String <br/>"+tsBean.getResult());
 	%>
-	
     <script type="text/javascript">    	
 	    google.load("visualization", "1", {callback : function(){drawLineChart();}, packages:["corechart"]});
 	    function drawLineChart() { 		    	
 	      	//var data = google.visualization.arrayToDataTable(getDataArrayForLineChart());
 	      	var data = new google.visualization.DataTable();
-			data.addColumn('number', 'Time');
+			data.addColumn ('number', 'Time Line');
 			data.addColumn('number', 'Actual Value');
 			data.addColumn('number', 'Predicted Value');
 			data.addRows(<%out.print(tsBean.getResult());%>);

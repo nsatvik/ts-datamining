@@ -19,7 +19,7 @@ public abstract class SmoothingFilter
 	 */
 	public SmoothingFilter(Sample sample, double k)
 	{
-		values = sample.getTimeSeries();
+		values = sample.getNormalizedTimeSeries();
 		smoothedValues = new ArrayList<Double>();
 		this.k = k;
 		calculateSmoothedValues();
