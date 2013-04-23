@@ -31,48 +31,37 @@
 \BOOKMARK [1][-]{section.4.1}{STRUCTURED CHART}{chapter.4}% 31
 \BOOKMARK [1][-]{section.4.2}{MODULES DESCRIPTION}{chapter.4}% 32
 \BOOKMARK [2][-]{subsection.4.2.1}{GUI MODULE}{section.4.2}% 33
-\BOOKMARK [2][-]{subsection.4.2.2}{SESSION KEY GENERATION MODULE}{section.4.2}% 34
-\BOOKMARK [2][-]{subsection.4.2.3}{EMBEDDING ALGORITHM MODULE}{section.4.2}% 35
-\BOOKMARK [2][-]{subsection.4.2.4}{DATA ENCRYPTION MODULE}{section.4.2}% 36
-\BOOKMARK [2][-]{subsection.4.2.5}{DATA DECRYPTION MODULE}{section.4.2}% 37
-\BOOKMARK [2][-]{subsection.4.2.6}{DATA EXTRACTION MODULE}{section.4.2}% 38
-\BOOKMARK [0][-]{chapter.5}{IMPLEMENTATION}{}% 39
-\BOOKMARK [1][-]{section.5.1}{PROGRAMMING LANGUAGE SELECTION}{chapter.5}% 40
-\BOOKMARK [1][-]{section.5.2}{PLATFORM}{chapter.5}% 41
-\BOOKMARK [1][-]{section.5.3}{CODE CONVENTIONS}{chapter.5}% 42
-\BOOKMARK [2][-]{subsection.5.3.1}{Naming Conventions}{section.5.3}% 43
-\BOOKMARK [2][-]{subsection.5.3.2}{File Organization}{section.5.3}% 44
-\BOOKMARK [2][-]{subsection.5.3.3}{Class Declarations}{section.5.3}% 45
-\BOOKMARK [2][-]{subsection.5.3.4}{Comments}{section.5.3}% 46
-\BOOKMARK [1][-]{section.5.4}{DIFFICULTIES ENCOUNTERED AND STRATEGIES USED TO TACKLE}{chapter.5}% 47
-\BOOKMARK [0][-]{chapter.6}{Decision Tree Learning}{}% 48
-\BOOKMARK [1][-]{section.6.1}{Definition}{chapter.6}% 49
-\BOOKMARK [1][-]{section.6.2}{The Basic Idea}{chapter.6}% 50
-\BOOKMARK [1][-]{section.6.3}{Building the Decision Tree}{chapter.6}% 51
-\BOOKMARK [2][-]{subsection.6.3.1}{ID3 Algorithm}{section.6.3}% 52
-\BOOKMARK [2][-]{subsection.6.3.2}{Choosing the best attribute for a given node}{section.6.3}% 53
-\BOOKMARK [2][-]{subsection.6.3.3}{Entropy - a measure of homogeneity of the set of examples}{section.6.3}% 54
-\BOOKMARK [2][-]{subsection.6.3.4}{Information gain measures the expected reduction in entropy}{section.6.3}% 55
-\BOOKMARK [2][-]{subsection.6.3.5}{Discretization}{section.6.3}% 56
-\BOOKMARK [2][-]{subsection.6.3.6}{Limitation of Decision Tree Methods}{section.6.3}% 57
-\BOOKMARK [0][-]{chapter.7}{Genetic Algorithms}{}% 58
-\BOOKMARK [1][-]{section.7.1}{The Algorithm}{chapter.7}% 59
-\BOOKMARK [1][-]{section.7.2}{Genetic Operators}{chapter.7}% 60
-\BOOKMARK [2][-]{subsection.7.2.1}{Generation Zero}{section.7.2}% 61
-\BOOKMARK [2][-]{subsection.7.2.2}{Survival of the Fittest}{section.7.2}% 62
-\BOOKMARK [2][-]{subsection.7.2.3}{The Next Generation}{section.7.2}% 63
-\BOOKMARK [0][-]{chapter.8}{Decision Trees and Genetic Algorithms}{}% 64
-\BOOKMARK [1][-]{section.8.1}{Representation of Chromosomes}{chapter.8}% 65
-\BOOKMARK [1][-]{section.8.2}{Population}{chapter.8}% 66
-\BOOKMARK [1][-]{section.8.3}{Advantages}{chapter.8}% 67
-\BOOKMARK [0][-]{chapter.9}{Our State-of-the-art Object-Oriented System}{}% 68
-\BOOKMARK [1][-]{section.9.1}{org.ck.sample}{chapter.9}% 69
-\BOOKMARK [1][-]{section.9.2}{org.ck.dt}{chapter.9}% 70
-\BOOKMARK [1][-]{section.9.3}{org.ck.ga}{chapter.9}% 71
-\BOOKMARK [1][-]{section.9.4}{org.ck.gui}{chapter.9}% 72
-\BOOKMARK [0][-]{chapter.10}{CONCLUSION AND FUTURE WORK}{}% 73
-\BOOKMARK [1][-]{section.10.1}{Summary}{chapter.10}% 74
-\BOOKMARK [1][-]{section.10.2}{Limitations}{chapter.10}% 75
-\BOOKMARK [1][-]{section.10.3}{Future enhancements}{chapter.10}% 76
-\BOOKMARK [1][-]{Item.42}{BIBLIOGRAPHY}{chapter.10}% 77
-\BOOKMARK [0][-]{chapter*.96}{APPENDICES}{}% 78
+\BOOKMARK [0][-]{chapter.5}{IMPLEMENTATION}{}% 34
+\BOOKMARK [1][-]{section.5.1}{PROGRAMMING LANGUAGE SELECTION}{chapter.5}% 35
+\BOOKMARK [1][-]{section.5.2}{PLATFORM}{chapter.5}% 36
+\BOOKMARK [1][-]{section.5.3}{CODE CONVENTIONS}{chapter.5}% 37
+\BOOKMARK [2][-]{subsection.5.3.1}{Naming Conventions}{section.5.3}% 38
+\BOOKMARK [2][-]{subsection.5.3.2}{File Organization}{section.5.3}% 39
+\BOOKMARK [2][-]{subsection.5.3.3}{Class Declarations}{section.5.3}% 40
+\BOOKMARK [2][-]{subsection.5.3.4}{Comments}{section.5.3}% 41
+\BOOKMARK [1][-]{section.5.4}{DIFFICULTIES ENCOUNTERED AND STRATEGIES USED TO TACKLE}{chapter.5}% 42
+\BOOKMARK [0][-]{chapter.6}{Implementation}{}% 43
+\BOOKMARK [0][-]{chapter.7}{Software Testing}{}% 44
+\BOOKMARK [1][-]{section.7.1}{Test Environment}{chapter.7}% 45
+\BOOKMARK [2][-]{subsection.7.1.1}{Unit Testing of Data Center Management Model}{section.7.1}% 46
+\BOOKMARK [2][-]{subsection.7.1.2}{Unit Testing of Metrics Adapter and Analyzer Module}{section.7.1}% 47
+\BOOKMARK [2][-]{subsection.7.1.3}{Unit Testing of Actuator Module}{section.7.1}% 48
+\BOOKMARK [1][-]{section.7.2}{Integration Testing of the Modules}{chapter.7}% 49
+\BOOKMARK [2][-]{subsection.7.2.1}{Integration of Data Center Management Model Service with Workload Metric Generator}{section.7.2}% 50
+\BOOKMARK [2][-]{subsection.7.2.2}{Integration of Metrics Adapter and Analyzer with Workload Metric Generator}{section.7.2}% 51
+\BOOKMARK [2][-]{subsection.7.2.3}{Integrate Actuator service with RTIM software}{section.7.2}% 52
+\BOOKMARK [1][-]{section.7.3}{System Testing}{chapter.7}% 53
+\BOOKMARK [1][-]{section.7.4}{Functional Testing of the GUI}{chapter.7}% 54
+\BOOKMARK [2][-]{subsection.7.4.1}{Design Data Center Resources Artifacts}{section.7.4}% 55
+\BOOKMARK [2][-]{subsection.7.4.2}{Design Business Services Artifacts}{section.7.4}% 56
+\BOOKMARK [0][-]{chapter.8}{Experimental Analysis and Results}{}% 57
+\BOOKMARK [1][-]{section.8.1}{Evaluation Metric}{chapter.8}% 58
+\BOOKMARK [1][-]{section.8.2}{Experimental Dataset}{chapter.8}% 59
+\BOOKMARK [1][-]{section.8.3}{Performance Analysis}{chapter.8}% 60
+\BOOKMARK [1][-]{section.8.4}{Inference from the Results}{chapter.8}% 61
+\BOOKMARK [0][-]{chapter.9}{CONCLUSION AND FUTURE WORK}{}% 62
+\BOOKMARK [1][-]{section.9.1}{Summary}{chapter.9}% 63
+\BOOKMARK [1][-]{section.9.2}{Limitations}{chapter.9}% 64
+\BOOKMARK [1][-]{section.9.3}{Future enhancements}{chapter.9}% 65
+\BOOKMARK [1][-]{Item.3}{BIBLIOGRAPHY}{chapter.9}% 66
+\BOOKMARK [0][-]{chapter*.57}{APPENDICES}{}% 67

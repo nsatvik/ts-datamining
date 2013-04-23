@@ -3,143 +3,113 @@
 \contentsline {section}{ABSTRACT}{ii}{section*.5}
 \contentsline {section}{CONTENTS}{ii}{section*.5}
 \contentsline {section}{LIST OF FIGURES}{vi}{chapter*.6}
-\contentsline {section}{LIST OF TABLES}{viii}{chapter*.7}
-\contentsline {chapter}{\numberline {1}INTRODUCTION}{ix}{chapter.1}
-\contentsline {section}{\numberline {1.1}DEFINITIONS AND USAGE}{ix}{section.1.1}
-\contentsline {section}{\numberline {1.2}LITERATURE SURVEY}{ix}{section.1.2}
-\contentsline {section}{\numberline {1.3}MOTIVATION}{xvi}{section.1.3}
-\contentsline {section}{\numberline {1.4}PROBLEM STATEMENT}{xvi}{section.1.4}
-\contentsline {section}{\numberline {1.5}OBJECTIVE}{xvi}{section.1.5}
-\contentsline {section}{\numberline {1.6}SCOPE}{xvi}{section.1.6}
-\contentsline {section}{\numberline {1.7}METHODOLOGY}{xvii}{section.1.7}
-\contentsline {section}{\numberline {1.8}ORGANIZATION OF REPORT}{xvii}{section.1.8}
-\contentsline {chapter}{\numberline {2}SOFTWARE REQUIREMENTS SPECIFICATION}{xviii}{chapter.2}
-\contentsline {paragraph}{}{xviii}{section*.9}
-\contentsline {section}{\numberline {2.1}PRODUCT PERSPECTIVE}{xviii}{section.2.1}
-\contentsline {paragraph}{}{xviii}{section*.10}
-\contentsline {section}{\numberline {2.2}PRODUCT FEATURES}{xviii}{section.2.2}
-\contentsline {paragraph}{}{xviii}{section*.11}
-\contentsline {section}{\numberline {2.3}CONSTRAINTS}{xix}{section.2.3}
-\contentsline {paragraph}{}{xix}{section*.12}
-\contentsline {section}{\numberline {2.4}ASSUMPTIONS AND DEPENDENCIES}{xix}{section.2.4}
-\contentsline {section}{\numberline {2.5}SPECIFIC REQUIREMENTS}{xix}{section.2.5}
-\contentsline {paragraph}{}{xix}{section*.13}
-\contentsline {subsection}{\numberline {2.5.1}FUNCTIONAL REQUIREMENTS}{xix}{subsection.2.5.1}
-\contentsline {paragraph}{}{xix}{section*.14}
-\contentsline {subsection}{\numberline {2.5.2}SOFTWARE REQUIREMENTS}{xx}{subsection.2.5.2}
-\contentsline {subsubsection}{DEVELOPERS MACHINE}{xx}{section*.15}
-\contentsline {subsubsection}{END USERS MACHINE}{xx}{section*.16}
-\contentsline {subsection}{\numberline {2.5.3}HARDWARE REQUIREMENTS}{xx}{subsection.2.5.3}
-\contentsline {subsubsection}{SOFTWARE INTERFACES }{xxi}{section*.17}
-\contentsline {chapter}{\numberline {3}HIGH LEVEL DESIGN}{xxii}{chapter.3}
-\contentsline {paragraph}{}{xxii}{section*.18}
-\contentsline {paragraph}{}{xxii}{section*.19}
-\contentsline {section}{\numberline {3.1}SYSTEM ARCHITECTURE}{xxii}{section.3.1}
-\contentsline {paragraph}{}{xxii}{section*.20}
-\contentsline {paragraph}{}{xxii}{figure.caption.22}
-\contentsline {section}{\numberline {3.2}DATA FLOW DIAGRAMS}{xxii}{section.3.2}
-\contentsline {paragraph}{}{xxii}{section*.23}
-\contentsline {paragraph}{}{xxiii}{section*.24}
-\contentsline {subsection}{\numberline {3.2.1}DFD LEVEL 0}{xxiv}{subsection.3.2.1}
-\contentsline {paragraph}{}{xxiv}{section*.25}
-\contentsline {subsection}{\numberline {3.2.2}DFD LEVEL 1}{xxv}{subsection.3.2.2}
-\contentsline {paragraph}{}{xxv}{section*.27}
-\contentsline {subsection}{\numberline {3.2.3}DFD LEVEL 2}{xxvi}{subsection.3.2.3}
-\contentsline {subsubsection}{Embedding Phase}{xxvi}{section*.29}
-\contentsline {subsubsection}{Extraction Phase}{xxvii}{section*.31}
+\contentsline {section}{LIST OF TABLES}{vii}{chapter*.7}
+\contentsline {chapter}{\numberline {1}INTRODUCTION}{viii}{chapter.1}
+\contentsline {section}{\numberline {1.1}DEFINITIONS AND USAGE}{viii}{section.1.1}
+\contentsline {section}{\numberline {1.2}LITERATURE SURVEY}{viii}{section.1.2}
+\contentsline {section}{\numberline {1.3}MOTIVATION}{xv}{section.1.3}
+\contentsline {section}{\numberline {1.4}PROBLEM STATEMENT}{xv}{section.1.4}
+\contentsline {section}{\numberline {1.5}OBJECTIVE}{xv}{section.1.5}
+\contentsline {section}{\numberline {1.6}SCOPE}{xv}{section.1.6}
+\contentsline {section}{\numberline {1.7}METHODOLOGY}{xvi}{section.1.7}
+\contentsline {section}{\numberline {1.8}ORGANIZATION OF REPORT}{xvi}{section.1.8}
+\contentsline {chapter}{\numberline {2}SOFTWARE REQUIREMENTS SPECIFICATION}{xvii}{chapter.2}
+\contentsline {paragraph}{}{xvii}{section*.9}
+\contentsline {section}{\numberline {2.1}PRODUCT PERSPECTIVE}{xvii}{section.2.1}
+\contentsline {paragraph}{}{xvii}{section*.10}
+\contentsline {section}{\numberline {2.2}PRODUCT FEATURES}{xvii}{section.2.2}
+\contentsline {paragraph}{}{xvii}{section*.11}
+\contentsline {section}{\numberline {2.3}CONSTRAINTS}{xviii}{section.2.3}
+\contentsline {paragraph}{}{xviii}{section*.12}
+\contentsline {section}{\numberline {2.4}ASSUMPTIONS AND DEPENDENCIES}{xviii}{section.2.4}
+\contentsline {section}{\numberline {2.5}SPECIFIC REQUIREMENTS}{xviii}{section.2.5}
+\contentsline {paragraph}{}{xviii}{section*.13}
+\contentsline {subsection}{\numberline {2.5.1}FUNCTIONAL REQUIREMENTS}{xviii}{subsection.2.5.1}
+\contentsline {paragraph}{}{xviii}{section*.14}
+\contentsline {subsection}{\numberline {2.5.2}SOFTWARE REQUIREMENTS}{xix}{subsection.2.5.2}
+\contentsline {subsubsection}{DEVELOPERS MACHINE}{xix}{section*.15}
+\contentsline {subsubsection}{END USERS MACHINE}{xix}{section*.16}
+\contentsline {subsection}{\numberline {2.5.3}HARDWARE REQUIREMENTS}{xix}{subsection.2.5.3}
+\contentsline {subsubsection}{SOFTWARE INTERFACES }{xx}{section*.17}
+\contentsline {chapter}{\numberline {3}HIGH LEVEL DESIGN}{xxi}{chapter.3}
+\contentsline {paragraph}{}{xxi}{section*.18}
+\contentsline {paragraph}{}{xxi}{section*.19}
+\contentsline {section}{\numberline {3.1}SYSTEM ARCHITECTURE}{xxi}{section.3.1}
+\contentsline {paragraph}{}{xxi}{section*.20}
+\contentsline {paragraph}{}{xxi}{figure.caption.22}
+\contentsline {section}{\numberline {3.2}DATA FLOW DIAGRAMS}{xxi}{section.3.2}
+\contentsline {paragraph}{}{xxi}{section*.23}
+\contentsline {paragraph}{}{xxii}{section*.24}
+\contentsline {subsection}{\numberline {3.2.1}DFD LEVEL 0}{xxiii}{subsection.3.2.1}
+\contentsline {paragraph}{}{xxiii}{section*.25}
+\contentsline {subsection}{\numberline {3.2.2}DFD LEVEL 1}{xxiv}{subsection.3.2.2}
+\contentsline {paragraph}{}{xxiv}{section*.26}
+\contentsline {subsection}{\numberline {3.2.3}DFD LEVEL 2}{xxv}{subsection.3.2.3}
+\contentsline {subsubsection}{Embedding Phase}{xxv}{section*.27}
+\contentsline {subsubsection}{Extraction Phase}{xxvi}{section*.28}
+\contentsline {paragraph}{}{xxvi}{section*.29}
+\contentsline {chapter}{\numberline {4}DETAILED DESIGN}{xxvii}{chapter.4}
+\contentsline {section}{\numberline {4.1}STRUCTURED CHART}{xxvii}{section.4.1}
+\contentsline {paragraph}{}{xxvii}{section*.30}
+\contentsline {paragraph}{}{xxvii}{section*.31}
 \contentsline {paragraph}{}{xxvii}{section*.32}
-\contentsline {chapter}{\numberline {4}DETAILED DESIGN}{xxviii}{chapter.4}
-\contentsline {section}{\numberline {4.1}STRUCTURED CHART}{xxviii}{section.4.1}
-\contentsline {paragraph}{}{xxviii}{section*.34}
-\contentsline {paragraph}{}{xxviii}{section*.35}
-\contentsline {paragraph}{}{xxviii}{section*.36}
+\contentsline {paragraph}{}{xxviii}{section*.33}
+\contentsline {section}{\numberline {4.2}MODULES DESCRIPTION}{xxix}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}GUI MODULE}{xxix}{subsection.4.2.1}
+\contentsline {subsubsection}{Definition:}{xxix}{section*.34}
+\contentsline {paragraph}{}{xxix}{section*.35}
+\contentsline {subsubsection}{Resources:}{xxix}{section*.36}
 \contentsline {paragraph}{}{xxix}{section*.37}
-\contentsline {section}{\numberline {4.2}MODULES DESCRIPTION}{xxx}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}GUI MODULE}{xxx}{subsection.4.2.1}
-\contentsline {subsubsection}{Definition:}{xxx}{section*.39}
+\contentsline {subsubsection}{Functionality:}{xxix}{section*.38}
+\contentsline {paragraph}{}{xxix}{section*.39}
+\contentsline {chapter}{\numberline {5}IMPLEMENTATION}{xxx}{chapter.5}
 \contentsline {paragraph}{}{xxx}{section*.40}
-\contentsline {subsubsection}{Resources:}{xxx}{section*.41}
-\contentsline {paragraph}{}{xxx}{section*.42}
-\contentsline {subsubsection}{Functionality:}{xxx}{section*.43}
-\contentsline {paragraph}{}{xxx}{section*.44}
-\contentsline {subsection}{\numberline {4.2.2}SESSION KEY GENERATION MODULE}{xxxi}{subsection.4.2.2}
-\contentsline {subsubsection}{Definition}{xxxi}{section*.46}
-\contentsline {subsubsection}{Input Resources}{xxxi}{section*.47}
-\contentsline {subsubsection}{Output Resources}{xxxi}{section*.48}
-\contentsline {subsubsection}{Functionality}{xxxi}{section*.49}
-\contentsline {subsection}{\numberline {4.2.3}EMBEDDING ALGORITHM MODULE}{xxxii}{subsection.4.2.3}
-\contentsline {subsubsection}{Input Resources}{xxxii}{section*.51}
-\contentsline {subsubsection}{Output Resources}{xxxii}{section*.52}
-\contentsline {subsubsection}{Functionality}{xxxii}{section*.53}
-\contentsline {subsection}{\numberline {4.2.4}DATA ENCRYPTION MODULE}{xxxiii}{subsection.4.2.4}
-\contentsline {subsubsection}{Input Resources}{xxxiii}{section*.55}
-\contentsline {subsubsection}{Output Resources}{xxxiii}{section*.56}
-\contentsline {subsubsection}{Functionality}{xxxiii}{section*.57}
-\contentsline {subsection}{\numberline {4.2.5}DATA DECRYPTION MODULE}{xxxiv}{subsection.4.2.5}
-\contentsline {subsubsection}{Input Resources}{xxxiv}{section*.59}
-\contentsline {subsubsection}{Output Resources}{xxxiv}{section*.60}
-\contentsline {subsubsection}{Functionality}{xxxiv}{section*.61}
-\contentsline {subsection}{\numberline {4.2.6}DATA EXTRACTION MODULE}{xxxv}{subsection.4.2.6}
-\contentsline {subsubsection}{Input Resources}{xxxv}{section*.63}
-\contentsline {subsubsection}{Output Resources}{xxxv}{section*.64}
-\contentsline {subsubsection}{Functionality}{xxxv}{section*.65}
-\contentsline {chapter}{\numberline {5}IMPLEMENTATION}{xxxvii}{chapter.5}
-\contentsline {paragraph}{}{xxxvii}{section*.67}
-\contentsline {section}{\numberline {5.1}PROGRAMMING LANGUAGE SELECTION}{xxxvii}{section.5.1}
-\contentsline {paragraph}{}{xxxvii}{section*.68}
-\contentsline {section}{\numberline {5.2}PLATFORM}{xxxviii}{section.5.2}
-\contentsline {paragraph}{}{xxxviii}{section*.69}
-\contentsline {section}{\numberline {5.3}CODE CONVENTIONS}{xxxviii}{section.5.3}
-\contentsline {paragraph}{}{xxxviii}{section*.70}
-\contentsline {subsection}{\numberline {5.3.1}Naming Conventions}{xxxviii}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}File Organization}{xxxviii}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Class Declarations}{xxxviii}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Comments}{xxxix}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4}DIFFICULTIES ENCOUNTERED AND STRATEGIES USED TO TACKLE}{xxxix}{section.5.4}
-\contentsline {paragraph}{}{xxxix}{section*.71}
-\contentsline {subsubsection}{Problem 1}{xxxix}{section*.72}
-\contentsline {paragraph}{}{xxxix}{section*.73}
-\contentsline {subsubsection}{Solution}{xxxix}{section*.74}
-\contentsline {paragraph}{}{xxxix}{section*.75}
-\contentsline {subsubsection}{Problem 2}{xxxix}{section*.76}
-\contentsline {paragraph}{}{xxxix}{section*.77}
-\contentsline {subsubsection}{Solution}{xxxix}{section*.78}
-\contentsline {paragraph}{}{xxxix}{section*.79}
-\contentsline {subsubsection}{Problem 3}{xl}{section*.80}
-\contentsline {paragraph}{}{xl}{section*.81}
-\contentsline {subsubsection}{Solution}{xl}{section*.82}
-\contentsline {paragraph}{}{xl}{section*.83}
-\contentsline {chapter}{\numberline {6}Decision Tree Learning}{xli}{chapter.6}
-\contentsline {section}{\numberline {6.1}Definition}{xli}{section.6.1}
-\contentsline {section}{\numberline {6.2}The Basic Idea}{xli}{section.6.2}
-\contentsline {section}{\numberline {6.3}Building the Decision Tree}{xliii}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}ID3 Algorithm}{xliii}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Choosing the best attribute for a given node}{xliv}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Entropy - a measure of homogeneity of the set of examples}{xlv}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Information gain measures the expected reduction in entropy}{xlvi}{subsection.6.3.4}
-\contentsline {subsection}{\numberline {6.3.5}Discretization}{xlvii}{subsection.6.3.5}
-\contentsline {subsection}{\numberline {6.3.6}Limitation of Decision Tree Methods}{xlviii}{subsection.6.3.6}
-\contentsline {chapter}{\numberline {7}Genetic Algorithms}{xlix}{chapter.7}
-\contentsline {section}{\numberline {7.1}The Algorithm}{xlix}{section.7.1}
-\contentsline {section}{\numberline {7.2}Genetic Operators}{l}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Generation Zero}{l}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Survival of the Fittest}{l}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}The Next Generation}{li}{subsection.7.2.3}
-\contentsline {subsubsection}{Selection}{li}{section*.88}
-\contentsline {subsubsection}{Crossover}{lii}{section*.90}
-\contentsline {subsubsection}{Mutation}{lii}{section*.92}
-\contentsline {chapter}{\numberline {8}Decision Trees and Genetic Algorithms}{liv}{chapter.8}
-\contentsline {section}{\numberline {8.1}Representation of Chromosomes}{lv}{section.8.1}
-\contentsline {section}{\numberline {8.2}Population}{lv}{section.8.2}
-\contentsline {section}{\numberline {8.3}Advantages}{lvi}{section.8.3}
-\contentsline {chapter}{\numberline {9}Our State-of-the-art Object-Oriented System}{lvii}{chapter.9}
-\contentsline {section}{\numberline {9.1}org.ck.sample}{lviii}{section.9.1}
-\contentsline {section}{\numberline {9.2}org.ck.dt}{lviii}{section.9.2}
-\contentsline {section}{\numberline {9.3}org.ck.ga}{lx}{section.9.3}
-\contentsline {section}{\numberline {9.4}org.ck.gui}{lx}{section.9.4}
-\contentsline {chapter}{\numberline {10}CONCLUSION AND FUTURE WORK}{lxiii}{chapter.10}
-\contentsline {section}{\numberline {10.1}Summary}{lxiii}{section.10.1}
-\contentsline {section}{\numberline {10.2}Limitations}{lxiv}{section.10.2}
-\contentsline {section}{\numberline {10.3}Future enhancements}{lxiv}{section.10.3}
-\contentsline {section}{BIBLIOGRAPHY}{lxiv}{Item.42}
-\contentsline {section*}{APPENDICES}{lxvi}{chapter*.96}
+\contentsline {section}{\numberline {5.1}PROGRAMMING LANGUAGE SELECTION}{xxx}{section.5.1}
+\contentsline {paragraph}{}{xxx}{section*.41}
+\contentsline {section}{\numberline {5.2}PLATFORM}{xxxi}{section.5.2}
+\contentsline {paragraph}{}{xxxi}{section*.42}
+\contentsline {section}{\numberline {5.3}CODE CONVENTIONS}{xxxi}{section.5.3}
+\contentsline {paragraph}{}{xxxi}{section*.43}
+\contentsline {subsection}{\numberline {5.3.1}Naming Conventions}{xxxi}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}File Organization}{xxxi}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Class Declarations}{xxxi}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Comments}{xxxii}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}DIFFICULTIES ENCOUNTERED AND STRATEGIES USED TO TACKLE}{xxxii}{section.5.4}
+\contentsline {paragraph}{}{xxxii}{section*.44}
+\contentsline {subsubsection}{Problem 1}{xxxii}{section*.45}
+\contentsline {paragraph}{}{xxxii}{section*.46}
+\contentsline {subsubsection}{Solution}{xxxii}{section*.47}
+\contentsline {paragraph}{}{xxxii}{section*.48}
+\contentsline {subsubsection}{Problem 2}{xxxii}{section*.49}
+\contentsline {paragraph}{}{xxxii}{section*.50}
+\contentsline {subsubsection}{Solution}{xxxii}{section*.51}
+\contentsline {paragraph}{}{xxxii}{section*.52}
+\contentsline {subsubsection}{Problem 3}{xxxiii}{section*.53}
+\contentsline {paragraph}{}{xxxiii}{section*.54}
+\contentsline {subsubsection}{Solution}{xxxiii}{section*.55}
+\contentsline {paragraph}{}{xxxiii}{section*.56}
+\contentsline {chapter}{\numberline {6}Implementation}{xxxiv}{chapter.6}
+\contentsline {chapter}{\numberline {7}Software Testing}{xxxv}{chapter.7}
+\contentsline {section}{\numberline {7.1}Test Environment}{xxxvi}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Unit Testing of Data Center Management Model}{xxxvi}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Unit Testing of Metrics Adapter and Analyzer Module}{xxxvi}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Unit Testing of Actuator Module}{xxxvi}{subsection.7.1.3}
+\contentsline {section}{\numberline {7.2}Integration Testing of the Modules}{xxxvi}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Integration of Data Center Management Model Service with Workload Metric Generator}{xxxvi}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Integration of Metrics Adapter and Analyzer with Workload Metric Generator}{xxxvi}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Integrate Actuator service with RTIM software}{xxxvi}{subsection.7.2.3}
+\contentsline {section}{\numberline {7.3}System Testing}{xxxvi}{section.7.3}
+\contentsline {section}{\numberline {7.4}Functional Testing of the GUI}{xxxvi}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Design Data Center Resources Artifacts}{xxxvi}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}Design Business Services Artifacts}{xxxvi}{subsection.7.4.2}
+\contentsline {chapter}{\numberline {8}Experimental Analysis and Results}{xxxvii}{chapter.8}
+\contentsline {section}{\numberline {8.1}Evaluation Metric}{xxxvii}{section.8.1}
+\contentsline {section}{\numberline {8.2}Experimental Dataset}{xxxvii}{section.8.2}
+\contentsline {section}{\numberline {8.3}Performance Analysis}{xxxvii}{section.8.3}
+\contentsline {section}{\numberline {8.4}Inference from the Results}{xxxvii}{section.8.4}
+\contentsline {chapter}{\numberline {9}CONCLUSION AND FUTURE WORK}{xxxviii}{chapter.9}
+\contentsline {section}{\numberline {9.1}Summary}{xxxviii}{section.9.1}
+\contentsline {section}{\numberline {9.2}Limitations}{xxxix}{section.9.2}
+\contentsline {section}{\numberline {9.3}Future enhancements}{xxxix}{section.9.3}
+\contentsline {section}{BIBLIOGRAPHY}{xxxix}{Item.3}
+\contentsline {section*}{APPENDICES}{xli}{chapter*.57}

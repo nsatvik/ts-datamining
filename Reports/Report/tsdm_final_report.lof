@@ -1,37 +1,10 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces System Architecture\relax }}{xxiii}{figure.caption.22}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Data Flow Diagram Level 0\relax }}{xxiv}{figure.caption.26}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Data Flow Diagram Level 0\relax }}{xxv}{figure.caption.28}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Data Flow Diagram Level 2: Embedding\relax }}{xxvi}{figure.caption.30}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Data Flow Diagram Level 2: Embedding\relax }}{xxvii}{figure.caption.33}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Structure Chart\relax }}{xxix}{figure.caption.38}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces GUI Module\relax }}{xxxi}{figure.caption.45}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Session Key Generator Module\relax }}{xxxi}{figure.caption.50}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Embedding Algorithm Module\relax }}{xxxii}{figure.caption.54}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Encryption Module\relax }}{xxxiii}{figure.caption.58}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Decryption Module\relax }}{xxxiv}{figure.caption.62}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Data Extraction Module\relax }}{xxxvi}{figure.caption.66}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces System Architecture\relax }}{xxii}{figure.caption.22}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Sample Decision Tree\relax }}{xlii}{figure.caption.84}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces ID3 Algorithm\relax }}{xliv}{figure.caption.85}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces The entropy function relative to a binary classification, as the proportion of positive examples p$_{p}$ varies between 0 and 1.\relax }}{xlvi}{figure.caption.86}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Random Genome\relax }}{l}{figure.caption.87}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Roulette Selection Pseudo-Code\relax }}{li}{figure.caption.89}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Crossover\relax }}{lii}{figure.caption.91}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Mutation\relax }}{liii}{figure.caption.93}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces The data flow in DT/GA Hybrid Classifier Algorithm.\relax }}{liv}{figure.caption.94}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Sample Representation\relax }}{lv}{figure.caption.95}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Application Window - Welcome Screen\relax }}{lxvii}{figure.caption.100}
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Decision Tree Constructor Window.\relax }}{lxvii}{figure.caption.101}
-\contentsline {figure}{\numberline {10.3}{\ignorespaces Decision Tree Classifier Window.\relax }}{lxviii}{figure.caption.102}
-\contentsline {figure}{\numberline {10.4}{\ignorespaces Decision Tree Construction with GA based Feature Selector.\relax }}{lxviii}{figure.caption.103}
-\contentsline {figure}{\numberline {10.5}{\ignorespaces Decision Tree Construction with manual feature selection.\relax }}{lxix}{figure.caption.104}
-\contentsline {figure}{\numberline {10.6}{\ignorespaces The project source code on github public repository.\relax }}{lxix}{figure.caption.105}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
