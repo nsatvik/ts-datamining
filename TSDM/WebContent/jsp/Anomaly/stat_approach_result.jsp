@@ -19,9 +19,9 @@
 	
 	
 	
-	<div id="line_chart_div" style="width: 1024px; height: 768px; margin-left: auto; margin-right: auto;">
+	<div id="line_chart_div" style="width: 900px; height: 500px; margin-left: auto; margin-right: auto;">
 	</div>
-	<div id="defect_chart_div" style="width: 1024px; height: 768px; margin-left: auto; margin-right: auto;">
+	<div id="defect_chart_div" style="width: 900px; height: 500px; margin-left: auto; margin-right: auto;">
 	</div>
 	
 		

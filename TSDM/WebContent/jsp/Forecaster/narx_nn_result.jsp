@@ -18,17 +18,11 @@
 	 
 	 
 	
-	<div style="float: left;">
-		Task Type Selected = ${tsBean.taskType } <br /> Algorithm used =
-		${tsBean.algorithmType } <br /> Dataset used = ${tsBean.dataset } <br />
-		Sample = ${tsBean.sample.normalizedTimeSeries[0] }
-		<%--Predicted Value is =  ${tsBean.pred}  --%> 
-		<br />
-	</div>
+	
 	<!--  <div id="line_chart_div" style="width: 900px; height: 500px; float: left;"> -->
 		
 	
-	<div id="annotated_timeline_div" style="width: 900px; height: 500px; float: right; margin-left: auto; margin-right: auto;">
+	<div id="annotated_timeline_div" style="width: 900px; height: 500px;  margin-left: auto; margin-right: auto;">
 		
 	</div>
 	

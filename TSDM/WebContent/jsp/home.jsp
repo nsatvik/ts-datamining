@@ -20,7 +20,7 @@ $(function() {
 </script>
 </head>
 <body>
-	<div style="margin-top: 1%;" id="tabs_all_nav">
+	<div style="margin-top: 1%; margin-left: auto; margin-right: auto;" id="tabs_all_nav">
 	<ul>
 		<li><a href="./jsp/Similarity/main.jsp">Similarity Detective</a></li>		
 		<li><a href="./jsp/Forecaster/main.jsp">Fortune-Teller</a></li>
