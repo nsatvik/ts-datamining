@@ -520,39 +520,20 @@ With these necessities in mind, J2EE is selected as the optimal programming lang
 
 \paragraph{}There were a number of challenges that were faced while implementing the Time Series Data Mining tool.Some challenges were challenging and ended up in helping us think innovatively and come up with efficient solutions. Some major problems that were encountered have been stated in brief along with their solutions.
 \subsubsection{Problem 1}
+\paragraph{}Initially we wanted to build the front end in python using django web framework. But integrating java (back-end) with python had performance issues.(Using Jython interpreter)
+\subsubsection{Solution}
+\paragraph{}We used JSP (Java server pages) for the front end and solved this problem.
+\subsubsection{Problem 2}
 \paragraph{}In the initial stages of the project charts4j libraries were used to plot graphs. There were some internal problems with the URL rendering.
 
 \subsubsection{Solution}
 \paragraph{}This Problem was solved later by making use of Google's Charts API and java script. 
-\subsubsection{Problem 2}
-@TODO Add Difficulties Encountered here.. more bullshitting to be done here :P ... (Cool)
-\paragraph{}Initially the 10 digit key was being entered by the user could not be transmitted to the other end.
-\subsubsection{Solution}
-\paragraph{}Diffie Hellman key exchange module was later developed which helped in key distribution.
 \subsubsection{Problem 3}
-\paragraph{}Initially it was difficult to view both the morphed and the original image at the same time.
+\paragraph{}Initially only Samir was doing the project and We had no clue what was going on.(Need to remove this)
 \subsubsection{Solution}
-\paragraph{}This problem was later solved by developing a module in SWT to compare the two images side by side.
+\paragraph{}We gave him a time out and everything became alright! 
 \pagebreak
 
-
-
-
-
-
-\pagestyle{fancy}
-\lhead{\scriptsize{Implementation}}
-\chead{}
-\rhead{\scriptsize{Time Series Data Mining Tool}}
-\lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
-\rfoot{\small{\thepage}}
-\cfoot{\scriptsize{Jan 2013 - Jun 2013}}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
-
-\chapter{Implementation}
-
-Nature seems to have an uncanny knack for problem-solving. Life began as a handful of simple, single-celled organisms barely equipped to survive the harsh environment of planet Earth. However, in the short span of a few billion years, nature has adapted and evolved them into beings complex enough to ponder their own origins. While this is indeed amazing, the truly incredible part is that it all happened according to a simple plan--allow individuals with favorable traits to survive and reproduce, and let die all the rest. This, in short, is the basis for a genetic algorithm. 
 
 
 
@@ -568,8 +549,12 @@ Nature seems to have an uncanny knack for problem-solving. Life began as a handf
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \chapter{Software Testing}
+Introduction to Testing (From wiki)
 \section{Test Environment}
+Talk about the server environment. 
+Server capabilities (No of requests it can process, computation requirements)
 \subsection{Unit Testing of Data Center Management Model}
+
 \subsection{Unit Testing of Metrics Adapter and Analyzer Module}
 \subsection{Unit Testing of Actuator Module}
 
@@ -595,11 +580,15 @@ Nature seems to have an uncanny knack for problem-solving. Life began as a handf
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \chapter{Experimental Analysis and Results}
+Satvik will do this
 \section{Evaluation Metric}
+Satvik will do this
 \section{Experimental Dataset}
+Satvik will do this
 \section{Performance Analysis}
+Satvik will do this
 \section{Inference from the Results}
-
+Satvik will do this
 
 
 
@@ -612,32 +601,51 @@ Nature seems to have an uncanny knack for problem-solving. Life began as a handf
 \cfoot{\scriptsize{Jan 2013 - Jun 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
-\chapter{CONCLUSION AND FUTURE WORK}
-
+\chapter{CONCLUSION}
 \section{Summary}
-In this mini project, we were able to successfully implement and test the performance of Decision Tree-based classifiers. The Decision Tree classifier was optimized using a Genetic Algorithm to select a subset of the features that were to be used in constructing an optimal decision tree.
+In this project, we were able to successfully implement the Time Series Data Mining Tool for analyzing the time series and test its performance. This tool mainly contains four modules, they are - \textbf{Similarity Detection, Forecasting and Prediction, Anomaly Detection and Temporal Pattern Finder}, which we were successful in implementing and testing. The results obtained were presented in the previous chapter.
 
-
-Although our program works with generic data samples, it must be noted that when we started this project, our main intention was to classify ground water samples into two classes, namely Potable and Non-Potable Water. However, thanks to the miracle of Object-Oriented Programming Concepts, we were able to extend our application, which was developed in Java and Java SWT. We were able to extend this application to work with any generic samples. Two other samples/ Classification problems were addressed:
+The description of the modules are below :
 \begin{itemize}
-\item{Diagnosing whether a Horse has colic or is healthy, based on its Blood Sample Data.}
-\item{Classifying/Determining the quality of a wine based on Data Samples containing it\'s quality parameters} 
-\end{itemize} 
+\item \textbf{Similarity Detection} : This module helps in finding similarity patterns (that occur at regular intervals in case of periodic time series), comparing different time series data. SAX and DTW are the main algorithms implemented/used in this module.
+\item \textbf{Forecasting and Prediction} : This module contain algorithms/models which can be trained from the past time series data and can be used to predict the future values of a time series. 
+\item \textbf{Anomaly Detection} : This module contains algorithms that help in indicating anomalous patterns in the time series data analyzed. Anomalies are patterns in time series which deviate from the normal behavior and can indicate fraud/danger depending on the application. For example in an industry which produces the blades, the thickness of the blade can be monitored by a machine as a time series and any deviation from the normal error rate can signal an error in the manufacturing process.
+\item \textbf{Temporal Pattern Finder } : This module helps in finding hidden temporal patterns in a time series. This module can be further extended to implement clustering techniques.
+\end{itemize}
 
-The hybrid GA /decision tree algorithm needs to be tested
-further to realize its true potential. Clearly more work needs to be done. 
-The test results show that the Decision Trees constructed using the Genetic algorithm-based feature selector, were more efficient and accurate in classifying the data than the Decision Trees constructed by selecting features manually.
+
+Initially this project mainly focused on analyzing the sea and water level time series. Later this application was extended to any uni-variate time series data. Users can upload the time series data to be analyzed and get the results instantly. Major data sets used were :
+\begin{itemize}
+\item Sea Level Dataset : Indicating the sea level at various times of a day.
+\item Water Level : Ground Water level data, indicating the ground water level during various moths of an year for upto 5 years.
+\item Finance Dataset : Consisting of stock index values of  Nifty and Vix collected every minuted for a week.(5 days,during market hours).
+\item ECG Dataset : The ECG  voltage values of patients collected every 4ms.(for 10 patients).
+\end{itemize}
+
+
+In this project, we also analyzed the efficiencies of different algorithms for the same tasks and also compared the results for different data sets.Clearly more work needs to be done.(End this section Properly Boys)
+
 
 \section{Limitations}
+Some of the shortcomings in our project are :
+\begin{enumerate}
+
+\item{} The application hangs when analyzing very large data sets (more than 500 MB).
+\item{} The application does not support multi-variate time series.
+\item{}Some algorithms efficient for a particular data set and may not be efficient for other data set. So user intervention is required in selecting an algorithm for a data set.
+\end{enumerate}
 
 \section{Future enhancements}
 Some of the future enhancements are :
 \begin{enumerate}
+\item{The size of the  time series data analyzed is in terms of Mega Bytes. For larger dataset(In terms of GBs) or big data, distributed computing technologies like Hadoop can be used.}
+\item{}The application can be extended to analyze multi variate time series data.
 \item{The application could be made more responsive by using Threads and Parallel/Cloud Computing}
-\item{The Decision Tree Classifier of this application could be optimized using Neural Networks which are more efficient than Genetic Algorithms.}
-\item{An interesting extension to be explored is the possibility of
-additional feedback from ID3 concerning the evaluation of a
-feature set.}
+\item{One more extension could be analyzing twitter post data with respect to time and predicting the trends. This requires NLP, but is an example of time series.}
+\item{Efficient algorithms using Support Vector Models (SVMs) for forecasting, Hidden Markov Model for anomaly detection can be implemented.}
+\item{This application uses static time series data, enhancements can be made to use real time data.(In finance applications)}
+
+\item{This application can be converted into an mobile application (android, iPhone, iPad) where the users can analyze the time series data on the go and share the results on facebook}
 %--- For efficient page utilization!
 % Currently only classification accuracy is returned.
 %However, there is potentially exploitable information with
@@ -650,13 +658,14 @@ feature set.}
 %For Bib refer to refs.bib to add/remove bib items
 \addcontentsline{toc}{section}{BIBLIOGRAPHY}
 \begin{thebibliography}{refs}
-\bibitem{test}Genetic Algorithms  -\url{http://en.wikipedia.org/wiki/Genetic_algorithm}
+\bibitem{test}Agrawal R., Lin K.-I., Sawhney H. S., Shim K.,\textit{“Fast Similarity Search in the Presence of Noise,Scaling, and Translation in Time-Series Databases”}
 \bibitem{t}Genetic Algorithm for constructing DT - \url{http://www.jprr.org/index.php/jprr/article/viewFile/44/25}
 \bibitem{te}Decision Trees - \url{http://web.cecs.pdx.edu/~mm/MachineLearningWinter2010/pdfslides/DecisionTrees.pdf}
 \bibitem{t} Project brief for the DT  using Horse data sets  - \url{https://cs.uwaterloo.ca/~ppoupart/teaching/cs486-spring06/assignments/asst4/asst4.pdf}
 \bibitem{t}Supervised and Unsupervised Discretization of Continous Features - \url{http://robotics.stanford.edu/users/sahami/papers-dir/disc.pdf}
 \bibitem{t}Hybrid learning using Genetic Algorithms and Decision Trees for pattern sification - \url{http://cs.gmu.edu/~eclab/papers/ijcai95.pdf}
 \bibitem{t}Kardi Tutorials on Decision Trees- \url{http://people.revoledu.com/kardi/tutorial/DecisionTree/index.html}
+
 
 %\bibitem{}
 %\bibitem{}

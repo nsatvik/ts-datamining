@@ -84,32 +84,31 @@
 \contentsline {paragraph}{}{xxxi}{section*.50}
 \contentsline {subsubsection}{Solution}{xxxi}{section*.51}
 \contentsline {paragraph}{}{xxxi}{section*.52}
-\contentsline {subsubsection}{Problem 3}{xxxii}{section*.53}
-\contentsline {paragraph}{}{xxxii}{section*.54}
+\contentsline {subsubsection}{Problem 3}{xxxi}{section*.53}
+\contentsline {paragraph}{}{xxxi}{section*.54}
 \contentsline {subsubsection}{Solution}{xxxii}{section*.55}
 \contentsline {paragraph}{}{xxxii}{section*.56}
-\contentsline {chapter}{\numberline {6}Implementation}{xxxiii}{chapter.6}
-\contentsline {chapter}{\numberline {7}Software Testing}{xxxiv}{chapter.7}
-\contentsline {section}{\numberline {7.1}Test Environment}{xxxv}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Unit Testing of Data Center Management Model}{xxxv}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Unit Testing of Metrics Adapter and Analyzer Module}{xxxv}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Unit Testing of Actuator Module}{xxxv}{subsection.7.1.3}
-\contentsline {section}{\numberline {7.2}Integration Testing of the Modules}{xxxv}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Integration of Data Center Management Model Service with Workload Metric Generator}{xxxv}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Integration of Metrics Adapter and Analyzer with Workload Metric Generator}{xxxv}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Integrate Actuator service with RTIM software}{xxxv}{subsection.7.2.3}
-\contentsline {section}{\numberline {7.3}System Testing}{xxxv}{section.7.3}
-\contentsline {section}{\numberline {7.4}Functional Testing of the GUI}{xxxv}{section.7.4}
-\contentsline {subsection}{\numberline {7.4.1}Design Data Center Resources Artifacts}{xxxv}{subsection.7.4.1}
-\contentsline {subsection}{\numberline {7.4.2}Design Business Services Artifacts}{xxxv}{subsection.7.4.2}
-\contentsline {chapter}{\numberline {8}Experimental Analysis and Results}{xxxvi}{chapter.8}
-\contentsline {section}{\numberline {8.1}Evaluation Metric}{xxxvi}{section.8.1}
-\contentsline {section}{\numberline {8.2}Experimental Dataset}{xxxvi}{section.8.2}
-\contentsline {section}{\numberline {8.3}Performance Analysis}{xxxvi}{section.8.3}
-\contentsline {section}{\numberline {8.4}Inference from the Results}{xxxvi}{section.8.4}
-\contentsline {chapter}{\numberline {9}CONCLUSION AND FUTURE WORK}{xxxvii}{chapter.9}
-\contentsline {section}{\numberline {9.1}Summary}{xxxvii}{section.9.1}
-\contentsline {section}{\numberline {9.2}Limitations}{xxxviii}{section.9.2}
-\contentsline {section}{\numberline {9.3}Future enhancements}{xxxviii}{section.9.3}
-\contentsline {section}{BIBLIOGRAPHY}{xxxviii}{Item.3}
+\contentsline {chapter}{\numberline {6}Software Testing}{xxxiii}{chapter.6}
+\contentsline {section}{\numberline {6.1}Test Environment}{xxxiii}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Unit Testing of Data Center Management Model}{xxxiv}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Unit Testing of Metrics Adapter and Analyzer Module}{xxxiv}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Unit Testing of Actuator Module}{xxxiv}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}Integration Testing of the Modules}{xxxiv}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Integration of Data Center Management Model Service with Workload Metric Generator}{xxxiv}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Integration of Metrics Adapter and Analyzer with Workload Metric Generator}{xxxiv}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Integrate Actuator service with RTIM software}{xxxiv}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}System Testing}{xxxiv}{section.6.3}
+\contentsline {section}{\numberline {6.4}Functional Testing of the GUI}{xxxiv}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Design Data Center Resources Artifacts}{xxxiv}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Design Business Services Artifacts}{xxxiv}{subsection.6.4.2}
+\contentsline {chapter}{\numberline {7}Experimental Analysis and Results}{xxxv}{chapter.7}
+\contentsline {section}{\numberline {7.1}Evaluation Metric}{xxxv}{section.7.1}
+\contentsline {section}{\numberline {7.2}Experimental Dataset}{xxxv}{section.7.2}
+\contentsline {section}{\numberline {7.3}Performance Analysis}{xxxv}{section.7.3}
+\contentsline {section}{\numberline {7.4}Inference from the Results}{xxxv}{section.7.4}
+\contentsline {chapter}{\numberline {8}CONCLUSION}{xxxvi}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{xxxvi}{section.8.1}
+\contentsline {section}{\numberline {8.2}Limitations}{xxxvii}{section.8.2}
+\contentsline {section}{\numberline {8.3}Future enhancements}{xxxviii}{section.8.3}
+\contentsline {section}{BIBLIOGRAPHY}{xxxviii}{Item.10}
 \contentsline {section*}{APPENDICES}{xl}{chapter*.57}

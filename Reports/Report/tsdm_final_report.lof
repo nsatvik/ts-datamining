@@ -7,12 +7,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces TSDM Tool Window - Welcome Screen\relax }}{xli}{figure.caption.61}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces Similarity Detection with DTW Algorithm.\relax }}{xli}{figure.caption.62}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces Time Series Prediction with NARX NN Model.\relax }}{xlii}{figure.caption.63}
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Time Series Prediction with Moving Average Method.\relax }}{xlii}{figure.caption.64}
-\contentsline {figure}{\numberline {9.5}{\ignorespaces Anomaly Detection using Statistical Approach.\relax }}{xliii}{figure.caption.65}
-\contentsline {figure}{\numberline {9.6}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{xliii}{figure.caption.66}
-\contentsline {figure}{\numberline {9.7}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{xliv}{figure.caption.67}
-\contentsline {figure}{\numberline {9.8}{\ignorespaces About the Developers who did this project!\relax }}{xliv}{figure.caption.68}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces TSDM Tool Window - Welcome Screen\relax }}{xli}{figure.caption.61}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Similarity Detection with DTW Algorithm.\relax }}{xli}{figure.caption.62}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Time Series Prediction with NARX NN Model.\relax }}{xlii}{figure.caption.63}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Time Series Prediction with Moving Average Method.\relax }}{xlii}{figure.caption.64}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Anomaly Detection using Statistical Approach.\relax }}{xliii}{figure.caption.65}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{xliii}{figure.caption.66}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{xliv}{figure.caption.67}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces About the Developers who did this project!\relax }}{xliv}{figure.caption.68}
