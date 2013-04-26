@@ -4,111 +4,111 @@
 \contentsline {section}{CONTENTS}{ii}{section*.5}
 \contentsline {section}{LIST OF FIGURES}{vi}{chapter*.6}
 \contentsline {section}{LIST OF TABLES}{vii}{chapter*.7}
-\contentsline {chapter}{\numberline {1}INTRODUCTION}{viii}{chapter.1}
-\contentsline {section}{\numberline {1.1}DEFINITIONS AND USAGE}{viii}{section.1.1}
-\contentsline {section}{\numberline {1.2}LITERATURE SURVEY}{viii}{section.1.2}
-\contentsline {section}{\numberline {1.3}MOTIVATION}{xv}{section.1.3}
-\contentsline {section}{\numberline {1.4}PROBLEM STATEMENT}{xv}{section.1.4}
-\contentsline {section}{\numberline {1.5}OBJECTIVE}{xv}{section.1.5}
-\contentsline {section}{\numberline {1.6}SCOPE}{xv}{section.1.6}
-\contentsline {section}{\numberline {1.7}METHODOLOGY}{xvi}{section.1.7}
-\contentsline {section}{\numberline {1.8}ORGANIZATION OF REPORT}{xvi}{section.1.8}
-\contentsline {chapter}{\numberline {2}SOFTWARE REQUIREMENTS SPECIFICATION}{xvii}{chapter.2}
-\contentsline {paragraph}{}{xvii}{section*.9}
-\contentsline {section}{\numberline {2.1}PRODUCT PERSPECTIVE}{xvii}{section.2.1}
-\contentsline {paragraph}{}{xvii}{section*.10}
-\contentsline {section}{\numberline {2.2}PRODUCT FEATURES}{xvii}{section.2.2}
-\contentsline {paragraph}{}{xvii}{section*.11}
-\contentsline {section}{\numberline {2.3}CONSTRAINTS}{xviii}{section.2.3}
-\contentsline {paragraph}{}{xviii}{section*.12}
-\contentsline {section}{\numberline {2.4}ASSUMPTIONS AND DEPENDENCIES}{xviii}{section.2.4}
-\contentsline {section}{\numberline {2.5}SPECIFIC REQUIREMENTS}{xviii}{section.2.5}
-\contentsline {paragraph}{}{xviii}{section*.13}
-\contentsline {subsection}{\numberline {2.5.1}FUNCTIONAL REQUIREMENTS}{xviii}{subsection.2.5.1}
-\contentsline {paragraph}{}{xviii}{section*.14}
-\contentsline {subsection}{\numberline {2.5.2}SOFTWARE REQUIREMENTS}{xix}{subsection.2.5.2}
-\contentsline {subsubsection}{DEVELOPERS MACHINE}{xix}{section*.15}
-\contentsline {subsubsection}{END USERS MACHINE}{xix}{section*.16}
-\contentsline {subsection}{\numberline {2.5.3}HARDWARE REQUIREMENTS}{xix}{subsection.2.5.3}
-\contentsline {subsubsection}{SOFTWARE INTERFACES }{xix}{section*.17}
-\contentsline {chapter}{\numberline {3}HIGH LEVEL DESIGN}{xx}{chapter.3}
-\contentsline {paragraph}{}{xx}{section*.18}
-\contentsline {paragraph}{}{xx}{section*.19}
-\contentsline {section}{\numberline {3.1}SYSTEM ARCHITECTURE}{xx}{section.3.1}
-\contentsline {paragraph}{}{xx}{section*.20}
-\contentsline {paragraph}{}{xx}{figure.caption.22}
-\contentsline {section}{\numberline {3.2}DATA FLOW DIAGRAMS}{xx}{section.3.2}
-\contentsline {paragraph}{}{xx}{section*.23}
-\contentsline {paragraph}{}{xxi}{section*.24}
-\contentsline {subsection}{\numberline {3.2.1}DFD LEVEL 0}{xxii}{subsection.3.2.1}
-\contentsline {paragraph}{}{xxii}{section*.25}
-\contentsline {subsection}{\numberline {3.2.2}DFD LEVEL 1}{xxiii}{subsection.3.2.2}
-\contentsline {paragraph}{}{xxiii}{section*.26}
-\contentsline {subsection}{\numberline {3.2.3}DFD LEVEL 2}{xxiv}{subsection.3.2.3}
-\contentsline {subsubsection}{Embedding Phase}{xxiv}{section*.27}
-\contentsline {subsubsection}{Extraction Phase}{xxv}{section*.28}
-\contentsline {paragraph}{}{xxv}{section*.29}
-\contentsline {chapter}{\numberline {4}DETAILED DESIGN}{xxvi}{chapter.4}
-\contentsline {section}{\numberline {4.1}STRUCTURED CHART}{xxvi}{section.4.1}
-\contentsline {paragraph}{}{xxvi}{section*.30}
-\contentsline {paragraph}{}{xxvi}{section*.31}
-\contentsline {paragraph}{}{xxvi}{section*.32}
-\contentsline {paragraph}{}{xxvii}{section*.33}
-\contentsline {section}{\numberline {4.2}MODULES DESCRIPTION}{xxviii}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}GUI MODULE}{xxviii}{subsection.4.2.1}
-\contentsline {subsubsection}{Definition:}{xxviii}{section*.34}
-\contentsline {paragraph}{}{xxviii}{section*.35}
-\contentsline {subsubsection}{Resources:}{xxviii}{section*.36}
-\contentsline {paragraph}{}{xxviii}{section*.37}
-\contentsline {subsubsection}{Functionality:}{xxviii}{section*.38}
-\contentsline {paragraph}{}{xxviii}{section*.39}
-\contentsline {chapter}{\numberline {5}IMPLEMENTATION}{xxix}{chapter.5}
-\contentsline {paragraph}{}{xxix}{section*.40}
-\contentsline {section}{\numberline {5.1}PROGRAMMING LANGUAGE SELECTION}{xxix}{section.5.1}
-\contentsline {paragraph}{}{xxix}{section*.41}
-\contentsline {section}{\numberline {5.2}PLATFORM}{xxx}{section.5.2}
-\contentsline {paragraph}{}{xxx}{section*.42}
-\contentsline {section}{\numberline {5.3}CODE CONVENTIONS}{xxx}{section.5.3}
-\contentsline {paragraph}{}{xxx}{section*.43}
-\contentsline {subsection}{\numberline {5.3.1}Naming Conventions}{xxx}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}File Organization}{xxx}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Class Declarations}{xxx}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Comments}{xxxi}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4}DIFFICULTIES ENCOUNTERED AND STRATEGIES USED TO TACKLE}{xxxi}{section.5.4}
-\contentsline {paragraph}{}{xxxi}{section*.44}
-\contentsline {subsubsection}{Problem 1}{xxxi}{section*.45}
-\contentsline {paragraph}{}{xxxi}{section*.46}
-\contentsline {subsubsection}{Solution}{xxxi}{section*.47}
-\contentsline {paragraph}{}{xxxi}{section*.48}
-\contentsline {subsubsection}{Problem 2}{xxxi}{section*.49}
-\contentsline {paragraph}{}{xxxi}{section*.50}
-\contentsline {subsubsection}{Solution}{xxxi}{section*.51}
-\contentsline {paragraph}{}{xxxi}{section*.52}
-\contentsline {subsubsection}{Problem 3}{xxxi}{section*.53}
-\contentsline {paragraph}{}{xxxi}{section*.54}
-\contentsline {subsubsection}{Solution}{xxxii}{section*.55}
-\contentsline {paragraph}{}{xxxii}{section*.56}
-\contentsline {chapter}{\numberline {6}Software Testing}{xxxiii}{chapter.6}
-\contentsline {section}{\numberline {6.1}Test Environment}{xxxiii}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Unit Testing of Data Center Management Model}{xxxiv}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Unit Testing of Metrics Adapter and Analyzer Module}{xxxiv}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Unit Testing of Actuator Module}{xxxiv}{subsection.6.1.3}
-\contentsline {section}{\numberline {6.2}Integration Testing of the Modules}{xxxiv}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Integration of Data Center Management Model Service with Workload Metric Generator}{xxxiv}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Integration of Metrics Adapter and Analyzer with Workload Metric Generator}{xxxiv}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Integrate Actuator service with RTIM software}{xxxiv}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}System Testing}{xxxiv}{section.6.3}
-\contentsline {section}{\numberline {6.4}Functional Testing of the GUI}{xxxiv}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Design Data Center Resources Artifacts}{xxxiv}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Design Business Services Artifacts}{xxxiv}{subsection.6.4.2}
-\contentsline {chapter}{\numberline {7}Experimental Analysis and Results}{xxxv}{chapter.7}
-\contentsline {section}{\numberline {7.1}Evaluation Metric}{xxxv}{section.7.1}
-\contentsline {section}{\numberline {7.2}Experimental Dataset}{xxxv}{section.7.2}
-\contentsline {section}{\numberline {7.3}Performance Analysis}{xxxv}{section.7.3}
-\contentsline {section}{\numberline {7.4}Inference from the Results}{xxxv}{section.7.4}
-\contentsline {chapter}{\numberline {8}CONCLUSION}{xxxvi}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{xxxvi}{section.8.1}
-\contentsline {section}{\numberline {8.2}Limitations}{xxxvii}{section.8.2}
-\contentsline {section}{\numberline {8.3}Future enhancements}{xxxviii}{section.8.3}
-\contentsline {section}{BIBLIOGRAPHY}{xxxviii}{Item.10}
-\contentsline {section*}{APPENDICES}{xl}{chapter*.57}
+\contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}DEFINITIONS AND USAGE}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}LITERATURE SURVEY}{1}{section.1.2}
+\contentsline {section}{\numberline {1.3}MOTIVATION}{8}{section.1.3}
+\contentsline {section}{\numberline {1.4}PROBLEM STATEMENT}{8}{section.1.4}
+\contentsline {section}{\numberline {1.5}OBJECTIVE}{8}{section.1.5}
+\contentsline {section}{\numberline {1.6}SCOPE}{8}{section.1.6}
+\contentsline {section}{\numberline {1.7}METHODOLOGY}{9}{section.1.7}
+\contentsline {section}{\numberline {1.8}ORGANIZATION OF REPORT}{9}{section.1.8}
+\contentsline {chapter}{\numberline {2}SOFTWARE REQUIREMENTS SPECIFICATION}{10}{chapter.2}
+\contentsline {paragraph}{}{10}{section*.9}
+\contentsline {section}{\numberline {2.1}PRODUCT PERSPECTIVE}{10}{section.2.1}
+\contentsline {paragraph}{}{10}{section*.10}
+\contentsline {section}{\numberline {2.2}PRODUCT FEATURES}{10}{section.2.2}
+\contentsline {paragraph}{}{10}{section*.11}
+\contentsline {section}{\numberline {2.3}CONSTRAINTS}{11}{section.2.3}
+\contentsline {paragraph}{}{11}{section*.12}
+\contentsline {section}{\numberline {2.4}ASSUMPTIONS AND DEPENDENCIES}{11}{section.2.4}
+\contentsline {section}{\numberline {2.5}SPECIFIC REQUIREMENTS}{11}{section.2.5}
+\contentsline {paragraph}{}{11}{section*.13}
+\contentsline {subsection}{\numberline {2.5.1}FUNCTIONAL REQUIREMENTS}{11}{subsection.2.5.1}
+\contentsline {paragraph}{}{11}{section*.14}
+\contentsline {subsection}{\numberline {2.5.2}SOFTWARE REQUIREMENTS}{12}{subsection.2.5.2}
+\contentsline {subsubsection}{DEVELOPERS MACHINE}{12}{section*.15}
+\contentsline {subsubsection}{END USERS MACHINE}{12}{section*.16}
+\contentsline {subsection}{\numberline {2.5.3}HARDWARE REQUIREMENTS}{12}{subsection.2.5.3}
+\contentsline {subsubsection}{SOFTWARE INTERFACES }{12}{section*.17}
+\contentsline {chapter}{\numberline {3}HIGH LEVEL DESIGN}{13}{chapter.3}
+\contentsline {paragraph}{}{13}{section*.18}
+\contentsline {paragraph}{}{13}{section*.19}
+\contentsline {section}{\numberline {3.1}SYSTEM ARCHITECTURE}{13}{section.3.1}
+\contentsline {paragraph}{}{13}{section*.20}
+\contentsline {paragraph}{}{13}{figure.caption.22}
+\contentsline {section}{\numberline {3.2}DATA FLOW DIAGRAMS}{13}{section.3.2}
+\contentsline {paragraph}{}{13}{section*.23}
+\contentsline {paragraph}{}{14}{section*.24}
+\contentsline {subsection}{\numberline {3.2.1}DFD LEVEL 0}{15}{subsection.3.2.1}
+\contentsline {paragraph}{}{15}{section*.25}
+\contentsline {subsection}{\numberline {3.2.2}DFD LEVEL 1}{16}{subsection.3.2.2}
+\contentsline {paragraph}{}{16}{section*.26}
+\contentsline {subsection}{\numberline {3.2.3}DFD LEVEL 2}{17}{subsection.3.2.3}
+\contentsline {subsubsection}{Embedding Phase}{17}{section*.27}
+\contentsline {subsubsection}{Extraction Phase}{18}{section*.28}
+\contentsline {paragraph}{}{18}{section*.29}
+\contentsline {chapter}{\numberline {4}DETAILED DESIGN}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}STRUCTURED CHART}{19}{section.4.1}
+\contentsline {paragraph}{}{19}{section*.30}
+\contentsline {paragraph}{}{19}{section*.31}
+\contentsline {paragraph}{}{19}{section*.32}
+\contentsline {paragraph}{}{20}{section*.33}
+\contentsline {section}{\numberline {4.2}MODULES DESCRIPTION}{21}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}GUI MODULE}{21}{subsection.4.2.1}
+\contentsline {subsubsection}{Definition:}{21}{section*.34}
+\contentsline {paragraph}{}{21}{section*.35}
+\contentsline {subsubsection}{Resources:}{21}{section*.36}
+\contentsline {paragraph}{}{21}{section*.37}
+\contentsline {subsubsection}{Functionality:}{21}{section*.38}
+\contentsline {paragraph}{}{21}{section*.39}
+\contentsline {chapter}{\numberline {5}IMPLEMENTATION}{22}{chapter.5}
+\contentsline {paragraph}{}{22}{section*.40}
+\contentsline {section}{\numberline {5.1}PROGRAMMING LANGUAGE SELECTION}{22}{section.5.1}
+\contentsline {paragraph}{}{22}{section*.41}
+\contentsline {section}{\numberline {5.2}PLATFORM}{23}{section.5.2}
+\contentsline {paragraph}{}{23}{section*.42}
+\contentsline {section}{\numberline {5.3}CODE CONVENTIONS}{23}{section.5.3}
+\contentsline {paragraph}{}{23}{section*.43}
+\contentsline {subsection}{\numberline {5.3.1}Naming Conventions}{23}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}File Organization}{23}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Class Declarations}{23}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Comments}{24}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}DIFFICULTIES ENCOUNTERED AND STRATEGIES USED TO TACKLE}{24}{section.5.4}
+\contentsline {paragraph}{}{24}{section*.44}
+\contentsline {subsubsection}{Problem 1}{24}{section*.45}
+\contentsline {paragraph}{}{24}{section*.46}
+\contentsline {subsubsection}{Solution}{24}{section*.47}
+\contentsline {paragraph}{}{24}{section*.48}
+\contentsline {subsubsection}{Problem 2}{24}{section*.49}
+\contentsline {paragraph}{}{24}{section*.50}
+\contentsline {subsubsection}{Solution}{24}{section*.51}
+\contentsline {paragraph}{}{24}{section*.52}
+\contentsline {subsubsection}{Problem 3}{24}{section*.53}
+\contentsline {paragraph}{}{24}{section*.54}
+\contentsline {subsubsection}{Solution}{25}{section*.55}
+\contentsline {paragraph}{}{25}{section*.56}
+\contentsline {chapter}{\numberline {6}Software Testing}{26}{chapter.6}
+\contentsline {section}{\numberline {6.1}Test Environment}{26}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Unit Testing of Data Center Management Model}{27}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Unit Testing of Metrics Adapter and Analyzer Module}{27}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Unit Testing of Actuator Module}{27}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}Integration Testing of the Modules}{27}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Integration of Data Center Management Model Service with Workload Metric Generator}{27}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Integration of Metrics Adapter and Analyzer with Workload Metric Generator}{27}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Integrate Actuator service with RTIM software}{27}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}System Testing}{27}{section.6.3}
+\contentsline {section}{\numberline {6.4}Functional Testing of the GUI}{27}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Design Data Center Resources Artifacts}{27}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Design Business Services Artifacts}{27}{subsection.6.4.2}
+\contentsline {chapter}{\numberline {7}Experimental Analysis and Results}{28}{chapter.7}
+\contentsline {section}{\numberline {7.1}Evaluation Metric}{28}{section.7.1}
+\contentsline {section}{\numberline {7.2}Experimental Dataset}{28}{section.7.2}
+\contentsline {section}{\numberline {7.3}Performance Analysis}{28}{section.7.3}
+\contentsline {section}{\numberline {7.4}Inference from the Results}{28}{section.7.4}
+\contentsline {chapter}{\numberline {8}CONCLUSION}{29}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{29}{section.8.1}
+\contentsline {section}{\numberline {8.2}Limitations}{30}{section.8.2}
+\contentsline {section}{\numberline {8.3}Future enhancements}{31}{section.8.3}
+\contentsline {section}{BIBLIOGRAPHY}{31}{Item.10}
+\contentsline {section*}{APPENDICES}{33}{chapter*.57}
