@@ -23,7 +23,7 @@
 	<center>
 		<object width="960" height="720">
 			<param name="movie"
-				value="http://www.youtube.com/v/shs_QLG6Nsw?hl=en_US&amp;version=3"></param>
+				value="http://www.youtube.com/watch?v=tn_tkzMxa4s"></param>
 			<param name="allowFullScreen" value="true"></param>
 			<param name="allowscriptaccess" value="always"></param>
 			<embed
