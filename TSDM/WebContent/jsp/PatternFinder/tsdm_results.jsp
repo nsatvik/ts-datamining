@@ -26,6 +26,18 @@
 			dataArray = dataArray.concat(${tsBean.resultObjects[0].phaseSpace});
 			return dataArray;
 		}
+		
+		function insertClusterPoints(data){
+			data.addColumn('number', 'Cluster Points');
+			${tsBean.resultObjects[0].clusterPhaseSpace.phasePoints}
+			
+			var dataArray = [];
+			<c:forEach items="${tsBean.resultObjects[0].clusterPhaseSpace.phasePoints}" var="phasePoint">
+				var dataTuple = [${phasePoint.coords[0]}, null, ${phasePoint.coords[1]}];
+				dataArray.push(dataTuple);
+			</c:forEach>	
+			data.addRows(dataArray);
+		}
 
 		google.load("visualization", "1", {
 			callback : function() {
@@ -33,9 +45,11 @@
 			},
 			packages : [ "corechart" ]
 		});
+		
 		function drawScatterChart() {
 			var data = google.visualization
 					.arrayToDataTable(getDataArrayForScatterChart());
+			insertClusterPoints(data);
 
 			var options = {
 				title : 'Phase Space Graph'

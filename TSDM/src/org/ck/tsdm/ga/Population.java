@@ -42,12 +42,32 @@ public class Population implements Constants
 		{
 			double totalFitnessScore = assessFitness(genomes);
 			System.out.println("Total Fitness Score = " + totalFitnessScore);
-			naturalSelection(totalFitnessScore);
-			//displayBestGenome();
+			naturalSelection(totalFitnessScore);			
 		}
-		//displayBestGenome();
+		
+		findBestGenome();
 	}
 	
+	/**
+	 * This method is used only if the final generation is reached
+	 * @throws OptimalScoreException 
+	 */
+	private void findBestGenome() throws OptimalScoreException
+	{
+		double fitnessScore = -Double.MIN_VALUE;
+		Genome bestGenome = null;
+		for(int i=0; i<genomes.size(); i++)
+		{
+			if(genomes.get(i).getFitnessScore() > fitnessScore)
+			{
+				bestGenome = genomes.get(i);
+				fitnessScore = bestGenome.getFitnessScore();				
+			}
+		}
+		
+		throw new OptimalScoreException(bestGenome);
+	}
+
 	/**
 	 * Creates a new population from the old population by selecting two genomes randomly at a time, and
 	 * 		performing crossover and mutation operations.

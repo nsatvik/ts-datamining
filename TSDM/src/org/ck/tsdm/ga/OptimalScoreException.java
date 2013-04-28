@@ -27,4 +27,9 @@ public class OptimalScoreException extends Exception implements Constants
 		System.out.println("OPTIMAL GENOME CAUGHT");
 		System.out.println(genome.toString());
 	}
+	
+	public Genome getGenome()
+	{
+		return genomeSolution;
+	}
 }

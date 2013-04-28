@@ -11,9 +11,9 @@ public interface Constants
 	public static final int Q_DIMENSION = 2;
 	public static final int ALLELE_SIZE = 8;
 	
-	public static final int POPULATION_SIZE = 5;
+	public static final int POPULATION_SIZE = 50;
 	public static final int NUM_OF_GENERATIONS = 150;
-	public static final double FITNESS_SCORE_THRESHOLD = 3;
+	public static final double FITNESS_SCORE_THRESHOLD = 7;
 	public static final double CROSSOVER_PROBABILITY_THRESHOLD = 0.85;
 	public static final double MUTATION_PROBABILITY_THRESHOLD = 0.025;
 	

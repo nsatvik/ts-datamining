@@ -52,16 +52,7 @@ public class MainClass
 		System.out.println(tsdm.getPhaseSpace().getMinValueOfPhaseSpace());
 		System.out.println(tsdm.getPhaseSpace().getMaxValueOfPhaseSpace());
 		
-		try
-		{
-			Population population = new Population(tsdm);
-			population.runGeneticAlgorithm();
-			System.out.println(population.toString());
-		}
-		catch(OptimalScoreException e)
-		{
-			
-		}		
+		System.out.println(tsdm.getClusterPhaseSpace().toString());
 	}
 
 	private static void vaishakh()

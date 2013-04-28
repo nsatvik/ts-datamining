@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.ck.sample.Sample;
+import org.ck.tsdm.ga.Genome;
 
 /**
  * Represents a Q-Dimensional Phase Space
@@ -23,6 +24,19 @@ public class PhaseSpace
 		this.series = series;
 		points = new ArrayList<PhasePoint>();
 		initPhaseSpace();
+		findMaxMinValues();
+	}
+	
+	/**
+	 * A pseudo-copy-constructor that initializes the phase space list with "points".
+	 * @param phaseSpace
+	 * @param points
+	 */
+	public PhaseSpace(PhaseSpace phaseSpace, List<PhasePoint> points)
+	{
+		numDimensions = phaseSpace.numDimensions;
+		series = phaseSpace.series;
+		this.points = points;
 		findMaxMinValues();
 	}
 	
@@ -76,6 +90,11 @@ public class PhaseSpace
 		return numDimensions;
 	}
 	
+	public List<PhasePoint> getPhasePoints()
+	{
+		return points;
+	}
+	
 	/**
 	 * Fills up the two Integer lists with indices of phase points that lie 
 	 * 		inside and outside the cluster respectively.
@@ -109,7 +128,7 @@ public class PhaseSpace
 	private boolean isWithinCluster(PhasePoint point, PhasePoint clusterCenter,
 			double clusterRadius)
 	{
-		return (clusterCenter.getDistanceFrom(point) <= clusterRadius);		
+		return (point.getDistanceFrom(clusterCenter) <= clusterRadius);		
 	}
 	
 	/**
@@ -138,5 +157,33 @@ public class PhaseSpace
 		for(int index : indices)
 			sum += Math.pow(series.get(index) - average, 2);
 		return (1.0 / indices.size()) * sum;
+	}
+	
+	/**
+	 * Finds out all the Phase Points that lie within the given cluster, based on the list of
+	 * 	indices passed as a parameter
+	 * @param clusterCenter
+	 * @param clusterRadius
+	 * @param indicesInsideCluster - Indices of phase points in a (numDimensions + 1) phase space that lie within this cluster.
+	 * @return
+	 */
+	public PhaseSpace getClusterPhaseSpace(PhasePoint clusterCenter, double clusterRadius, 
+			List<Integer> indicesInsideCluster)
+	{			
+		List<PhasePoint> clusterPhasePoints = new ArrayList<PhasePoint>();
+		
+		/*int subFactor = numDimensions - 1;
+		for(int index : indicesInsideCluster)
+		{
+			clusterPhasePoints.add(points.get(index - subFactor));
+		}*/
+		
+		for(PhasePoint point : points)
+		{
+			if(isWithinCluster(point, clusterCenter, clusterRadius))
+				clusterPhasePoints.add(point);			
+		}	
+		
+		return new PhaseSpace(this, clusterPhasePoints);
 	}
 }

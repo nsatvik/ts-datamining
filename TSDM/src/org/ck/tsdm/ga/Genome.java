@@ -99,6 +99,20 @@ public class Genome implements Constants
 	}
 	
 	/**
+	 * IMPORTANT: This method is to be used only by the Optimal Genome 
+	 * 		(added to save heap space when Population size is very large)
+	 * @return
+	 */
+	public List<Integer> getIndicesInsideCluster()
+	{
+		List<Integer> indicesInsideCluster = new ArrayList<Integer>();
+		List<Integer> indicesOutsideCluster = new ArrayList<Integer>();
+		phaseSpace.findClusterPointIndices(clusterCenter, clusterRadius, indicesInsideCluster, indicesOutsideCluster);
+		
+		return indicesInsideCluster;
+	}
+	
+	/**
 	 * Every bit of the chromosome string has a probability equal to mutationProbability of mutating.
 	 * 		After mutation, the decision tree of this genome is reinitialized
 	 * @param mutationProbability
@@ -138,6 +152,16 @@ public class Genome implements Constants
 	public PhaseSpace getPhaseSpace()
 	{
 		return phaseSpace;
+	}
+	
+	public PhasePoint getClusterCenter()
+	{
+		return clusterCenter;
+	}
+	
+	public double getClusterRadius()
+	{
+		return clusterRadius;
 	}
 
 	@Override
