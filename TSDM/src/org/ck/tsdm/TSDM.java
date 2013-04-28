@@ -1,12 +1,14 @@
 package org.ck.tsdm;
 
+import org.ck.gui.Constants;
 import org.ck.sample.Sample;
+import org.ck.tsdm.ga.Population;
 
 /**
  * This class is to be used to find Temporal Patterns in Time Series 
  *
  */
-public class TSDM
+public class TSDM implements Constants
 {
 	Sample sample;
 	PhaseSpace phaseSpace;
@@ -15,8 +17,8 @@ public class TSDM
 	public TSDM(Sample sample)
 	{
 		this.sample = sample;
-		phaseSpace = new PhaseSpace(sample.getTimeSeries(), 2);
-		augmentedPhaseSpace = new PhaseSpace(sample.getTimeSeries(), 3);
+		phaseSpace = new PhaseSpace(sample.getNormalizedTimeSeries(), Q_DIMENSION);
+		augmentedPhaseSpace = new PhaseSpace(sample.getNormalizedTimeSeries(), Q_DIMENSION + 1);		
 	}
 	
 	public String toString()

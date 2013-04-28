@@ -11,9 +11,11 @@ import org.ck.sample.Sample;
  */
 public class PhaseSpace
 {
-	int numDimensions;
-	List<Double> series;
-	List<PhasePoint> points;
+	private int numDimensions;
+	private List<Double> series;
+	private List<PhasePoint> points;
+	private double maxValue;
+	private double minValue;
 	
 	public PhaseSpace(List<Double> series, int Q)
 	{
@@ -21,8 +23,22 @@ public class PhaseSpace
 		this.series = series;
 		points = new ArrayList<PhasePoint>();
 		initPhaseSpace();
+		findMaxMinValues();
 	}
 	
+	private void findMaxMinValues()
+	{
+		maxValue = -Double.MIN_VALUE;
+		minValue = Double.MAX_VALUE;
+		for(double val : series)
+		{
+			if(val > maxValue)
+				maxValue = val;
+			if(val < minValue)
+				minValue = val;
+		}
+	}
+
 	private void initPhaseSpace()
 	{
 		int numValues = series.size() - numDimensions + 1;
@@ -31,11 +47,96 @@ public class PhaseSpace
 			points.add(new PhasePoint(series.subList(i, i + numDimensions)));			
 		}
 	}
+	
+	/**
+	 * 
+	 * @return maxX, where X is the training time series.
+	 */
+	public double getMaxValueOfPhaseSpace()
+	{
+		return maxValue;
+	}
+	
+	/**
+	 * 
+	 * @return minX, where X is the training time series
+	 */
+	public double getMinValueOfPhaseSpace()
+	{
+		return minValue;
+	}
 
 	public String toString()
 	{
 		return "" + points;
 	}
-
 	
+	public int getNumOfDimensions()
+	{
+		return numDimensions;
+	}
+	
+	/**
+	 * Fills up the two Integer lists with indices of phase points that lie 
+	 * 		inside and outside the cluster respectively.
+	 * The cluster is defined by clusterCenter and clusterRadius
+	 * @param clusterCenter
+	 * @param clusterRadius
+	 * @param indicesInsideCluster
+	 * @param indicesOutsideCluster
+	 */
+	public void findClusterPointIndices(PhasePoint clusterCenter, double clusterRadius,
+			List<Integer> indicesInsideCluster, List<Integer> indicesOutsideCluster)
+	{				
+		int startIndex = (numDimensions - 2);
+		for(PhasePoint point : points)
+		{
+			if(isWithinCluster(point, clusterCenter, clusterRadius))
+				indicesInsideCluster.add(startIndex++);
+			else
+				indicesOutsideCluster.add(startIndex++);
+		}		
+	}
+
+	/**
+	 * Checks if point lies within a cluster defined by clusterCenter and clusterRadius
+	 * @param point
+	 * @param clusterCenter
+	 * @param clusterRadius
+	 * @return true, if point lies within cluster; 
+	 * 		   false, otherwise
+	 */
+	private boolean isWithinCluster(PhasePoint point, PhasePoint clusterCenter,
+			double clusterRadius)
+	{
+		return (clusterCenter.getDistanceFrom(point) <= clusterRadius);		
+	}
+	
+	/**
+	 * Calculates the average eventness, given the list of indices of points that lie in/out side the cluster
+	 * 	calculated before
+	 * @param indices
+	 * @return
+	 */
+	public double getAverageEventness(List<Integer> indices)
+	{
+		double sum = 0;
+		for(int index : indices)
+			sum += series.get(index + 1);
+		return (1.0 / indices.size()) * sum;
+	}
+	
+	/**
+	 * Calculates the variance of the eventness
+	 * @param indices
+	 * @param average
+	 * @return
+	 */
+	public double getVarianceOfEventness(List<Integer> indices, double average)
+	{
+		double sum = 0;
+		for(int index : indices)
+			sum += Math.pow(series.get(index) - average, 2);
+		return (1.0 / indices.size()) * sum;
+	}
 }

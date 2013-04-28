@@ -8,6 +8,16 @@ public interface Constants
 	public static final int SAX_ALPHA_SIZE = 6;
 	public static final String PATH_PREFIX = "/jsp/";
 	
+	public static final int Q_DIMENSION = 2;
+	public static final int ALLELE_SIZE = 8;
+	
+	public static final int POPULATION_SIZE = 5;
+	public static final int NUM_OF_GENERATIONS = 150;
+	public static final double FITNESS_SCORE_THRESHOLD = 3;
+	public static final double CROSSOVER_PROBABILITY_THRESHOLD = 0.85;
+	public static final double MUTATION_PROBABILITY_THRESHOLD = 0.025;
+	
+	
 	enum DatasetOptions
 	{
 		SEA_LEVEL_DATASET,

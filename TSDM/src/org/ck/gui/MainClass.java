@@ -15,11 +15,14 @@ import org.ck.similarity.CommonSequenceFinder;
 import org.ck.similarity.CommonSequenceFinder.Tuple;
 import org.ck.similarity.DynamicTimeWarper;
 import org.ck.tsdm.TSDM;
+import org.ck.tsdm.ga.Genome;
+import org.ck.tsdm.ga.OptimalScoreException;
+import org.ck.tsdm.ga.Population;
 
 
 public class MainClass 
 {
-	public static void main(String args[])
+	public static void main(String args[]) throws Exception
 	{	
 		DataHolder.setDataset(DatasetOptions.ECG_DATASET);
 		//Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
@@ -32,9 +35,9 @@ public class MainClass
 		
 	}
 	
-	private static void samir()
+	private static void samir() throws Exception
 	{
-		DataHolder.setDataset(DatasetOptions.SEA_LEVEL_DATASET);
+		DataHolder.setDataset(DatasetOptions.WATER_LEVEL_DATASET);
 		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);		
 		
 		/*DataHolder.setDataset(DatasetOptions.FINANCE_VIX_DATASET);
@@ -45,7 +48,20 @@ public class MainClass
 		System.out.println(seaSample.getDistanceUsingSAX(sample2));*/
 		
 		TSDM tsdm = new TSDM(seaSample);
-		System.out.println(tsdm.toString());
+		//System.out.println(tsdm.toString());
+		System.out.println(tsdm.getPhaseSpace().getMinValueOfPhaseSpace());
+		System.out.println(tsdm.getPhaseSpace().getMaxValueOfPhaseSpace());
+		
+		try
+		{
+			Population population = new Population(tsdm);
+			population.runGeneticAlgorithm();
+			System.out.println(population.toString());
+		}
+		catch(OptimalScoreException e)
+		{
+			
+		}		
 	}
 
 	private static void vaishakh()
