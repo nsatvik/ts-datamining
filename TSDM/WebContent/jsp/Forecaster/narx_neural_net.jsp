@@ -22,7 +22,8 @@
 	<p id="ajax_nn_result"></p>
 	
 	<script type="text/javascript">
-		$("#button_nnCalc").button().click(function () {			
+		$("#button_nnCalc").button().click(function () {	
+			$("#ajax_nn_result").html(loadingImgHTML);
 	        $("#ajax_nn_result").load("MainController", 
 	        		{"taskType" : "<%=Constants.TaskType.FORTUNE_TELLER %>",
 	        		 "algorithmType" : "<%=Constants.AlgorithmType.NARX_NN %>",

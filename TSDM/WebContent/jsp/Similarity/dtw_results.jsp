@@ -132,6 +132,7 @@
 		});
 		
 		$("#dropdown").change(function(){
+			 $("#ajax_dtw_results").html(loadingImgHTML);
 			 $("#ajax_dtw_results").load("MainController", 
 		        		{"taskType" : "<%=Constants.TaskType.SIMILARITY %>",
 		        		 "algorithmType" : "<%=Constants.AlgorithmType.DTW %>",

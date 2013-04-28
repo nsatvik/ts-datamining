@@ -24,7 +24,8 @@
 	<p id="ajax_moving_average_result"></p>
 	
 	<script type="text/javascript">
-		$("#button_movingAvgCalc").button().click(function () {			
+		$("#button_movingAvgCalc").button().click(function () {	
+			$("#ajax_moving_average_result").html(loadingImgHTML);
 	        $("#ajax_moving_average_result").load("MainController", 
 	        		{"taskType" : "<%=Constants.TaskType.FORTUNE_TELLER %>",
 	        		 "algorithmType" : "<%=Constants.AlgorithmType.MOVING_AVERAGE %>",

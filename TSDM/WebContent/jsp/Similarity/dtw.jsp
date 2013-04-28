@@ -29,7 +29,8 @@
 	
 	
 	<script type="text/javascript">
-		$("#button_dtwCalc").button().click(function () {			
+		$("#button_dtwCalc").button().click(function () {	
+			$("#ajax_dtw_results").html(loadingImgHTML);
 	        $("#ajax_dtw_results").load("MainController", 
 	        		{"taskType" : "<%=Constants.TaskType.SIMILARITY %>",
 	        		 "algorithmType" : "<%=Constants.AlgorithmType.DTW %>",

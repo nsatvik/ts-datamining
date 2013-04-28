@@ -9,8 +9,6 @@
 	<title>TSDM Results</title>
 </head>
 <body>
-
-	It's me...yeah ME!
 	
 	<br/>
 	

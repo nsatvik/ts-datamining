@@ -55,7 +55,7 @@
 	
 	<script type="text/javascript">
 		$("#button_statsAppCalc").button().click(function () {
-			
+			$("#ajax_stat_app_result").html(loadingImgHTML);
 	        $("#ajax_stat_app_result").load("MainController", 
 	        		{"taskType" : "<%=Constants.TaskType.ANOMALY_DETECTIVE %>",
 	        		 "algorithmType" : "<%=Constants.AlgorithmType.STATISTICAL_APPROACH%>",

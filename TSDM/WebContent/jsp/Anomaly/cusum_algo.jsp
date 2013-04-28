@@ -55,7 +55,7 @@
 	
 	<script type="text/javascript">
 		$("#button_cusumAlgoCalc").button().click(function () {
-			
+			$("#ajax_cusum_algo_result").html(loadingImgHTML);
 	        $("#ajax_cusum_algo_result").load("MainController", 
 	        		{"taskType" : "<%=Constants.TaskType.ANOMALY_DETECTIVE %>",
 	        		 "algorithmType" : "<%=Constants.AlgorithmType.CUSUM %>",

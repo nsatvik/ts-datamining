@@ -25,7 +25,8 @@
 	<p id="ajax_moving_exponential_result"></p>
 	
 	<script type="text/javascript">
-		$("#button_movingExpoCalc").button().click(function () {			
+		$("#button_movingExpoCalc").button().click(function () {
+			$("#ajax_moving_exponential_result").html(loadingImgHTML);
 	        $("#ajax_moving_exponential_result").load("MainController", 
 	        		{"taskType" : "<%=Constants.TaskType.FORTUNE_TELLER %>",
 	        		 "algorithmType" : "<%=Constants.AlgorithmType.MOVING_EXPONENTIAL%>",

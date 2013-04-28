@@ -26,6 +26,7 @@
 	
 	<script type="text/javascript">
 		$("#button_movinggeoCalc").button().click(function () {			
+			$("#ajax_moving_geometric_result").html(loadingImgHTML);
 	        $("#ajax_moving_geometric_result").load("MainController", 
 	        		{"taskType" : "<%=Constants.TaskType.FORTUNE_TELLER %>",
 	        		 "algorithmType" : "<%=Constants.AlgorithmType.MOVING_GEOMETRIC%>",

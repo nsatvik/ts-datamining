@@ -61,6 +61,7 @@
     </script>
     <script type="text/javascript">		
 		$("#dropdown").change(function(){
+			$("#ajax_cusum_algo_results").html(loadingImgHTML);
 			 $("#ajax_cusum_algo_results").load("MainController", 
 		        		{"taskType" : "<%=Constants.TaskType.ANOMALY_DETECTIVE %>",
 		        		 "algorithmType" : "<%=Constants.AlgorithmType.CUSUM %>",

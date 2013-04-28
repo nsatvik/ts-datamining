@@ -31,6 +31,7 @@
 	<script type="text/javascript">
 		$("#button_tsdmCalc").button().click(function () {			
 			$("#navigator").empty();							//BUG FIX 
+			$("#ajax_tsdm_results").html(loadingImgHTML);
 	        $("#ajax_tsdm_results").load("MainController", 
 	        		{"taskType" : "<%=Constants.TaskType.TEMPORAL_PATTERN_MINER %>",
 	        		 "algorithmType" : "<%=Constants.AlgorithmType.TSDM %>",
