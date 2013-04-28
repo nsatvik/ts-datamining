@@ -89,26 +89,26 @@
 \contentsline {subsubsection}{Solution}{25}{section*.55}
 \contentsline {paragraph}{}{25}{section*.56}
 \contentsline {chapter}{\numberline {6}Software Testing}{26}{chapter.6}
-\contentsline {section}{\numberline {6.1}Test Environment}{26}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Unit Testing of Data Center Management Model}{27}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Unit Testing of Metrics Adapter and Analyzer Module}{27}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Unit Testing of Actuator Module}{27}{subsection.6.1.3}
-\contentsline {section}{\numberline {6.2}Integration Testing of the Modules}{27}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Integration of Data Center Management Model Service with Workload Metric Generator}{27}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Integration of Metrics Adapter and Analyzer with Workload Metric Generator}{27}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Integrate Actuator service with RTIM software}{27}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}System Testing}{27}{section.6.3}
-\contentsline {section}{\numberline {6.4}Functional Testing of the GUI}{27}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Design Data Center Resources Artifacts}{27}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Design Business Services Artifacts}{27}{subsection.6.4.2}
-\contentsline {chapter}{\numberline {7}Experimental Analysis and Results}{28}{chapter.7}
-\contentsline {section}{\numberline {7.1}Evaluation Metric}{28}{section.7.1}
-\contentsline {section}{\numberline {7.2}Experimental Dataset}{28}{section.7.2}
-\contentsline {section}{\numberline {7.3}Performance Analysis}{28}{section.7.3}
-\contentsline {section}{\numberline {7.4}Inference from the Results}{28}{section.7.4}
-\contentsline {chapter}{\numberline {8}CONCLUSION}{29}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{29}{section.8.1}
-\contentsline {section}{\numberline {8.2}Limitations}{30}{section.8.2}
-\contentsline {section}{\numberline {8.3}Future enhancements}{31}{section.8.3}
-\contentsline {section}{BIBLIOGRAPHY}{31}{Item.10}
-\contentsline {section*}{APPENDICES}{33}{chapter*.57}
+\contentsline {section}{\numberline {6.1}Types Of Testing}{26}{section.6.1}
+\contentsline {subsubsection}{Unit testing}{26}{section*.57}
+\contentsline {subsubsection}{Integration testing}{27}{section*.58}
+\contentsline {subsubsection}{Functional test}{27}{section*.59}
+\contentsline {subsubsection}{System Test}{27}{section*.60}
+\contentsline {subsubsection}{Performance Test}{28}{section*.61}
+\contentsline {subsubsection}{White Box Testing}{28}{section*.62}
+\contentsline {subsubsection}{Black Box Testing}{28}{section*.63}
+\contentsline {section}{\numberline {6.2}Test Environment}{28}{section.6.2}
+\contentsline {section}{\numberline {6.3}System Testing}{29}{section.6.3}
+\contentsline {subsubsection}{Test Case 1}{29}{section*.64}
+\contentsline {section}{\numberline {6.4}Integration Testing}{29}{section.6.4}
+\contentsline {chapter}{\numberline {7}Experimental Analysis and Results}{31}{chapter.7}
+\contentsline {section}{\numberline {7.1}Evaluation Metric}{31}{section.7.1}
+\contentsline {section}{\numberline {7.2}Experimental Dataset}{31}{section.7.2}
+\contentsline {section}{\numberline {7.3}Performance Analysis}{31}{section.7.3}
+\contentsline {section}{\numberline {7.4}Inference from the Results}{31}{section.7.4}
+\contentsline {chapter}{\numberline {8}CONCLUSION}{32}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{32}{section.8.1}
+\contentsline {section}{\numberline {8.2}Limitations}{33}{section.8.2}
+\contentsline {section}{\numberline {8.3}Future enhancements}{34}{section.8.3}
+\contentsline {section}{BIBLIOGRAPHY}{34}{Item.10}
+\contentsline {section*}{APPENDICES}{36}{chapter*.69}

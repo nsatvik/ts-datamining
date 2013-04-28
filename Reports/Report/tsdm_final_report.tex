@@ -553,25 +553,146 @@ With these necessities in mind, J2EE is selected as the optimal programming lang
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \chapter{Software Testing}
-Introduction to Testing (From wiki)
+The purpose of testing is to discover errors. Testing is the process of trying to
+discover every conceivable fault or weakness in a work product. It provides a way to
+check the functionality of components, sub assemblies, assemblies and/or a finished
+product Testing is the process of exercising software with the intent of ensuring that
+the Software system meets its requirements and user expectations and does not fail in
+an unacceptable manner. There are various types of test. Each test type addresses a
+specific testing requirement.
+\section{Types Of Testing}
+\subsubsection{Unit testing}
+Unit testing involves the design of test cases that validate that the internal
+program logic is functioning properly, and that program input produces valid outputs.
+All decision branches and internal code flow should be validated. It is the testing of
+individual software units of the application. It is done after the completion of an
+individual unit before integration. This is a structural testing, that relies on knowledge
+of its construction and is invasive. Unit tests perform basic tests at component level
+and test a specific business process, application, and/or system configuration. Unit
+tests ensure that each unique path of a business process performs accurately to the
+documented specifications and contains clearly defined inputs and expected results.
+\subsubsection{Integration testing}
+Integration tests are designed to test integrated software components to
+determine if they actually run as one program. Testing is event driven and is more
+concerned with the basic outcome of screens or fields. Integration tests demonstrate
+that although the components were individually satisfaction, as shown by successfully
+unit testing, the combination of components is correct and consistent. Integration
+testing is specifically aimed at exposing the problems that arise from the combination
+of components.
+\subsubsection{Functional test}
+Functional tests provides a systematic demonstration that functions tested are
+available as specified by the business and technical requirements, system
+documentation, and user manuals. Functional testing is centered on the following
+items:
+Valid Input: identified classes of valid input must be accepted.
+Invalid Input: identified classes of invalid input must be rejected.
+Functions: identified functions must be exercised.
+Output: identified classes of application outputs must be exercised.
+Systems / Procedures: interfacing systems or procedures must be invoked.
+Organization and preparation of functional tests is focused on requirements,
+key functions, or special test cases. In addition, systematic coverage pertaining to
+identifying business process flows, data fields, predefined processes, and successive
+processes must be considered for testing. Before functional testing is complete,
+additional tests are identified and the effective value of current tests is determined.
+\subsubsection{System Test}
+System testing ensures that the entire integrated software system meets
+requirements. It tests a configuration to ensure known and predictable results. An
+example of system testing is the configuration oriented system integration test.
+System testing is based on process descriptions and flows, emphasizing pre-driven
+process links and integration points.
+\subsubsection{Performance Test}
+The Performance test ensures that the output be produced within the time
+limits, and the time taken by the system for compiling, giving response to the users
+and request being send to the system for to retrieve the results.
+\subsubsection{White Box Testing}
+White Box Testing is a testing in which in which the software tester has
+knowledge of the inner workings, structure and language of the software, or at least its
+purpose. It is used to test areas that cannot be reached from a black box level.
+\subsubsection{Black Box Testing}
+Black Box Testing is testing the software without any knowledge of the inner
+workings, structure or language of the module being tested. Black box tests, as most
+other kinds of tests, must be written from a definitive source document, such as
+specification or requirements document, such as specification or requirements
+document. It is a testing in which the software under test is treated, as a black box
+.you cannot “see” into it. The test provides inputs and responds to outputs without
+considering how the software works.
+%\section{Test Environment}
 \section{Test Environment}
-Talk about the server environment. 
-Server capabilities (No of requests it can process, computation requirements)
-\subsection{Unit Testing of Data Center Management Model}
+The testing of the modules was done on machine with the following features.
+\begin{description}
+  \item[$\cdot$ Operating System ] : Windows 7 
+  \item[$\cdot$ JDK Version ] : 1.7 
+  \item[$\cdot$ Browser ] : Google Chrome 
+  \item[$\cdot$ Web server ]: Tomcat Version 7 
+\end{description}
+\newpage
 
-\subsection{Unit Testing of Metrics Adapter and Analyzer Module}
-\subsection{Unit Testing of Actuator Module}
-
-\section{Integration Testing of the Modules}
-\subsection{Integration of Data Center Management Model Service with Workload Metric Generator}
-\subsection{Integration of Metrics Adapter and Analyzer with Workload Metric Generator}
-\subsection{Integrate Actuator service with RTIM software}
 \section{System Testing}
-\section{Functional Testing of the GUI}
-\subsection{Design Data Center Resources Artifacts}
-\subsection{Design Business Services Artifacts}
+\subsubsection{Test Case 1}
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 1                                  \\ \hline
+    Name Of the test        & Connection between Tomcat and JDK. \\ \hline
+    Feature Being Tested    & Tomcat Instance Working            \\ \hline
+    Input                   & Tomcat Catalina Home batch file    \\ \hline
+    Expected Output         & Home Page Must Open                \\ \hline
+    Output                  & Home Page Opens                    \\ \hline
+    Remarks                 & Test case passed                   \\ \hline
+    \end{tabular}
+    \caption {Test Case 1 : System Test}
+\end{table}
 
 
+
+%\subsubsection{Test Case 2}
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 2                                                      \\ \hline
+    Name Of the test        & Working of JQuery and Ajax Libraries                   \\ \hline
+    Feature Being Tested    & Presence of JQuery Libraries and Ajax Libraries        \\ \hline
+    Input                   & Nil                                                    \\ \hline
+    Expected Output         & Home Page Must Open with Jquery and Ajax Functionality \\ \hline
+    Output                  & Home Page Opens as expected                            \\ \hline
+    Remarks                 & Test case passed                                       \\ \hline
+    \end{tabular}
+    \caption {Test Case 2 : System Test}
+\end{table}
+
+
+
+
+
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 3                                  \\ \hline
+    Name Of the test        & Working of Google Charts API       \\ \hline
+    Feature Being Tested    & Charts                             \\ \hline
+    Input                   & Data Files                         \\ \hline
+    Expected Output         & Scatter and Line Plots must appear \\ \hline
+    Output                  & Charts are plotted                 \\ \hline
+    Remarks                 & Test case passed                   \\ \hline
+    \end{tabular}
+    \caption {Test Case 3 : System Test}
+\end{table}
+
+\section{Integration Testing}
+
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 4                             \\ \hline
+    Name Of the test        & Network Testing               \\ \hline
+    Feature Being Tested    & Checking Network Connectivity \\ \hline
+    Input                   & IP address of any DNS server  \\ \hline
+    Expected Output         & Ping Data                     \\ \hline
+    Output                  & Ping Data Obtained            \\ \hline
+    Remarks                 & Test case passed              \\ \hline
+    \end{tabular}
+    \caption {Test Case 4 : Integration Test}
+\end{table}
 
 
 \pagestyle{fancy}
