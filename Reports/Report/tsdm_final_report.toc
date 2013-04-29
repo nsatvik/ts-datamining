@@ -71,44 +71,40 @@
 \contentsline {section}{\numberline {5.3}CODE CONVENTIONS}{23}{section.5.3}
 \contentsline {paragraph}{}{23}{section*.43}
 \contentsline {subsection}{\numberline {5.3.1}Naming Conventions}{23}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}File Organization}{23}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Class Declarations}{23}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.2}File Organization}{24}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Class Declarations}{24}{subsection.5.3.3}
 \contentsline {subsection}{\numberline {5.3.4}Comments}{24}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4}DIFFICULTIES ENCOUNTERED AND STRATEGIES USED TO TACKLE}{24}{section.5.4}
-\contentsline {paragraph}{}{24}{section*.44}
-\contentsline {subsubsection}{Problem 1}{24}{section*.45}
-\contentsline {paragraph}{}{24}{section*.46}
-\contentsline {subsubsection}{Solution}{24}{section*.47}
-\contentsline {paragraph}{}{24}{section*.48}
-\contentsline {subsubsection}{Problem 2}{24}{section*.49}
-\contentsline {paragraph}{}{24}{section*.50}
-\contentsline {subsubsection}{Solution}{24}{section*.51}
-\contentsline {paragraph}{}{24}{section*.52}
-\contentsline {subsubsection}{Problem 3}{24}{section*.53}
-\contentsline {paragraph}{}{24}{section*.54}
-\contentsline {subsubsection}{Solution}{25}{section*.55}
-\contentsline {paragraph}{}{25}{section*.56}
-\contentsline {chapter}{\numberline {6}Software Testing}{26}{chapter.6}
-\contentsline {section}{\numberline {6.1}Test Environment}{26}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Unit Testing of Data Center Management Model}{27}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Unit Testing of Metrics Adapter and Analyzer Module}{27}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Unit Testing of Actuator Module}{27}{subsection.6.1.3}
-\contentsline {section}{\numberline {6.2}Integration Testing of the Modules}{27}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Integration of Data Center Management Model Service with Workload Metric Generator}{27}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Integration of Metrics Adapter and Analyzer with Workload Metric Generator}{27}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Integrate Actuator service with RTIM software}{27}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}System Testing}{27}{section.6.3}
-\contentsline {section}{\numberline {6.4}Functional Testing of the GUI}{27}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Design Data Center Resources Artifacts}{27}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Design Business Services Artifacts}{27}{subsection.6.4.2}
-\contentsline {chapter}{\numberline {7}Experimental Analysis and Results}{28}{chapter.7}
-\contentsline {section}{\numberline {7.1}Evaluation Metric}{28}{section.7.1}
-\contentsline {section}{\numberline {7.2}Experimental Dataset}{28}{section.7.2}
-\contentsline {section}{\numberline {7.3}Performance Analysis}{28}{section.7.3}
-\contentsline {section}{\numberline {7.4}Inference from the Results}{28}{section.7.4}
-\contentsline {chapter}{\numberline {8}CONCLUSION}{29}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{29}{section.8.1}
-\contentsline {section}{\numberline {8.2}Limitations}{30}{section.8.2}
-\contentsline {section}{\numberline {8.3}Future enhancements}{31}{section.8.3}
-\contentsline {section}{BIBLIOGRAPHY}{31}{Item.10}
-\contentsline {section*}{APPENDICES}{33}{chapter*.57}
+\contentsline {section}{\numberline {5.4}DIFFICULTIES ENCOUNTERED AND STRATEGIES USED TO TACKLE}{26}{section.5.4}
+\contentsline {paragraph}{}{26}{section*.44}
+\contentsline {subsubsection}{Problem 1}{26}{section*.45}
+\contentsline {paragraph}{}{26}{section*.46}
+\contentsline {subsubsection}{Solution}{26}{section*.47}
+\contentsline {paragraph}{}{26}{section*.48}
+\contentsline {subsubsection}{Problem 2}{26}{section*.49}
+\contentsline {paragraph}{}{26}{section*.50}
+\contentsline {subsubsection}{Solution}{26}{section*.51}
+\contentsline {paragraph}{}{26}{section*.52}
+\contentsline {chapter}{\numberline {6}Software Testing}{27}{chapter.6}
+\contentsline {section}{\numberline {6.1}Test Environment}{27}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Unit Testing of Data Center Management Model}{28}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Unit Testing of Metrics Adapter and Analyzer Module}{28}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Unit Testing of Actuator Module}{28}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}Integration Testing of the Modules}{28}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Integration of Data Center Management Model Service with Workload Metric Generator}{28}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Integration of Metrics Adapter and Analyzer with Workload Metric Generator}{28}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Integrate Actuator service with RTIM software}{28}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}System Testing}{28}{section.6.3}
+\contentsline {section}{\numberline {6.4}Functional Testing of the GUI}{28}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Design Data Center Resources Artifacts}{28}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Design Business Services Artifacts}{28}{subsection.6.4.2}
+\contentsline {chapter}{\numberline {7}Experimental Analysis and Results}{29}{chapter.7}
+\contentsline {section}{\numberline {7.1}Evaluation Metric}{29}{section.7.1}
+\contentsline {section}{\numberline {7.2}Experimental Dataset}{29}{section.7.2}
+\contentsline {section}{\numberline {7.3}Performance Analysis}{29}{section.7.3}
+\contentsline {section}{\numberline {7.4}Inference from the Results}{29}{section.7.4}
+\contentsline {chapter}{\numberline {8}CONCLUSION}{30}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{30}{section.8.1}
+\contentsline {section}{\numberline {8.2}Limitations}{31}{section.8.2}
+\contentsline {section}{\numberline {8.3}Future enhancements}{32}{section.8.3}
+\contentsline {section}{BIBLIOGRAPHY}{32}{Item.10}
+\contentsline {section*}{APPENDICES}{34}{chapter*.53}

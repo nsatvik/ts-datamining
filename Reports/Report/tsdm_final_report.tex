@@ -79,7 +79,7 @@ showstringspaces=false
 \section*{DECLARATION}
 \end{center}
 
-\paragraph{}  We, Samir Sheriff and Satvik N bearing USN number 1RV09CS093 and 1RV09CS095 respectively, hereby declare that the dissertation entitled ``\textbf{Decision Tree Classifier with GA based feature selection}'' completed and written by us, has not been previously formed the basis for the award of any degree or diploma or certificate of any other University.
+\paragraph{}  We, Samir Sheriff, Satvik N and Vaishakh B.N. bearing USN number 1RV09CS093 1RV09CS095 and 1RV09CS114 respectively, hereby declare that the project entitled ``\textbf{Time Series Data Mining Tool}'' completed and written by us, has not been previously formed the basis for the award of any degree or diploma or certificate of any other University.
 \vspace{1in}
 
 \begin{flushright} {Bangalore \hspace{4.4in} Samir Sheriff } 
@@ -89,6 +89,11 @@ showstringspaces=false
 \begin{flushright} { Satvik N } \\
  {USN:1RV09CS095}
  \end{flushright}
+
+\begin{flushright} { Vaishakh B N } \\
+ {USN:1RV09CS114}
+ \end{flushright}
+
 \end{titlepage}
 
 %%---------Certificate
@@ -111,7 +116,7 @@ showstringspaces=false
 \begin{center}
 \bf{\underline{CERTIFICATE}}
 \end{center}
-\noindent This is to certify that the dissertation entitled, ``\textbf{Decision Tree Classifier with GA based feature selection}'',  which is being submitted herewith for the award of B.E is the result of the work completed by \textbf{Samir Sheriff and Satvik N}  under my supervision and guidance.
+\noindent This is to certify that the dissertation entitled, ``\textbf{Time Series Data Mining Tool}'',  which is being submitted herewith for the award of B.E is the result of the work completed by \textbf{Samir Sheriff, Satvik N, Vaishakh B N}  under my supervision and guidance.
 \vspace{.5in}
 
 \begin{flushleft} 
@@ -143,15 +148,15 @@ Signature of Guide
 \end{center}
 Any achievement, be it scholastic or otherwise does not depend solely on the individual efforts but on the guidance, encouragement and cooperation of intellectuals, elders and friends. A number of personalities, in their own capacities have helped me in carrying out this project work. We would like to take this opportunity to thank them all.
 
-First and foremost we would like to thank Dr. B. S. Satyanarayana, Principal, R.V.C.E, Bengaluru, for his moral support towards completing my project work.
+First and foremost we would like to thank \textbf{Dr. B. S. Satyanarayana}, Principal, R.V.C.E, Bengaluru, for his moral support towards completing my project work.
 
-We deeply express my sincere gratitude to our guides Ms. Shanta Rangaswamy, Assistant Professor and Dr. Shobha G, Professor, Department of CSE, R.V.C.E, Bengaluru, for their able guidance, regular source of encouragement and assistance throughout this project. 
+We deeply express my sincere gratitude to our guides \textbf{Mrs. Shanta Rangaswamy}, Assistant Professor and \textbf{Dr. Shobha G}, Professor, Department of CSE, R.V.C.E, Bengaluru, for their able guidance, regular source of encouragement and assistance throughout this project. 
 
-We would like to thank Dr. N. K. Srinath, Head of Department, Computer Science \& Engineering, R.V.C.E, Bengaluru, for his valuable suggestions and expert advice.
+We would like to thank \textbf{Dr. N. K. Srinath}, Head of Department, Computer Science \& Engineering, R.V.C.E, Bengaluru, for his valuable suggestions and expert advice.
 
 We thank our Parents, and all the Faculty members of Department of Computer Science \& Engineering for their constant support and encouragement.
 
-Last, but not the least, We would like to thank our peers and friends who provided me with valuable suggestions to improve our project.
+Last, but not the least, We would like to thank our peers and friends who provided us with valuable suggestions to improve our project.
 \begin{flushright}
 Samir Sheriff\\
 8th semester, CSE\\
@@ -175,11 +180,23 @@ USN:1RV09CS114\\
 \section*{ABSTRACT}
 \addcontentsline{toc}{section}{ABSTRACT}
 \end{center} 
-A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of signal processing it is used for signal detection and estimation, while in the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting. This project is aimed making a time series data mining tool which can be used to accomplish the above goals. 
+A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of signal processing it is used for signal detection and estimation, while in the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting. This project is aimed making a time series data mining tool which can be used to accomplish the above goals. 
 
-@TODO Data sets names to be added 
 
-The project makes use of quite a few data sets in for time series analysis. these include Rainfall Data from Sita Nadi, electricity consumption data from XYZ city, ECG data and Sea Level Data. Anomaly detection, forecasting, Similarity detection is performed on these data sets using the algorithms available in literature. 
+
+
+%@TODO Data sets names to be added 
+This project mainly focuses on analyzing the sea and rainfall level time series. Users can upload the time series data to be analyzed and get the results instantly. Major data sets used are :
+\begin{itemize}
+\item Sea Level Dataset : Indicating the sea level at various times of a day.
+\item Rainfall Level : Rainfall level data, indicating the rainfall levels during various months of an year.
+\item Finance Dataset : Consisting of stock index values of  Nifty and Vix collected every minuted for a week.(5 days,during market hours).
+\item ECG Dataset : The ECG  voltage values of patients collected every 4ms.(for 10 patients).
+\end{itemize}
+
+The tool developed can be used to perform anomaly detection, forecasting, similarity detection. The tool has been developed and tested using these data sets.
+
+
 
 @TODO Key findings and results come here
 
@@ -509,17 +526,85 @@ This section describes the main modules that are used in developing the project.
 \end{itemize} 
 With these necessities in mind, J2EE is selected as the optimal programming language to implement the project.
 \section{PLATFORM}
-\paragraph{}The TSDM tool was built and designed on Windows Operating system family. They were specifically tested on Windows 7 with Google Chrome and Mozilla Firefox browsers. Because the product is browser based, any user with the broswers mentioned above will be able to run the tool. The product is hence platform independent in the true sense.
+\paragraph{}The TSDM tool was built and designed on Windows Operating system family. They were specifically tested on Windows 7 with Google Chrome and Mozilla Firefox browsers. Because the product is browser based, any user with the browsers mentioned above will be able to run the tool. The product is hence platform independent in the true sense.
 \section{CODE CONVENTIONS}
 \paragraph{}The code standards for the Java programming Language document contains the standard conventions that follows. It includes file names, file organizations, indentation, comments, declarations, naming conventions and programming practices. Code conventions improve the readability of the software.
 \subsection{Naming Conventions}
-@TODO Add shitty things here
+ A naming convention is a set of rules for choosing the character sequence to be used for identifiers which denote variables, types, functions, and other entities in source code and documentation.  There are several common elements that influence most if not all naming conventions in common use today. They are :
+\begin{itemize}
+\item \textbf{Use mixed case to make names readable}
+\item \textbf{Avoid long names (15 characters maximum is a good idea)}
+\item \textbf{Avoid names that are too similar or that differ only in case}
+\item \textbf{Capitalize the first letter of standard acronyms}
+\item \textbf{Use terminology applicable to the domain}
+\item \textbf{Use full descriptors that accurately describe the variable, field, or class}
+\end{itemize}
 \subsection{File Organization}
-@TODO Add shitty things here
+As stated above, this project has been developed using the eclipse JEE IDE. This is a dynamic web project. The project has been organized as follows :
+\begin{itemize}
+\item\textbf{Java Resources} - This folder contains the java classes organized in packages. All the algorithms implemented in java are present in this folder under different packages.
+\item\textbf{JavaScript Resources} - This folder contains the javascript library files.
+\item\textbf{Web Content} - This folder mainly contains the jsp, js, html, css files which are used for developing the front webpages.
+\end{itemize}
 \subsection{Class Declarations}
-@TODO Add shitty things here
+The following table describes the parts of a class or interface declaration, in the order that they should appear. 
+@TODO :(
+\begin{tabular}{ |l|l| }
+  \hline
+  Part of Class/Interface declaration  & Notes \\ \hline
+  Class/interface documentation comment\\ ( /**...*/) & Please see the next section on comments \\
+  class or interface statement & \\
+  Class/interface implementation comment\\ ( /*...*/), if necessary & This comment should contain any class-wide or interface-wide information that wasn't appropriate for the class/interface documentation comment.\\
+  \hline
+\end{tabular}
 \subsection{Comments}
-@TODO Add shitty things here
+\begin{itemize}
+\item{\textbf{Implementation Comment Formats}}
+	\begin{itemize}
+	\item \textbf{Block Comments}
+	\begin{verbatim}
+	/*
+ 	* Here is a block comment.
+ 	*/
+	\end{verbatim}
+	\item \textbf{Single Line Comments}
+	\begin{verbatim}
+	if (condition) {
+
+    	/* Handle the condition. */
+    	...
+	}
+
+	\end{verbatim}
+	\item \textbf{Trailing Comments}
+	\begin{verbatim}
+	if (a == 2) {
+ 	   return TRUE;            /* special case */
+	} else {
+	    return isPrime(a);      /* works only for odd a */
+	}
+	\end{verbatim}
+	\item \textbf{End-of-Line Comments}
+	\begin{verbatim}
+	if (foo > 1) {
+
+    // Do a double-flip. Harlem Style
+    	...
+	}
+	else	 {
+    	return false;          // Explain why here.	
+	}
+	\end{verbatim}
+	\end{itemize}
+\item{\textbf{Documentation Comments}}
+\begin{verbatim}
+/**
+ * The Example class provides ...
+ */
+public class Example { ...
+\end{verbatim}
+
+\end{itemize}
 \section{DIFFICULTIES ENCOUNTERED AND STRATEGIES USED TO TACKLE}
 
 \paragraph{}There were a number of challenges that were faced while implementing the Time Series Data Mining tool.Some challenges were challenging and ended up in helping us think innovatively and come up with efficient solutions. Some major problems that were encountered have been stated in brief along with their solutions.
@@ -532,10 +617,8 @@ With these necessities in mind, J2EE is selected as the optimal programming lang
 
 \subsubsection{Solution}
 \paragraph{}This Problem was solved later by making use of Google's Charts API and java script. 
-\subsubsection{Problem 3}
-\paragraph{}Initially only Samir was doing the project and We had no clue what was going on.(Need to remove this)
-\subsubsection{Solution}
-\paragraph{}We gave him a time out and everything became alright! 
+
+
 \pagebreak
 
 
@@ -553,7 +636,20 @@ With these necessities in mind, J2EE is selected as the optimal programming lang
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \chapter{Software Testing}
-Introduction to Testing (From wiki)
+Software testing is an investigation conducted to provide stakeholders with information about the quality of the product or service under test.[1] Software testing can also provide an objective, independent view of the software to allow the business to appreciate and understand the risks of software implementation. Test techniques include, but are not limited to, the process of executing a program or application with the intent of finding software bugs (errors or other defects).
+
+
+
+Software testing can be stated as the process of validating and verifying that a computer program/application/product:
+
+
+\begin{itemize}
+\item meets the requirements that guided its design and development,
+\item works as expected,
+\item can be implemented with the same characteristics,
+\item and satisfies the needs of stakeholders.
+
+\end{itemize}
 \section{Test Environment}
 Talk about the server environment. 
 Server capabilities (No of requests it can process, computation requirements)
@@ -650,11 +746,7 @@ Some of the future enhancements are :
 \item{This application uses static time series data, enhancements can be made to use real time data.(In finance applications)}
 
 \item{This application can be converted into an mobile application (android, iPhone, iPad) where the users can analyze the time series data on the go and share the results on facebook}
-%--- For efficient page utilization!
-% Currently only classification accuracy is returned.
-%However, there is potentially exploitable information with
-%respect to which features were actually used to build the
-%decision tree and their relative positions in the tree.
+
 \end{enumerate}
 
 
@@ -667,8 +759,8 @@ Some of the future enhancements are :
 \bibitem{te}Decision Trees - \url{http://web.cecs.pdx.edu/~mm/MachineLearningWinter2010/pdfslides/DecisionTrees.pdf}
 \bibitem{t} Project brief for the DT  using Horse data sets  - \url{https://cs.uwaterloo.ca/~ppoupart/teaching/cs486-spring06/assignments/asst4/asst4.pdf}
 \bibitem{t}Supervised and Unsupervised Discretization of Continous Features - \url{http://robotics.stanford.edu/users/sahami/papers-dir/disc.pdf}
-\bibitem{t}Hybrid learning using Genetic Algorithms and Decision Trees for pattern sification - \url{http://cs.gmu.edu/~eclab/papers/ijcai95.pdf}
-\bibitem{t}Kardi Tutorials on Decision Trees- \url{http://people.revoledu.com/kardi/tutorial/DecisionTree/index.html}
+\bibitem{t}Naming Convention -\textit{Wikipedia} :  \url{http://en.wikipedia.org/wiki/Naming_convention_(programming)}
+\bibitem{t}Code Conventions for the Java Programming Language - \url{http://www.oracle.com/technetwork/java/codeconv-138413.html}
 
 
 %\bibitem{}
@@ -677,7 +769,7 @@ Some of the future enhancements are :
 
 \newpage
 \pagestyle{fancy}
-\lhead{\scriptsize{Appendix A: Source Code}}
+\lhead{\scriptsize{Appendix A: Screen Shots}}
 \chead{}
 \rhead{\scriptsize{Time Series Data Mining Tool}}
 \lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
@@ -688,25 +780,8 @@ Some of the future enhancements are :
 
 \addcontentsline{toc}{section*}{APPENDICES}
 \section*{Appendices}
-\section*{Appendix A : Source Code}
-
-%\lstinputlisting[language=Java, caption=DecisionTreeConstructor.java, breaklines=true]{../../src/org/ck/dt/DecisionTreeConstructor.java}
-%\lstinputlisting[language=Java, caption=DecisionTreeClassifier.java, breaklines=true]{../../src/org/ck/dt/DecisionTreeClassifier.java}
-
-
-\newpage
-\pagestyle{fancy}
-\lhead{\scriptsize{Appendix B: Screen shots}}
-\chead{}
-\rhead{\scriptsize{Time Series Data Mining Tool}}
-\lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
-\rfoot{\small{\thepage}}
-\cfoot{\scriptsize{Jan 2013 - Jun 2013}}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
-
-
-\section*{Appendix B : Screen Shots}
+%\section*{Appendix A : Source Code}
+\section*{Appendix A : Screen Shots}
 \begin{figure}[h!]
 
   \centering
@@ -760,5 +835,22 @@ Some of the future enhancements are :
     \includegraphics[scale=0.35]{./screenshots/about_us.png}
 \caption{About the Developers who did this project!}
 \end{figure}
+
+%\lstinputlisting[language=Java, caption=DecisionTreeConstructor.java, breaklines=true]{../../src/org/ck/dt/DecisionTreeConstructor.java}
+%\lstinputlisting[language=Java, caption=DecisionTreeClassifier.java, breaklines=true]{../../src/org/ck/dt/DecisionTreeClassifier.java}
+
+
+\newpage
+\pagestyle{fancy}
+\lhead{\scriptsize{Appendix B: Paper Publication}}
+\chead{}
+\rhead{\scriptsize{Time Series Data Mining Tool}}
+\lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
+\rfoot{\small{\thepage}}
+\cfoot{\scriptsize{Jan 2013 - Jun 2013}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+Add Paper to be published in IEEE.
 
 \end{document}
