@@ -186,4 +186,15 @@ public class PhaseSpace
 		
 		return new PhaseSpace(this, clusterPhasePoints);
 	}
+
+	public boolean containsElements(List<Double> subList)
+	{
+		for(PhasePoint phasePoint : points)
+		{
+			if(phasePoint.containsElement(subList))
+				return true;
+		}
+		
+		return false;
+	}
 }

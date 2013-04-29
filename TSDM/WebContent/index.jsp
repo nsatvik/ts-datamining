@@ -12,7 +12,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Time Series Data Mining Tool</title>    
     <title>TSDM Tool</title>
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/dot-luv/jquery-ui.css" />
+    <link rel="stylesheet" href="./styles/jquery-ui.css" />
     <link rel="stylesheet" href="./styles/MainPage.css"/>
     <script src="./js/jquery-1.9.1.js"></script>
 	<script src="./js/jquery-ui.js"></script>

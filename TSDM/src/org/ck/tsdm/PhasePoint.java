@@ -69,6 +69,16 @@ public class PhasePoint
 			sum += Math.pow(coords.get(i) - p.coords.get(i), 2);
 		return Math.sqrt(sum);
 	}
+	
+	public boolean containsElement(List<Double> subList)
+	{
+		for(int i=0; i<subList.size(); i++)
+		{
+			if(Math.abs(coords.get(i) - subList.get(i)) >= 0.001)
+				return false;
+		}
+		return true;
+	}
 
 	public String toString()
 	{

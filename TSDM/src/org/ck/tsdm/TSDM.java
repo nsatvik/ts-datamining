@@ -1,5 +1,8 @@
 package org.ck.tsdm;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
 
 import org.ck.gui.Constants;
@@ -22,6 +25,7 @@ public class TSDM implements Constants
 	
 	private Population population;
 	PhaseSpace clusterPhaseSpace;
+	private Map<Integer, Double> temporalPatternMarkings;
 	
 	public TSDM(Sample sample)
 	{
@@ -30,6 +34,7 @@ public class TSDM implements Constants
 		augmentedPhaseSpace = new PhaseSpace(sample.getNormalizedTimeSeries(), Q_DIMENSION + 1);
 		
 		findOptimalTemporalPattern();
+		initTemporalPatternMarkings();
 	}
 	
 	public String toString()
@@ -53,6 +58,11 @@ public class TSDM implements Constants
 		return clusterPhaseSpace;
 	}
 	
+	public Map<Integer, Double> getTemporalPatternMarkers()
+	{
+		return temporalPatternMarkings;
+	}
+	
 	/**
 	 * Initializes a population and runs a Genetic Algorithm to find an optimal temporal pattern
 	 */
@@ -72,5 +82,20 @@ public class TSDM implements Constants
 					optimalGenome.getClusterRadius(), optimalGenome.getIndicesInsideCluster());
 			log.info(clusterPhaseSpace.toString());
 		}	
+	}
+	
+	private void initTemporalPatternMarkings()
+	{
+		temporalPatternMarkings = new HashMap<Integer, Double>();
+		List<Double> timeSeries = sample.getNormalizedTimeSeries();
+		for(int i=0; i<timeSeries.size() - Q_DIMENSION; i++)
+		{
+			if(clusterPhaseSpace.containsElements(timeSeries.subList(i, i + Q_DIMENSION)))
+			{
+				for(int j=i; j<i+Q_DIMENSION; j++)
+					temporalPatternMarkings.put(j, timeSeries.get(j));
+			}
+		}
+		log.info("Map = " + temporalPatternMarkings.toString());
 	}
 }
