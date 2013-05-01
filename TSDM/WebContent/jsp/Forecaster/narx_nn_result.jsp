@@ -21,7 +21,7 @@
 	
 	<!--  <div id="line_chart_div" style="width: 900px; height: 500px; float: left;"> -->
 		
-	
+	<label> Estimated Error : </label> <p id="error_estimate">TBD</p>
 	<div id="annotated_timeline_div" style="width: 900px; height: 500px;  margin-left: auto; margin-right: auto;">
 		
 	</div>
@@ -58,40 +58,10 @@
 	        
 	        var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('annotated_timeline_div'));
 	        chart.draw(data, {displayAnnotations: true});
+	        $("#error_estimate").html(<%out.println(tsBean.getErrorEstimate());%>);
 
 	    }
     </script>
-	
-	<script type="text/javascript">
-		function getDataArrayForLineChart(){
-			var dataArray = [];
-			var i = 0;
-			dataArray.push(['Month', 'Level']);
-			<c:forEach items="${tsBean.sample.paaTimeSeries}" var="timeValuePair">
-				// IMPORTANT : '' + ++i will be replaced with appropriate names from the Sample Object -- Restructuring required
-				var dataTuple = ['' + ++i, ${timeValuePair}];		
-				dataArray.push(dataTuple);
-			</c:forEach>
-			return dataArray;		
-		}
-		
-		function getDataArrayForTimeline(){
-			var i = 0;
-			var data = new google.visualization.DataTable();
-			data.addColumn('date', 'Date');
-	        data.addColumn('number', 'Value');	        
-	        data.addRows([
-				<c:forEach items="${tsBean.sample.paaTimeSeries}" var="timeValuePair">
-					[new Date(++i * 10), ${timeValuePair}],
-				</c:forEach>
-	          [new Date(i), ${tsBean.sample.timeSeries[5]}]
-	        ]);
-	        
-			return data;
-					
-		}
-	</script>
-		
 	
 </body>
 </html>

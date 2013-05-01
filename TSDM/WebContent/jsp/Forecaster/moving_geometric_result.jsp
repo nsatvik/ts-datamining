@@ -22,6 +22,7 @@
 		<%--Predicted Value is =  ${tsBean.pred}  --%> 
 		<br />
 	</div>
+	<label> Estimated Error : </label> <p id="error_geo_estimate">TBD</p>
 	<div id="line_chart_div" style="width: 900px; height: 500px; float: left;">
 		
 		
@@ -63,6 +64,7 @@
 	        
 	        var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('annotated_timeline_div'));
 	        chart.draw(data, {displayAnnotations: true});
+	        $("#error_geo_estimate").html(<%out.println(tsBean.getErrorEstimate());%>);
 
 	    }
     </script>

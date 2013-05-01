@@ -91,19 +91,21 @@ public class AlgorithmUtils implements Constants
 		//System.out.println("::::::::::::::::::");
 		//PrintWriter out = new PrintWriter(System.out);
 		//out.println("::::::The simple Moving Average is :::::: "+predictedValue);
-
+		double error = 0;
 		String output = "";
 		output += "[";
 		int i = 0;
 		for(i=0;i<sample.getNumOfValues();++i)
 		{
 			output += "["+(i+1)+","+sample.getValue(i)+","+smoothList.get(i)+"],";
+			error += Math.pow((sample.getValue(i)-smoothList.get(i)),2);
 		}
 		output = output.substring(0, output.length()-1);
 		output += "]";
 		System.out.println("Output : "+output);
 		tsBean.setResult(output);
-		
+		error = Math.sqrt(error/i);
+		tsBean.setErrorEstimate(error);
 		return PATH_PREFIX + "Forecaster/moving_average_result.jsp";
 	}
 
@@ -117,15 +119,18 @@ public class AlgorithmUtils implements Constants
 		String output = "";
 		output += "[";
 		int i = 0;
+		double error = 0;
 		for(i=0;i<sample.getNumOfValues();++i)
 		{
 			output += "["+(i+1)+","+sample.getValue(i)+","+smoothList.get(i)+"],";
+			error += Math.pow((sample.getValue(i)-smoothList.get(i)),2);
 		}
 		output = output.substring(0, output.length()-1);
 		output += "]";
 		//System.out.println("Output : "+output);
 		tsBean.setResult(output);
-		
+		error = Math.sqrt(error/i);
+		tsBean.setErrorEstimate(error);
 		return PATH_PREFIX + "Forecaster/moving_exponential_result.jsp";
 		
 	}
@@ -139,15 +144,18 @@ public class AlgorithmUtils implements Constants
 		String output = "";
 		output += "[";
 		int i = 0;
+		double error = 0;
 		for(i=0;i<sample.getNumOfValues();++i)
 		{
 			output += "["+(i+1)+","+sample.getValue(i)+","+smoothList.get(i)+"],";
+			error += Math.pow((sample.getValue(i)-smoothList.get(i)),2);
 		}
 		output = output.substring(0, output.length()-1);
 		output += "]";
 		//System.out.println("Output : "+output);
 		tsBean.setResult(output);
-		
+		error = Math.sqrt(error/i);
+		tsBean.setErrorEstimate(error);
 		return PATH_PREFIX + "Forecaster/moving_geometric_result.jsp";
 		
 	}
@@ -206,11 +214,15 @@ public class AlgorithmUtils implements Constants
 		//neural_net.train();
 		String output = "[";
 		Random random = new Random();
+		double error = 0;
 		for(int i=0;i<sample.getNumOfValues();++i)
 		{
 			double predictedValue = sample.getValue(i)+random.nextDouble();
+			error += (predictedValue-sample.getValue(i))*(predictedValue-sample.getValue(i));
 			output += "[ new Date("+i+"+1000),"+sample.getValue(i)+","+predictedValue+"],";
 		}
+		error = Math.sqrt(error/sample.getNumOfValues());
+		tsBean.setErrorEstimate(error);
 		output = output.substring(0,output.length()-1);
 		output += "]";
 		tsBean.setResult(output);

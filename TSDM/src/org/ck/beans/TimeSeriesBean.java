@@ -21,7 +21,7 @@ public class TimeSeriesBean implements Serializable, Constants
 	private SubTaskType subTaskType = SubTaskType.NONE;
 	private AlgorithmType algorithmType = AlgorithmType.DTW;
 	private DatasetOptions dataset = DatasetOptions.SEA_LEVEL_DATASET;
-	
+	private double errorEstimate = 0.0;
 	private ArrayList<Sample> subSamples = new ArrayList<Sample>();		//Holds samples that are to be compared to Sample
 	
 	private String params = "";		//Required for processing user-defined queries
@@ -37,6 +37,14 @@ public class TimeSeriesBean implements Serializable, Constants
 	public Sample getSample()
 	{
 		return sample;
+	}
+	public void setErrorEstimate(double error)
+	{
+		this.errorEstimate = error;
+	}
+	public double getErrorEstimate()
+	{
+		return this.errorEstimate;
 	}
 	public void setPredictedValue(double pred)
 	{

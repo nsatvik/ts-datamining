@@ -24,6 +24,7 @@
 		<%--Predicted Value is =  ${tsBean.pred}  --%> 
 		<br />
 	</div>
+	<label> Estimated Error : </label> <p id="error_avg_estimate">TBD</p>
 	<div id="line_chart_div" style="width: 1024px; height: 768px; float: left;">
 		
 		
@@ -54,51 +55,8 @@
 		  
 	     	var chart = new google.visualization.LineChart(document.getElementById('line_chart_div'));
 	     	chart.draw(data, options);
+	     	$("#error_avg_estimate").html(<%out.println(tsBean.getErrorEstimate());%>);
 	    }
     </script>
-    
-    <script type="text/javascript">    	
-	    google.load("visualization", "1", {callback : function(){drawAnnotatedTimeline();}, packages:["annotatedtimeline"]});
-	    function drawAnnotatedTimeline() { 		    	
-	    	
-	    	var data = getDataArrayForTimeline();
-	        
-	        var chart = new google.visualization.AnnotatedTimeLine(document.getElementById('annotated_timeline_div'));
-	        chart.draw(data, {displayAnnotations: true});
-
-	    }
-    </script>
-	
-	<script type="text/javascript">
-		function getDataArrayForLineChart(){
-			var dataArray = [];
-			var i = 0;
-			dataArray.push(['Month', 'Level']);
-			<c:forEach items="${tsBean.sample.paaTimeSeries}" var="timeValuePair">
-				// IMPORTANT : '' + ++i will be replaced with appropriate names from the Sample Object -- Restructuring required
-				var dataTuple = ['' + ++i, ${timeValuePair}];		
-				dataArray.push(dataTuple);
-			</c:forEach>
-			return dataArray;		
-		}
-		
-		function getDataArrayForTimeline(){
-			var i = 0;
-			var data = new google.visualization.DataTable();
-			data.addColumn('date', 'Date');
-	        data.addColumn('number', 'Value');	        
-	        data.addRows([
-				<c:forEach items="${tsBean.sample.paaTimeSeries}" var="timeValuePair">
-					[new Date(++i * 10), ${timeValuePair}],
-				</c:forEach>
-	          [new Date(i), ${tsBean.sample.timeSeries[5]}]
-	        ]);
-	        
-			return data;
-					
-		}
-	</script>
-		
-	
 </body>
 </html>
