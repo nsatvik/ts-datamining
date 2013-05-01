@@ -3,12 +3,12 @@ package org.ck.sample;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-import java.math.*;
 
 import org.ck.gui.Constants;
 import org.ck.smoothers.ExponentialMovingAverageSmoother;
@@ -27,7 +27,7 @@ public class Sample implements Constants
 	String saxWord;
 	private String sampleName;
 	private Logger log = Logger.getLogger(Sample.class.getName());
-		
+	private List<String> timeData;	
 	/**
 	 * @param file_path - The path of the file that contains the time series values
 	 * @param sample_name - The name of the given time series
@@ -42,11 +42,30 @@ public class Sample implements Constants
 		smoothenValues();	
 		performPAA();
 		runSAXEngine();
-		
+		initTimeData();
 		log.info("Initialized Sample");
 	}
 	
 	
+	private void initTimeData() {
+		timeData = new ArrayList<String>();
+		File f = new File(DataHolder.TIME_DATA_FILE);
+		try {
+			FileReader fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+			String line = null;
+			while((line=br.readLine())!=null)
+				timeData.add(line);
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+
 	/**
 	 * Copy Constructor
 	 * @param sample - The sample to be copied
@@ -59,6 +78,7 @@ public class Sample implements Constants
 		smoothenValues();	
 		performPAA();
 		runSAXEngine();
+		initTimeData();
 	}
 	
 	/**
@@ -368,5 +388,10 @@ public class Sample implements Constants
 		{
 			e.printStackTrace();
 		}
+	}
+
+
+	public List<String> getTimeData() {
+		return this.timeData;
 	}
 }

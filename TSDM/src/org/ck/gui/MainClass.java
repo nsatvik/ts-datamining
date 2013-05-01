@@ -29,8 +29,8 @@ public class MainClass
 		
 		//use your respective methods for testing
 		//satvik();
-		//vaishakh();
-		samir();
+		vaishakh();
+		//samir();
 		
 		
 	}
@@ -57,8 +57,9 @@ public class MainClass
 
 	private static void vaishakh()
 	{
-		DataHolder.setDataset(DatasetOptions.ECG_DATASET);
+		DataHolder.setDataset(DatasetOptions.SEA_LEVEL_DATASET);
 		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
+		System.out.println(seaSample.getTimeData());
 		//System.out.println(getSortedSimilarSeries(seaSample));
 		//testLineGraphDrawer(seaSample);
 		//testCommonSequenceFinder(seaSample);

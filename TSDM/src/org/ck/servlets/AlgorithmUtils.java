@@ -1,5 +1,10 @@
 package org.ck.servlets;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +17,7 @@ import org.ck.anomalifinder.Cusum_VmaskApproch;
 import org.ck.beans.TimeSeriesBean;
 import org.ck.forecaster.nn.NeuralNetwork;
 import org.ck.gui.Constants;
+import org.ck.sample.DataHolder;
 import org.ck.sample.Sample;
 import org.ck.similarity.DynamicTimeWarper;
 import org.ck.smoothers.ExponentialMovingAverageSmoother;
@@ -215,11 +221,12 @@ public class AlgorithmUtils implements Constants
 		String output = "[";
 		Random random = new Random();
 		double error = 0;
-		for(int i=0;i<sample.getNumOfValues();++i)
+		List<String> timeData = sample.getTimeData();
+		for(int i=0;i<sample.getNumOfValues()&&i<timeData.size();++i)
 		{
 			double predictedValue = sample.getValue(i)+random.nextDouble();
 			error += (predictedValue-sample.getValue(i))*(predictedValue-sample.getValue(i));
-			output += "[ new Date("+i+"+1000),"+sample.getValue(i)+","+predictedValue+"],";
+			output += "[ "+timeData.get(i)+","+sample.getValue(i)+","+predictedValue+"],";
 		}
 		error = Math.sqrt(error/sample.getNumOfValues());
 		tsBean.setErrorEstimate(error);
