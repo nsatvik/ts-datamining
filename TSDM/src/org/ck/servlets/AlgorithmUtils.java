@@ -242,7 +242,8 @@ public class AlgorithmUtils implements Constants
 	 * @return
 	 */
 	public static String runTSDMAlgorithm(TimeSeriesBean tsBean)
-	{
+	{		
+		DataHolder.setFitnessScoreThreshold(Double.parseDouble(tsBean.getParams()));
 		TSDM tsdm = new TSDM(tsBean.getSample());
 		tsBean.setResultObject(tsdm);
 		
