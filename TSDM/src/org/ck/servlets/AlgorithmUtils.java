@@ -12,6 +12,7 @@ import org.ck.anomalifinder.Cusum_VmaskApproch;
 import org.ck.beans.TimeSeriesBean;
 import org.ck.forecaster.nn.NeuralNetwork;
 import org.ck.gui.Constants;
+import org.ck.sample.DataHolder;
 import org.ck.sample.Sample;
 import org.ck.similarity.DynamicTimeWarper;
 import org.ck.smoothers.ExponentialMovingAverageSmoother;
@@ -235,7 +236,8 @@ public class AlgorithmUtils implements Constants
 	 * @return
 	 */
 	public static String runTSDMAlgorithm(TimeSeriesBean tsBean)
-	{
+	{		
+		DataHolder.setFitnessScoreThreshold(Double.parseDouble(tsBean.getParams()));
 		TSDM tsdm = new TSDM(tsBean.getSample());
 		tsBean.setResultObject(tsdm);
 		

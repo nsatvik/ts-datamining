@@ -3,6 +3,7 @@ package org.ck.tsdm.ga;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Logger;
 
 import org.ck.gui.Constants;
 import org.ck.tsdm.PhaseSpace;
@@ -54,6 +55,8 @@ public class Population implements Constants
 	 */
 	private void findBestGenome() throws OptimalScoreException
 	{
+		Logger.getLogger(Population.class.getName()).info("Reached the last generation");
+		
 		double fitnessScore = -Double.MIN_VALUE;
 		Genome bestGenome = null;
 		for(int i=0; i<genomes.size(); i++)

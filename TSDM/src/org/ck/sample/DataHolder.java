@@ -7,6 +7,7 @@ public class DataHolder implements Constants
 {
 	public static String TRAINING_FILE_NAME;
 	public static String SAMPLE_NAME;
+	private static double fitnessScoreThreshold = 5;			//Required by genetic algorithm
 	static
 	{
 		setDataset(DatasetOptions.SEA_LEVEL_DATASET);
@@ -38,5 +39,15 @@ public class DataHolder implements Constants
 		default:
 			break;
 		}
+	}
+
+	public static double getFitnessScoreThreshold()
+	{
+		return fitnessScoreThreshold;
+	}
+
+	public static void setFitnessScoreThreshold(double fitnessScoreThreshold)
+	{
+		DataHolder.fitnessScoreThreshold = fitnessScoreThreshold;
 	}
 }

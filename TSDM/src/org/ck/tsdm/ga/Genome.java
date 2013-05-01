@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.ck.gui.Constants;
+import org.ck.sample.DataHolder;
 import org.ck.tsdm.PhasePoint;
 import org.ck.tsdm.PhaseSpace;
 
@@ -37,7 +38,7 @@ public class Genome implements Constants
 		initClusterFromChromosome(chromosome, phaseSpace);
 		calculateFitnessScore(phaseSpace);
 		
-		if(fitnessScore >= FITNESS_SCORE_THRESHOLD)
+		if(fitnessScore >= DataHolder.getFitnessScoreThreshold())
 			throw new OptimalScoreException(this);
 	}
 
@@ -131,7 +132,7 @@ public class Genome implements Constants
 		
 		initClusterFromChromosome(chromosomeBuffer.toString(), phaseSpace);	
 		calculateFitnessScore(phaseSpace);		
-		if(fitnessScore >= FITNESS_SCORE_THRESHOLD)
+		if(fitnessScore >= DataHolder.getFitnessScoreThreshold())
 			throw new OptimalScoreException(this);
 	}
 	
@@ -144,21 +145,37 @@ public class Genome implements Constants
 		return fitnessScore;
 	}
 	
+	/**
+	 * Number of dimensions in the Cluster Phase Space
+	 * @return
+	 */
 	public int getNumDimensions()
 	{
 		return numDimensions;
 	}
 	
+	/**
+	 * The phase space of which the cluster is a part
+	 * @return
+	 */
 	public PhaseSpace getPhaseSpace()
 	{
 		return phaseSpace;
 	}
 	
+	/**
+	 * Center of the cluster phase point
+	 * @return
+	 */
 	public PhasePoint getClusterCenter()
 	{
 		return clusterCenter;
 	}
 	
+	/**
+	 * Radius of the cluster phase point
+	 * @return
+	 */
 	public double getClusterRadius()
 	{
 		return clusterRadius;

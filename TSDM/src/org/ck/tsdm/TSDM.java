@@ -84,6 +84,9 @@ public class TSDM implements Constants
 		}	
 	}
 	
+	/**
+	 * This fills up a structure that maps time indices to temporal pattern phase points of the optimal cluster
+	 */
 	private void initTemporalPatternMarkings()
 	{
 		temporalPatternMarkings = new HashMap<Integer, Double>();

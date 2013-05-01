@@ -47,7 +47,7 @@
     </div>
     
     <script type="text/javascript">
-    	var loadingImgHTML = '<img src="./images/loading4.gif" />';			//Bad Practice, but really helpful global variable
+    	var loadingImgHTML = '<img src="./images/loading5.gif" />';			//Bad Practice, but really helpful global variable
     </script>    
 </body>
 </html>
