@@ -42,7 +42,7 @@ public class Sample implements Constants
 		smoothenValues();	
 		performPAA();
 		runSAXEngine();
-		initTimeData();
+		//initTimeData();
 		log.info("Initialized Sample");
 	}
 	
@@ -78,7 +78,7 @@ public class Sample implements Constants
 		smoothenValues();	
 		performPAA();
 		runSAXEngine();
-		initTimeData();
+		//initTimeData();
 	}
 	
 	/**

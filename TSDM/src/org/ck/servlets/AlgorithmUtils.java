@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -221,12 +222,24 @@ public class AlgorithmUtils implements Constants
 		String output = "[";
 		Random random = new Random();
 		double error = 0;
-		List<String> timeData = sample.getTimeData();
-		for(int i=0;i<sample.getNumOfValues()&&i<timeData.size();++i)
+		int year = 2010, month = 1, day =1;
+		//List<String> timeData = sample.getTimeData();
+		for(int i=0;i<sample.getNumOfValues();++i)
 		{
 			double predictedValue = sample.getValue(i)+random.nextDouble();
 			error += (predictedValue-sample.getValue(i))*(predictedValue-sample.getValue(i));
-			output += "[ "+timeData.get(i)+","+sample.getValue(i)+","+predictedValue+"],";
+			output += "[ new Date("+year+","+month+","+day+"),"+sample.getValue(i)+","+predictedValue+"],";
+			day += 1;
+			if(day==28) {
+				month += 1;
+				day = 1;
+			}
+			if(month==12)
+			{
+				year += 1;
+				month = 1;
+			}
+						
 		}
 		error = Math.sqrt(error/sample.getNumOfValues());
 		tsBean.setErrorEstimate(error);

@@ -59,11 +59,26 @@ public class MainClass
 	{
 		DataHolder.setDataset(DatasetOptions.SEA_LEVEL_DATASET);
 		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
-		System.out.println(seaSample.getTimeData());
+		//System.out.println(seaSample.getTimeData());
 		//System.out.println(getSortedSimilarSeries(seaSample));
 		//testLineGraphDrawer(seaSample);
 		//testCommonSequenceFinder(seaSample);
 		//System.out.println(new MovingGeometricForecaster(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME).geometricMean());
+		int year = 2010, month = 1, day =1;
+		for(int i=0;i<200;++i)
+		{
+			System.out.println("new Date("+year+","+month+","+day+")");
+			day += 1;
+			if(day==28) {
+				month += 1;
+				day = 1;
+			}
+			if(month==12)
+			{
+				year += 1;
+				month = 1;
+			}
+		}
 				
 		
 	}
