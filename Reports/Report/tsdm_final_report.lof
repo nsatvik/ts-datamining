@@ -7,22 +7,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-<<<<<<< HEAD
-\contentsline {figure}{\numberline {8.1}{\ignorespaces TSDM Tool Window - Welcome Screen\relax }}{34}{figure.caption.56}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Similarity Detection with DTW Algorithm.\relax }}{34}{figure.caption.57}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Time Series Prediction with NARX NN Model.\relax }}{35}{figure.caption.58}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Time Series Prediction with Moving Average Method.\relax }}{36}{figure.caption.59}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Anomaly Detection using Statistical Approach.\relax }}{37}{figure.caption.60}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{37}{figure.caption.61}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{38}{figure.caption.62}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces About the Developers who did this project!\relax }}{38}{figure.caption.63}
-=======
-\contentsline {figure}{\numberline {8.1}{\ignorespaces TSDM Tool Window - Welcome Screen\relax }}{37}{figure.caption.73}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Similarity Detection with DTW Algorithm.\relax }}{37}{figure.caption.74}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Time Series Prediction with NARX NN Model.\relax }}{38}{figure.caption.75}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Time Series Prediction with Moving Average Method.\relax }}{38}{figure.caption.76}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Anomaly Detection using Statistical Approach.\relax }}{39}{figure.caption.77}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{39}{figure.caption.78}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{40}{figure.caption.79}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces About the Developers who did this project!\relax }}{40}{figure.caption.80}
->>>>>>> fa668a642e64ef311b55674579cfa2591527d458
+\contentsline {figure}{\numberline {8.1}{\ignorespaces TSDM Tool Window - Welcome Screen\relax }}{39}{figure.caption.68}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Similarity Detection with DTW Algorithm.\relax }}{39}{figure.caption.69}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Time Series Prediction with NARX NN Model.\relax }}{40}{figure.caption.70}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Time Series Prediction with Moving Average Method.\relax }}{41}{figure.caption.71}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Anomaly Detection using Statistical Approach.\relax }}{42}{figure.caption.72}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{42}{figure.caption.73}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{43}{figure.caption.74}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces About the Developers who did this project!\relax }}{43}{figure.caption.75}

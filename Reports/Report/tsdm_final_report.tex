@@ -190,7 +190,6 @@ This project mainly focuses on analyzing the sea and rainfall level time series.
 \begin{itemize}
 \item Sea Level Dataset : Indicating the sea level at various times of a day.
 \item Rainfall Level : Rainfall level data, indicating the rainfall levels during various months of an year.
-\item Finance Dataset : Consisting of stock index values of  Nifty and Vix collected every minuted for a week.(5 days,during market hours).
 \item ECG Dataset : The ECG  voltage values of patients collected every 4ms.(for 10 patients).
 \end{itemize}
 
@@ -198,8 +197,7 @@ The tool developed can be used to perform anomaly detection, forecasting, simila
 
 
 
-@TODO Key findings and results come here
-
+The tool consists of various algorithms categorized under anomaly detection, forecasting, similarity detection and temporal pattern recognition. The performance of these algorithms were tested on the above data sets and the results are presented.
 
 
 
@@ -701,7 +699,6 @@ document. It is a testing in which the software under test is treated, as a blac
 .you cannot “see” into it. The test provides inputs and responds to outputs without
 considering how the software works.
 %\section{Test Environment}
->>>>>>> fa668a642e64ef311b55674579cfa2591527d458
 \section{Test Environment}
 The testing of the modules was done on machine with the following features.
 \begin{description}
@@ -792,11 +789,31 @@ The testing of the modules was done on machine with the following features.
 \chapter{Experimental Analysis and Results}
 Satvik will do this
 \section{Evaluation Metric}
-Satvik will do this
+The root-mean-square deviation (RMSD) or root-mean-square error (RMSE) is a frequently used measure of the differences between values predicted by a model or an estimator and the values actually observed. These individual differences are called residuals when the calculations are performed over the data sample that was used for estimation, and are called prediction errors when computed out-of-sample. The RMSD serves to aggregate the magnitudes of the errors in predictions for various times into a single measure of predictive power. RMSD is a good measure of accuracy, but only to compare forecasting errors of different models for a particular variable and not between variables, as it is scale-dependent.[1]
+
+
+
+In statistics, the mean squared error (MSE) of an estimator is one of many ways to quantify the difference between values implied by an estimator and the true values of the quantity being estimated. MSE is a risk function, corresponding to the expected value of the squared error loss or quadratic loss. MSE measures the average of the squares of the "errors." The error is the amount by which the value implied by the estimator differs from the quantity to be estimated. The difference occurs because of randomness or because the estimator doesn't account for information that could produce a more accurate estimate.[1]
+
+The MSE is the second moment (about the origin) of the error, and thus incorporates both the variance of the estimator and its bias. For an unbiased estimator, the MSE is the variance of the estimator. Like the variance, MSE has the same units of measurement as the square of the quantity being estimated. In an analogy to standard deviation, taking the square root of MSE yields the root mean square error or root mean square deviation (RMSE or RMSD), which has the same units as the quantity being estimated; for an unbiased estimator, the RMSE is the square root of the variance, known as the standard deviation.
 \section{Experimental Dataset}
-Satvik will do this
+\begin{itemize}
+\item Sea Level Dataset : Indicating the sea level at various times of a day.
+\item Water Level : Ground Water level data, indicating the ground water level during various moths of an year for upto 5 years.
+\item Finance Dataset : Consisting of stock index values of  Nifty and Vix collected every minuted for a week.(5 days,during market hours).
+\item ECG Dataset : The ECG  voltage values of patients collected every 4ms.(for 10 patients).
+\end{itemize}
 \section{Performance Analysis}
-Satvik will do this
+\begin{itemize}
+\item{Similarity Detection}
+\item{Anomaly Detection}
+\item{Prediction and Forecasting}
+\item{Temporal Pattern Detection}
+\end{itemize}
+\subsection{Similarity Detection}
+\subsection{Anomaly Detection}
+\subsection{Prediction and Forecasting}
+\subsection{Temporal Pattern Detection}
 \section{Inference from the Results}
 Satvik will do this
 

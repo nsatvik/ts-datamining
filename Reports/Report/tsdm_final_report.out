@@ -41,31 +41,6 @@
 \BOOKMARK [2][-]{subsection.5.3.4}{Comments}{section.5.3}% 41
 \BOOKMARK [1][-]{section.5.4}{DIFFICULTIES ENCOUNTERED AND STRATEGIES USED TO TACKLE}{chapter.5}% 42
 \BOOKMARK [0][-]{chapter.6}{Software Testing}{}% 43
-<<<<<<< HEAD
-\BOOKMARK [1][-]{section.6.1}{Test Environment}{chapter.6}% 44
-\BOOKMARK [2][-]{subsection.6.1.1}{Unit Testing of Data Center Management Model}{section.6.1}% 45
-\BOOKMARK [2][-]{subsection.6.1.2}{Unit Testing of Metrics Adapter and Analyzer Module}{section.6.1}% 46
-\BOOKMARK [2][-]{subsection.6.1.3}{Unit Testing of Actuator Module}{section.6.1}% 47
-\BOOKMARK [1][-]{section.6.2}{Integration Testing of the Modules}{chapter.6}% 48
-\BOOKMARK [2][-]{subsection.6.2.1}{Integration of Data Center Management Model Service with Workload Metric Generator}{section.6.2}% 49
-\BOOKMARK [2][-]{subsection.6.2.2}{Integration of Metrics Adapter and Analyzer with Workload Metric Generator}{section.6.2}% 50
-\BOOKMARK [2][-]{subsection.6.2.3}{Integrate Actuator service with RTIM software}{section.6.2}% 51
-\BOOKMARK [1][-]{section.6.3}{System Testing}{chapter.6}% 52
-\BOOKMARK [1][-]{section.6.4}{Functional Testing of the GUI}{chapter.6}% 53
-\BOOKMARK [2][-]{subsection.6.4.1}{Design Data Center Resources Artifacts}{section.6.4}% 54
-\BOOKMARK [2][-]{subsection.6.4.2}{Design Business Services Artifacts}{section.6.4}% 55
-\BOOKMARK [0][-]{chapter.7}{Experimental Analysis and Results}{}% 56
-\BOOKMARK [1][-]{section.7.1}{Evaluation Metric}{chapter.7}% 57
-\BOOKMARK [1][-]{section.7.2}{Experimental Dataset}{chapter.7}% 58
-\BOOKMARK [1][-]{section.7.3}{Performance Analysis}{chapter.7}% 59
-\BOOKMARK [1][-]{section.7.4}{Inference from the Results}{chapter.7}% 60
-\BOOKMARK [0][-]{chapter.8}{CONCLUSION}{}% 61
-\BOOKMARK [1][-]{section.8.1}{Summary}{chapter.8}% 62
-\BOOKMARK [1][-]{section.8.2}{Limitations}{chapter.8}% 63
-\BOOKMARK [1][-]{section.8.3}{Future enhancements}{chapter.8}% 64
-\BOOKMARK [1][-]{Item.10}{BIBLIOGRAPHY}{chapter.8}% 65
-\BOOKMARK [0][-]{chapter*.53}{APPENDICES}{}% 66
-=======
 \BOOKMARK [1][-]{section.6.1}{Types Of Testing}{chapter.6}% 44
 \BOOKMARK [1][-]{section.6.2}{Test Environment}{chapter.6}% 45
 \BOOKMARK [1][-]{section.6.3}{System Testing}{chapter.6}% 46
@@ -74,11 +49,14 @@
 \BOOKMARK [1][-]{section.7.1}{Evaluation Metric}{chapter.7}% 49
 \BOOKMARK [1][-]{section.7.2}{Experimental Dataset}{chapter.7}% 50
 \BOOKMARK [1][-]{section.7.3}{Performance Analysis}{chapter.7}% 51
-\BOOKMARK [1][-]{section.7.4}{Inference from the Results}{chapter.7}% 52
-\BOOKMARK [0][-]{chapter.8}{CONCLUSION}{}% 53
-\BOOKMARK [1][-]{section.8.1}{Summary}{chapter.8}% 54
-\BOOKMARK [1][-]{section.8.2}{Limitations}{chapter.8}% 55
-\BOOKMARK [1][-]{section.8.3}{Future enhancements}{chapter.8}% 56
-\BOOKMARK [1][-]{Item.10}{BIBLIOGRAPHY}{chapter.8}% 57
-\BOOKMARK [0][-]{chapter*.69}{APPENDICES}{}% 58
->>>>>>> fa668a642e64ef311b55674579cfa2591527d458
+\BOOKMARK [2][-]{subsection.7.3.1}{Similarity Detection}{section.7.3}% 52
+\BOOKMARK [2][-]{subsection.7.3.2}{Anomaly Detection}{section.7.3}% 53
+\BOOKMARK [2][-]{subsection.7.3.3}{Prediction and Forecasting}{section.7.3}% 54
+\BOOKMARK [2][-]{subsection.7.3.4}{Temporal Pattern Detection}{section.7.3}% 55
+\BOOKMARK [1][-]{section.7.4}{Inference from the Results}{chapter.7}% 56
+\BOOKMARK [0][-]{chapter.8}{CONCLUSION}{}% 57
+\BOOKMARK [1][-]{section.8.1}{Summary}{chapter.8}% 58
+\BOOKMARK [1][-]{section.8.2}{Limitations}{chapter.8}% 59
+\BOOKMARK [1][-]{section.8.3}{Future enhancements}{chapter.8}% 60
+\BOOKMARK [1][-]{Item.10}{BIBLIOGRAPHY}{chapter.8}% 61
+\BOOKMARK [0][-]{chapter*.65}{APPENDICES}{}% 62
