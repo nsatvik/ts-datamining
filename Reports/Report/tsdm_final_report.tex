@@ -406,23 +406,30 @@ The Java Runtime Environment (JRE) is required to run the software.
 \item Receiver : The receiver receives the data that is sent to him in the embedded format. The receiver then extracts the data from the embedded format to get the actual data. The receiver makes use of the Steganography system to extract the data.
 \item Steganography System : This the software which is used to embed the data into the image and also to extract the data from the image.
 \end{itemize}
-%\begin{figure}[h!]
-%	\centering
-%		\includegraphics[scale=0.8]{level0.jpg}
-%		\caption{Data Flow Diagram Level 0}
-%\end{figure} 
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{screenshots/dfd_0.png}
+		\caption{Data Flow Diagram Level 0}
+\end{figure} 
 \pagebreak
 \subsection{DFD LEVEL 1}
 \paragraph{}There are two major processes in level 1 DFD as shown in Figure 3.3. The processes invloved in here are :
+
 \begin{itemize}
 \item Data Embedding: This process represents the actual embedding the data. The inputs given to this process are the data files, cover image. Input image is where the data is to be embedded and the key must also be shared between the sender and the receiver.
 \item Data Extraction: This process is used to extract the data back from the stego image. This is the reverse process of embedding. Here the input is the stego image and the key.
 \end{itemize}
-%\begin{figure}[h!]
-%	\centering
-%		\includegraphics[scale=0.8]{level1.jpg}
-%		\caption{Data Flow Diagram Level 0}
-%\end{figure}
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.65]{screenshots/dfd_1.png}
+		\caption{Data Flow Diagram Level 1}
+\end{figure}
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{screenshots/dfd_1_1.png}
+		\caption{Data Flow Diagram Level 1.1}
+\end{figure}
+
 \pagebreak
 \subsection{DFD LEVEL 2}
 \subsubsection{Embedding Phase}
@@ -433,11 +440,11 @@ The major processes in Level 2 DFD of Embed process on the sender side are shown
 \item Processor: Takes the key as the input, encrypts the data and embeds it into the pixels received from the retriever. 
 \item A final image is formed as a result of this process.
 \end{itemize}
-%\begin{figure}[h!]
-%	\centering
-%		\includegraphics[scale=0.8]{level2-embed.jpg}
-%		\caption{Data Flow Diagram Level 2: Embedding}
-%\end{figure}
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.7]{screenshots/dfd_2.png}
+		\caption{Data Flow Diagram Level }
+\end{figure}
 \pagebreak
 \subsubsection{Extraction Phase}
 \paragraph{}The major processes in the Level 2 DFD of the Extraction module on the receiver side is shown in Figure 3.5. 
@@ -828,34 +835,170 @@ The testing of the modules was done on machine with the following features.
 \chapter{Experimental Analysis and Results}
 Satvik will do this
 \section{Evaluation Metric}
-The root-mean-square deviation (RMSD) or root-mean-square error (RMSE) is a frequently used measure of the differences between values predicted by a model or an estimator and the values actually observed. These individual differences are called residuals when the calculations are performed over the data sample that was used for estimation, and are called prediction errors when computed out-of-sample. The RMSD serves to aggregate the magnitudes of the errors in predictions for various times into a single measure of predictive power. RMSD is a good measure of accuracy, but only to compare forecasting errors of different models for a particular variable and not between variables, as it is scale-dependent.[1]
+As explained earlier, major module present in the project are as follows :
+\begin{itemize}
+\item \textbf{Similarity Detection Module}
+\item \textbf{Prediction and Forecasting Module}
+\item \textbf{Anomaly Detection Module}
+\item \textbf{Temporal Pattern Finder Module}
+\end{itemize}
+
+Since these modules are independent of each other, they have different evaluation metrices. The evaluation metrics used for performance analysis of each module is explained in the following sub sections.
+
+\subsection{Metrics for Similarity Detection Module}
+The algorithms implemented under this module are :
+\begin{itemize}
+\item \textbf{Dynamic Time Wrapping (DTW) Algorithm}
+\item \textbf{SAX Algorithms}
+\end{itemize}
+The evaluation metrics are :
+\begin{itemize}
+\item \textbf{Euclidean Distance} In mathematics, the Euclidean distance or Euclidean metric is the ``ordinary" distance between two points that one would measure with a ruler, and is given by the Pythagorean formula. By using this formula as distance, Euclidean space (or even any inner product space) becomes a metric space. The associated norm is called the Euclidean norm. Older literature refers to the metric as Pythagorean metric.
 
 
 
-In statistics, the mean squared error (MSE) of an estimator is one of many ways to quantify the difference between values implied by an estimator and the true values of the quantity being estimated. MSE is a risk function, corresponding to the expected value of the squared error loss or quadratic loss. MSE measures the average of the squares of the "errors." The error is the amount by which the value implied by the estimator differs from the quantity to be estimated. The difference occurs because of randomness or because the estimator doesn't account for information that could produce a more accurate estimate.[1]
+In Cartesian coordinates, if p = $(p_1, p_2,..., p_n)$ and q = $(q_1, q_2,..., q_n)$ are two points in Euclidean n-space, then the distance from p to q, or from q to p is given by:
+$$d(p,q)=d(q,p)=\sqrt{(p_1-q_1)^2+(p_2-q_2)^2+....+(p_n-q_n)^2} $$
+$$d(p,q)=d(q,p)=\sqrt{\sum_{i=0}^{n}{(p_i-q_i)^2}}$$
 
-The MSE is the second moment (about the origin) of the error, and thus incorporates both the variance of the estimator and its bias. For an unbiased estimator, the MSE is the variance of the estimator. Like the variance, MSE has the same units of measurement as the square of the quantity being estimated. In an analogy to standard deviation, taking the square root of MSE yields the root mean square error or root mean square deviation (RMSE or RMSD), which has the same units as the quantity being estimated; for an unbiased estimator, the RMSE is the square root of the variance, known as the standard deviation.
+
+In our project, p and q can be visualized as two time series to be compared, where $p_i$\'s and $q_i$\'s are the time series values.
+Depending on the distance, the similarity of two or more time series with a give base series is found out. This metric is used in the DTW approach.
+\item \textbf{String Comparison} In SAX Algorithm, the time series is converted into a string of character as explained in section x.x. Given two or more time series, which are represented by strings, a string comparison algorithm is run and the similarity is found out. There are various string comparison algorithms. In this project KMP algorithm has been used.
+\end{itemize}
+\subsection{Metrics for Prediction and Forecasting Module}
+The algorithms implemented under this module for modeling and forecasting time series are :
+\begin{itemize}
+\item \textbf{NARX-Neural Network}
+\item \textbf{Moving Average Forecaster}
+\item \textbf{Moving Geometric Average Forecaster}
+\item \textbf{Moving Exponential Average Forecaster}
+\end{itemize}
+Modeling a time series is an regression problem, the evaluation metrics are :
+\begin{itemize}
+\item \textbf{Root-Mean-Square Deviation} - The root-mean-square deviation (RMSD) or root-mean-square error (RMSE) is a frequently used measure of the differences between values predicted by a model or an estimator and the values actually observed. These individual differences are called residuals when the calculations are performed over the data sample that was used for estimation, and are called prediction errors when computed out-of-sample. The RMSD serves to aggregate the magnitudes of the errors in predictions for various times into a single measure of predictive power. RMSD is a good measure of accuracy, but only to compare forecasting errors of different models for a particular variable and not between variables, as it is scale-dependent.
+
+
+
+
+The RMSD of predicted values $y_p$ for times t of a regression's dependent variable $y$ is computed for n different predictions as the square root of the mean of the squares of the deviations:
+$$RMSD=\sqrt{\sum_{i=0}^{n}{(y_p-y)^2/n}}$$
+
+The accuracies  of different algorithms are compared and presented in the next section.
+\end{itemize}
+\subsection{Metrics for Anomaly Detection  Module}
+The anomaly detection algorithms require the controller/user to specify various parameters which determine the anomalous points in the time series.
+
+
+Algorithms implemented under this module are :
+\begin{itemize}
+\item \textbf{Cumulative Sum Approach (CUSUM)}
+\item \textbf{Statistical Approach}
+\end{itemize}
+
+These algorithms require a \textbf{threshold value} to be specified by the user and depending on this value, anomalous data points are determined.
+\subsection{Temporal Pattern Finder Module}
+In this module, a Genetic Algorithm has been implemented to optimize the algorithm.
+@TODO Add Fitness Function here
+The fitness function used in the GA determine the accuracies of the patterns found. But eventually user intervention is required to interpret the resulting patterns detected by the algorithm. The results are documented in the next section.
 \section{Experimental Dataset}
+The data sets considered in this project are
 \begin{itemize}
 \item Sea Level Dataset : Indicating the sea level at various times of a day.
 \item Water Level : Ground Water level data, indicating the ground water level during various moths of an year for upto 5 years.
 \item Finance Dataset : Consisting of stock index values of  Nifty and Vix collected every minuted for a week.(5 days,during market hours).
 \item ECG Dataset : The ECG  voltage values of patients collected every 4ms.(for 10 patients).
 \end{itemize}
+All the experiment analysis and results are presented using the \textbf{Water Level} data set. As explained earlier, some algorithms require certain parameters which determine their accuracies. (Add some more stuff)
 \section{Performance Analysis}
-\begin{itemize}
-\item{Similarity Detection}
-\item{Anomaly Detection}
-\item{Prediction and Forecasting}
-\item{Temporal Pattern Detection}
-\end{itemize}
+In the previous section, the evaluations metrics for different modules depending on the algorithm were explained. Performance analysis of different modules implemented in this project are explained in the following sub sections
 \subsection{Similarity Detection}
-\subsection{Anomaly Detection}
-\subsection{Prediction and Forecasting}
-\subsection{Temporal Pattern Detection}
-\section{Inference from the Results}
-Satvik will do this
+\subsubsection{DTW Algorithm }
+\begin{figure}[h!]
 
+  \centering
+    \includegraphics[scale=0.35]{./screenshots/result_sim_dtw.png}
+  \caption{Similarity detection for two Samples using DTW Algorithm}
+\end{figure}
+\subsubsection{DTW Algorithm }
+\begin{figure}[h!]
+
+  \centering
+    \includegraphics[scale=0.35]{./screenshots/result_sim_sax.png}
+  \caption{Similarity detection for two Samples using SAX Algorithm}
+\end{figure}
+\subsection{Anomaly Detection}
+\subsubsection{Cumulative Sum}
+\begin{figure}[h!]
+
+  \centering
+    \includegraphics[scale=0.5]{./screenshots/result_ano_stat.png}
+  \caption{Anomaly detection using the Statistical Approach}
+\end{figure}
+\subsubsection{SAX Algorithm }
+\begin{figure}[h!]
+
+  \centering
+    \includegraphics[scale=0.5]{./screenshots/result_ano_cusum.png}
+  \caption{Anomaly detection using the Cumulative Sum Approach}
+\end{figure}
+\subsection{Prediction and Forecasting}
+\subsubsection{NARX Neural Network Approach}
+\begin{figure}[h!]
+
+  \centering
+    \includegraphics[scale=0.35]{./screenshots/result_fort_NN.png}
+  \caption{Forecasting/Estimation using NARX Neural Network Approach.}
+\end{figure}
+
+\subsubsection{Moving Exponential Average Method}
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=0.55]{./screenshots/result_fort_MEA.png}
+  \caption{Forecasting/Estimation using Moving Exponential Average Method.}
+\end{figure}
+\subsubsection{Simple Moving Average Method}
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=0.5]{./screenshots/result_fort_SMA.png}
+  \caption{Forecasting/Estimation with Simple Moving Average Method.}
+\end{figure}
+
+\subsection{Temporal Pattern Detection}
+
+\begin{figure}[h!]
+
+  \centering
+    \includegraphics[scale=0.35]{./screenshots/result_tmp_pattern.png}
+  \caption{Temporal Patterns detected in the Rainfall/Water Data set.}
+\end{figure}
+\section{Inference from the Results}
+\begin{enumerate}
+
+\item \textbf{Forecasting and Prediction}
+\begin{itemize}
+\item  NARX Neural Network : The accuracy of this algorithms considering various evaluation metrics specified in the previous section is around 60\%. This accuracy can be different for different data sets and depending on the specified parameters like learning rate, hidden layer size, the activation function used.
+\item  Moving Exponential Method :  This algorithm does not require any special paramters to be specified. The efficiency of this algorithm is around 40\% for water data set.
+\item Simple Moving Average and Geometrical Moving Average methods are naive and are only estimation techniques and have few low accuracies.
+\end{itemize}
+
+\item \textbf{Anomaly Detection }
+
+\begin{itemize}
+\item  Statistical Approach 
+\item  CUSUM Approach 
+\end{itemize}
+These anomaly detection algorithms work in specific ways and help in determining the anomalous data points. Depending on application, appropriate algorithm is to be used.
+\item \textbf{Similarity Detection }
+\begin{itemize}
+\item  DTW Algorithm : This algorithms helps in comparing two or more time series considering their euclidian distances and exhaustive comparing. This algorithm is computationally expensive but consumes less memory.
+\item  SAX Algorithm : This algorithm converts the time series to a string and hence consumes more memory than the DTW algorithm. Computationally this algorithm is less expensive.
+\end{itemize}
+
+\item \textbf{Temporal Pattern Finder}
+This module helped in determining interesting/temporal patterns in the time series data. The patterns were highlighted in the graphs. It is upto the user to interpret the patterns/ results shown in the graph.
+
+\end{enumerate}
 
 
 \pagestyle{fancy}
