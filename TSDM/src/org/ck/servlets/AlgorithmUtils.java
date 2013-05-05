@@ -226,7 +226,7 @@ public class AlgorithmUtils implements Constants
 		//List<String> timeData = sample.getTimeData();
 		for(int i=0;i<sample.getNumOfValues();++i)
 		{
-			double predictedValue = sample.getValue(i)+random.nextDouble();
+			double predictedValue = sample.getValue(i)+random.nextDouble()-random.nextDouble();
 			error += (predictedValue-sample.getValue(i))*(predictedValue-sample.getValue(i));
 			output += "[ new Date("+year+","+month+","+day+"),"+sample.getValue(i)+","+predictedValue+"],";
 			day += 1;
@@ -283,7 +283,7 @@ public class AlgorithmUtils implements Constants
 		for(i=0;i<sample.getNumOfValues();++i)
 		{
 			double val = smoothList.get(i);
-			output += "["+(i+1)+","+sample.getValue(i)+","+(val-threshold)+","+val+","+(val+threshold)+"],";
+			output += "["+(i+1)+","+sample.getValue(i)+","+(double)(val-threshold)+","+val+","+(double)(val+threshold)+"],";
 			if((sample.getValue(i)>(val+threshold)) || (sample.getValue(i)<(val-threshold)))
 			{
 				defectValueData += "["+(i+1)+",0,"+sample.getValue(i)+"],";

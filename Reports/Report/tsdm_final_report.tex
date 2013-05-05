@@ -184,21 +184,14 @@ A time series is a sequence of data points, measured typically at successive poi
 
 
 
-
-%@TODO Data sets names to be added 
-This project mainly focuses on analyzing the sea and rainfall level time series. Users can upload the time series data to be analyzed and get the results instantly. Major data sets used are :
-\begin{itemize}
-\item Sea Level Dataset : Indicating the sea level at various times of a day.
-\item Rainfall Level : Rainfall level data, indicating the rainfall levels during various months of an year.
-\item ECG Dataset : The ECG  voltage values of patients collected every 4ms.(for 10 patients).
-\end{itemize}
-
+This project mainly focuses on analyzing the sea and rainfall level time series. 
 The tool developed can be used to perform anomaly detection, forecasting, similarity detection. The tool has been developed and tested using these data sets.
 
 
+The tool consists of various algorithms categorized under anomaly detection, forecasting, similarity detection and temporal pattern recognition. The performance of these algorithms were tested on the above data sets and the results are presented. 
 
-The tool consists of various algorithms categorized under anomaly detection, forecasting, similarity detection and temporal pattern recognition. The performance of these algorithms were tested on the above data sets and the results are presented.
 
+Every algorithm in this tool requires a set of user-defined parameters that determine the accuracy of the results. The Neural Network in the Forecasting module is the most accurate with 60\% accuracy. The CUSUM and Statistical approach in the Anomaly-Detection module requires a threshold to be set by the user. The Temporal Pattern Mining tool requires a fitness threshold to be set by the user, and similarly, the Dynamic Time Warping tool in the Similarity Module requires no parameters.
 
 
 %------Table Of Contents
@@ -617,7 +610,53 @@ public class Example { ...
 \paragraph{}This Problem was solved later by making use of Google's Charts API and java script. 
 
 
-\pagebreak
+\section{Module Design}
+
+Object-oriented programming (OOP) is a programming paradigm that represents con-
+cepts as "objects" that have data fields (attributes that describe the object) and associated
+procedures known as methods. Objects, which are instances of classes, are used to inter-
+act with one another to design applications and computer programs.
+
+Had it not been for the presence of the OOP paradigm, our efforts in this project would
+have gone in vain, and we do not use that term lightly. Code management was a whole
+lot easier when compared to our past experience with procedural programming. In this
+chapter, we describe the different classes that were created by us to efficiently manage
+our code.
+
+Object-oriented programming (OOP) is a programming paradigm that represents concepts as "objects" that have data fields \textit{(attributes that describe the object)} and associated procedures known as methods. Objects, which are instances of classes, are used to interact with one another to design applications and computer programs.
+\\Had it not been for the presence of the OOP paradigm, our efforts in this project would have gone in vain, and we do not use that term lightly. Code management was a whole lot easier when compared to our past experience with procedural programming. In this chapter, we describe the different packages that were created by us to efficiently manage our code. Know first that our application consists of four diverse packages, namely:\textbf{}
+\begin{enumerate}
+\itemsep-0.5em
+\item{org.ck.beans}
+\item{org.ck.anomalifinder}
+\item{org.ck.dataExtractor}
+\item{org.ck.forecaster}
+\item{org.ck.forecaster.nn}
+\item{org.ck.gui}
+\item{org.ck.sample}
+\item{org.ck.similarity}
+\item{org.ck.the\_dictator}
+\end{enumerate}
+
+The description of the modules are below :
+\begin{itemize}
+\item \textbf{Similarity Detection} : This module helps in finding similarity patterns (that occur at regular intervals in case of periodic time series), comparing different time series data. SAX and DTW are the main algorithms implemented/used in this module.
+\item \textbf{Forecasting and Prediction} : This module contain algorithms/models which can be trained from the past time series data and can be used to predict the future values of a time series. 
+\item \textbf{Anomaly Detection} : This module contains algorithms that help in indicating anomalous patterns in the time series data analyzed. Anomalies are patterns in time series which deviate from the normal behavior and can indicate fraud/danger depending on the application. For example in an industry which produces the blades, the thickness of the blade can be monitored by a machine as a time series and any deviation from the normal error rate can signal an error in the manufacturing process.
+\item \textbf{Temporal Pattern Finder } : This module helps in finding hidden temporal patterns in a time series. This module can be further extended to implement clustering techniques.
+\end{itemize}
+
+
+Initially this project mainly focused on analyzing the sea and water level time series. Later this application was extended to any uni-variate time series data. Users can upload the time series data to be analyzed and get the results instantly. Major data sets used were :
+\begin{itemize}
+\item Sea Level Dataset : Indicating the sea level at various times of a day.
+\item Water Level : Ground Water level data, indicating the ground water level during various moths of an year for upto 5 years.
+\item Finance Dataset : Consisting of stock index values of  Nifty and Vix collected every minuted for a week.(5 days,during market hours).
+\item ECG Dataset : The ECG  voltage values of patients collected every 4ms.(for 10 patients).
+\end{itemize}
+
+
+In this project, we also analyzed the efficiencies of different algorithms for the same tasks and also compared the results for different data sets.Clearly more work needs to be done.(End this section Properly Boys)
 
 
 
