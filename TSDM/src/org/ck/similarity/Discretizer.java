@@ -1,4 +1,4 @@
-package org.ck.sample;
+package org.ck.similarity;
 
 import java.util.ArrayList;
 import java.util.Arrays;

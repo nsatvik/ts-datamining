@@ -85,7 +85,7 @@
 			dataArray.push(['Month' 
 			                <%			                	
 			                	for(int i=0; i<subSamples.size(); i++)
-			                		out.print(", " + "'Sample " + (i+1) + "'");
+			                		out.print(", " + "'Sample " + (i) + "'");
 			                %>
 			                ]);
 						
