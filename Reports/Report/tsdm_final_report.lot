@@ -4,9 +4,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+<<<<<<< HEAD
 \contentsline {table}{\numberline {6.1}{\ignorespaces Test Case 1 : System Test\relax }}{33}{table.caption.65}
 \contentsline {table}{\numberline {6.2}{\ignorespaces Test Case 2 : System Test\relax }}{33}{table.caption.66}
 \contentsline {table}{\numberline {6.3}{\ignorespaces Test Case 3 : System Test\relax }}{34}{table.caption.67}
 \contentsline {table}{\numberline {6.4}{\ignorespaces Test Case 4 : Integration Test\relax }}{34}{table.caption.68}
+=======
+\contentsline {table}{\numberline {6.1}{\ignorespaces Test Case 1 : System Test\relax }}{37}{table.caption.61}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Test Case 2 : System Test\relax }}{37}{table.caption.62}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Test Case 3 : System Test\relax }}{38}{table.caption.63}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Test Case 4 : Integration Test\relax }}{38}{table.caption.64}
+>>>>>>> e1e443e7265ffa039619cfab1ab30028223caee7
 \addvspace {10\p@ }
 \addvspace {10\p@ }

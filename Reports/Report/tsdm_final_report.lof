@@ -2,14 +2,18 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces System Architecture\relax }}{14}{figure.caption.22}
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Data Flow Diagram Level 0\relax }}{15}{figure.caption.26}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Data Flow Diagram Level 1\relax }}{16}{figure.caption.28}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Data Flow Diagram Level 1.1\relax }}{17}{figure.caption.29}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Data Flow Diagram Level \relax }}{18}{figure.caption.31}
+=======
+>>>>>>> e1e443e7265ffa039619cfab1ab30028223caee7
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Similarity detection for two Samples using DTW Algorithm\relax }}{39}{figure.caption.70}
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Similarity detection for two Samples using SAX Algorithm\relax }}{39}{figure.caption.72}
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Anomaly detection using the Statistical Approach\relax }}{40}{figure.caption.74}
@@ -27,3 +31,14 @@
 \contentsline {figure}{\numberline {8.6}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{52}{figure.caption.92}
 \contentsline {figure}{\numberline {8.7}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{53}{figure.caption.93}
 \contentsline {figure}{\numberline {8.8}{\ignorespaces About the Developers who did this project!\relax }}{53}{figure.caption.94}
+=======
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces TSDM Tool Window - Welcome Screen\relax }}{46}{figure.caption.68}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Similarity Detection with DTW Algorithm.\relax }}{46}{figure.caption.69}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Time Series Prediction with NARX NN Model.\relax }}{47}{figure.caption.70}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Time Series Prediction with Moving Average Method.\relax }}{48}{figure.caption.71}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Anomaly Detection using Statistical Approach.\relax }}{49}{figure.caption.72}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{49}{figure.caption.73}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{50}{figure.caption.74}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces About the Developers who did this project!\relax }}{50}{figure.caption.75}
+>>>>>>> e1e443e7265ffa039619cfab1ab30028223caee7

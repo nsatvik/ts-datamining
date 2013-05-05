@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import org.ck.gui.Constants;
+import org.ck.similarity.Approximator;
+import org.ck.similarity.Discretizer;
 import org.ck.smoothers.ExponentialMovingAverageSmoother;
 import org.ck.smoothers.SmoothingFilter;
 

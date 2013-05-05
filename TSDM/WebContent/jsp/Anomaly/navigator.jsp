@@ -24,8 +24,8 @@ $(function() {
 <body>
 <div id="tabs_forecast_nav">
 	<ul>
-		<li><a href="./jsp/Anomaly/cusum_algo.jsp">Cumulative Sum (CUSUM) Technique</a></li>
-		<li><a href="./jsp/Anomaly/stat_approach.jsp">Statistical Approach(Control Charts)</a></li>
+		<li><a href="./jsp/Anomaly/cusum_algo.jsp">CUSUM</a></li>
+		<li><a href="./jsp/Anomaly/stat_approach.jsp">Control Charts</a></li>
 	</ul>	
 </div>
 </body>

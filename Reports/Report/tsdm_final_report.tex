@@ -626,49 +626,187 @@ act with one another to design applications and computer programs.
 
 Had it not been for the presence of the OOP paradigm, our efforts in this project would
 have gone in vain, and we do not use that term lightly. Code management was a whole
-lot easier when compared to our past experience with procedural programming. In this
-chapter, we describe the different classes that were created by us to efficiently manage
-our code.
-
-Object-oriented programming (OOP) is a programming paradigm that represents concepts as "objects" that have data fields \textit{(attributes that describe the object)} and associated procedures known as methods. Objects, which are instances of classes, are used to interact with one another to design applications and computer programs.
-\\Had it not been for the presence of the OOP paradigm, our efforts in this project would have gone in vain, and we do not use that term lightly. Code management was a whole lot easier when compared to our past experience with procedural programming. In this chapter, we describe the different packages that were created by us to efficiently manage our code. Know first that our application consists of four diverse packages, namely:\textbf{}
-\begin{enumerate}
+lot easier when compared to our past experience with procedural programming. 
+In this chapter, we describe the different packages that were created by us to efficiently manage our code. Know first that our application consists of four diverse packages, namely:\textbf{}
+\textit{\begin{enumerate}
 \itemsep-0.5em
-\item{org.ck.beans}
-\item{org.ck.anomalifinder}
-\item{org.ck.dataExtractor}
-\item{org.ck.forecaster}
-\item{org.ck.forecaster.nn}
-\item{org.ck.gui}
 \item{org.ck.sample}
+\item{org.ck.smoother}
 \item{org.ck.similarity}
-\item{org.ck.the\_dictator}
+\item{org.ck.forecaster.nn}
+\item{org.ck.anomalifinder}
+\item{org.ck.tsdm}
+\item{org.ck.tsdm.ga}
+\item{org.ck.beans}
+\item{org.ck.servlets}
+\item{org.ck.gui}
+\end{enumerate}}
+
+We describe each package in detail, in the following sections. We follow a bottom-up
+methodology for explaining the layout of the classes.
+
+\subsection{org.ck.sample}
+This package allows us to efficiently manage and encapsulate the details of the data
+samples, provided by users, which are required for analysis. It is this class that allows
+our application to accept generic data sets. It consists of four classes:
+
+\begin{enumerate}
+\item{\textbf{DataHolder} - This class keeps track of names of files that contain time series data; the fitness score threshold for the genetic algorithm. It provides this information, when required, to the front-end or back-
+end of our application. To make a long story short, this class acts like a middleman
+between the back-end and front-end of our application.}
+
+\item{\textbf{Sample} - This class stores the values of a given time series in various forms - discrete and continuous; normalized and unnormalized; smooth and unsmooth; SAX Representation. It keeps track of all dimensions of a given time-series }
+
+
+
 \end{enumerate}
 
-The description of the modules are below :
+\subsection{org.ck.smoothers}
+This package consists of a number of smoothing filters that can be used to smoothen time series values stored in an object of the Sample class. These classes also double up as naive forecaster modules. They are based on the concept of Moving Averages.
+
+\begin{enumerate}
+\item{\textbf{SmoothingFilter} - This is the parent class of all the other classes in this package. It is also an abstract class. Hence, all the other classes that extend this class must provide implementations for the calculateSmoothedValues() and getAverage() methods compulsorily.}
+
+\item{\textbf{ExponentialMovingAverageSmoother} - This class extends the SmoothingFilter class. Exponential smoothing is commonly applied to financial market and economic data, but it can be used with any discrete set of repeated measurements. The raw data sequence is often represented by $x_t$, and the output of the exponential smoothing algorithm is commonly written as $s_t$, which may be regarded as a best estimate of what the next value of x will be. When the sequence of observations begins at time t = 0, the simplest form of exponential smoothing is given by the formulae:
+
+$s_0 = x_0$
+$s_t = \alpha x_t + (1 - \alpha) * s_{t-1} , t > 0$
+
+where $\alpha$ is the smoothing factor, and $0 < \alpha < 1$.}
+
+\item{\textbf{SimpleMovingAverageSmoother} - This class extends the SmoothingFilter class. A simple moving average (SMA) is the unweighted mean of the previous n datum points.
+
+$SMA = (t_m + t_{m-1} + t_{m-2} + t_{m-3} + ... + t_{m-(n-1)}) \div n$
+
+where $t_m$ is the value of the time series at the $m^{th}$ instance of time.
+
+}
+
+\item{\textbf{GeometricMovingAverageSmoother} - This class extends the SmoothingFilter class.The Geometric moving average calculates the geometric mean of the previous N bars of a time series.}
+
+\end{enumerate}
+
+\subsection{org.ck.similarity}
+This module helps in finding similarity patterns (that occur at regular intervals in case of periodic time series), comparing different time series data. SAX and DTW are the main algorithms implemented/used in this module.
+
+\begin{enumerate}
+\item{\textbf{DynamicTimeWarper} - Dynamic time warping (DTW) is an algorithm for measuring similarity between two sequences which may vary in time or speed. In general, DTW is a method that allows a computer to find an optimal match between two given sequences (e.g. time series) with certain restrictions. The sequences are "warped" non-linearly in the time dimension to determine a measure of their similarity independent of certain non-linear variations in the time dimension. This sequence alignment method is often used in time series classification. This class implements the aforementioned functionality.}
+
+\item{\textbf{Discretizer} - This Singleton class is used to convert a time series represented by a PAA (Piecewise Aggregate Approximation), to a string representation (SAX - Symbolic Aggregate Approximation)}
+
+\item{\textbf{Approximator} - This class averages out any time series containing continuous values using Piecewise Aggregate Approximation, allowing the time series to occupy as small a space as possible.}
+
+\end{enumerate}
+
+
+\subsection{org.ck.forecaster.nn}
+
+This package contain algorithms/models which can be trained from the past time series data and can be used to predict the future values of a time series. In more practical terms neural networks are non-linear statistical data modeling or decision making tools. They can be used to model complex relationships between inputs and outputs or to find patterns in data.
+
+
+
+\begin{enumerate}
+
+\item{\textbf{Neuron} - In a neural network model simple nodes (which can be called by a number of names, including "neurons", "neurodes", "Processing Elements" (PE) and "units"), are connected together to form a network of nodes — hence the term "neural network".}
+\item{\textbf{NetworkLayer} - Creating the NN architecture therefore means coming up with values for the number of layers of each type and the number of nodes in each of these layers.
+
 \begin{itemize}
-\item \textbf{Similarity Detection} : This module helps in finding similarity patterns (that occur at regular intervals in case of periodic time series), comparing different time series data. SAX and DTW are the main algorithms implemented/used in this module.
-\item \textbf{Forecasting and Prediction} : This module contain algorithms/models which can be trained from the past time series data and can be used to predict the future values of a time series. 
-\item \textbf{Anomaly Detection} : This module contains algorithms that help in indicating anomalous patterns in the time series data analyzed. Anomalies are patterns in time series which deviate from the normal behavior and can indicate fraud/danger depending on the application. For example in an industry which produces the blades, the thickness of the blade can be monitored by a machine as a time series and any deviation from the normal error rate can signal an error in the manufacturing process.
-\item \textbf{Temporal Pattern Finder } : This module helps in finding hidden temporal patterns in a time series. This module can be further extended to implement clustering techniques.
+\item{The Input Layer}
+\item{The Hidden Layer}
+\item{The Output Layer}
 \end{itemize}
 
-
-Initially this project mainly focused on analyzing the sea and water level time series. Later this application was extended to any uni-variate time series data. Users can upload the time series data to be analyzed and get the results instantly. Major data sets used were :
-\begin{itemize}
-\item Sea Level Dataset : Indicating the sea level at various times of a day.
-\item Water Level : Ground Water level data, indicating the ground water level during various moths of an year for upto 5 years.
-\item Finance Dataset : Consisting of stock index values of  Nifty and Vix collected every minuted for a week.(5 days,during market hours).
-\item ECG Dataset : The ECG  voltage values of patients collected every 4ms.(for 10 patients).
-\end{itemize}
+}
+\item{\textbf{NeuralNetwork} - A neural network (NN), in the case of artificial neurons called artificial neural network (ANN) or simulated neural network (SNN), is an interconnected group of natural or artificial neurons that uses a mathematical or computational model for information processing based on a connectionistic approach to computation.}
 
 
-In this project, we also analyzed the efficiencies of different algorithms for the same tasks and also compared the results for different data sets.Clearly more work needs to be done.(End this section Properly Boys)
+\end{enumerate}
+
+\subsection{org.ck.anomalifinder}
+This package contains algorithms that help in indicating anomalous patterns in the time series data analyzed. Anomalies are patterns in time series which deviate from the normal behavior and can indicate fraud/danger depending on the application. For example in an industry which produces the blades, the thickness of the blade can be monitored by a machine as a time series and any deviation from the normal error rate can signal an error in the manufacturing process.
+
+\begin{enumerate}
+
+\item{\textbf{Cusum\_VmaskApproch} - }
+
+\item{\textbf{CusumAnomalyMethod} - }
+
+\end{enumerate}
+
+\subsection{org.ck.tsdm}
+
+This package contains a set of classes that reveal hidden
+patterns in time series data and overcome limitations of traditional time series analysis
+techniques. This Temporal Pattern Mining tool focuses on predicting events, which are important
+occurrences. This allows the TSDM methods to predict nonstationary, nonperiodic,
+irregular time series, including chaotic deterministic time series. It makes use of a genetic algorithm, internally.
+
+\begin{enumerate}
+
+\item{\textbf{TSDM} - This class is to be used to find Temporal Patterns in Time Series and maintains status information about the algorithm.}
+
+\item{\textbf{PhaseSpace} - Represents a Q-Dimensional Phase Space of points in the time series}
+
+\item{\textbf{PhasePoint} - A point in a Q-Dimensional Phase Space}
+
+\end{enumerate}
+
+\subsection{org.ck.tsdm.ga}
+This package takes care of all operations of the Genetic algorithm that is used by the TSDM class of the org.ck.tsdm package.
+
+\begin{enumerate}
+\item{\textbf{Genome} - This class takes as input, a chromosome that encodes a given phase space cluster. It keeps track of this chromosome, and provides methods to manipulate
+this chromosome; to calculate the fitness score of this chromosome; and to throw an
+exception when the fitness value threshold has been crossed or when the best solution has been discovered.}
 
 
+\item{\textbf{Population} - As defined earlier, a population is a collection of genomes. And this is
+exactly what this class is. Initially, the Population class randomly initializes a large
+number of genomes, of which it keeps track. It provides methods such as roulette
+selection, reproduction, crossover, and mutation to operate on the population and
+discover the best genome, and hence, the best decision tree with the appropriate
+feature subset.}
 
 
+\item{\textbf{OptimalScoreException} - This class is responsible for catching the best genome
+as soon as it is discovered, since the best genome should never be allowed to escape.
+It should be caught and nurtured for future use.}
 
+\end{enumerate}
+
+\subsection{org.ck.beans}
+
+JavaBeans are reusable software components for Java. Practically, they are classes that encapsulate many objects into a single object (the bean). They are serializable, have a 0-argument constructor, and allow access to properties using getter and setter methods.
+
+\begin{enumerate}
+
+\item{\textbf{TimeSeriesBean} - This bean stores information about requested values and results of calculations. The results produced by the Similarity, Forecaster, Anomaly Detection and Temporal Pattern Mining modules are stored in an object of this class, and the front-end reads the results from this bean. It is our very own custom class that allows any number of user-defined objects to be stored for communication.}
+
+\end{enumerate}
+
+\subsection{org.ck.servlets}
+
+A Servlet is an object that receives a request and generates a response based on that request. 
+
+\begin{enumerate}
+
+\item{\textbf{MainController} - Since we've used the MVC design pattern, this servlet is the controller that gets requests from JSP pages, generates results through beans and forwards them to other jsp pages.}
+
+\item{\textbf{AlgorithmUtils} - This class is a utility class that contains methods to run various algorithms in this tool.}
+
+\end{enumerate}
+
+\subsection{org.ck.gui}
+
+This package allows each member of our team to test out the functionality of the back-end framework before we connect the front-end to it.
+
+\begin{enumerate}
+
+\item{\textbf{Constants} - A number of constants and enumerations used by all the other classes and packages.}
+
+\item{\textbf{MainClass} - After a method is added to any class, the method is called from the respective team member's method to test it. If it works fine, then the tested method is used in the front-end.}
+
+\end{enumerate}
 
 \pagestyle{fancy}
 \lhead{\scriptsize{Software Testing}}
