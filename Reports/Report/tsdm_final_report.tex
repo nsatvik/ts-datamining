@@ -225,60 +225,46 @@ Every algorithm in this tool requires a set of user-defined parameters that dete
 \renewcommand{\footrulewidth}{0.4pt}
 
 \chapter{INTRODUCTION}
-A time series is a set of observations Xt , each one being recorded at a specific time t. Discrete-time time series is one in which the set T of times at which observations are made is a discrete set. Continuous-time time series are obtained when observations are recorded continuously over some time interval, e.g., when T0 belongs [0,1]. Examples of time series are the daily closing value of the ECG readings and the annual flow volume of the Nile River at Aswan. Time series are very frequently plotted via line charts. Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data. Time series forecasting is the use of a model to predict future values based on previously observed values.  
+A time series is a set of observations $X_t$ , each one being recorded at a specific time t. Discrete-time time series is one in which the set T of times at which observations are made is a discrete set. Continuous-time time series are obtained when observations are recorded continuously over some time interval, e.g., when $T_0$ belongs [0,1]. Examples of time series are the daily closing value of the ECG readings and the annual flow volume of the Nile River at Aswan. Time series are very frequently plotted via line charts. Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data. Time series forecasting is the use of a model to predict future values based on previously observed values.  
 \section{DEFINITIONS AND USAGE}
 Definition of Time Series: An ordered sequence of values of a variable at equally spaced time intervals.
 TSDM : Time Series Data Mining tool.
 @TODO ADD DETAILS OF THIS SECTION
 %-----------------------literature survey--------------------------------------------
 \section{LITERATURE SURVEY}
-A time series is a collection of observations made sequentially through time. At each time point one or more measurements may be monitored corresponding to one or more attributes under consideration. The resulting time series is called univariate or multivariate respectively. In many cases the term sequence is used in order to refer to a time series, although some authors refer to this term only when the corresponding values are non-numerical. Throughout this paper the terms sequence and time series are being used interchangeably.
+A time series is a collection of observations made sequentially through time. At each time point one or more measurements may be monitored corresponding to one or more attributes under consideration. The resulting time series is called univariate or multivariate respectively. In many cases the term sequence is used in order to refer to a time series, although some authors refer to this term only when the corresponding values are non-numerical.
+
+
+
+
 The most common tasks of time series data mining methods are: indexing, clustering, classification, novelty detection, motif discovery and rule discovery. In most of the cases, forecasting is based on the outcomes of the other tasks. A brief description of each task is given below.\\
+
 \textbf{Indexing:} Find the most similar time series in a database to a given query time series.\\
 \textbf{Clustering:} Find groups of time series in a database such that, time series of the same group are similar to each other whereas time series from different groups are dissimilar to each other.\\
 \textbf{Classification:} Assign a given time series to a predefined group in a way that is more similar to other time series of the same group than it is to time series from other groups.\\
 \textbf{Novelty detection:} Find all sections of a time series that contain a different behavior than the expected with respect to some base model.\\
 \textbf{Motif discovery:} Detect previously unknown repeated patterns in a time series database.\\
 \textbf{Rule discovery:} Infer rules from one or more time series describing the most possible behaviour that they might present at a specific time point (or interval).\\
-  The temporal aspect of data arises some special issues to be considered and/or imposes some restrictions in the corresponding applications. First, it is necessary to define a similarity measure between two time series and this issue is very important in TSDM since it involves a degree of subjectivity that might affect the final result. A lot of research has focused on defining different similarity measures in order to improve the performance of the corresponding methods. Second, it is necessary to apply a representation scheme on the time series data. Since the amount of data may range from a few megabytes to terabytes, an appropriate representation of the time series is necessary in order to manipulate and analyze it efficiently. The desirable properties that this approach should hold are: 
-(a) the completeness of feature extraction 
-(b) the reduction of the dimensionality “curse” [1]. 
-More specifically, the method of extraction features should guarantee that there would be no pattern missed, the number of patterns falsely identified as interesting will be minimized and the dimensionality reduction will be substantial. In many cases also, the objective is to take advantage of the specific characteristics of a representation that make specific methods applicable (i.e. inducing rules, Markov models). Consequently, the majority of the researchers are focused on defining novel similarity measures and representation schemes in order to improve indexing performance. 
-Clustering and classification of time series rely heavily on the similarity measure and the representation scheme selected, thus, there are very few papers proposing a novel algorithm [2]. A recent survey on clustering time series is provided by Liao [3].  
-Novelty detection is a very important task in many areas. Several alternative terms for “novelty” have been used, such as, “anomaly”, “interestingness”, “surprising”, “faults” to name a few. Moreover, many problems of finding periodic patterns can be considered as similar problems. The important point here is to provide a clear and concise definition of the corresponding notion. For instance, Keogh et al. [14] describe a pattern as surprising “if the frequency with which it appears, differs greatly from that expected given previous experience”. The authors present a novel algorithm, called Tarzan, and provide useful pointers to relevant literature. Recently, Aref et al. [4] focus on discovering partial periodic patterns in one or more databases. They present algorithms for incremental mining (how to maintain discovered patterns over time as the database is being expanded).
-Motif discovery has only recently attracted the interest of the data mining community [9]. Motifs are defined to be previously unknown, frequently occurring patterns in a time series. These patterns may be of particular importance to other data mining tasks, such as, rule discovery and novelty detection. The recent work of Tanaka et al. [7] proposes a new method for identifying motifs from multi-dimensional time series. They apply Principal Component Analysis to reduce dimensionality and perform a symbolic representation. Then, the motif discovery procedure starts by calculating a description length of a pattern based on the “Minimum Description Length” principle.
-\begin{itemize}
 
-\item{Indexing }
-Indexing approaches are mostly influenced by the pioneer work of Agrawal et al. [1], generalized by Faloutsos et al. [12]. The emerged framework from these papers, referred as GEMINI, can be summarized in the following steps [11]:
-•extract k essential features from the time series 
-•map into a point in k-dimension feature space
-•organize points with off-the-shelf spatial access method.
-•discard false alarms
-The first and second step suggests the application of a representation scheme in order to reduce the dimensionality. However, this mapping should guarantee that it would return all the qualifying objects. This implies that the similarity measure in the k-dimension feature space should lower bound the corresponding similarity measure in the original space [8]. The third step is an opened selection, however most of the times R-tree structures are used. Other indexing structures may be vp-trees [7] [9], hB-trees and grid-files. The fourth step is a consequence of the fact that this approach can not guarantee that there will not be returned unqualified objects, thus these false alarms should be discarded in a post processing phase.
-Recently, Vlachos et al. [8] presented an external memory indexing method for discovering similar multidimensional time series under time warping conditions. The main contribution of this work is the ability to support various distance measures without the need to reconstruct the index. Two approaches with respect to distance measures are taken under consideration, namely, the Longest Common Subsequence (LCS) and the Dynamic Time Warping (DTW). Their indexing technique works by splitting a set of multiple time series in multidimensional Minimum Bounding Rectangles (MBR) and storing them in an R-tree. For a given query, a Minimum Bounding Envelope (MBE) is constructed, that covers all the possible matching areas of the query under time warping conditions. This MBE is decomposed into MBRs and then probed in the R-tree index.
-\item{Time series representation}
-There have been several time series representations proposed in the literature, mainly on the purpose of reducing the intrinsically high dimensionality of time series. We will refer to some of the most commonly used representations. Discrete Fourier Transform (DFT) [1] was one of the first representation schemes proposed within data mining context. DFT transforms a time series from the time domain into the frequency domain whereas a similar representation scheme, Discrete Wavelet Transform (DWT) [8], transforms it into the time/frequency or space/frequency domain. Singular Value Decomposition (SVD) [5] performs a global transformation by rotating the axes of the entire dataset such that the first axis explains the maximum variance, the second axis explains the maximum of the remaining variance and is orthogonal to the first axis etc. Piecewise Aggregate Approximation (PAA) [3] divides a time series into segments of equal length and records the mean of the corresponding values of each one. Adaptive Piecewise Constant Approximation (APCA) [10] is similar to PAA but allows segments of different lengths. Piecewise Linear Approximation (PLA) approximates a time series by a sequence of straight lines.
-Recently, more representation schemes have been proposed in order to reduce dimensionality. The first class of these schemes consists of symbolic representations. Lin et al. [11] propose a Symbolic Aggregate Approximation (SAX) method, which uses as a first step the PAA representation and then discretizes the transformed time series by using the properties of the normal probability distribution. Bagnal[5] assess the effects of clipping original data on the clustering of time series. Each point of a series is mapped to 1 when it is above the population mean and to 0 when it is below. This representation is called clipping and has many advantages especially when the original series is long enough. It achieves adequate accuracy in clustering, it efficiently handles outliers and it provides the ability to employ algorithms developed for discrete or categorical data. Megalooikonomou et al. [30] introduce a novel dimensionality reduction technique, called Piecewise Vector Quantized Approximation (PVQA). This technique is based on vector quantization that partitions each series into segments of equal length and uses vector quantization to represent each segment by the closest codeword from a codebook. The original time series is transformed to a lower dimensionality series of symbols. This approach requires a training phase in order to construct the codebook, a data-encoding scheme and a distance measure.
-Cole et al. [9] provide a work that addresses the task of discovering correlated windows of time series (synchronously or with lags) over streaming data. They concentrate in the case where the time series are “uncooperative”, meaning that there does not exist a fundamental degree of regularity that would allow an efficient implementation of DFT  transformations. The proposed method involves a combination of several techniques – sketches (random projections), convolution, structured random vectors, grid structures, and combinatorial design – in order to achieve high performance. Gionis and Mannila [7] introduce a different approach, which is mainly motivated from research on human genome sequences. However, this approach is more general and involves multivariate time series. The notion behind their approach is that, the high variability that some time series very often exhibit, may be explained by the existence of several different sources that affect different segments of this series. More specifically, the task is to find a proper way to segment a time series into k segments, each of which comes from one of h different sources (k >>h). This task is analogous to clustering the points of a time series in h clusters with the additional constraint that a cluster may change at most k-1 times. Gionis and Mannila provide three algorithms for solving this problem and they test them on synthetic and genome data.
-Finally, Vlachos et al. [3] propose to represent a time series by applying discrete Fourier transformations and retain the k best Fourier coefficients instead of the first few ones. Although this paper is motivated by mining knowledge from the query logs of the MSN search engine, the proposed methods may be applied for time series data mining in general.
-\item{Similarity Measures}
-The definition of novel similarity measures has been one of the most researched areas in the TSDM field. Generally, they are strongly related to the representation scheme applied to the original data. However, there are some similarity measures that appear frequently in the literature. Most of the researchers’ choices are based on the family of Lp norms, that include the Euclidean distance. Yi and Faloutsos [3] presented a novel and fast indexing scheme when the distance function is any of the arbitrary Lp norms (p = 1, 2, …, ¥). Another similarity measure that attracted a lot of attention, Dynamic Time Warping (DTW), comes from the speech recognition field [6]. The main advantage of this measure is that it allows acceleration-deceleration of a series along the time dimension (nonlinear alignments are possible), however it is computationally expensive. Markov models have been constructed and experimented. Another family of distance measures, Longest Common Subsequence Measures (LCS), often used in speech recognition and text pattern matching. As an example of this approach, we refer to the work of Agrawal et al. [2] who define two sequences as similar when they have enough, non-overlapping, time-ordered pairs of subsequences that are similar. 
-Li et al. [6] propose an algorithm for fast and efficient recognition of motions in multi-attribute continuous motion sequences. The main contribution of this paper is the definition of a similarity measure based on the analysis of Singular Value Decomposition (SVD) properties of similar multi-attribute motions.  The proposed measure deals with noise and takes into account the different rates and durations of each motion. The authors also propose a five-phase algorithm for handling segmentation and recognition in real-time.
-Sakurai et al. [5] propose the Fast search method for dynamic Time Warping (DTW) that satisfies the following criteria: 
-(a) it is fast 
-(b) it produces no false dismissals 
-(c) it does not pose any restriction on the series length 
-(d) it supports for any, as well as for no restriction on warping scope.
- Their approach is based on a new lower bounding distance measure. They represent the sequence with approximate segments, not necessary of equal length, and operate on them. Three segments, the lower bound, the upper bound, and the time interval, correspond to each one of these approximate segments. In order to fulfill all of the above criteria, they provide algorithms for dynamic programming and searching adjusted to the properties of this representation. Fu et al. [14] propose a new technique to query time series that incorporates global scaling and time warping. The argument is that most real world problems require the ability to handle both types of distortion simultaneously. The approach is to scale the sequence by a bounded scaling factor and also to find nearest neighbor or evaluate range query by applying time warping. The authors provide definitions and proofs of the necessary lower bounds.
-Furthermore, there is the expected contribution to defining similarity measures by papers that propose novel representation schemes, since these two tasks are interrelated to each other. 
-\end{itemize}
+
+  The temporal aspect of data arises some special issues to be considered and imposes some restrictions in the corresponding applications. First, it is necessary to define a similarity measure between two time series and this issue is very important in TSDM since it involves a degree of subjectivity that might affect the final result. Second, it is necessary to apply a representation scheme on the time series data. Since the amount of data may range from a few kilobytes to megabytes, an appropriate representation of the time series is necessary in order to manipulate and analyze it efficiently. The desirable properties that this approach should hold are: 
+  \begin{itemize}
+  \item the completeness of feature extraction 
+  \item the reduction of the dimensionality. 
+  \end{itemize}
+
+Since in this project we consider only single/uni-variate time series, dimentionality reduction can be ignored.
+In many cases also, the objective is to take advantage of the specific characteristics of a representation that make specific methods applicable (i.e. inducing rules, Markov models). 
+
+Novelty detection is a very important task in many areas. Several alternative terms for ``novelty\" have been used, such as, ``anomaly\", ``interestingness\", ``surprising\", ``faults\". Moreover, many problems of finding periodic patterns can be considered as similar problems.
+
 \section{MOTIVATION}
-mr. Manju. 
-@TODO Add video link here..
+
+
 \section{PROBLEM STATEMENT}
-Make a paper and publish water data everywhere. :/
-@TODO add problem statement. 
+A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting.
+
+To define the problem statement in one line, it is given a time series, design and develop a tool which can help in analyzing (forecasting/prediction, anomaly detection, temporal pattern detection, etc.) the time series and help the user visualize the results. 
 
 \section{OBJECTIVE}
 The ability to model and perform decision modelling and analysis is an essential feature of many real-world applications ranging from emergency medical treatment in intensive care units to military command and control systems. Existing formalisms and methods of inference have not been effective in real-time applications where trade-offs between decision quality and computational tractability are essential. The objective of this project is to fill the void that exists and help in proper analysis of time varying data.
@@ -299,8 +285,27 @@ fit a model and proceed to forecasting, monitoring or even feedback and feed for
 Time series analysis of data requires the user to able to view the different algorithms and the result obtained from each algorithm along with the graphs which help the user understand the time varying nature of the data. Hence, the representation of data becomes very important. Having understood this requirement in the early phase of the project, we adopted a methodology that will accomplish the objectives in a neat and intuitive way. A GUI was developed in the form of Java Server Pages and the back end was coded in Java which helped us exploit the object oriented paradigm in design of algorithms. 
 
 \section{ORGANIZATION OF REPORT}
-@TODO after all chapters are complete.
+Chapter 1 gave an introduction to the time series, the motivation, objective TSDM tool to be developed. Problem statement was discussed in brief.
 
+
+Chapter 2 discusses the software requirements specifications considering product perspective, functional requirements, software and hardware requirements.
+
+
+Chapter 3 discusses a high level design of the tool being developed. The data flow diagrams are discussed showing various levels (0, 1, 2).
+
+Chapter 5 gives the implementation details discussing the programming language selection, coding conventions used. A detailed description of the modules present in this project is presented under this chapter.
+
+
+
+Chapter 6 discusses the testing strategies used, testing environment, and various test results are shown.
+
+
+
+Chapter 7 explains the results of experiment and performance analysis of various modules of the TSDM tool. A comparative study is made for different algorithms under each module and inferences from the results are shown with a few snapshots for illustrations.
+
+
+
+Chapter 8 summarizes the entire project, stating its limitations and puts forth the possible future enhancements for the TSDM Tool.
 \pagestyle{fancy}
 \lhead{\scriptsize{Software Requirements Specification}}
 \chead{}
@@ -400,11 +405,11 @@ The Java Runtime Environment (JRE) is required to run the software.
 \paragraph{}There are many levels of DFDs. Level 0 gives the general description and level 1 gives the detailed description. Going higher in the level numbers greater description of the processes will be given.
 \pagebreak
 \subsection{DFD LEVEL 0}
-\paragraph{}The level 0 DFD is shown in Fig. 3.2 below ehich gives the general operation of the steganographic system There are three major components. Two external entities called sender and receiver and one major system called the steganographic system.
+\paragraph{}The level 0 DFD is shown in Fig. 3.2 below which gives the general operation of the TSDM Tool. There are three major components. Two external entities called sender and receiver and the most important Time Series Data Mining Tool.
 \begin{itemize}
-\item Sender : The sender is the one responsible to send the data to the receiver. The data to be sent is hidden using the Steganography system. The data is hidden in an image.
-\item Receiver : The receiver receives the data that is sent to him in the embedded format. The receiver then extracts the data from the embedded format to get the actual data. The receiver makes use of the Steganography system to extract the data.
-\item Steganography System : This the software which is used to embed the data into the image and also to extract the data from the image.
+\item Input Time Series Data : The user of this tool  is the one responsible to send the data to be analyzed using the tool. This tool can analyze only uni-variate time series data.
+\item Analyzed Results: Depending the data sent by the user and the requested operations, the TSDM tool produces results in the form of graphs showing patterns, predictions, and other analyzed results.
+\item TSDM Tool : This the software tool which is used to analyze the input time series data and generate meaningful results, patterns etc. depending on what the user wants.
 \end{itemize}
 \begin{figure}[h!]
 	\centering
@@ -413,52 +418,76 @@ The Java Runtime Environment (JRE) is required to run the software.
 \end{figure} 
 \pagebreak
 \subsection{DFD LEVEL 1}
-\paragraph{}There are two major processes in level 1 DFD as shown in Figure 3.3. The processes invloved in here are :
+\paragraph{}Major components of the TSDM Tool can be  in level 1 DFD as shown in Figure 3.3. The components are :
 
+The description of the modules are below :
 \begin{itemize}
-\item Data Embedding: This process represents the actual embedding the data. The inputs given to this process are the data files, cover image. Input image is where the data is to be embedded and the key must also be shared between the sender and the receiver.
-\item Data Extraction: This process is used to extract the data back from the stego image. This is the reverse process of embedding. Here the input is the stego image and the key.
+\item \textbf{Similarity Detection} : This module helps in finding similarity patterns (that occur at regular intervals in case of periodic time series), comparing different time series data. SAX and DTW are the main algorithms implemented/used in this module.
+\item \textbf{Forecasting and Prediction} : This module contain algorithms/models which can be trained from the past time series data and can be used to predict the future values of a time series. 
+\item \textbf{Anomaly Detection} : This module contains algorithms that help in indicating anomalous patterns in the time series data analyzed. Anomalies are patterns in time series which deviate from the normal behavior and can indicate fraud/danger depending on the application. For example in an industry which produces the blades, the thickness of the blade can be monitored by a machine as a time series and any deviation from the normal error rate can signal an error in the manufacturing process.
+\item \textbf{Temporal Pattern Finder } : This module helps in finding hidden temporal patterns in a time series. This module can be further extended to implement clustering techniques.
+\end{itemize}
+
+Other components are 
+\begin{itemize}
+\item \textbf{Input } - Input is the uni-variate time series data to be analyzed using the tool.
+\item \textbf{Output } - Output depends on the module selected by the user. This is visualized using the graphs/charts.
 \end{itemize}
 \begin{figure}[h!]
 	\centering
 		\includegraphics[scale=0.65]{screenshots/dfd_1.png}
 		\caption{Data Flow Diagram Level 1}
 \end{figure}
+
+\subsubsection{DFD LEVEL 1.1}
+In DFD Level 1.1 shown in the figure 3.4, All the modules are expanded to show the algorithms implemented under them. The Input and the Output are same and level 1. Charts are used for visualizing the results performed on the time series data.
 \begin{figure}[h!]
 	\centering
 		\includegraphics[scale=0.8]{screenshots/dfd_1_1.png}
 		\caption{Data Flow Diagram Level 1.1}
 \end{figure}
+A brief description of the algorithms implemented under each module are below :
+\begin{enumerate}
 
-\pagebreak
-\subsection{DFD LEVEL 2}
-\subsubsection{Embedding Phase}
-The major processes in Level 2 DFD of Embed process on the sender side are shown in Figure 3.4.
+\item \textbf{Forecasting and Prediction}
 \begin{itemize}
-\item Data Holder: Data holder contains all the data bits, which upon invocation will give the required number of bits of data need to be embedded.
-\item Pixel Retriever: This retrieves the individual pixels from the cover image. 
-\item Processor: Takes the key as the input, encrypts the data and embeds it into the pixels received from the retriever. 
-\item A final image is formed as a result of this process.
+\item  NARX Neural Network : NARX is Non Linear Auto-Regressive with Extraneous Inputs. This is a neural network approach used for modeling a time series which depends on another time series. Back Propagation algorithm has been used to train the neural network.
+Sigmoid activation function is  used for neurons. 
 \end{itemize}
+
+\item \textbf{Anomaly Detection }
+
+\begin{itemize}
+\item  Statistical Approach 
+\item  CUSUM Approach 
+\end{itemize}
+These anomaly detection algorithms work in specific ways and help in determining the anomalous data points. The results are displayed in the output graphs.
+\item \textbf{Similarity Detection }
+\begin{itemize}
+\item  DTW Algorithm : This algorithms helps in comparing two or more time series considering their euclidian distances and exhaustive comparing. This algorithm is computationally expensive but consumes less memory.
+\item  SAX Algorithm : This algorithm converts the time series to a string and helps in comparing different time series and shows how similar the time series are by giving a similarity distance.
+\end{itemize}
+
+\item \textbf{Temporal Pattern Finder}
+This module helps in determining interesting/temporal patterns in the time series data. The patterns are highlighted in the graphs. It is upto the user to interpret the patterns/ results shown in the graph.
+\end{enumerate}
+
+\subsection{DFD LEVEL 2}
+The DFD Level 2 diagram is shown in the Figure 3.5 . The Output that comes out of the TSDM tool is divided into various categories depending on the module and is as shown in the figure 3.5.
+The output categories are :
+
 \begin{figure}[h!]
 	\centering
 		\includegraphics[scale=0.7]{screenshots/dfd_2.png}
 		\caption{Data Flow Diagram Level }
 \end{figure}
-\pagebreak
-\subsubsection{Extraction Phase}
-\paragraph{}The major processes in the Level 2 DFD of the Extraction module on the receiver side is shown in Figure 3.5. 
 \begin{itemize}
-\item Data Retriever: The data retriever module extracts the data file from the morphed image which it receives. The key should be present for proper retrieval.
-\item Pixel Retriever: Retrieves the pixels from the morphed image and pprovides it to the Data Retriever.
-\end{itemize}
-%\begin{figure}[h!]
-%	\centering
-%		\includegraphics[scale=0.8]{level2-extract.jpg}
-%		\caption{Data Flow Diagram Level 2: Embedding}
-%\end{figure}
-\pagebreak
+\item Comparision Results  : The comparison results of the DTW or the SAX algorithm under the Similarity Detection Module are obtained and given as input to the charts api for visualization.
+\item Anomalous Data Points  : The anomalous data points determined by the CUSUM or STATISTICAL algorithm under the Anomaly Detection Module are obtained and given as input to the charts api for visualization.
+\item Forecast/Predicted Results  : The predicted values of the input time series output by one of the NARX, GMA or GEA algorithms under the Forecasting Module are obtained and given as input to the charts api for visualization.
+\item Temporal Patterns  : The temporal patterns found by the Temporal Pattern Finder module are obtained and given as input to the charts api for1 visualization.
 
+\end{itemize}
 \chapter{DETAILED DESIGN}
 \pagestyle{fancy}
 \lhead{\scriptsize{Detailed Design}}
@@ -544,17 +573,7 @@ As stated above, this project has been developed using the eclipse JEE IDE. This
 \item\textbf{JavaScript Resources} - This folder contains the javascript library files.
 \item\textbf{Web Content} - This folder mainly contains the jsp, js, html, css files which are used for developing the front webpages.
 \end{itemize}
-\subsection{Class Declarations}
-The following table describes the parts of a class or interface declaration, in the order that they should appear. 
-@TODO :(
-\begin{tabular}{ |l|l| }
-  \hline
-  Part of Class/Interface declaration  & Notes \\ \hline
-  Class/interface documentation comment\\ ( /**...*/) & Please see the next section on comments \\
-  class or interface statement & \\
-  Class/interface implementation comment\\ ( /*...*/), if necessary & This comment should contain any class-wide or interface-wide information that wasn't appropriate for the class/interface documentation comment.\\
-  \hline
-\end{tabular}
+
 \subsection{Comments}
 \begin{itemize}
 \item{\textbf{Implementation Comment Formats}}
@@ -727,9 +746,9 @@ This package contains algorithms that help in indicating anomalous patterns in t
 
 \begin{enumerate}
 
-\item{\textbf{Cusum\_VmaskApproch} - }
+\item{\textbf{Cusum\_VmaskApproch}}
 
-\item{\textbf{CusumAnomalyMethod} - }
+\item{\textbf{CusumAnomalyMethod}}
 
 \end{enumerate}
 
@@ -893,8 +912,7 @@ The testing of the modules was done on machine with the following features.
 \end{description}
 \newpage
 
-\section{System Testing}
-\subsubsection{Test Case 1}
+
 \begin{table}
     \begin{tabular}{|l|l|}
     \hline
@@ -944,7 +962,7 @@ The testing of the modules was done on machine with the following features.
     \caption {Test Case 3 : System Test}
 \end{table}
 
-\section{Integration Testing}
+
 
 \begin{table}
     \begin{tabular}{|l|l|}
@@ -958,6 +976,34 @@ The testing of the modules was done on machine with the following features.
     Remarks                 & Test case passed              \\ \hline
     \end{tabular}
     \caption {Test Case 4 : Integration Test}
+\end{table}
+
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 5                             \\ \hline
+    Name Of the test        & Performance Testing               \\ \hline
+    Feature Being Tested    & Performance of various algorithms in the tool\\ \hline
+    Input                   & Time series data specified by the user  \\ \hline
+    Expected Output         & Load the graphs/results within the timeout specified.   \\ \hline
+    Output                  & visualization graphs appear           \\ \hline
+    Remarks                 & Test case passed              \\ \hline
+    \end{tabular}
+    \caption {Test Case 4 : Performance Test}
+\end{table}
+
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 6                             \\ \hline
+    Name Of the test        & Load Testing               \\ \hline
+    Feature Being Tested    & Memory consumption of the tool per request\\ \hline
+    Input                   & Time series data and operations specified by the user  \\ \hline
+    Expected Output         & Process maximum requests from the users \\ \hline
+    Output                  & server computer handle multiple requests \\ \hline
+    Remarks                 & Test case passed              \\ \hline
+    \end{tabular}
+    \caption {Test Case 4 : Load Test}
 \end{table}
 
 
@@ -1037,7 +1083,7 @@ Algorithms implemented under this module are :
 These algorithms require a \textbf{threshold value} to be specified by the user and depending on this value, anomalous data points are determined.
 \subsection{Temporal Pattern Finder Module}
 In this module, a Genetic Algorithm has been implemented to optimize the algorithm.
-@TODO Add Fitness Function here
+
 The fitness function used in the GA determine the accuracies of the patterns found. But eventually user intervention is required to interpret the resulting patterns detected by the algorithm. The results are documented in the next section.
 \section{Experimental Dataset}
 The data sets considered in this project are
