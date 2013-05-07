@@ -1,11 +1,11 @@
-\documentclass[12pt]{report}
+\documentclass[12pt,a4paper]{report}
 \usepackage[pdftex]{graphicx}
 %\usepackage[pdftrex/bookmarksnumbered=true]{hyperref}
 \usepackage{hyperref}
-\linespread{1.5}
-\textwidth = 6in
-\textheight = 9in
-\usepackage[body={6.0in, 8.2in},left=1.25in,right=1.0in,top=1.0in, bottom=1.0in]{geometry}
+%\linespread{1.5}
+%\textwidth = 6in
+%\textheight = 9in
+%\usepackage[body={6.0in, 8.2in},left=1.25in,right=1.0in,top=1.0in, bottom=1.0in]{geometry}
 \frenchspacing
 \usepackage{fancyhdr}
 \usepackage{color}
@@ -26,50 +26,69 @@ showstringspaces=false
 \DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
 \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
 
-
+\title{Time Series Data Mining Tool}
+\author{Samir Sheriff, Satvik N, Vaishakh BN}
 \begin{document}
 \pagenumbering{roman}
 %\input{Coverpage.tex}
 
-%----------------title page
-%\begin{titlepage}
-%\begin{center}
-%{\bf \large Decision Tree Classifier with GA based feature selection}\\
-%\vspace{.15in}
-%{\bfseries Mini Project Report}\\
-%\vspace{.15in}
-%{\normalsize Submitted to} \\
-%\vspace{.1in}
-%{\bfseries DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}\\
-%\vspace{.25in}
-%{\normalsize \emph{By}}\\
-%{\bfseries\normalsize Samir Sheriff }\\
-%{\bfseries\normalsize Satvik N }\\
-%\vspace{.25in}
-%{\normalsize \emph{In partial fulfilment of the requirements\\ for the award of the degree \\
-%\vspace{.15in}
-%} } 
-%
-%\vspace{.15in}
-%{\large{BACHELOR OF ENGINEERING}}\\
-%\vspace{.15in}
-%{\normalsize{IN}}\\
-%\vspace{.15in}
-%{\bfseries\normalsize COMPUTER SCIENCE AND ENGINEERING}\\
-%\vspace{0.15in}
-%
-%\begin{figure}[h!]
-%	\centering
-%		\includegraphics[scale=0.5]{RVCE.png}
-%		
-%\end{figure} 
-%\vspace{.25in}
-%{\bfseries\large R V College of Engineering}\\
-%{\normalsize (Autonomous Institute, Affiliated to VTU)}\\
-%{\bfseries\normalsize BANGALORE - 560059}\\ 
-%{\bfseries\large Jan 2013 - Jun 2013}
-%\end{center}
-%\end{titlepage}
+\maketitle
+
+\begin{center}
+\textbf{\large{VISVESVARAYA TECHNOLOGICAL UNIVERSITY}}\\
+\vspace{1.5mm}
+\textbf{\large{Jnana Sangama, Belgaum - 590 014}}\\
+%\vspace{1.5mm}
+\end{center}
+\vspace{5mm}
+\begin{figure} [!h]
+\begin{center}
+	\includegraphics[scale=0.15]{vtu.png}	
+\end{center}
+\end{figure}
+
+\begin{center}
+\vspace{-10mm}
+\textbf{2012-2013}\\
+\textbf{\large{Project Report on}}\\
+\textbf{\Large{Time Series Data Mining Tool}}\\
+
+
+\begin{center}
+\vspace{5mm}
+\textit{Submitted to RVCE (Autonomous institution affiliated to Visvesvaraya Technological University (VTU), Belgaum) in partial fulfillment of the requirements for the award of degree of}\\
+\vspace{1mm}
+\begin{center}
+\textbf{\large{BACHELOR OF ENGINEERING}}\\
+\textit{\textbf{\large{In}}}\\
+\textbf{\large{COMPUTER SCIENCE AND ENGINEERING}}\\
+\textit{\textbf{\large{By}}}\\
+\end{center}
+
+\begin{tabular}{l c r}
+
+\textbf{\large{Samir Sheriff}} & \hspace{50mm} & \textbf{\large{1RV09CS093}}\\
+\textbf{\large{Satvik N}} & \hspace{50mm} & \textbf{\large{1RV09CS095}}\\
+\textbf{\large{Vaishakh BN}} & \hspace{50mm} & \textbf{\large{1RV09CS114}}\\
+
+\end{tabular}
+\end{center}
+\vspace{1mm}
+\textbf{\textit{Under the Guidance of}}\\
+\textbf{Mrs. Shantha Rangaswamy}\\
+\textbf{Assistant Professor}\\
+\textbf{Computer Science and Engineering, RVCE}\\
+\end{center}
+\begin{figure} [h]
+	\centering
+	\includegraphics[scale=0.5]{RV.jpg}
+\end{figure}
+\begin{center}
+\textbf{R.V. College of Engineering}\\
+\textbf{\scriptsize{(Autonomous institution affiliated to VTU)}}\\
+\textbf{Department of Computer Science and Engineering}\\
+\textbf{\small{Bangalore -- 560059}}\\
+\end{center}
 
 
 %---------Declaration

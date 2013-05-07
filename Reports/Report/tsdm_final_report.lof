@@ -1,29 +1,29 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces System Architecture\relax }}{10}{figure.caption.22}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Data Flow Diagram Level 0\relax }}{11}{figure.caption.26}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Data Flow Diagram Level 1\relax }}{13}{figure.caption.28}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Data Flow Diagram Level 1.1\relax }}{14}{figure.caption.30}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Data Flow Diagram Level 2\relax }}{16}{figure.caption.31}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces System Architecture\relax }}{9}{figure.caption.24}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Data Flow Diagram Level 0\relax }}{10}{figure.caption.28}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Data Flow Diagram Level 1\relax }}{12}{figure.caption.30}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Data Flow Diagram Level 1.1\relax }}{13}{figure.caption.32}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Data Flow Diagram Level 2\relax }}{15}{figure.caption.33}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Structed Chart for the TSDM Tool \relax }}{18}{figure.caption.34}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Structed Chart for the TSDM Tool \relax }}{17}{figure.caption.36}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Similarity detection for two Samples using DTW Algorithm\relax }}{43}{figure.caption.74}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Similarity detection for two Samples using SAX Algorithm\relax }}{44}{figure.caption.76}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Anomaly detection using the Cumulative Sum Approach\relax }}{44}{figure.caption.78}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Anomaly detection using the Statistical Approach\relax }}{45}{figure.caption.80}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Forecasting/Estimation using NARX Neural Network Approach.\relax }}{46}{figure.caption.82}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Forecasting/Estimation using Moving Exponential Average Method.\relax }}{47}{figure.caption.84}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Temporal Patterns detected in the Rainfall/Water Data set.\relax }}{48}{figure.caption.85}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Similarity detection for two Samples using DTW Algorithm\relax }}{40}{figure.caption.76}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Similarity detection for two Samples using SAX Algorithm\relax }}{40}{figure.caption.78}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Anomaly detection using the Cumulative Sum Approach\relax }}{41}{figure.caption.80}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Anomaly detection using the Statistical Approach\relax }}{42}{figure.caption.82}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Forecasting/Estimation using NARX Neural Network Approach.\relax }}{43}{figure.caption.84}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Forecasting/Estimation using Moving Exponential Average Method.\relax }}{43}{figure.caption.86}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Temporal Patterns detected in the Rainfall/Water Data set.\relax }}{44}{figure.caption.87}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces TSDM Tool Window - Welcome Screen\relax }}{54}{figure.caption.89}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Similarity Detection with DTW Algorithm.\relax }}{54}{figure.caption.90}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Time Series Prediction with NARX NN Model.\relax }}{55}{figure.caption.91}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Time Series Prediction with Moving Average Method.\relax }}{55}{figure.caption.92}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Anomaly Detection using Statistical Approach.\relax }}{56}{figure.caption.93}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{56}{figure.caption.94}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{57}{figure.caption.95}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces About the Developers who did this project!\relax }}{57}{figure.caption.96}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces TSDM Tool Window - Welcome Screen\relax }}{50}{figure.caption.91}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Similarity Detection with DTW Algorithm.\relax }}{50}{figure.caption.92}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Time Series Prediction with NARX NN Model.\relax }}{51}{figure.caption.93}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Time Series Prediction with Moving Average Method.\relax }}{52}{figure.caption.94}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Anomaly Detection using Statistical Approach.\relax }}{53}{figure.caption.95}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{54}{figure.caption.96}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{54}{figure.caption.97}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces About the Developers who did this project!\relax }}{55}{figure.caption.98}
