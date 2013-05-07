@@ -226,39 +226,39 @@ Every algorithm in this tool requires a set of user-defined parameters that dete
 
 \chapter{INTRODUCTION}
 A time series is a set of observations $X_t$ , each one being recorded at a specific time t. Discrete-time time series is one in which the set T of times at which observations are made is a discrete set. Continuous-time time series are obtained when observations are recorded continuously over some time interval, e.g., when $T_0$ belongs [0,1]. Examples of time series are the daily closing value of the ECG readings and the annual flow volume of the Nile River at Aswan. Time series are very frequently plotted via line charts. Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data. Time series forecasting is the use of a model to predict future values based on previously observed values.  
-\section{DEFINITIONS AND USAGE}
-Definition of Time Series: An ordered sequence of values of a variable at equally spaced time intervals.
-TSDM : Time Series Data Mining tool.
-@TODO ADD DETAILS OF THIS SECTION
+%\section{DEFINITIONS AND USAGE}
+%Definition of Time Series: An ordered sequence of values of a variable at equally spaced time intervals.
+%TSDM : Time Series Data Mining tool.
+%@TODO ADD DETAILS OF THIS SECTION
 %-----------------------literature survey--------------------------------------------
 \section{LITERATURE SURVEY}
-A time series is a collection of observations made sequentially through time. At each time point one or more measurements may be monitored corresponding to one or more attributes under consideration. The resulting time series is called univariate or multivariate respectively. In many cases the term sequence is used in order to refer to a time series, although some authors refer to this term only when the corresponding values are non-numerical.
+A time series is a collection of observations made sequentially through time. At each time point one or more measurements may be monitored corresponding to one or more attributes under consideration. The resulting time series is called univariate or multivariate respectively. In many cases the term sequence is used in order to refer to a time series, although some authors refer to this term only when the corresponding values are non-numerical.[1,2]
 
 
 
 
-The most common tasks of time series data mining methods are: indexing, clustering, classification, novelty detection, motif discovery and rule discovery. In most of the cases, forecasting is based on the outcomes of the other tasks. A brief description of each task is given below.\\
+The most common tasks of time series data mining methods are: indexing, clustering, classification, novelty detection, motif discovery and rule discovery. In most of the cases, forecasting is based on the outcomes of the other tasks. A brief description of each task is given below.[3]\\
 
 \textbf{Indexing:} Find the most similar time series in a database to a given query time series.\\
 \textbf{Clustering:} Find groups of time series in a database such that, time series of the same group are similar to each other whereas time series from different groups are dissimilar to each other.\\
 \textbf{Classification:} Assign a given time series to a predefined group in a way that is more similar to other time series of the same group than it is to time series from other groups.\\
 \textbf{Novelty detection:} Find all sections of a time series that contain a different behavior than the expected with respect to some base model.\\
 \textbf{Motif discovery:} Detect previously unknown repeated patterns in a time series database.\\
-\textbf{Rule discovery:} Infer rules from one or more time series describing the most possible behaviour that they might present at a specific time point (or interval).\\
+\textbf{Rule discovery:} Infer rules from one or more time series describing the most possible behavior that they might present at a specific time point (or interval).\\
 
 
-  The temporal aspect of data arises some special issues to be considered and imposes some restrictions in the corresponding applications. First, it is necessary to define a similarity measure between two time series and this issue is very important in TSDM since it involves a degree of subjectivity that might affect the final result. Second, it is necessary to apply a representation scheme on the time series data. Since the amount of data may range from a few kilobytes to megabytes, an appropriate representation of the time series is necessary in order to manipulate and analyze it efficiently. The desirable properties that this approach should hold are: 
+  The temporal aspect of data arises some special issues to be considered and imposes some restrictions in the corresponding applications[3]. First, it is necessary to define a similarity measure between two time series and this issue is very important in TSDM since it involves a degree of subjectivity that might affect the final result. Second, it is necessary to apply a representation scheme on the time series data. Since the amount of data may range from a few kilobytes to megabytes, an appropriate representation of the time series is necessary in order to manipulate and analyze it efficiently.[3,4] The desirable properties that this approach should hold are: 
   \begin{itemize}
   \item the completeness of feature extraction 
   \item the reduction of the dimensionality. 
   \end{itemize}
 
-Since in this project we consider only single/uni-variate time series, dimentionality reduction can be ignored.
+Since in this project we consider only single/uni-variate time series, dimentionality reduction can be ignored.[5]
 In many cases also, the objective is to take advantage of the specific characteristics of a representation that make specific methods applicable (i.e. inducing rules, Markov models). 
 
 Novelty detection is a very important task in many areas. Several alternative terms for ``novelty\" have been used, such as, ``anomaly\", ``interestingness\", ``surprising\", ``faults\". Moreover, many problems of finding periodic patterns can be considered as similar problems.
 
-\section{MOTIVATION}
+%\section{MOTIVATION}
 
 
 \section{PROBLEM STATEMENT}
@@ -331,8 +331,8 @@ The time series data mining tool has many features that distinguishes it from th
 \paragraph{}During the development of this product, constraints were encountered. Some specific constraints under which the time series data mining tool has are :
 
 \begin{itemize} 
-\item{}Add Constraints
-\item{} Add Constraints
+\item{} Memory consumption of the Tool on the server machine. Number of requests that can be handled by the server depends on the memory consumption of the tool.
+\item{} Internet speed, depending on the speed of the internet, data upload to the server, display of charts, loading of ajax, jquery apis are determined.
 \end{itemize}
 
 \section{ASSUMPTIONS AND DEPENDENCIES}
@@ -352,9 +352,7 @@ The requirements that are needed for this project are :
 \item The data sets should be normalized so that the algorithms can be applied effectively.
 \item A good representation of the results should be made available to the users through proper representation media like graphs.
 \end{itemize}
- \begin{itemize}
-\item TODO ADD SOMETHING HERE.
-\end{itemize}
+
 \subsection{SOFTWARE REQUIREMENTS}
 \subsubsection{DEVELOPERS MACHINE}
 \begin{itemize}
@@ -413,7 +411,7 @@ The Java Runtime Environment (JRE) is required to run the software.
 \end{itemize}
 \begin{figure}[h!]
 	\centering
-		\includegraphics[scale=0.8]{screenshots/dfd_0.png}
+		\includegraphics[scale=0.8]{screenshots/dfd_new_0.png}
 		\caption{Data Flow Diagram Level 0}
 \end{figure} 
 \pagebreak
@@ -435,7 +433,7 @@ Other components are
 \end{itemize}
 \begin{figure}[h!]
 	\centering
-		\includegraphics[scale=0.65]{screenshots/dfd_1.png}
+		\includegraphics[scale=0.65]{screenshots/dfd_new_1.png}
 		\caption{Data Flow Diagram Level 1}
 \end{figure}
 
@@ -478,8 +476,8 @@ The output categories are :
 
 \begin{figure}[h!]
 	\centering
-		\includegraphics[scale=0.7]{screenshots/dfd_2.png}
-		\caption{Data Flow Diagram Level }
+		\includegraphics[scale=0.8]{screenshots/dfd_new_2.png}
+		\caption{Data Flow Diagram Level 2}
 \end{figure}
 \begin{itemize}
 \item Comparision Results  : The comparison results of the DTW or the SAX algorithm under the Similarity Detection Module are obtained and given as input to the charts api for visualization.
@@ -501,20 +499,25 @@ The output categories are :
 \section{STRUCTURED CHART}
 \paragraph{}Structure charts are used to specify the high level design or architecture of a computer program. As a design tool, they help the programmer in dividing and conquering a large software problem, i.e. recursively breaking a problem down into parts that are small enough to be understood by a human brain. The process is called top-down design or functional decomposition. 
 \paragraph{}Programmers use a structure chart to build a program in a manner similar to how an architect uses a blueprint to build a house. In the design stage, the chart is drawn and used as a method for the client and various software designers to communicate. During the actual building of the program, the chart is continuously referred to as master plan. Often, it is modified as programmers learn new details about the program. After a program is completed, the structured chart is used to fix bugs and to make changes.
-\paragraph{} The entire program starts with user entering his choice of input as to either embed or extract. Based on this, the GUI module responds appropriately with success or failure. The digital media chosen by user is taken as input for embedding phase. The digital media is encrypted using AES algorithm before embedding to stego image.This encrypted data is embedded onto image using embedding algorithm to get the stego image containing secret data. A key is generated using Diffie Hellman Key exchange which acts as the input for the embedding algorihm.
-\paragraph{} At the receiver end, the Diffie Hellman key is generated once again. From the stego images, secret data is extracted. It will be in encrypted form. The original input data is extracted by using decompression module of AES algorithm. This gives the hidden file's original content.
+
+
+The structured chart for the TSDM tool is shown in the figure 4.1 The Output that comes out of the TSDM tool is divided into various categories depending on the module and is as shown in the figure 4.1.
+The output categories are :
+
+\begin{itemize}
+\item Comparision Results  : The comparison results of the DTW or the SAX algorithm under the Similarity Detection Module are obtained and given as input to the charts api for visualization.
+\item Anomalous Data Points  : The anomalous data points determined by the CUSUM or STATISTICAL algorithm under the Anomaly Detection Module are obtained and given as input to the charts api for visualization.
+\item Forecast/Predicted Results  : The predicted values of the input time series output by one of the NARX, GMA or GEA algorithms under the Forecasting Module are obtained and given as input to the charts api for visualization.
+\item Temporal Patterns  : The temporal patterns found by the Temporal Pattern Finder module are obtained and given as input to the charts api for1 visualization.
+\end{itemize}
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.7]{screenshots/dfd_2.png}
+		\caption{Structed Chart for the TSDM Tool }
+\end{figure}
 %\pagebreak
 
-\pagebreak
-\section{MODULES DESCRIPTION}
-This section describes the main modules that are used in developing the project. This will help us in understanding the working of individual components. 
-\subsection{GUI MODULE}
-\subsubsection{Definition:} 
-\paragraph{} This module is the core module which takes the users input to decide upon which operation to be performed. Based upon user choice, the necessary inputs will be taken in this module. If any errors are generated during any operation, then suitable report is displayed to the user.
-\subsubsection{Resources:} 
-\paragraph{}The input files are bitmap images and are chosen to embed data. A session key is generated using Diffie Hellman protocol. Also, the data file to be hidden is taken.
-\subsubsection{Functionality:} 
-\paragraph{}This is the main flowchart which shows all the functions provided by the software. In the beginning, the user is given two options, according to which the user either embeds extracts or exits from the application. This is shown in the decision symbol. According to the decision taken, the operations are performed. If the user chooses to embed, then the functions to select cover image, the secret data, and key generation are performed. Before embedding the secret data encryption is done. After performing these operations, the stego images are sent to the receiver using any wireless medium or LAN. At the receivers end, the receiver implements the functions to extract stego image values, extract secret digits data. After the implementation of these functions, if the user wants to exit from the software, that particular option is also provided to the user. This is shown in Fig 4.2.
+
 %\pagebreak
 %\begin{figure}[h!]
 %	\centering
@@ -989,7 +992,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & visualization graphs appear           \\ \hline
     Remarks                 & Test case passed              \\ \hline
     \end{tabular}
-    \caption {Test Case 4 : Performance Test}
+    \caption {Test Case 5 : Performance Test}
 \end{table}
 
 \begin{table}
@@ -1003,9 +1006,170 @@ The testing of the modules was done on machine with the following features.
     Output                  & server computer handle multiple requests \\ \hline
     Remarks                 & Test case passed              \\ \hline
     \end{tabular}
-    \caption {Test Case 4 : Load Test}
+    \caption {Test Case 6 : Load Test}
 \end{table}
 
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 7                             \\ \hline
+    Name Of the test        & DTW Algorithm Testing        \\ \hline
+    Feature Being Tested    & Working of the DTW Algorithm \\ \hline
+    Input                   & A null value time series is passed as a parameter\\ \hline
+    Expected Output         & Similarity distance of -1 \\ \hline
+    Output                  & A Java.NullPointer Exception is thrown \\ \hline
+    Remarks                 & Test case failed              \\ \hline
+    \end{tabular}
+    \caption {Test Case 7 : Similarity DTW Algorithm.}
+\end{table}
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 8                            \\ \hline
+    Name Of the test        & DTW Algorithm Testing        \\ \hline
+    Feature Being Tested    & Working of the DTW Algorithm \\ \hline
+    Input                   & same Time series data for both parameters\\ \hline
+    Expected Output         & Similarity distance of 0 \\ \hline
+    Output                  & Similarity distance of 0 \\ \hline
+    Remarks                 & Test case passed              \\ \hline
+    \end{tabular}
+    \caption {Test Case 8 : Similarity DTW Algorithm.}
+\end{table}
+
+
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 9                            \\ \hline
+    Name Of the test        & SAX Algorithm Testing        \\ \hline
+    Feature Being Tested    & Working of the DTW Algorithm \\ \hline
+    Input                   & same Time series data for both parameters\\ \hline
+    Expected Output         & Similarity distance of 0 \\ \hline
+    Output                  & Similarity distance of 0 \\ \hline
+    Remarks                 & Test case passed              \\ \hline
+    \end{tabular}
+    \caption {Test Case 9 : Similarity SAX Algorithm.}
+\end{table}
+
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 10                            \\ \hline
+    Name Of the test        & Testing Temporal Pattern Detection Algorithm \\ \hline
+    Feature Being Tested    & Temporal Pattern Detection Module \\ \hline
+    Input                   & Time series data with threshold value 5.0\\ \hline
+    Expected Output         & Temporal patterns \\ \hline
+    Output                  & Improper patterns are shown \\ \hline
+    Remarks                 & Test case failed             \\ \hline
+    \end{tabular}
+    \caption {Test Case 10 : Testing Temporal Pattern Detection}
+\end{table}
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 11                            \\ \hline
+    Name Of the test        & Testing Anomaly Detection Algorithm\\ \hline
+    Feature Being Tested    & Statistical Approach  \\ \hline
+    Input                   & Time series data with a low threshold value\\ \hline
+    Expected Output         & Large number of anomalous data points \\ \hline
+    Output                  & Large number of anomalous points shown \\ \hline
+    Remarks                 & Test case passed             \\ \hline
+    \end{tabular}
+    \caption {Test Case 11 : Testing Anomaly Detection}
+\end{table}
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 12                            \\ \hline
+    Name Of the test        & Testing Anomaly Detection Algorithm\\ \hline
+    Feature Being Tested    & Statistical Approach  \\ \hline
+    Input                   & Time series data with a higher threshold value\\ \hline
+    Expected Output         & Number of anomalous data points decrease \\ \hline
+    Output                  & Number of anomalous points reduce \\ \hline
+    Remarks                 & Test case passed             \\ \hline
+    \end{tabular}
+    \caption {Test Case 12 : Testing Anomaly Detection}
+\end{table}
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 13                           \\ \hline
+    Name Of the test        & SAX Algorithm Testing        \\ \hline
+    Feature Being Tested    & Working of the DTW Algorithm \\ \hline
+    Input                   & same Time series data for both parameters\\ \hline
+    Expected Output         & Similarity distance of 0 \\ \hline
+    Output                  & Similarity distance of 0 \\ \hline
+    Remarks                 & Test case passed              \\ \hline
+    \end{tabular}
+    \caption {Test Case 13 : Testing Anomaly Detection.}
+\end{table}
+
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 14                            \\ \hline
+    Name Of the test        & Testing Forecasting Module     \\ \hline
+    Feature Being Tested    & Working of the Moving Exponential Algorithm \\ \hline
+    Input                   & Time series and expected predictions as parameters\\ \hline
+    Expected Output         & The predictions match as per the parameter sent \\ \hline
+    Output                  & predictions match \\ \hline
+    Remarks                 & Test case passed              \\ \hline
+    \end{tabular}
+    \caption {Test Case 14 : Forecasting Moving Exponential Average.}
+\end{table}
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 15                            \\ \hline
+    Name Of the test        & Testing Forecasting Module     \\ \hline
+    Feature Being Tested    & Working of the Moving Exponential Algorithm \\ \hline
+    Input                   & An empty/null time series is passed\\ \hline
+    Expected Output         & null value to be returned for predictions \\ \hline
+    Output                  & NullPointer Exception is thrown \\ \hline
+    Remarks                 & Test case failed              \\ \hline
+    \end{tabular}
+    \caption {Test Case 15 : Forecasting Moving Exponential Average.}
+\end{table}
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 16                            \\ \hline
+    Name Of the test        & Testing Forecasting Module     \\ \hline
+    Feature Being Tested    & Working of the Moving Geometric Algorithm \\ \hline
+    Input                   & Time series and expected predictions as parameters\\ \hline
+    Expected Output         & The predictions match as per the parameter sent \\ \hline
+    Output                  & predictions match \\ \hline
+    Remarks                 & Test case passed              \\ \hline
+    \end{tabular}
+    \caption {Test Case 16 : Forecasting Moving Geometric Average.}
+\end{table}
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 17                            \\ \hline
+    Name Of the test        & Testing Forecasting Module     \\ \hline
+    Feature Being Tested    & Working of the Moving Geometric Algorithm \\ \hline
+    Input                   & An empty/null time series is passed\\ \hline
+    Expected Output         & null value to be returned for predictions \\ \hline
+    Output                  & null value is returned \\ \hline
+    Remarks                 & Test case passed.             \\ \hline
+    \end{tabular}
+    \caption {Test Case 17 : Forecasting Moving Geometric Average.}
+\end{table}
+
+\begin{table}
+    \begin{tabular}{|l|l|}
+    \hline
+    Sl. Number of Test Case & 18                            \\ \hline
+    Name Of the test        & Testing Forecasting Module     \\ \hline
+    Feature Being Tested    & Working of the NARX Neural Network \\ \hline
+    Input                   & Time series data with learning rate 1.0\\ \hline
+    Expected Output         & Prediction accuracy of 70\% \\ \hline
+    Output                  & Prediction accuracy is 20\% \\ \hline
+    Remarks                 & Test case failed.             \\ \hline
+    \end{tabular}
+    \caption {Test Case 18 : Forecasting with NARX Neural Network.}
+\end{table}
 
 \pagestyle{fancy}
 \lhead{\scriptsize{Experimental Analysis and Results}}
@@ -1017,7 +1181,7 @@ The testing of the modules was done on machine with the following features.
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \chapter{Experimental Analysis and Results}
-Satvik will do this
+In this chapter, all the performance and experimental analysis of the algorithms implemented under various different modules and the results obtained are presented.
 \section{Evaluation Metric}
 As explained earlier, major module present in the project are as follows :
 \begin{itemize}
@@ -1093,18 +1257,23 @@ The data sets considered in this project are
 \item Finance Dataset : Consisting of stock index values of  Nifty and Vix collected every minuted for a week.(5 days,during market hours).
 \item ECG Dataset : The ECG  voltage values of patients collected every 4ms.(for 10 patients).
 \end{itemize}
-All the experiment analysis and results are presented using the \textbf{Water Level} data set. As explained earlier, some algorithms require certain parameters which determine their accuracies. (Add some more stuff)
+All the experiment analysis and results are presented using the \textbf{Water Level} data set. As explained earlier, some algorithms require certain parameters which determine their accuracies.
 \section{Performance Analysis}
 In the previous section, the evaluations metrics for different modules depending on the algorithm were explained. Performance analysis of different modules implemented in this project are explained in the following sub sections
 \subsection{Similarity Detection}
 \subsubsection{DTW Algorithm }
+The working of the DTW algorithm for comparing two samples of same size in different intervals is shown in the figure 7.1. The algorithm shows a DTW distance of 34.17. 
+
+
+The key inference is lesser the distance (closer to 0) more similar the two series are.
 \begin{figure}[h!]
 
   \centering
     \includegraphics[scale=0.35]{./screenshots/result_sim_dtw.png}
   \caption{Similarity detection for two Samples using DTW Algorithm}
 \end{figure}
-\subsubsection{DTW Algorithm }
+\subsubsection{SAX Algorithm }
+In SAX algorithm the time series is converted to a string. The working of this algorithm is shown in the figure 7.2 . The algorithms shows an SAX string representation of the sample and the corresponding similarity between the series.
 \begin{figure}[h!]
 
   \centering
@@ -1112,22 +1281,40 @@ In the previous section, the evaluations metrics for different modules depending
   \caption{Similarity detection for two Samples using SAX Algorithm}
 \end{figure}
 \subsection{Anomaly Detection}
+The anomaly detection algorithms require the user to specify a threshold value. This threshold value  determines the number of anomalous points discovered.
 \subsubsection{Cumulative Sum}
-\begin{figure}[h!]
-
-  \centering
-    \includegraphics[scale=0.5]{./screenshots/result_ano_stat.png}
-  \caption{Anomaly detection using the Statistical Approach}
-\end{figure}
-\subsubsection{SAX Algorithm }
+Figure 7.3 shows the anomalous points determined by the CUSUM (Cumulative Sum) Algorithm. These points are shown in red. The threshold value set is 3.0 as shown in the figure.
 \begin{figure}[h!]
 
   \centering
     \includegraphics[scale=0.5]{./screenshots/result_ano_cusum.png}
   \caption{Anomaly detection using the Cumulative Sum Approach}
 \end{figure}
+
+\subsubsection{Statistical Approach Anomaly}
+In this approach a moving average of the time series is calculated. Then an upper and lower limit is defined as boundary. These limits are basically defined using the standard deviation of the data points. This boundary determines the number of anomalous data points discovered. The figure 7.4 shows the mean, upper limit and lower limit in the top graph and the anomalous data points discovered in the bottom graph.
+\begin{figure}[h!]
+
+  \centering
+    \includegraphics[scale=0.5]{./screenshots/result_ano_stat.png}
+  \caption{Anomaly detection using the Statistical Approach}
+\end{figure}
+
+
 \subsection{Prediction and Forecasting}
 \subsubsection{NARX Neural Network Approach}
+NARX is Non-Linear Auto Regressive model with Extraneous Inputs. This is basically a neural network which predicts one time series which depends on another time series. A feed forward network with backpropogation algorithm is implemented. 
+
+
+The results obtained by the neural network are shown in Figure 7.5. The accuracy obtained is around 60\% and it is different for different data sets.
+
+Various neural network parameters are :
+\begin{itemize}
+\item \textbf{Activation Function} : Sigmoidal activation function.
+\item \textbf{Hidden Layer Size} : 20 neurons. Larger the size, more accurate the results. But computationally will become exponential (too expensive).
+\item \textbf{Learning Rate } : 0.01 - 0.03. 
+\end{itemize}
+
 \begin{figure}[h!]
 
   \centering
@@ -1136,20 +1323,21 @@ In the previous section, the evaluations metrics for different modules depending
 \end{figure}
 
 \subsubsection{Moving Exponential Average Method}
+This method computes a moving exponential average and this value computed is the predicted value of the time series. The results obtained are shown in the figure 7.6.
+
+
+This is not a conventional approach, the value predicted by this algorithm is just an estimation and not an actual prediction. The accuracy of this approach is around 50\%.
 \begin{figure}[h!]
   \centering
     \includegraphics[scale=0.55]{./screenshots/result_fort_MEA.png}
   \caption{Forecasting/Estimation using Moving Exponential Average Method.}
 \end{figure}
-\subsubsection{Simple Moving Average Method}
-\begin{figure}[h!]
-  \centering
-    \includegraphics[scale=0.5]{./screenshots/result_fort_SMA.png}
-  \caption{Forecasting/Estimation with Simple Moving Average Method.}
-\end{figure}
 
 \subsection{Temporal Pattern Detection}
+Temporal Patterns are hidden patterns which occur very rarely. These patterns are basically the indications of periodic trends. In our project, the temporal pattern finder module is implemented using a genetic algorithm. A fitness value is to set for the algorithm, depending on this value, the patterns are discovered. 
 
+
+Figure 7.8 shows the patterns discovered in the water data set. Eventually it is upto the user to interpret these patterns.
 \begin{figure}[h!]
 
   \centering
@@ -1216,7 +1404,7 @@ Initially this project mainly focused on analyzing the sea and water level time 
 \end{itemize}
 
 
-In this project, we also analyzed the efficiencies of different algorithms for the same tasks and also compared the results for different data sets.Clearly more work needs to be done.(End this section Properly Boys)
+In this project, we also analyzed the efficiencies of different algorithms for the same tasks and also compared the results for different data sets.Clearly more work needs to be done.
 
 
 \section{Limitations}
@@ -1248,12 +1436,21 @@ Some of the future enhancements are :
 \addcontentsline{toc}{section}{BIBLIOGRAPHY}
 \begin{thebibliography}{refs}
 \bibitem{test}Agrawal R., Lin K.-I., Sawhney H. S., Shim K.,\textit{“Fast Similarity Search in the Presence of Noise,Scaling, and Translation in Time-Series Databases”}
-\bibitem{t}Genetic Algorithm for constructing DT - \url{http://www.jprr.org/index.php/jprr/article/viewFile/44/25}
-\bibitem{te}Decision Trees - \url{http://web.cecs.pdx.edu/~mm/MachineLearningWinter2010/pdfslides/DecisionTrees.pdf}
-\bibitem{t} Project brief for the DT  using Horse data sets  - \url{https://cs.uwaterloo.ca/~ppoupart/teaching/cs486-spring06/assignments/asst4/asst4.pdf}
-\bibitem{t}Supervised and Unsupervised Discretization of Continous Features - \url{http://robotics.stanford.edu/users/sahami/papers-dir/disc.pdf}
-\bibitem{t}Naming Convention -\textit{Wikipedia} :  \url{http://en.wikipedia.org/wiki/Naming_convention_(programming)}
-\bibitem{t}Code Conventions for the Java Programming Language - \url{http://www.oracle.com/technetwork/java/codeconv-138413.html}
+\bibitem{t}Agrawal R., Lin K.-I., Sawhney H. S., Shim K., \textit{“Fast Similarity Search in the Presence of Noise,
+Scaling, and Translation in Time-Series Databases”}, Proc. VLDB 1995, pp. 490-501, Zurich
+(Switzerland), September 2008.
+
+\bibitem{te}Antunes C.M., Oliveira A.L., \textit{“Temporal Data Mining: An Overview”}, Workshop on Temporal Data
+Mining ACM SIGKDD 2010, San Francisco, California (USA), August 2010.
+
+\bibitem{t} Berndt D. J., Clifford J., \textit{“Using Dynamic Time Warping to Find Patterns in Time Series”}, KDD
+Workshop 2004, pp.359-370, Seattle, WA (USA), July 2004.
+
+\bibitem{t} Faloutsos C., \textit{“Mining Time Series Data”}, Tutorial ICML 2003, Washington DC (USA), August 2003.
+\bibitem{t}Das G., Lin K.I., Mannila H., Ranganathan G., Smyth P., \textit{“Rule Discovery from Time series”}, Proc.
+ACM SIGKDD 1998, pp. 16-22, New York, New York (USA), August 1998.
+
+\bibitem{t}Time Series -\textit{Wikipedia, the free encyclopedia}- \url{http://en.wikipedia.org/Time_Series}
 
 
 %\bibitem{}
@@ -1333,17 +1530,17 @@ Some of the future enhancements are :
 %\lstinputlisting[language=Java, caption=DecisionTreeClassifier.java, breaklines=true]{../../src/org/ck/dt/DecisionTreeClassifier.java}
 
 
-\newpage
-\pagestyle{fancy}
-\lhead{\scriptsize{Appendix B: Paper Publication}}
-\chead{}
-\rhead{\scriptsize{Time Series Data Mining Tool}}
-\lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
-\rfoot{\small{\thepage}}
-\cfoot{\scriptsize{Jan 2013 - Jun 2013}}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
-
-Add Paper to be published in IEEE.
+%\newpage
+%\pagestyle{fancy}
+%\lhead{\scriptsize{Appendix B: Paper Publication}}
+%\chead{}
+%\rhead{\scriptsize{Time Series Data Mining Tool}}
+%\lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
+%\rfoot{\small{\thepage}}
+%\cfoot{\scriptsize{Jan 2013 - Jun 2013}}
+%\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+%
+%Add Paper to be published in IEEE.
 
 \end{document}

@@ -5,14 +5,12 @@
 \contentsline {section}{LIST OF FIGURES}{vi}{chapter*.6}
 \contentsline {section}{LIST OF TABLES}{vii}{chapter*.7}
 \contentsline {chapter}{\numberline {1}INTRODUCTION}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}DEFINITIONS AND USAGE}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}LITERATURE SURVEY}{1}{section.1.2}
-\contentsline {section}{\numberline {1.3}MOTIVATION}{3}{section.1.3}
-\contentsline {section}{\numberline {1.4}PROBLEM STATEMENT}{3}{section.1.4}
-\contentsline {section}{\numberline {1.5}OBJECTIVE}{3}{section.1.5}
-\contentsline {section}{\numberline {1.6}SCOPE}{4}{section.1.6}
-\contentsline {section}{\numberline {1.7}METHODOLOGY}{4}{section.1.7}
-\contentsline {section}{\numberline {1.8}ORGANIZATION OF REPORT}{5}{section.1.8}
+\contentsline {section}{\numberline {1.1}LITERATURE SURVEY}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}PROBLEM STATEMENT}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}OBJECTIVE}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}SCOPE}{4}{section.1.4}
+\contentsline {section}{\numberline {1.5}METHODOLOGY}{4}{section.1.5}
+\contentsline {section}{\numberline {1.6}ORGANIZATION OF REPORT}{4}{section.1.6}
 \contentsline {chapter}{\numberline {2}SOFTWARE REQUIREMENTS SPECIFICATION}{6}{chapter.2}
 \contentsline {paragraph}{}{6}{section*.9}
 \contentsline {section}{\numberline {2.1}PRODUCT PERSPECTIVE}{6}{section.2.1}
@@ -50,81 +48,70 @@
 \contentsline {section}{\numberline {4.1}STRUCTURED CHART}{17}{section.4.1}
 \contentsline {paragraph}{}{17}{section*.32}
 \contentsline {paragraph}{}{17}{section*.33}
-\contentsline {paragraph}{}{17}{section*.34}
-\contentsline {paragraph}{}{18}{section*.35}
-\contentsline {section}{\numberline {4.2}MODULES DESCRIPTION}{19}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}GUI MODULE}{19}{subsection.4.2.1}
-\contentsline {subsubsection}{Definition:}{19}{section*.36}
-\contentsline {paragraph}{}{19}{section*.37}
-\contentsline {subsubsection}{Resources:}{19}{section*.38}
-\contentsline {paragraph}{}{19}{section*.39}
-\contentsline {subsubsection}{Functionality:}{19}{section*.40}
-\contentsline {paragraph}{}{19}{section*.41}
-\contentsline {chapter}{\numberline {5}IMPLEMENTATION}{20}{chapter.5}
-\contentsline {paragraph}{}{20}{section*.42}
-\contentsline {section}{\numberline {5.1}PROGRAMMING LANGUAGE SELECTION}{20}{section.5.1}
-\contentsline {paragraph}{}{20}{section*.43}
-\contentsline {section}{\numberline {5.2}PLATFORM}{21}{section.5.2}
-\contentsline {paragraph}{}{21}{section*.44}
-\contentsline {section}{\numberline {5.3}CODE CONVENTIONS}{21}{section.5.3}
-\contentsline {paragraph}{}{21}{section*.45}
-\contentsline {subsection}{\numberline {5.3.1}Naming Conventions}{21}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}File Organization}{22}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Comments}{22}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}DIFFICULTIES ENCOUNTERED AND STRATEGIES USED TO TACKLE}{23}{section.5.4}
-\contentsline {paragraph}{}{23}{section*.46}
-\contentsline {subsubsection}{Problem 1}{24}{section*.47}
-\contentsline {paragraph}{}{24}{section*.48}
-\contentsline {subsubsection}{Solution}{24}{section*.49}
-\contentsline {paragraph}{}{24}{section*.50}
-\contentsline {subsubsection}{Problem 2}{24}{section*.51}
-\contentsline {paragraph}{}{24}{section*.52}
-\contentsline {subsubsection}{Solution}{24}{section*.53}
-\contentsline {paragraph}{}{24}{section*.54}
-\contentsline {section}{\numberline {5.5}Module Design}{24}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}org.ck.sample}{25}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}org.ck.smoothers}{25}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}org.ck.similarity}{26}{subsection.5.5.3}
-\contentsline {subsection}{\numberline {5.5.4}org.ck.forecaster.nn}{27}{subsection.5.5.4}
-\contentsline {subsection}{\numberline {5.5.5}org.ck.anomalifinder}{28}{subsection.5.5.5}
-\contentsline {subsection}{\numberline {5.5.6}org.ck.tsdm}{28}{subsection.5.5.6}
-\contentsline {subsection}{\numberline {5.5.7}org.ck.tsdm.ga}{29}{subsection.5.5.7}
-\contentsline {subsection}{\numberline {5.5.8}org.ck.beans}{29}{subsection.5.5.8}
-\contentsline {subsection}{\numberline {5.5.9}org.ck.servlets}{30}{subsection.5.5.9}
-\contentsline {subsection}{\numberline {5.5.10}org.ck.gui}{30}{subsection.5.5.10}
-\contentsline {chapter}{\numberline {6}Software Testing}{31}{chapter.6}
-\contentsline {section}{\numberline {6.1}Types Of Testing}{31}{section.6.1}
-\contentsline {subsubsection}{Unit testing}{31}{section*.55}
-\contentsline {subsubsection}{Integration testing}{32}{section*.56}
-\contentsline {subsubsection}{Functional test}{32}{section*.57}
-\contentsline {subsubsection}{System Test}{32}{section*.58}
-\contentsline {subsubsection}{Performance Test}{33}{section*.59}
-\contentsline {subsubsection}{White Box Testing}{33}{section*.60}
-\contentsline {subsubsection}{Black Box Testing}{33}{section*.61}
-\contentsline {section}{\numberline {6.2}Test Environment}{33}{section.6.2}
-\contentsline {chapter}{\numberline {7}Experimental Analysis and Results}{36}{chapter.7}
-\contentsline {section}{\numberline {7.1}Evaluation Metric}{36}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Metrics for Similarity Detection Module}{36}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Metrics for Prediction and Forecasting Module}{37}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Metrics for Anomaly Detection Module}{38}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Temporal Pattern Finder Module}{39}{subsection.7.1.4}
-\contentsline {section}{\numberline {7.2}Experimental Dataset}{39}{section.7.2}
-\contentsline {section}{\numberline {7.3}Performance Analysis}{39}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Similarity Detection}{40}{subsection.7.3.1}
-\contentsline {subsubsection}{DTW Algorithm }{40}{section*.68}
-\contentsline {subsubsection}{DTW Algorithm }{40}{section*.70}
-\contentsline {subsection}{\numberline {7.3.2}Anomaly Detection}{42}{subsection.7.3.2}
-\contentsline {subsubsection}{Cumulative Sum}{42}{section*.72}
-\contentsline {subsubsection}{SAX Algorithm }{42}{section*.74}
-\contentsline {subsection}{\numberline {7.3.3}Prediction and Forecasting}{42}{subsection.7.3.3}
-\contentsline {subsubsection}{NARX Neural Network Approach}{42}{section*.76}
-\contentsline {subsubsection}{Moving Exponential Average Method}{42}{section*.78}
-\contentsline {subsubsection}{Simple Moving Average Method}{42}{section*.80}
-\contentsline {subsection}{\numberline {7.3.4}Temporal Pattern Detection}{42}{subsection.7.3.4}
-\contentsline {section}{\numberline {7.4}Inference from the Results}{42}{section.7.4}
-\contentsline {chapter}{\numberline {8}CONCLUSION}{46}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{46}{section.8.1}
-\contentsline {section}{\numberline {8.2}Limitations}{47}{section.8.2}
-\contentsline {section}{\numberline {8.3}Future enhancements}{48}{section.8.3}
-\contentsline {section}{BIBLIOGRAPHY}{48}{Item.53}
-\contentsline {section*}{APPENDICES}{50}{chapter*.83}
+\contentsline {chapter}{\numberline {5}IMPLEMENTATION}{19}{chapter.5}
+\contentsline {paragraph}{}{19}{section*.35}
+\contentsline {section}{\numberline {5.1}PROGRAMMING LANGUAGE SELECTION}{19}{section.5.1}
+\contentsline {paragraph}{}{19}{section*.36}
+\contentsline {section}{\numberline {5.2}PLATFORM}{20}{section.5.2}
+\contentsline {paragraph}{}{20}{section*.37}
+\contentsline {section}{\numberline {5.3}CODE CONVENTIONS}{20}{section.5.3}
+\contentsline {paragraph}{}{20}{section*.38}
+\contentsline {subsection}{\numberline {5.3.1}Naming Conventions}{20}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}File Organization}{21}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Comments}{21}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}DIFFICULTIES ENCOUNTERED AND STRATEGIES USED TO TACKLE}{22}{section.5.4}
+\contentsline {paragraph}{}{22}{section*.39}
+\contentsline {subsubsection}{Problem 1}{23}{section*.40}
+\contentsline {paragraph}{}{23}{section*.41}
+\contentsline {subsubsection}{Solution}{23}{section*.42}
+\contentsline {paragraph}{}{23}{section*.43}
+\contentsline {subsubsection}{Problem 2}{23}{section*.44}
+\contentsline {paragraph}{}{23}{section*.45}
+\contentsline {subsubsection}{Solution}{23}{section*.46}
+\contentsline {paragraph}{}{23}{section*.47}
+\contentsline {section}{\numberline {5.5}Module Design}{23}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}org.ck.sample}{24}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}org.ck.smoothers}{24}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}org.ck.similarity}{25}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}org.ck.forecaster.nn}{26}{subsection.5.5.4}
+\contentsline {subsection}{\numberline {5.5.5}org.ck.anomalifinder}{27}{subsection.5.5.5}
+\contentsline {subsection}{\numberline {5.5.6}org.ck.tsdm}{27}{subsection.5.5.6}
+\contentsline {subsection}{\numberline {5.5.7}org.ck.tsdm.ga}{28}{subsection.5.5.7}
+\contentsline {subsection}{\numberline {5.5.8}org.ck.beans}{28}{subsection.5.5.8}
+\contentsline {subsection}{\numberline {5.5.9}org.ck.servlets}{29}{subsection.5.5.9}
+\contentsline {subsection}{\numberline {5.5.10}org.ck.gui}{29}{subsection.5.5.10}
+\contentsline {chapter}{\numberline {6}Software Testing}{30}{chapter.6}
+\contentsline {section}{\numberline {6.1}Types Of Testing}{30}{section.6.1}
+\contentsline {subsubsection}{Unit testing}{30}{section*.48}
+\contentsline {subsubsection}{Integration testing}{31}{section*.49}
+\contentsline {subsubsection}{Functional test}{31}{section*.50}
+\contentsline {subsubsection}{System Test}{31}{section*.51}
+\contentsline {subsubsection}{Performance Test}{32}{section*.52}
+\contentsline {subsubsection}{White Box Testing}{32}{section*.53}
+\contentsline {subsubsection}{Black Box Testing}{32}{section*.54}
+\contentsline {section}{\numberline {6.2}Test Environment}{32}{section.6.2}
+\contentsline {chapter}{\numberline {7}Experimental Analysis and Results}{39}{chapter.7}
+\contentsline {section}{\numberline {7.1}Evaluation Metric}{39}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Metrics for Similarity Detection Module}{39}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Metrics for Prediction and Forecasting Module}{40}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Metrics for Anomaly Detection Module}{41}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Temporal Pattern Finder Module}{42}{subsection.7.1.4}
+\contentsline {section}{\numberline {7.2}Experimental Dataset}{42}{section.7.2}
+\contentsline {section}{\numberline {7.3}Performance Analysis}{42}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Similarity Detection}{43}{subsection.7.3.1}
+\contentsline {subsubsection}{DTW Algorithm }{43}{section*.73}
+\contentsline {subsubsection}{SAX Algorithm }{43}{section*.75}
+\contentsline {subsection}{\numberline {7.3.2}Anomaly Detection}{43}{subsection.7.3.2}
+\contentsline {subsubsection}{Cumulative Sum}{44}{section*.77}
+\contentsline {subsubsection}{Statistical Approach Anomaly}{45}{section*.79}
+\contentsline {subsection}{\numberline {7.3.3}Prediction and Forecasting}{46}{subsection.7.3.3}
+\contentsline {subsubsection}{NARX Neural Network Approach}{46}{section*.81}
+\contentsline {subsubsection}{Moving Exponential Average Method}{46}{section*.83}
+\contentsline {subsection}{\numberline {7.3.4}Temporal Pattern Detection}{47}{subsection.7.3.4}
+\contentsline {section}{\numberline {7.4}Inference from the Results}{47}{section.7.4}
+\contentsline {chapter}{\numberline {8}CONCLUSION}{50}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{50}{section.8.1}
+\contentsline {section}{\numberline {8.2}Limitations}{51}{section.8.2}
+\contentsline {section}{\numberline {8.3}Future enhancements}{52}{section.8.3}
+\contentsline {section}{BIBLIOGRAPHY}{52}{Item.53}
+\contentsline {section*}{APPENDICES}{54}{chapter*.86}

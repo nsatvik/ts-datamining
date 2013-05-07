@@ -30,7 +30,7 @@
         <div id="div_mainMenu">
             <input id="button_home" class="TopMenuButtons" style="width: 10%" type="button" value="Home"/>            
             <input id="button_aboutUs" class="TopMenuButtons" style="width: 10%" type="button" value="About Us"/>
-            <input id="button_Donate" class="TopMenuButtons" style="width: 10%" type="button" value="Donate"/>   
+           <input id="button_Donate" class="TopMenuButtons" style="width: 10%" type="button" value="Donate"/>    
         </div>
         
 

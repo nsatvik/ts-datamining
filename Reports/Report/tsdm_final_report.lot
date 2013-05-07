@@ -4,11 +4,23 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Test Case 1 : System Test\relax }}{34}{table.caption.62}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Test Case 2 : System Test\relax }}{34}{table.caption.63}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Test Case 3 : System Test\relax }}{34}{table.caption.64}
-\contentsline {table}{\numberline {6.4}{\ignorespaces Test Case 4 : Integration Test\relax }}{35}{table.caption.65}
-\contentsline {table}{\numberline {6.5}{\ignorespaces Test Case 4 : Performance Test\relax }}{35}{table.caption.66}
-\contentsline {table}{\numberline {6.6}{\ignorespaces Test Case 4 : Load Test\relax }}{35}{table.caption.67}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Test Case 1 : System Test\relax }}{33}{table.caption.55}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Test Case 2 : System Test\relax }}{33}{table.caption.56}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Test Case 3 : System Test\relax }}{33}{table.caption.57}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Test Case 4 : Integration Test\relax }}{34}{table.caption.58}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Test Case 5 : Performance Test\relax }}{34}{table.caption.59}
+\contentsline {table}{\numberline {6.6}{\ignorespaces Test Case 6 : Load Test\relax }}{34}{table.caption.60}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Test Case 7 : Similarity DTW Algorithm.\relax }}{35}{table.caption.61}
+\contentsline {table}{\numberline {6.8}{\ignorespaces Test Case 8 : Similarity DTW Algorithm.\relax }}{35}{table.caption.62}
+\contentsline {table}{\numberline {6.9}{\ignorespaces Test Case 9 : Similarity SAX Algorithm.\relax }}{35}{table.caption.63}
+\contentsline {table}{\numberline {6.10}{\ignorespaces Test Case 10 : Testing Temporal Pattern Detection\relax }}{36}{table.caption.64}
+\contentsline {table}{\numberline {6.11}{\ignorespaces Test Case 11 : Testing Anomaly Detection\relax }}{36}{table.caption.65}
+\contentsline {table}{\numberline {6.12}{\ignorespaces Test Case 12 : Testing Anomaly Detection\relax }}{36}{table.caption.66}
+\contentsline {table}{\numberline {6.13}{\ignorespaces Test Case 13 : Testing Anomaly Detection.\relax }}{37}{table.caption.67}
+\contentsline {table}{\numberline {6.14}{\ignorespaces Test Case 14 : Forecasting Moving Exponential Average.\relax }}{37}{table.caption.68}
+\contentsline {table}{\numberline {6.15}{\ignorespaces Test Case 15 : Forecasting Moving Exponential Average.\relax }}{37}{table.caption.69}
+\contentsline {table}{\numberline {6.16}{\ignorespaces Test Case 16 : Forecasting Moving Geometric Average.\relax }}{38}{table.caption.70}
+\contentsline {table}{\numberline {6.17}{\ignorespaces Test Case 17 : Forecasting Moving Geometric Average.\relax }}{38}{table.caption.71}
+\contentsline {table}{\numberline {6.18}{\ignorespaces Test Case 18 : Forecasting with NARX Neural Network.\relax }}{38}{table.caption.72}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
