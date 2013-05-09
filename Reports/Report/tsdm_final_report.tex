@@ -179,17 +179,15 @@ We would like to thank \textbf{Dr. N. K. Srinath}, Head of Department, Computer 
 We thank our Parents, and all the Faculty members of Department of Computer Science \& Engineering for their constant support and encouragement.
 
 Last, but not the least, We would like to thank our peers and friends who provided us with valuable suggestions to improve our project.
+\\
 \begin{flushright}
 Samir Sheriff\\
-8th semester, CSE\\
 USN:1RV09CS093\\
 
 Satvik N\\
-8th semester, CSE\\
 USN:1RV09CS095\\
 
 Vaishakh B N\\ 
-8th semester, CSE\\
 USN:1RV09CS114\\
 
 \end{flushright}
@@ -254,13 +252,14 @@ A time series is a set of observations $X_t$ , each one being recorded at a spec
 %@TODO ADD DETAILS OF THIS SECTION
 %-----------------------literature survey--------------------------------------------
 \section{LITERATURE SURVEY}
-A time series is a collection of observations made sequentially through time. At each time point one or more measurements may be monitored corresponding to one or more attributes under consideration. The resulting time series is called univariate or multivariate respectively. In many cases the term sequence is used in order to refer to a time series, although some authors refer to this term only when the corresponding values are non-numerical.[1,2]
+A time series is a collection of observations made sequentially through time. At each time point one or more measurements may be monitored corresponding to one or more attributes under consideration. The resulting time series is called univariate or multivariate respectively. In many cases the term sequence is used in order to refer to a time series, although some authors refer to this term only when the corresponding values are non-numerical.$^{[1,2]}$
 
 
 
 
-The most common tasks of time series data mining methods are: indexing, clustering, classification, novelty detection, motif discovery and rule discovery. In most of the cases, forecasting is based on the outcomes of the other tasks. A brief description of each task is given below.[3]\\
+The most common tasks of time series data mining methods are: indexing, clustering, classification, novelty detection, motif discovery and rule discovery. In most of the cases, forecasting is based on the outcomes of the other tasks. A brief description of each task is given below.$^{[3]}$\\
 
+\noindent
 \textbf{Indexing:} Find the most similar time series in a database to a given query time series.\\
 \textbf{Clustering:} Find groups of time series in a database such that, time series of the same group are similar to each other whereas time series from different groups are dissimilar to each other.\\
 \textbf{Classification:} Assign a given time series to a predefined group in a way that is more similar to other time series of the same group than it is to time series from other groups.\\
@@ -269,7 +268,7 @@ The most common tasks of time series data mining methods are: indexing, clusteri
 \textbf{Rule discovery:} Infer rules from one or more time series describing the most possible behavior that they might present at a specific time point (or interval).\\
 
 
-  The temporal aspect of data arises some special issues to be considered and imposes some restrictions in the corresponding applications[3]. First, it is necessary to define a similarity measure between two time series and this issue is very important in TSDM since it involves a degree of subjectivity that might affect the final result. Second, it is necessary to apply a representation scheme on the time series data. Since the amount of data may range from a few kilobytes to megabytes, an appropriate representation of the time series is necessary in order to manipulate and analyze it efficiently.[3,4] The desirable properties that this approach should hold are: 
+  The temporal aspect of data arises some special issues to be considered and imposes some restrictions in the corresponding applications$^{[3]}$. First, it is necessary to define a similarity measure between two time series and this issue is very important in TSDM since it involves a degree of subjectivity that might affect the final result. Second, it is necessary to apply a representation scheme on the time series data. Since the amount of data may range from a few kilobytes to megabytes, an appropriate representation of the time series is necessary in order to manipulate and analyze it efficiently.$^{[3,4]}$ The desirable properties that this approach should hold are: 
   \begin{itemize}
   \item the completeness of feature extraction 
   \item the reduction of the dimensionality. 
@@ -315,6 +314,8 @@ Chapter 2 discusses the software requirements specifications considering product
 
 Chapter 3 discusses a high level design of the tool being developed. The data flow diagrams are discussed showing various levels (0, 1, 2).
 
+Chapter 4 gives the detailed design of the tool, through Structured Charts that specify the high level design.
+
 Chapter 5 gives the implementation details discussing the programming language selection, coding conventions used. A detailed description of the modules present in this project is presented under this chapter.
 
 
@@ -347,7 +348,7 @@ Chapter 8 summarizes the entire project, stating its limitations and puts forth 
 \paragraph{} Time Series Data Mining tool is a unique product that makes use of different algorithms to predict, view similarities, and points out the anomalies in different time varying data sets. It is built in a pluggable fashion where the only requirement at the users end is the browser and a working internet connection. 
 \section{PRODUCT FEATURES}
 \paragraph{} 
-The time series data mining tool has many features that distinguishes it from the others available already in the open world. It provides accurate results using the similarity finding, anomaly finding algorithms. The back propagation neural network helps us predicting the future values. On the front end, the user has options to choose the algorithm of her choice. Also, the charts which depict the output are carefully plotted using the google charts API which has been made available by Google Inc. Also, Java beans along with servlets and java server pages and best practices of coding have been followed. 
+The time series data mining tool has many features that distinguishes it from the others available already in the open world. It provides accurate results using the similarity finding, anomaly finding algorithms. The back propagation neural network helps us predicting the future values. On the front end, the user has options to choose the algorithm of her/his choice. Also, the charts which depict the output are carefully plotted using the google charts API which has been made available by Google Inc. Also, Java beans along with servlets and java server pages and best practices of coding have been followed. 
  
 \section{CONSTRAINTS}
 \paragraph{}During the development of this product, constraints were encountered. Some specific constraints under which the time series data mining tool has are :
@@ -440,7 +441,8 @@ The Java Runtime Environment (JRE) is required to run the software.
 \subsection{DFD LEVEL 1}
 \paragraph{}Major components of the TSDM Tool can be  in level 1 DFD as shown in Figure 3.3. The components are :
 
-The description of the modules are below :
+\noindent
+The description of the modules are as below :
 \begin{itemize}
 \item \textbf{Similarity Detection} : This module helps in finding similarity patterns (that occur at regular intervals in case of periodic time series), comparing different time series data. SAX and DTW are the main algorithms implemented/used in this module.
 \item \textbf{Forecasting and Prediction} : This module contain algorithms/models which can be trained from the past time series data and can be used to predict the future values of a time series. 
@@ -448,6 +450,7 @@ The description of the modules are below :
 \item \textbf{Temporal Pattern Finder } : This module helps in finding hidden temporal patterns in a time series. This module can be further extended to implement clustering techniques.
 \end{itemize}
 
+\noindent
 Other components are 
 \begin{itemize}
 \item \textbf{Input } - Input is the uni-variate time series data to be analyzed using the tool.
@@ -930,10 +933,10 @@ considering how the software works.
 \section{Test Environment}
 The testing of the modules was done on machine with the following features.
 \begin{description}
-  \item[$\cdot$ Operating System ] : Windows 7 
-  \item[$\cdot$ JDK Version ] : 1.7 
-  \item[$\cdot$ Browser ] : Google Chrome 
-  \item[$\cdot$ Web server ]: Tomcat Version 7 
+  \item[Operating System ] : Windows 7 
+  \item[JDK Version ] : 1.7 
+  \item[Browser ] : Google Chrome 
+  \item[Web server ]: Tomcat Version 7 
 \end{description}
 \newpage
 
@@ -1420,7 +1423,7 @@ The description of the modules are below :
 Initially this project mainly focused on analyzing the sea and water level time series. Later this application was extended to any uni-variate time series data. Users can upload the time series data to be analyzed and get the results instantly. Major data sets used were :
 \begin{itemize}
 \item Sea Level Dataset : Indicating the sea level at various times of a day.
-\item Water Level : Ground Water level data, indicating the ground water level during various moths of an year for upto 5 years.
+\item Water Level : Ground Water level data, indicating the ground water level during various months of an year for upto 5 years.
 \item Finance Dataset : Consisting of stock index values of  Nifty and Vix collected every minuted for a week.(5 days,during market hours).
 \item ECG Dataset : The ECG  voltage values of patients collected every 4ms.(for 10 patients).
 \end{itemize}
@@ -1471,8 +1474,6 @@ Workshop 2004, pp.359-370, Seattle, WA (USA), July 2004.
 \bibitem{t} Faloutsos C., \textit{“Mining Time Series Data”}, Tutorial ICML 2003, Washington DC (USA), August 2003.
 \bibitem{t}Das G., Lin K.I., Mannila H., Ranganathan G., Smyth P., \textit{“Rule Discovery from Time series”}, Proc.
 ACM SIGKDD 1998, pp. 16-22, New York, New York (USA), August 1998.
-
-\bibitem{t}Time Series -\textit{Wikipedia, the free encyclopedia}- \url{http://en.wikipedia.org/Time_Series}
 
 
 %\bibitem{}
