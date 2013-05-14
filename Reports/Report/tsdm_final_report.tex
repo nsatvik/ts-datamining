@@ -5,7 +5,7 @@
 %\linespread{1.5}
 %\textwidth = 6in
 %\textheight = 9in
-%\usepackage[body={6.0in, 8.2in},left=1.25in,right=1.0in,top=1.0in, bottom=1.0in]{geometry}
+\usepackage[body={6.0in, 8.2in},left=1.25in,right=1.0in,top=1.0in, bottom=1.0in]{geometry}
 \frenchspacing
 \usepackage{fancyhdr}
 \usepackage{color}
@@ -101,16 +101,16 @@ showstringspaces=false
 \paragraph{}  We, Samir Sheriff, Satvik N and Vaishakh B.N. bearing USN number 1RV09CS093 1RV09CS095 and 1RV09CS114 respectively, hereby declare that the project entitled ``\textbf{Time Series Data Mining Tool}'' completed and written by us, has not been previously formed the basis for the award of any degree or diploma or certificate of any other University.
 \vspace{1in}
 
-\begin{flushright} {Bangalore \hspace{4.4in} Samir Sheriff } 
- {USN:1RV09CS093}
+\begin{flushright} {Bangalore \hspace{4in} Samir Sheriff } \\
+ {1RV09CS093}
  \end{flushright}
 
 \begin{flushright} { Satvik N } \\
- {USN:1RV09CS095}
+ {1RV09CS095}
  \end{flushright}
 
 \begin{flushright} { Vaishakh B N } \\
- {USN:1RV09CS114}
+ {1RV09CS114}
  \end{flushright}
 
 \end{titlepage}
@@ -244,20 +244,20 @@ Every algorithm in this tool requires a set of user-defined parameters that dete
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
-\chapter{INTRODUCTION}
-A time series is a set of observations $X_t$ , each one being recorded at a specific time t. Discrete-time time series is one in which the set T of times at which observations are made is a discrete set. Continuous-time time series are obtained when observations are recorded continuously over some time interval, e.g., when $T_0$ belongs [0,1]. Examples of time series are the daily closing value of the ECG readings and the annual flow volume of the Nile River at Aswan. Time series are very frequently plotted via line charts. Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data. Time series forecasting is the use of a model to predict future values based on previously observed values.  
+\chapter{Introduction}
+\paragraph{} A time series is a set of observations $X_t$ , each one being recorded at a specific time t. Discrete-time time series is one in which the set T of times at which observations are made is a discrete set. Continuous-time time series are obtained when observations are recorded continuously over some time interval, e.g., when $T_0$ belongs [0,1]. Examples of time series are the daily closing value of the ECG readings and the annual flow volume of the Nile River at Aswan. Time series are very frequently plotted via line charts. Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data. Time series forecasting is the use of a model to predict future values based on previously observed values.  
 %\section{DEFINITIONS AND USAGE}
 %Definition of Time Series: An ordered sequence of values of a variable at equally spaced time intervals.
 %TSDM : Time Series Data Mining tool.
 %@TODO ADD DETAILS OF THIS SECTION
 %-----------------------literature survey--------------------------------------------
-\section{LITERATURE SURVEY}
-A time series is a collection of observations made sequentially through time. At each time point one or more measurements may be monitored corresponding to one or more attributes under consideration. The resulting time series is called univariate or multivariate respectively. In many cases the term sequence is used in order to refer to a time series, although some authors refer to this term only when the corresponding values are non-numerical.$^{[1,2]}$
+\section{Literature Survey}
+\paragraph{} A time series is a collection of observations made sequentially through time. At each time point one or more measurements may be monitored corresponding to one or more attributes under consideration. The resulting time series is called univariate or multivariate respectively. In many cases the term sequence is used in order to refer to a time series, although some authors refer to this term only when the corresponding values are non-numerical.[1][2]
 
 
 
 
-The most common tasks of time series data mining methods are: indexing, clustering, classification, novelty detection, motif discovery and rule discovery. In most of the cases, forecasting is based on the outcomes of the other tasks. A brief description of each task is given below.$^{[3]}$\\
+The most common tasks of time series data mining methods are: indexing, clustering, classification, novelty detection, motif discovery and rule discovery. In most of the cases, forecasting is based on the outcomes of the other tasks. A brief description of each task is given below.[3]
 
 \noindent
 \textbf{Indexing:} Find the most similar time series in a database to a given query time series.\\
@@ -274,7 +274,7 @@ The most common tasks of time series data mining methods are: indexing, clusteri
   \item the reduction of the dimensionality. 
   \end{itemize}
 
-Since in this project we consider only single/uni-variate time series, dimentionality reduction can be ignored.[5]
+This project  considers only single/uni-variate time series, dimentionality reduction is ignored.[5]
 In many cases also, the objective is to take advantage of the specific characteristics of a representation that make specific methods applicable (i.e. inducing rules, Markov models). 
 
 Novelty detection is a very important task in many areas. Several alternative terms for ``novelty\" have been used, such as, ``anomaly\", ``interestingness\", ``surprising\", ``faults\". Moreover, many problems of finding periodic patterns can be considered as similar problems.
@@ -282,17 +282,17 @@ Novelty detection is a very important task in many areas. Several alternative te
 %\section{MOTIVATION}
 
 
-\section{PROBLEM STATEMENT}
-A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting.
+\section{Problem Statement}
+\paragraph{} A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting.
 
 To define the problem statement in one line, it is given a time series, design and develop a tool which can help in analyzing (forecasting/prediction, anomaly detection, temporal pattern detection, etc.) the time series and help the user visualize the results. 
 
-\section{OBJECTIVE}
-The ability to model and perform decision modelling and analysis is an essential feature of many real-world applications ranging from emergency medical treatment in intensive care units to military command and control systems. Existing formalisms and methods of inference have not been effective in real-time applications where trade-offs between decision quality and computational tractability are essential. The objective of this project is to fill the void that exists and help in proper analysis of time varying data.
+\section{Objective}
+\paragraph{} The ability to model and perform decision modelling and analysis is an essential feature of many real-world applications ranging from emergency medical treatment in intensive care units to military command and control systems. Existing formalisms and methods of inference have not been effective in real-time applications where trade-offs between decision quality and computational tractability are essential. The objective of this project is to fill the void that exists and help in proper analysis of time varying data.
 
-\section{SCOPE}
-The scope of a time series data mining tool is two fold. The first  is to obtain an understanding of the underlying forces and structure that produced the observed data. The second is to 
-fit a model and proceed to forecasting, monitoring or even feedback and feed forward control. The time series data mining tool can be used in the following fields. 
+\section{Scope}
+\paragraph{} The scope of a time series data mining tool is two fold. The first  is to obtain an understanding of the underlying forces and structure that produced the observed data. The second is to 
+fit a model and proceed to forecasting, monitoring or even feedback and feed forward control. The time series data mining tool can be used in the following fields: 
 \begin{itemize}
 \item{\textbf{Economic Forecasting}}
 \item{\textbf{Sales Forecasting}}
@@ -302,10 +302,10 @@ fit a model and proceed to forecasting, monitoring or even feedback and feed for
 \item{\textbf{Process and Quality Control}}
 \item{\textbf{Census Analysis}}
 \end{itemize}
-\section{METHODOLOGY}
-Time series analysis of data requires the user to able to view the different algorithms and the result obtained from each algorithm along with the graphs which help the user understand the time varying nature of the data. Hence, the representation of data becomes very important. Having understood this requirement in the early phase of the project, we adopted a methodology that will accomplish the objectives in a neat and intuitive way. A GUI was developed in the form of Java Server Pages and the back end was coded in Java which helped us exploit the object oriented paradigm in design of algorithms. 
+\section{Methodology}
+\paragraph{} Time series analysis of data requires the user to able to view the different algorithms and the result obtained from each algorithm along with the graphs which help the user understand the time varying nature of the data. Hence, the representation of data becomes very important. Having understood this requirement in the early phase of the project, we adopted a methodology that will accomplish the objectives in a neat and intuitive way. A GUI was developed in the form of Java Server Pages and the back end was coded in Java which exploited the object oriented paradigm in designing the algorithms. 
 
-\section{ORGANIZATION OF REPORT}
+\section{Organization of the report}
 Chapter 1 gave an introduction to the time series, the motivation, objective TSDM tool to be developed. Problem statement was discussed in brief.
 
 
@@ -339,18 +339,18 @@ Chapter 8 summarizes the entire project, stating its limitations and puts forth 
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
-\chapter{SOFTWARE REQUIREMENTS SPECIFICATION}
+\chapter{Software Requirements Specifications}
 
 \paragraph{}Software Requirement Specification (SRS) is an important part of software development process. It includes a set of use cases that describe all the interactions of the users with the software. Requirements analysis is critical to the success of a project. \\
 
-\section{PRODUCT PERSPECTIVE}
+\section{Product Perspective}
 
 \paragraph{} Time Series Data Mining tool is a unique product that makes use of different algorithms to predict, view similarities, and points out the anomalies in different time varying data sets. It is built in a pluggable fashion where the only requirement at the users end is the browser and a working internet connection. 
-\section{PRODUCT FEATURES}
+\section{Product Features}
 \paragraph{} 
 The time series data mining tool has many features that distinguishes it from the others available already in the open world. It provides accurate results using the similarity finding, anomaly finding algorithms. The back propagation neural network helps us predicting the future values. On the front end, the user has options to choose the algorithm of her/his choice. Also, the charts which depict the output are carefully plotted using the google charts API which has been made available by Google Inc. Also, Java beans along with servlets and java server pages and best practices of coding have been followed. 
  
-\section{CONSTRAINTS}
+\section{Constraints}
 \paragraph{}During the development of this product, constraints were encountered. Some specific constraints under which the time series data mining tool has are :
 
 \begin{itemize} 
@@ -358,17 +358,17 @@ The time series data mining tool has many features that distinguishes it from th
 \item{} Internet speed, depending on the speed of the internet, data upload to the server, display of charts, loading of ajax, jquery apis are determined.
 \end{itemize}
 
-\section{ASSUMPTIONS AND DEPENDENCIES}
+\section{Assumptions and Dependencies}
  \begin{itemize}
 \item{}It is assumed that the user of this tool has basic understanding of time series data mining.
  
 \item{}Also, the user must have a decent knowledge of the interpretation of line graphs.
 \end{itemize}
 
-\section{SPECIFIC REQUIREMENTS}
+\section{Specific Requirements}
 \paragraph{}This section shows the functional requirements that are to be satisfied by the system. All the requirements exposed here are essential to run this tool successfully.
 
-\subsection{FUNCTIONAL REQUIREMENTS}
+\subsection{Functional Requirements}
 \paragraph{}The functionality requirements for a system describe the functionality or the services that the system is expected to provide. This depends on the type of software system being developed. 
 The requirements that are needed for this project are :
  \begin{itemize}
@@ -376,8 +376,8 @@ The requirements that are needed for this project are :
 \item A good representation of the results should be made available to the users through proper representation media like graphs.
 \end{itemize}
 
-\subsection{SOFTWARE REQUIREMENTS}
-\subsubsection{DEVELOPERS MACHINE}
+\subsection{Software Requirements}
+\subsubsection{Developer\'s Machine}
 \begin{itemize}
 \item{	Operating System: Windows 7/8, Linux, Mac}
 \item{  Software Tools : Java, JDK 7.0, Apache Tomcat Server version 7.0\\ Web Browser (Mozilla, IE8+, Chrome)} 
@@ -385,47 +385,47 @@ The requirements that are needed for this project are :
 \item {API Libraries : }JQuery UI and Ajax Libraries (Active Internet Connection)
 
 \end{itemize}
-\subsubsection{END USERS MACHINE}
+\subsubsection{End User Machine}
 \begin{itemize}
 \item {Java Enabled Browser }
 \item { Active Internet Connection }
 \end{itemize}
-\subsection{HARDWARE REQUIREMENTS}
+\subsection{Hardware Requirements}
 \begin{itemize}
 \item{Processor: Intel Pentium 4 or higher version}
 \item{RAM: 512MB or more}
 \item{Hard disk: 5 GB}
 \end{itemize}
-\subsubsection{SOFTWARE INTERFACES }
+\subsubsection{Software Requirements }
 The Java Runtime Environment (JRE) is required to run the software.
 \pagestyle{fancy}
-\lhead{\scriptsize{Decision Tree Learning}}
+\lhead{\scriptsize{High Level Design}}
 \chead{}
-\rhead{\scriptsize{Decision Tree Classifier with GA-based Feature Selection}}
+\rhead{\scriptsize{Time Series Data Mining Tool}}
 \lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
 \rfoot{\small{\thepage}}
 \cfoot{\scriptsize{Jan 2013 - Jun 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
-\chapter{HIGH LEVEL DESIGN}
+\chapter{High Level Design}
 \paragraph{}The software development usually follows Software Development Life Cycle (SDLC). The second stage of SDLC is the design phase. The design stage involves two substages namely High level design and Detailed level design.\\
 \paragraph{} High level design gives an overview of how the system works and top level components comprising the system.
 
-\section{SYSTEM ARCHITECTURE}
+\section{System Architecture}
 \paragraph{}This section provides an overview of  the functionality and the working of the time series data mining tool. The overall functionality of the application is divided into different modules in an efficient way. The system architecture is shown in Figure 3.1
 \paragraph{}
 
 \begin{figure}[h!]
 	\centering
 		\includegraphics[scale=0.7]{system-architecture.png}
-		\caption{System Architecture}
+		\caption{ System Architecture}
 \end{figure} 
 
-\section{DATA FLOW DIAGRAMS}
+\section{Data Flow Diagrams}
 \paragraph{}A DFD is a figure which shows the flow of data between the different processes and how the data is modified in each of the process. It is very important tool in software engineering that is used for studying the high level design.\\
 \paragraph{}There are many levels of DFDs. Level 0 gives the general description and level 1 gives the detailed description. Going higher in the level numbers greater description of the processes will be given.
 \pagebreak
-\subsection{DFD LEVEL 0}
+\subsection{DFD Level 0}
 \paragraph{}The level 0 DFD is shown in Fig. 3.2 below which gives the general operation of the TSDM Tool. There are three major components. Two external entities called sender and receiver and the most important Time Series Data Mining Tool.
 \begin{itemize}
 \item Input Time Series Data : The user of this tool  is the one responsible to send the data to be analyzed using the tool. This tool can analyze only uni-variate time series data.
@@ -434,12 +434,12 @@ The Java Runtime Environment (JRE) is required to run the software.
 \end{itemize}
 \begin{figure}[h!]
 	\centering
-		\includegraphics[scale=0.8]{screenshots/dfd_new_0.png}
+		\includegraphics[scale=0.9]{screenshots/dfd_new_0.png}
 		\caption{Data Flow Diagram Level 0}
 \end{figure} 
 \pagebreak
-\subsection{DFD LEVEL 1}
-\paragraph{}Major components of the TSDM Tool can be  in level 1 DFD as shown in Figure 3.3. The components are :
+\subsection{DFD Level 1}
+\paragraph{}Major components of the TSDM Tool are shown in  level 1 DFD as in Figure 3.3. The components are :
 
 \noindent
 The description of the modules are as below :
@@ -458,15 +458,15 @@ Other components are
 \end{itemize}
 \begin{figure}[h!]
 	\centering
-		\includegraphics[scale=0.65]{screenshots/dfd_new_1.png}
+		\includegraphics[scale=0.85]{screenshots/dfd_new_1.png}
 		\caption{Data Flow Diagram Level 1}
 \end{figure}
 
-\subsubsection{DFD LEVEL 1.1}
-In DFD Level 1.1 shown in the figure 3.4, All the modules are expanded to show the algorithms implemented under them. The Input and the Output are same and level 1. Charts are used for visualizing the results performed on the time series data.
+\subsubsection{DFD Level 1.1}
+In DFD Level 1.1 shown in the figure 3.4, all the modules are expanded to show the algorithms implemented under them. The Input and the Output are same as level 1. Google charts are used for visualizing the results performed on the time series data.
 \begin{figure}[h!]
 	\centering
-		\includegraphics[scale=0.8]{screenshots/dfd_1_1.png}
+		\includegraphics[scale=0.85]{screenshots/dfd_1_1.png}
 		\caption{Data Flow Diagram Level 1.1}
 \end{figure}
 A brief description of the algorithms implemented under each module are below :
@@ -492,10 +492,10 @@ These anomaly detection algorithms work in specific ways and help in determining
 \end{itemize}
 
 \item \textbf{Temporal Pattern Finder}
-This module helps in determining interesting/temporal patterns in the time series data. The patterns are highlighted in the graphs. It is upto the user to interpret the patterns/ results shown in the graph.
+This module helps in determining interesting/temporal patterns in the time series data. The patterns are highlighted in the graphs.
 \end{enumerate}
 
-\subsection{DFD LEVEL 2}
+\subsection{DFD Level 2}
 The DFD Level 2 diagram is shown in the Figure 3.5 . The Output that comes out of the TSDM tool is divided into various categories depending on the module and is as shown in the figure 3.5.
 The output categories are :
 
@@ -506,12 +506,12 @@ The output categories are :
 \end{figure}
 \begin{itemize}
 \item Comparision Results  : The comparison results of the DTW or the SAX algorithm under the Similarity Detection Module are obtained and given as input to the charts api for visualization.
-\item Anomalous Data Points  : The anomalous data points determined by the CUSUM or STATISTICAL algorithm under the Anomaly Detection Module are obtained and given as input to the charts api for visualization.
+\item Anomalous Data Points  : The anomalous data points determined by the CUSUM or STATISTICAL algorithm under the Anomaly Detection Module are obtained and given as input to the charts application programmer interface for visualization.
 \item Forecast/Predicted Results  : The predicted values of the input time series output by one of the NARX, GMA or GEA algorithms under the Forecasting Module are obtained and given as input to the charts api for visualization.
 \item Temporal Patterns  : The temporal patterns found by the Temporal Pattern Finder module are obtained and given as input to the charts api for1 visualization.
 
 \end{itemize}
-\chapter{DETAILED DESIGN}
+\chapter{Detailed Design}
 \pagestyle{fancy}
 \lhead{\scriptsize{Detailed Design}}
 \chead{}
@@ -521,7 +521,7 @@ The output categories are :
 \cfoot{\scriptsize{September 2012 - January 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
-\section{STRUCTURED CHART}
+\section{Structured Chart}
 \paragraph{}Structure charts are used to specify the high level design or architecture of a computer program. As a design tool, they help the programmer in dividing and conquering a large software problem, i.e. recursively breaking a problem down into parts that are small enough to be understood by a human brain. The process is called top-down design or functional decomposition. 
 \paragraph{}Programmers use a structure chart to build a program in a manner similar to how an architect uses a blueprint to build a house. In the design stage, the chart is drawn and used as a method for the client and various software designers to communicate. During the actual building of the program, the chart is continuously referred to as master plan. Often, it is modified as programmers learn new details about the program. After a program is completed, the structured chart is used to fix bugs and to make changes.
 
@@ -530,10 +530,10 @@ The structured chart for the TSDM tool is shown in the figure 4.1 The Output tha
 The output categories are :
 
 \begin{itemize}
-\item Comparision Results  : The comparison results of the DTW or the SAX algorithm under the Similarity Detection Module are obtained and given as input to the charts api for visualization.
-\item Anomalous Data Points  : The anomalous data points determined by the CUSUM or STATISTICAL algorithm under the Anomaly Detection Module are obtained and given as input to the charts api for visualization.
-\item Forecast/Predicted Results  : The predicted values of the input time series output by one of the NARX, GMA or GEA algorithms under the Forecasting Module are obtained and given as input to the charts api for visualization.
-\item Temporal Patterns  : The temporal patterns found by the Temporal Pattern Finder module are obtained and given as input to the charts api for1 visualization.
+\item Comparision Results  : The comparison results of the DTW or the SAX algorithm under the Similarity Detection Module are obtained and given as input to the charts API for visualization.
+\item Anomalous Data Points  : The anomalous data points determined by the CUSUM or STATISTICAL algorithm under the Anomaly Detection Module are obtained and given as input to the charts API for visualization.
+\item Forecast/Predicted Results  : The predicted values of the input time series output by one of the NARX, GMA or GEA algorithms under the Forecasting Module are obtained and given as input to the charts API for visualization.
+\item Temporal Patterns  : The temporal patterns found by the Temporal Pattern Finder module are obtained and given as input to the charts API for visualization.
 \end{itemize}
 \begin{figure}[h!]
 	\centering
@@ -559,7 +559,7 @@ The output categories are :
 %\end{figure} 
 \pagebreak
 
-\chapter{IMPLEMENTATION}
+\chapter{Implementation}
 \pagestyle{fancy}
 \lhead{\scriptsize{Implementation}}
 \chead{}
@@ -570,7 +570,7 @@ The output categories are :
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \paragraph{}The implementation phase of any project development is the most important phase and yields the final solution which solves the problem at hand.The implementation phase involves the actual materialization of the ideas, which are expressed in a suitable programming language. The factors concerning the programming language selection and platform chosen are described in the following sections.
-\section{PROGRAMMING LANGUAGE SELECTION}
+\section{Programming Language Selection}
 
 \paragraph{}The programming language chosen must reflect the necessities of the project to be completely expressed in terms of the analysis and the design documents. Therefore before choosing the language, features to be included in the project are decided. The time series data mining project needs the following features in a language to be implemented. Some of the features required are stated as follows:
 \begin{itemize}
@@ -580,19 +580,19 @@ The output categories are :
 \item Java's core classes are designed from scratch to meet the requirements of an object oriented system.
 \end{itemize} 
 With these necessities in mind, J2EE is selected as the optimal programming language to implement the project.
-\section{PLATFORM}
+\section{Platform}
 \paragraph{}The TSDM tool was built and designed on Windows Operating system family. They were specifically tested on Windows 7 with Google Chrome and Mozilla Firefox browsers. Because the product is browser based, any user with the browsers mentioned above will be able to run the tool. The product is hence platform independent in the true sense.
-\section{CODE CONVENTIONS}
+\section{Code Conventions}
 \paragraph{}The code standards for the Java programming Language document contains the standard conventions that follows. It includes file names, file organizations, indentation, comments, declarations, naming conventions and programming practices. Code conventions improve the readability of the software.
 \subsection{Naming Conventions}
  A naming convention is a set of rules for choosing the character sequence to be used for identifiers which denote variables, types, functions, and other entities in source code and documentation.  There are several common elements that influence most if not all naming conventions in common use today. They are :
 \begin{itemize}
-\item \textbf{Use mixed case to make names readable}
-\item \textbf{Avoid long names (15 characters maximum is a good idea)}
-\item \textbf{Avoid names that are too similar or that differ only in case}
-\item \textbf{Capitalize the first letter of standard acronyms}
-\item \textbf{Use terminology applicable to the domain}
-\item \textbf{Use full descriptors that accurately describe the variable, field, or class}
+\item Use mixed case to make names readable
+\item Avoid long names (15 characters maximum)
+\item Avoid names that are too similar or that differ only in case
+\item Capitalize the first letter of standard acronyms
+\item Use terminology applicable to the domain
+\item Use full descriptors that accurately describe the variable, field, or class
 \end{itemize}
 \subsection{File Organization}
 As stated above, this project has been developed using the eclipse JEE IDE. This is a dynamic web project. The project has been organized as follows :
@@ -650,13 +650,13 @@ public class Example { ...
 \end{verbatim}
 
 \end{itemize}
-\section{DIFFICULTIES ENCOUNTERED AND STRATEGIES USED TO TACKLE}
+\section{Difficulties encountered and Strategies used to tackle}
 
 \paragraph{}There were a number of challenges that were faced while implementing the Time Series Data Mining tool.Some challenges were challenging and ended up in helping us think innovatively and come up with efficient solutions. Some major problems that were encountered have been stated in brief along with their solutions.
 \subsubsection{Problem 1}
-\paragraph{}Initially we wanted to build the front end in python using django web framework. But integrating java (back-end) with python had performance issues.(Using Jython interpreter)
+\paragraph{}Initially the front end was designed in python using django web framework. But integrating java (back-end) with python had performance issues.(Using Jython interpreter)
 \subsubsection{Solution}
-\paragraph{}We used JSP (Java server pages) for the front end and solved this problem.
+\paragraph{}JSP (Java server pages) was later used for the front end and this problem was solved.
 \subsubsection{Problem 2}
 \paragraph{}In the initial stages of the project charts4j libraries were used to plot graphs. There were some internal problems with the URL rendering.
 
@@ -666,14 +666,8 @@ public class Example { ...
 
 \section{Module Design}
 
-Object-oriented programming (OOP) is a programming paradigm that represents con-
-cepts as "objects" that have data fields (attributes that describe the object) and associated
-procedures known as methods. Objects, which are instances of classes, are used to inter-
-act with one another to design applications and computer programs.
-
-Had it not been for the presence of the OOP paradigm, our efforts in this project would
-have gone in vain, and we do not use that term lightly. Code management was a whole
-lot easier when compared to our past experience with procedural programming. 
+Object-oriented programming (OOP) is a programming paradigm that represents concepts as ``objects" that have data fields (attributes that describe the object) and associated
+procedures known as methods. Objects, which are instances of classes, are used to interact with one another to design applications and computer programs.
 In this chapter, we describe the different packages that were created by us to efficiently manage our code. Know first that our application consists of four diverse packages, namely:\textbf{}
 \textit{\begin{enumerate}
 \itemsep-0.5em
@@ -689,13 +683,11 @@ In this chapter, we describe the different packages that were created by us to e
 \item{org.ck.gui}
 \end{enumerate}}
 
-We describe each package in detail, in the following sections. We follow a bottom-up
-methodology for explaining the layout of the classes.
+Each package is explained  in detail, in the following sections. A bottom-up methodology is followed for explaining the layout of the classes.
 
 \subsection{org.ck.sample}
 This package allows us to efficiently manage and encapsulate the details of the data
-samples, provided by users, which are required for analysis. It is this class that allows
-our application to accept generic data sets. It consists of four classes:
+samples, provided by users, which are required for analysis. It is this class that allows our application to accept generic data sets. It consists of four classes:
 
 \begin{enumerate}
 \item{\textbf{DataHolder} - This class keeps track of names of files that contain time series data; the fitness score threshold for the genetic algorithm. It provides this information, when required, to the front-end or back-
@@ -754,8 +746,8 @@ This package contain algorithms/models which can be trained from the past time s
 
 \begin{enumerate}
 
-\item{\textbf{Neuron}} - In a neural network model simple nodes (which can be called by a number of names, including "neurons", "neurodes", "Processing Elements" (PE) and "units"), are connected together to form a network of nodes — hence the term "neural network".
-\item{\textbf{NetworkLayer}} - Creating the NN architecture therefore means coming up with values for the number of layers of each type and the number of nodes in each of these layers.
+\item{\textbf{Neuron}} - In a neural network model simple nodes (which can be called by a number of names, including ``neurons", ``neurodes", ``Processing Elements" (PE) and ``units"), are connected together to form a network of nodes — hence the term ``neural network".
+\item{\textbf{NetworkLayer}} - Creating the neural network architecture therefore means coming up with values for the number of layers of each type and the number of nodes in each of these layers.
 
 \begin{itemize}
 \item{The Input Layer}
@@ -770,7 +762,7 @@ This package contain algorithms/models which can be trained from the past time s
 \end{enumerate}
 
 \subsection{org.ck.anomalifinder}
-This package contains algorithms that help in indicating anomalous patterns in the time series data analyzed. Anomalies are patterns in time series which deviate from the normal behavior and can indicate fraud/danger depending on the application. For example in an industry which produces the blades, the thickness of the blade can be monitored by a machine as a time series and any deviation from the normal error rate can signal an error in the manufacturing process.
+\paragraph{} This package contains algorithms that help in indicating anomalous patterns in the time series data analyzed. Anomalies are patterns in time series which deviate from the normal behavior and can indicate fraud/danger depending on the application. For example in an industry which produces the blades, the thickness of the blade can be monitored by a machine as a time series and any deviation from the normal error rate can signal an error in the manufacturing process.
 
 \begin{enumerate}
 
@@ -782,7 +774,7 @@ This package contains algorithms that help in indicating anomalous patterns in t
 
 \subsection{org.ck.tsdm}
 
-This package contains a set of classes that reveal hidden
+\paragraph{} This package contains a set of classes that reveal hidden
 patterns in time series data and overcome limitations of traditional time series analysis
 techniques. This Temporal Pattern Mining tool focuses on predicting events, which are important
 occurrences. This allows the TSDM methods to predict nonstationary, nonperiodic,
@@ -837,7 +829,7 @@ A Servlet is an object that receives a request and generates a response based on
 
 \begin{enumerate}
 
-\item{\textbf{MainController} - Since we've used the MVC design pattern, this servlet is the controller that gets requests from JSP pages, generates results through beans and forwards them to other jsp pages.}
+\item{\textbf{MainController} - This servlet is the controller that gets requests from JSP pages, generates results through beans and forwards them to other jsp pages.}
 
 \item{\textbf{AlgorithmUtils} - This class is a utility class that contains methods to run various algorithms in this tool.}
 
@@ -845,7 +837,7 @@ A Servlet is an object that receives a request and generates a response based on
 
 \subsection{org.ck.gui}
 
-This package allows each member of our team to test out the functionality of the back-end framework before we connect the front-end to it.
+This package allows each member of our team to test out the functionality of the back-end framework before connecting to the front-end to it.
 
 \begin{enumerate}
 
@@ -1210,13 +1202,13 @@ In this chapter, all the performance and experimental analysis of the algorithms
 \section{Evaluation Metric}
 As explained earlier, major module present in the project are as follows :
 \begin{itemize}
-\item \textbf{Similarity Detection Module}
-\item \textbf{Prediction and Forecasting Module}
-\item \textbf{Anomaly Detection Module}
-\item \textbf{Temporal Pattern Finder Module}
+\item Similarity Detection Module
+\item Prediction and Forecasting Module
+\item Anomaly Detection Module
+\item Temporal Pattern Finder Module
 \end{itemize}
 
-Since these modules are independent of each other, they have different evaluation metrices. The evaluation metrics used for performance analysis of each module is explained in the following sub sections.
+Since these modules are independent of each other, they have different evaluation metrics. The evaluation metrics used for performance analysis of each module is explained in the following sub sections.
 
 \subsection{Metrics for Similarity Detection Module}
 The algorithms implemented under this module are :
@@ -1235,17 +1227,17 @@ $$d(p,q)=d(q,p)=\sqrt{(p_1-q_1)^2+(p_2-q_2)^2+....+(p_n-q_n)^2} $$
 $$d(p,q)=d(q,p)=\sqrt{\sum_{i=0}^{n}{(p_i-q_i)^2}}$$
 
 
-In our project, p and q can be visualized as two time series to be compared, where $p_i$\'s and $q_i$\'s are the time series values.
+In the project, p and q can be visualized as two time series to be compared, where $p_i$\'s and $q_i$\'s are the time series values.
 Depending on the distance, the similarity of two or more time series with a give base series is found out. This metric is used in the DTW approach.
-\item \textbf{String Comparison} In SAX Algorithm, the time series is converted into a string of character as explained in section x.x. Given two or more time series, which are represented by strings, a string comparison algorithm is run and the similarity is found out. There are various string comparison algorithms. In this project KMP algorithm has been used.
+\item \textbf{String Comparison} In SAX Algorithm, the time series is converted into a string of character as explained. Given two or more time series, which are represented by strings, a string comparison algorithm is run and the similarity is found out. There are various string comparison algorithms. In this project KMP algorithm has been used.
 \end{itemize}
 \subsection{Metrics for Prediction and Forecasting Module}
 The algorithms implemented under this module for modeling and forecasting time series are :
 \begin{itemize}
-\item \textbf{NARX-Neural Network}
-\item \textbf{Moving Average Forecaster}
-\item \textbf{Moving Geometric Average Forecaster}
-\item \textbf{Moving Exponential Average Forecaster}
+\item NARX-Neural Network
+\item Moving Average Forecaster
+\item Moving Geometric Average Forecaster
+\item Moving Exponential Average Forecaster
 \end{itemize}
 Modeling a time series is an regression problem, the evaluation metrics are :
 \begin{itemize}
@@ -1271,9 +1263,7 @@ Algorithms implemented under this module are :
 
 These algorithms require a \textbf{threshold value} to be specified by the user and depending on this value, anomalous data points are determined.
 \subsection{Temporal Pattern Finder Module}
-In this module, a Genetic Algorithm has been implemented to optimize the algorithm.
-
-The fitness function used in the GA determine the accuracies of the patterns found. But eventually user intervention is required to interpret the resulting patterns detected by the algorithm. The results are documented in the next section.
+\paragraph{} In this module, a Genetic Algorithm has been implemented to optimize the algorithm. The fitness function used in the GA determine the accuracies of the patterns found. But eventually user intervention is required to interpret the resulting patterns detected by the algorithm. The results are documented in the next section.
 \section{Experimental Dataset}
 The data sets considered in this project are
 \begin{itemize}
@@ -1284,10 +1274,10 @@ The data sets considered in this project are
 \end{itemize}
 All the experiment analysis and results are presented using the \textbf{Water Level} data set. As explained earlier, some algorithms require certain parameters which determine their accuracies.
 \section{Performance Analysis}
-In the previous section, the evaluations metrics for different modules depending on the algorithm were explained. Performance analysis of different modules implemented in this project are explained in the following sub sections
+\paragraph{} In the previous section, the evaluations metrics for different modules depending on the algorithm were explained. Performance analysis of different modules implemented in this project are explained in the following sub sections
 \subsection{Similarity Detection}
 \subsubsection{DTW Algorithm }
-The working of the DTW algorithm for comparing two samples of same size in different intervals is shown in the figure 7.1. The algorithm shows a DTW distance of 34.17. 
+\paragraph{} The working of the DTW algorithm for comparing two samples of same size in different intervals is shown in the figure 7.1. The algorithm shows a DTW distance of 34.17. 
 
 
 The key inference is lesser the distance (closer to 0) more similar the two series are.
@@ -1298,7 +1288,7 @@ The key inference is lesser the distance (closer to 0) more similar the two seri
   \caption{Similarity detection for two Samples using DTW Algorithm}
 \end{figure}
 \subsubsection{SAX Algorithm }
-In SAX algorithm the time series is converted to a string. The working of this algorithm is shown in the figure 7.2 . The algorithms shows an SAX string representation of the sample and the corresponding similarity between the series.
+\paragraph{} In SAX algorithm the time series is converted to a string. The working of this algorithm is shown in the figure 7.2 . The algorithms shows an SAX string representation of the sample and the corresponding similarity between the series.
 \begin{figure}[h!]
 
   \centering
@@ -1306,9 +1296,9 @@ In SAX algorithm the time series is converted to a string. The working of this a
   \caption{Similarity detection for two Samples using SAX Algorithm}
 \end{figure}
 \subsection{Anomaly Detection}
-The anomaly detection algorithms require the user to specify a threshold value. This threshold value  determines the number of anomalous points discovered.
+\paragraph{} The anomaly detection algorithms require the user to specify a threshold value. This threshold value  determines the number of anomalous points discovered.
 \subsubsection{Cumulative Sum}
-Figure 7.3 shows the anomalous points determined by the CUSUM (Cumulative Sum) Algorithm. These points are shown in red. The threshold value set is 3.0 as shown in the figure.
+\paragraph{} Figure 7.3 shows the anomalous points determined by the CUSUM (Cumulative Sum) Algorithm. These points are shown in red. The threshold value set is 3.0 as shown in the figure.
 \begin{figure}[h!]
 
   \centering
@@ -1317,7 +1307,7 @@ Figure 7.3 shows the anomalous points determined by the CUSUM (Cumulative Sum) A
 \end{figure}
 
 \subsubsection{Statistical Approach Anomaly}
-In this approach a moving average of the time series is calculated. Then an upper and lower limit is defined as boundary. These limits are basically defined using the standard deviation of the data points. This boundary determines the number of anomalous data points discovered. The figure 7.4 shows the mean, upper limit and lower limit in the top graph and the anomalous data points discovered in the bottom graph.
+\paragraph{} In this approach a moving average of the time series is calculated. Then an upper and lower limit is defined as boundary. These limits are basically defined using the standard deviation of the data points. This boundary determines the number of anomalous data points discovered. The figure 7.4 shows the mean, upper limit and lower limit in the top graph and the anomalous data points discovered in the bottom graph.
 \begin{figure}[h!]
 
   \centering
@@ -1328,7 +1318,7 @@ In this approach a moving average of the time series is calculated. Then an uppe
 
 \subsection{Prediction and Forecasting}
 \subsubsection{NARX Neural Network Approach}
-NARX is Non-Linear Auto Regressive model with Extraneous Inputs. This is basically a neural network which predicts one time series which depends on another time series. A feed forward network with backpropogation algorithm is implemented. 
+\paragraph{} NARX is Non-Linear Auto Regressive model with Extraneous Inputs. This is basically a neural network which predicts one time series which depends on another time series. A feed forward network with backpropogation algorithm is implemented. 
 
 
 The results obtained by the neural network are shown in Figure 7.5. The accuracy obtained is around 60\% and it is different for different data sets.
@@ -1336,7 +1326,7 @@ The results obtained by the neural network are shown in Figure 7.5. The accuracy
 Various neural network parameters are :
 \begin{itemize}
 \item \textbf{Activation Function} : Sigmoidal activation function.
-\item \textbf{Hidden Layer Size} : 20 neurons. Larger the size, more accurate the results. But computationally will become exponential (too expensive).
+\item \textbf{Hidden Layer Size} : 20 neurons. If more number of neurons are used, he accuracy of the results increase but the computation is expensive.
 \item \textbf{Learning Rate } : 0.01 - 0.03. 
 \end{itemize}
 
@@ -1348,7 +1338,7 @@ Various neural network parameters are :
 \end{figure}
 
 \subsubsection{Moving Exponential Average Method}
-This method computes a moving exponential average and this value computed is the predicted value of the time series. The results obtained are shown in the figure 7.6.
+\paragraph{} This method computes a moving exponential average and this value computed is the predicted value of the time series. The results obtained are shown in the figure 7.6.
 
 
 This is not a conventional approach, the value predicted by this algorithm is just an estimation and not an actual prediction. The accuracy of this approach is around 50\%.
@@ -1359,8 +1349,7 @@ This is not a conventional approach, the value predicted by this algorithm is ju
 \end{figure}
 
 \subsection{Temporal Pattern Detection}
-Temporal Patterns are hidden patterns which occur very rarely. These patterns are basically the indications of periodic trends. In our project, the temporal pattern finder module is implemented using a genetic algorithm. A fitness value is to set for the algorithm, depending on this value, the patterns are discovered. 
-
+\paragraph{} Temporal Patterns are hidden patterns which occur very rarely. These patterns are basically the indications of periodic trends. In this project, the temporal pattern finder module is implemented using a genetic algorithm. A fitness value is to set for the algorithm, depending on this value, the patterns are discovered. 
 
 Figure 7.8 shows the patterns discovered in the water data set. Eventually it is upto the user to interpret these patterns.
 \begin{figure}[h!]
@@ -1375,8 +1364,8 @@ Figure 7.8 shows the patterns discovered in the water data set. Eventually it is
 \item \textbf{Forecasting and Prediction}
 \begin{itemize}
 \item  NARX Neural Network : The accuracy of this algorithms considering various evaluation metrics specified in the previous section is around 60\%. This accuracy can be different for different data sets and depending on the specified parameters like learning rate, hidden layer size, the activation function used.
-\item  Moving Exponential Method :  This algorithm does not require any special paramters to be specified. The efficiency of this algorithm is around 40\% for water data set.
-\item Simple Moving Average and Geometrical Moving Average methods are naive and are only estimation techniques and have few low accuracies.
+\item \textbf{ Moving Exponential Method : } This algorithm does not require any special paramters to be specified. The efficiency of this algorithm is around 40\% for water data set.
+\item \textbf{Simple Moving Average and Geometrical Moving Average : } These methods are naive and are only estimation techniques and have few low accuracies.
 \end{itemize}
 
 \item \textbf{Anomaly Detection }
@@ -1409,8 +1398,8 @@ This module helped in determining interesting/temporal patterns in the time seri
 \renewcommand{\footrulewidth}{0.4pt}
 \chapter{CONCLUSION}
 \section{Summary}
-In this project, we were able to successfully implement the Time Series Data Mining Tool for analyzing the time series and test its performance. This tool mainly contains four modules, they are - \textbf{Similarity Detection, Forecasting and Prediction, Anomaly Detection and Temporal Pattern Finder}, which we were successful in implementing and testing. The results obtained were presented in the previous chapter.
-
+\paragraph{}This project successfully implements the Time Series Data Mining Tool for analyzing the time series and test its performance. This tool mainly contains four modules, they are - \textbf{Similarity Detection, Forecasting and Prediction, Anomaly Detection and Temporal Pattern Finder}, which were successfully implemented and tested. The results obtained were presented in the previous chapter.
+\noindent
 The description of the modules are below :
 \begin{itemize}
 \item \textbf{Similarity Detection} : This module helps in finding similarity patterns (that occur at regular intervals in case of periodic time series), comparing different time series data. SAX and DTW are the main algorithms implemented/used in this module.
@@ -1446,7 +1435,7 @@ Some of the future enhancements are :
 \begin{enumerate}
 \item{The size of the  time series data analyzed is in terms of Mega Bytes. For larger dataset(In terms of GBs) or big data, distributed computing technologies like Hadoop can be used.}
 \item{}The application can be extended to analyze multi variate time series data.
-\item{The application could be made more responsive by using Threads and Parallel/Cloud Computing}
+\item{The application could be made more responsive by using Threads and Parallel or Cloud Computing}
 \item{One more extension could be analyzing twitter post data with respect to time and predicting the trends. This requires NLP, but is an example of time series.}
 \item{Efficient algorithms using Support Vector Models (SVMs) for forecasting, Hidden Markov Model for anomaly detection can be implemented.}
 \item{This application uses static time series data, enhancements can be made to use real time data.(In finance applications)}
