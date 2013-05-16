@@ -200,18 +200,16 @@ USN:1RV09CS114\\
 \section*{ABSTRACT}
 \addcontentsline{toc}{section}{ABSTRACT}
 \end{center} 
-A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of signal processing it is used for signal detection and estimation, while in the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting. This project is aimed making a time series data mining tool which can be used to accomplish the above goals. 
+ Data mining (sometimes called data or knowledge discovery) is the process of analyzing data from different perspectives and summarizing it into useful information. A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of signal processing it is used for signal detection and estimation, while in the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting. This project is aimed making a time series data mining tool which can be used to accomplish the above goals. 
 
 
 
 This project mainly focuses on analyzing the sea and rainfall level time series. 
 The tool developed can be used to perform anomaly detection, forecasting, similarity detection. The tool has been developed and tested using these data sets.
 
-
 The tool consists of various algorithms categorized under anomaly detection, forecasting, similarity detection and temporal pattern recognition. The performance of these algorithms were tested on the above data sets and the results are presented. 
 
-
-Every algorithm in this tool requires a set of user-defined parameters that determine the accuracy of the results. The Neural Network in the Forecasting module is the most accurate with 60\% accuracy. The CUSUM and Statistical approach in the Anomaly-Detection module requires a threshold to be set by the user. The Temporal Pattern Mining tool requires a fitness threshold to be set by the user, and similarly, the Dynamic Time Warping tool in the Similarity Module requires no parameters.
+Every algorithm in this tool requires a set of user-defined parameters that determine the accuracy of the results. The CUSUM and Statistical approach in the Anomaly-Detection module discover anomalies in the data sets. The Temporal Pattern Mining tool uses a fitness threshold set by the user and shows temporal patterns, and similarly, the Dynamic Time Warping tool in the Similarity Module shows similarities among the time series data sets. The Neural Network in the Forecasting module is the most accurate among the algorithms with 60\% accuracy. 
 
 
 %------Table Of Contents
@@ -1447,9 +1445,8 @@ Some of the future enhancements are :
 
 
 %For Bib refer to refs.bib to add/remove bib items
-\addcontentsline{toc}{section}{BIBLIOGRAPHY}
+\addcontentsline{toc}{section}{REFERENCES}
 \begin{thebibliography}{refs}
-\bibitem{test}Agrawal R., Lin K.-I., Sawhney H. S., Shim K.,\textit{“Fast Similarity Search in the Presence of Noise,Scaling, and Translation in Time-Series Databases”}
 \bibitem{t}Agrawal R., Lin K.-I., Sawhney H. S., Shim K., \textit{“Fast Similarity Search in the Presence of Noise,
 Scaling, and Translation in Time-Series Databases”}, Proc. VLDB 1995, pp. 490-501, Zurich
 (Switzerland), September 2008.
@@ -1465,11 +1462,18 @@ Workshop 2004, pp.359-370, Seattle, WA (USA), July 2004.
 ACM SIGKDD 1998, pp. 16-22, New York, New York (USA), August 1998.
 
 \bibitem{t}
-Povinelli; Richard J., \textit {"Time Series Data Mining: Identifying Temporal patterns for characterization and prediction of time series events"}
+Povinelli; Richard J., \textit {Time Series Data Mining: Identifying Temporal patterns for characterization and prediction of time series events}
 \bibitem{t}
 Damle; Chaitanya, Yalcin; Ali - 
 \textit{Flood prediction using Time Series Data Mining}
-Journal of Hydrology, Volume 333, Issues 2–4, 15 February 2007, Pages 305–316.
+Journal of Hydrology, Volume 333, Issues 2–4, 15 February 2007, Pages 305 – 316.
+\bibitem{t}
+Hamilton, James 
+\textit{ TIME SERIES ANALYSIS published by Princeton University Press, 1994}
+\bibitem{t}
+ Robert H. Shumway, David S. Stoffer
+ \textit{Time Series Analysis and Its Applications: With R Examples, Springer, 2011}
+
 \end{thebibliography}
 
 \newpage

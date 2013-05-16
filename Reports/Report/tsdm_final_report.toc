@@ -132,5 +132,5 @@
 \contentsline {paragraph}{}{46}{section*.106}
 \contentsline {section}{\numberline {8.2}Limitations}{47}{section.8.2}
 \contentsline {section}{\numberline {8.3}Future enhancements}{47}{section.8.3}
-\contentsline {section}{BIBLIOGRAPHY}{48}{Item.53}
+\contentsline {section}{REFERENCES}{48}{Item.53}
 \contentsline {section*}{APPENDICES}{50}{chapter*.107}
