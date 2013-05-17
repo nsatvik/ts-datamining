@@ -203,7 +203,7 @@ USN:1RV09CS114\\
 \addcontentsline{toc}{section}{ABSTRACT}
 \end{center} 
 
-\paragraph{}  Data mining (sometimes called data or knowledge discovery) is the process of analyzing data from different perspectives and summarizing it into useful information. A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of signal processing it is used for signal detection and estimation, while in the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting. This project is aimed making a time series data mining tool which can be used to accomplish the above goals. \\
+\paragraph{}  Data mining is the process of analyzing data from different perspectives and summarizing it into useful information. A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of signal processing it is used for signal detection and estimation, while in the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting. This project is aimed making a time series data mining tool which can be used to accomplish the above goals. \\
 
 
 
@@ -282,8 +282,8 @@ In many cases also, the objective is to take advantage of the specific character
 
 Novelty detection is a very important task in many areas. Several alternative terms for ``novelty\" have been used, such as, ``anomaly\", ``interestingness\", ``surprising\", ``faults\". Moreover, many problems of finding periodic patterns can be considered as similar problems.
 
-\section{MOTIVATION}
-
+\section{Motivation}
+Time series data is a commonly found type of data in the nature. Everything changes over time and understanding why things change will help the mankind understand the nature in a better way and adapt according to the changes. Hence, discovering knowledge from time series and interpreting it is of utmost importance.
 
 \section{Problem Statement}
 \paragraph{} A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting.
@@ -565,7 +565,10 @@ The modules are as below :
 \subsection{Forecasting and Prediction Algorithms}
 \subsubsection{NARX Neural Network}
 \subsubsection{Moving Exponential Average Method}
+Moving Exponential average,  is a technique that can be applied to time series data to produce smoothed data for presentation, or to make forecasts. Exponential smoothing is commonly applied to discrete set of repeated measurements. This makes it a method feasible for usage in the TSDM tool. Exponential smoothing was first suggested by Robert Goodell Brown in 1956, the one used in this tool is known as `` Brown's simple exponential smoothing".[14]
+The algorithm is a trivial and the forecasting accuracy is not as good as the Neural network approach.
 \subsubsection{Moving Geometric Average Method}
+A moving average of order k, MA(k) is the value of k consecutive observations. A moving geometric  average is commonly used with time series data to smooth out short-term fluctuations and highlight longer-term trends or cycles. 
 \subsection{Anomaly Detection Algorithms}
 \subsubsection{Cumulative Sum (CUSUM) Approach}
 \subsubsection{Statistical Approach}
@@ -1531,6 +1534,11 @@ Ann Ratanamahatana; Chotirat, Lin; Jessica, Gunopulos; Dimitrios, Keogh;Eamonn
  Riverside, Vlachos;Michail, Das; Gautam -
 \textit{Mining Time Series Data}
 University of California,IBM T.J. Watson Research Center, University of Texas, Arlington.
+\bibitem{t}
+Brown, Robert Goodell (1963).
+\textit{Smoothing Forecasting and Prediction of Discrete Time Series. }
+Englewood Cliffs, NJ: Prentice-Hall.
+
 
 \end{thebibliography}
 
