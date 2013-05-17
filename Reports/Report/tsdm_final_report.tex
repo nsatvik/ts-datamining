@@ -560,84 +560,7 @@ The modules are as below :
 \item Temporal Pattern Finder 
 \end{itemize}
 \subsection{Similarity Detection Algorithms}
-\subsubsection{Euclidian Distance}
-One of the simplest similarity measures for time series is the Euclidean distance
-measure. Assume that both time sequences are of the same length n, this sequence can be viewed as a point in n-dimensional Euclidean space, and define
-the dissimilarity between sequences C and Q and D(C;Q) = $L_p(C;Q)$
-i.e. the distance between the two points measured by the $L_p$ norm (when p = 2, it reduces to the familiar Euclidean distance). Figure 4.2 shows a visual intuition
-behind the Euclidean distance metric.
-
-\begin{figure}[h!]
-	\centering
-		\includegraphics[scale=0.6]{screenshots/euclid.png}
-		\caption{The intuition behind the Euclidean distance metric}
-\end{figure}
-Such a measure is simple to understand and easy to compute, which has ensured that the Euclidean distance is the most widely used distance measure for similarity search. However, one major disadvantage is that it is very brittle; it does not allow
-for a situation where two sequences are alike, but one has been ``stretched" or ``compressed" in the Y -axis.
-
 \subsubsection{DTW}
-Dynamic time warping (DTW) is a well-known technique to find an optimal
-alignment between two given (time-dependent) sequences under certain restrictions. Intuitively, the sequences are warped in a nonlinear fashion
-to match each other. Originally, DTW has been used to compare different
-speech patterns in automatic speech recognition. In fields such as
-data mining and information retrieval, DTW has been successfully applied
-to automatically cope with time deformations and different speeds associated
-with time-dependent data.
-
-\begin{figure}[h!]
-	\centering
-		\includegraphics[scale=0.7]{screenshots/dtw/time_alignment.png}
-		\caption{Time alignment of two time-dependent sequences.}
-\end{figure}
-
-The objective of DTW is to compare two (time-dependent) sequences 
-$X := (x_1, x_2, . . . , x_N) $ of length $N \in N$ and $Y := (y_1, y_2, . . . , y_M)$ of length $M \in N$.\\
-These sequences may be discrete signals (time-series) or, more generally, feature
-sequences sampled at equidistant points in time. Fix a
-feature space denoted by F. Then $x_n, y_m \in F$ for $n \in [1 : N]$ and  $m \in [1 : M].$\\
-To compare two different features $x, y \in F$, one needs a local cost measure,
-sometimes also referred to as local distance measure, which is defined to be a
-function
-c : $F \times F \rightarrow R. $
-Typically, $c(x, y)$ is small (low cost) if x and y are similar to each other, and
-otherwise $c(x, y$) is large (high cost).\\
-
-\begin{figure}[h!]
-	\centering
-		\includegraphics[scale=0.6]{screenshots/dtw/cost_matrix.png}
-		\caption{Cost matrix of the two real-valued sequences X (vertical axis) and Y
-(horizontal axis) using the Manhattan distance (absolute value of the difference) as
-local cost measure c. Regions of low cost are indicated by dark colors and regions
-of high cost are indicated by light colors}
-\end{figure}
-
-Evaluating the local cost measure for each pair of elements of the sequences X and Y , one obtains the cost matrix
-$C \in R^{N \times M}$ defined by $C(n,m) := c(x_n, y_m)$. Then the goal is to
-find an alignment between X and Y having minimal overall cost. Intuitively,
-such an optimal alignment runs along a "valley" of low cost within the cost
-matrix C.
-\\
-
-Basic Conditions to be satisfied:
-An (N,M)-warping path (or simply referred to as warping
-path if N and M are clear from the context) is a sequence $p = (p_1, . . . , p_L)$
-with $p_l = (n_l,m_l) \in [1 : N] \times [1 : M] for l \in [1 : L]$ satisfying the following
-three conditions.
-
-\begin{enumerate}
-\item{Boundary condition: $p_1 = (1, 1)$ and $p_L = (N,M).$}
-\item{Monotonicity condition: $n_1 \leq n_2 \leq . . .  \leq n_L$ and $m_1 \leq m_2 \leq . . . \leq m_L.$}
-\item{Step size condition:$ p_{l+1} − p_l \in {(1, 0), (0, 1), (1, 1)} $ for $l \in [1 : L − 1].$}
-\end{enumerate}
-
-\begin{figure}[h!]
-	\centering
-		\includegraphics[scale=0.6]{screenshots/dtw/conditions.png}
-		\caption{Illustration of paths of index pairs for some sequence X of length N = 9
-and some sequence Y of length M = 7. (a) Admissible warping path satisfying the
-conditions (i), (ii), and (iii) of Definition 4.1. (b) Boundary condition (i) is violated.
-(c) Monotonicity condition (ii) is violated. (d) Step size condition (iii) is violated}
-\end{figure}`
 \subsubsection{SAX}
 \subsection{Forecasting and Prediction Algorithms}
 \subsubsection{NARX Neural Network}
@@ -649,6 +572,16 @@ A moving average of order k, MA(k) is the value of k consecutive observations. A
 \subsection{Anomaly Detection Algorithms}
 \subsubsection{Cumulative Sum (CUSUM) Approach}
 \subsubsection{Statistical Approach}
+This approach is mainly dealt with by Statistical Quality Control process. In this approach the mean and standard deviation of the time series values of the process is recorded up to the the current time. If the time series value goes outside 3 sigmas (standard deviation) then an anomaly is signaled.
+
+This approach is explained in the figure 4.4.
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.6]{screenshots/control_chart.png}
+		\caption{Statistical approach of anomaly detection.}
+\end{figure}
+
+
 \subsection{Temporal Pattern Detection Algorithm}
 
 
@@ -656,7 +589,7 @@ A moving average of order k, MA(k) is the value of k consecutive observations. A
 \pagestyle{fancy}
 \lhead{\scriptsize{Implementation}}
 \chead{}
-\rhead{\scriptsize{Key Based Data Embedding Technique in Image Steganography}}
+\rhead{\scriptsize{Time Series Data Mining Tool}}
 \lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
 \rfoot{\small{\thepage}}
 \cfoot{\scriptsize{September 2012 - January 2013}}
@@ -1623,16 +1556,16 @@ Published by: The MIT Press
 
 \end{thebibliography}
 
-\newpage
-\pagestyle{fancy}
-\lhead{\scriptsize{Appendix A: Screen Shots}}
-\chead{}
-\rhead{\scriptsize{Time Series Data Mining Tool}}
-\lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
-\rfoot{\small{\thepage}}
-\cfoot{\scriptsize{Jan 2013 - Jun 2013}}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+%\newpage
+%\pagestyle{fancy}
+%\lhead{\scriptsize{Appendix A: Screen Shots}}
+%\chead{}
+%\rhead{\scriptsize{Time Series Data Mining Tool}}
+%\lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
+%\rfoot{\small{\thepage}}
+%\cfoot{\scriptsize{Jan 2013 - Jun 2013}}
+%\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
 
 %\addcontentsline{toc}{section*}{APPENDICES}
 %\section*{Appendices}
