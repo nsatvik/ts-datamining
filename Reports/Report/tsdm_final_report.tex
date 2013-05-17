@@ -271,7 +271,7 @@ The most common tasks of time series data mining methods are: indexing, clusteri
 \textbf{Rule discovery:} Infer rules from one or more time series describing the most possible behavior that they might present at a specific time point (or interval).\\
 
 
-  The temporal aspect of data arises some special issues to be considered and imposes some restrictions in the corresponding applications$^{[3]}$. First, it is necessary to define a similarity measure between two time series and this issue is very important in TSDM since it involves a degree of subjectivity that might affect the final result. Second, it is necessary to apply a representation scheme on the time series data. Since the amount of data may range from a few kilobytes to megabytes, an appropriate representation of the time series is necessary in order to manipulate and analyze it efficiently.$^{[3,4]}$ The desirable properties that this approach should hold are: 
+  The temporal aspect of data arises some special issues to be considered and imposes some restrictions in the corresponding applications [3]. First, it is necessary to define a similarity measure between two time series and this issue is very important in TSDM since it involves a degree of subjectivity that might affect the final result. Second, it is necessary to apply a representation scheme on the time series data. Since the amount of data may range from a few kilobytes to megabytes, an appropriate representation of the time series is necessary in order to manipulate and analyze it efficiently.$^{[3,4]}$ The desirable properties that this approach should hold are: 
   \begin{itemize}
   \item the completeness of feature extraction 
   \item the reduction of the dimensionality. 
@@ -560,6 +560,22 @@ The modules are as below :
 \item Temporal Pattern Finder 
 \end{itemize}
 \subsection{Similarity Detection Algorithms}
+Similarity detection is basically  query time series Q, and some
+similarity/dissimilarity measure D(Q;C), find the most similar time series that matches the query series.
+\subsubsection{Euclidian Distances}
+One of the simplest similarity measures for time series is the Euclidean distance
+measure. Assume that both time sequences are of the same length n, this sequence can be viewed as a point in n-dimensional Euclidean space, and define
+the dissimilarity between sequences C and Q and D(C;Q) = $L_p(C;Q)$
+i.e. the distance between the two points measured by the $L_p$ norm (when p = 2, it reduces to the familiar Euclidean distance). Figure 4.2 shows a visual intuition
+behind the Euclidean distance metric.
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.6]{screenshots/euclid.png}
+		\caption{The intuition behind the Euclidean distance metric}
+\end{figure}
+Such a measure is simple to understand and easy to compute, which has ensured that the Euclidean distance is the most widely used distance measure for similarity search. However, one major disadvantage is that it is very brittle; it does not allow
+for a situation where two sequences are alike, but one has been ``stretched" or ``compressed" in the Y -axis.
 \subsubsection{DTW}
 \subsubsection{SAX}
 \subsection{Forecasting and Prediction Algorithms}
