@@ -2,6 +2,8 @@
 \usepackage[pdftex]{graphicx}
 %\usepackage[pdftrex/bookmarksnumbered=true]{hyperref}
 \usepackage{hyperref}
+%\usepackage[toc]{glossaries}
+
 %\linespread{1.5}
 %\textwidth = 6in
 %\textheight = 9in
@@ -200,12 +202,13 @@ USN:1RV09CS114\\
 \section*{ABSTRACT}
 \addcontentsline{toc}{section}{ABSTRACT}
 \end{center} 
- Data mining (sometimes called data or knowledge discovery) is the process of analyzing data from different perspectives and summarizing it into useful information. A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of signal processing it is used for signal detection and estimation, while in the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting. This project is aimed making a time series data mining tool which can be used to accomplish the above goals. 
+
+\paragraph{}  Data mining (sometimes called data or knowledge discovery) is the process of analyzing data from different perspectives and summarizing it into useful information. A time series is a sequence of data points, measured typically at successive points in time spaced at uniform time intervals. Time series analysis comprises methods for analyzing time series data in order to extract meaningful statistics and other characteristics of the data.In the context of statistics,the primary goal of time series analysis is forecasting. In the context of signal processing it is used for signal detection and estimation, while in the context of data mining, pattern recognition and machine learning time series analysis can be used for clustering, classification, query by content, anomaly detection as well as forecasting. This project is aimed making a time series data mining tool which can be used to accomplish the above goals. \\
 
 
 
 This project mainly focuses on analyzing the sea and rainfall level time series. The data sets considered belong to the  rainfall data collected over ten years in the six taluks of Chikkaballapura district of Karnataka.
-The tool developed can be used to perform anomaly detection, forecasting, similarity detection and temporal pattern detection. The performance of these algorithms were tested on the above data sets and the results are presented. 
+The tool developed can be used to perform anomaly detection, forecasting, similarity detection and temporal pattern detection. The performance of these algorithms were tested on the above data sets and the results are presented.  \\
 
 
 
@@ -225,6 +228,7 @@ The algorithms implemented in this tool requires a set of user-defined parameter
 
 \addcontentsline{toc}{section}{LIST OF TABLES}
 \listoftables
+%\makeglossaries
 \newpage
 
 \pagenumbering{arabic}
@@ -239,12 +243,15 @@ The algorithms implemented in this tool requires a set of user-defined parameter
 \cfoot{\scriptsize{Jan 2013 - Jun 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
-
+\linespread{1.5}
 \chapter{Introduction}
-\paragraph{} A time series is a set of observations $X_t$ , each one being recorded at a specific time t. Discrete-time time series is one in which the set T of times at which observations are made is a discrete set. Continuous-time time series are obtained when observations are recorded continuously over some time interval, e.g., when $T_0$ belongs [0,1]. Examples of time series are the daily closing value of the ECG readings and the annual flow volume of the Nile River at Aswan. Time series are very frequently plotted via line charts. Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data. Time series forecasting is the use of a model to predict future values based on previously observed values.  
-%\section{DEFINITIONS AND USAGE}
-%Definition of Time Series: An ordered sequence of values of a variable at equally spaced time intervals.
-%TSDM : Time Series Data Mining tool.
+\paragraph{} A time series is a set of observations $X_t$ , each one being recorded at a specific time t. Discrete-time time series is one in which the set T of times at which observations are made is a discrete set. Continuous-time time series are obtained when observations are recorded continuously over some time interval, e.g., when $T_0$ belongs [0,1]. Examples of time series are the daily closing value of the stock market points and the annual flow volume of the Nile River at Aswan. Time series are very frequently plotted via line charts.
+
+
+ Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data. Time series forecasting is the use of a model to predict future values based on previously observed values.  
+\section{Definitions}
+Definition of Time Series: An ordered sequence of values of a variable at equally spaced time intervals.
+TSDM : Time Series Data Mining tool.
 %@TODO ADD DETAILS OF THIS SECTION
 %-----------------------literature survey--------------------------------------------
 \section{Literature Survey}
@@ -275,7 +282,7 @@ In many cases also, the objective is to take advantage of the specific character
 
 Novelty detection is a very important task in many areas. Several alternative terms for ``novelty\" have been used, such as, ``anomaly\", ``interestingness\", ``surprising\", ``faults\". Moreover, many problems of finding periodic patterns can be considered as similar problems.
 
-%\section{MOTIVATION}
+\section{MOTIVATION}
 
 
 \section{Problem Statement}
@@ -512,11 +519,15 @@ The output categories are :
 \lhead{\scriptsize{Detailed Design}}
 \chead{}
 \rhead{\scriptsize{Key Based Data Embedding Technique in Image Steganography}}
-\lfoot{\scriptsize{Dept. of CSE, R V C E, Bangalore.}}
+\lfoot{\scriptsize{Dept. of CSE, RVCE, Bangalore.}}
 \rfoot{\small{\thepage}}
 \cfoot{\scriptsize{September 2012 - January 2013}}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
+This chapter discusses the detailed design of the TSDM tool. In the section 4.1 the structured chart of the tool is explained.
+\paragraph{}
+In section 4.2 the details of the algorithms implemented under different modules of the tool are explained in detail.
+
 \section{Structured Chart}
 \paragraph{}Structure charts are used to specify the high level design or architecture of a computer program. As a design tool, they help the programmer in dividing and conquering a large software problem, i.e. recursively breaking a problem down into parts that are small enough to be understood by a human brain. The process is called top-down design or functional decomposition. 
 \paragraph{}Programmers use a structure chart to build a program in a manner similar to how an architect uses a blueprint to build a house. In the design stage, the chart is drawn and used as a method for the client and various software designers to communicate. During the actual building of the program, the chart is continuously referred to as master plan. Often, it is modified as programmers learn new details about the program. After a program is completed, the structured chart is used to fix bugs and to make changes.
@@ -536,24 +547,30 @@ The output categories are :
 		\includegraphics[scale=0.7]{screenshots/structured_chart.png}
 		\caption{Structed Chart for the TSDM Tool }
 \end{figure}
-%\pagebreak
 
+\section{Algorithm Details}
+In this section, the algorithms implemented in the TSDM Tool are explained in required detail.
 
-%\pagebreak
-%\begin{figure}[h!]
-%	\centering
-%		\includegraphics[scale=0.9]{2.jpg}
-%		\caption{GUI Module}
-%\end{figure} 
-\pagebreak
+\paragraph{} As explained in the DFDs (figures 3.2 to 3.5), this tool mainly consists of four main modules.
+The modules are as below :
+\begin{itemize}
+\item Similarity Detection Module
+\item Forecasting and Prediction Module
+\item Anomaly Detection Module
+\item Temporal Pattern Finder 
+\end{itemize}
+\subsection{Similarity Detection Algorithms}
+\subsubsection{DTW}
+\subsubsection{SAX}
+\subsection{Forecasting and Prediction Algorithms}
+\subsubsection{NARX Neural Network}
+\subsubsection{Moving Exponential Average Method}
+\subsubsection{Moving Geometric Average Method}
+\subsection{Anomaly Detection Algorithms}
+\subsubsection{Cumulative Sum (CUSUM) Approach}
+\subsubsection{Statistical Approach}
+\subsection{Temporal Pattern Detection Algorithm}
 
-\pagebreak
-%\begin{figure}[h!]
-%	\centering
-%		\includegraphics[scale=0.9]{7.jpg}
-%		\caption{Data Extraction Module}
-%\end{figure} 
-\pagebreak
 
 \chapter{Implementation}
 \pagestyle{fancy}
@@ -1466,32 +1483,54 @@ Some of the future enhancements are :
 %For Bib refer to refs.bib to add/remove bib items
 \addcontentsline{toc}{section}{REFERENCES}
 \begin{thebibliography}{refs}
-\bibitem{t}Agrawal R., Lin K.-I., Sawhney H. S., Shim K., \textit{“Fast Similarity Search in the Presence of Noise,
-Scaling, and Translation in Time-Series Databases”}, Proc. VLDB 1995, pp. 490-501, Zurich
+\bibitem{t}
+ Robert H. Shumway, David S. Stoffer
+ \textit{Time Series Analysis and Its Applications: With R Examples, Springer, 2011}
+
+\bibitem{te}Antunes C.M., Oliveira A.L., \textit{``Temporal Data Mining: An Overview"}, Workshop on Temporal Data
+Mining ACM SIGKDD 2010, San Francisco, California (USA), August 2010.
+
+\bibitem{t}Agrawal R., Lin K.-I., Sawhney H. S., Shim K., \textit{``Fast Similarity Search in the Presence of Noise,
+Scaling, and Translation in Time-Series Databases"}, Proc. VLDB 1995, pp. 490-501, Zurich
 (Switzerland), September 2008.
 
-\bibitem{te}Antunes C.M., Oliveira A.L., \textit{“Temporal Data Mining: An Overview”}, Workshop on Temporal Data
-Mining ACM SIGKDD 2010, San Francisco, California (USA), August 2010.
+\bibitem{t}
+Damle; Chaitanya, Yalcin; Ali - 
+\textit{Flood prediction using Time Series Data Mining}
+Journal of Hydrology, Volume 333, Issues 2–4, 15 February 2007, Pages 305 – 316.
 
 \bibitem{t} Berndt D. J., Clifford J., \textit{“Using Dynamic Time Warping to Find Patterns in Time Series”}, KDD
 Workshop 2004, pp.359-370, Seattle, WA (USA), July 2004.
 
 \bibitem{t} Faloutsos C., \textit{“Mining Time Series Data”}, Tutorial ICML 2003, Washington DC (USA), August 2003.
+\bibitem{t}
+Keogh, E., Lonardi, S., Chiu, W. \textit{Finding Surprising Patterns in a Time Series
+Database In Linear Time and Space}. In the 8th ACM SIGKDD International
+Conference on Knowledge Discovery and Data Mining; 2002 Jul 23 – 26;
+Edmonton, Alberta, Canada, pp 550-556.
+\bibitem{t}Ge, X., Smyth, P. -\textit{Deformable Markov Model Templates for Time-Series Pattern
+Matching}. Proceedings of 6th ACM SIGKDD International Conference
+on Knowledge Discovery and Data Mining; 2000 Aug 20-23; Boston , MA,pp. 81-90.
+
+\bibitem{t}
+Povinelli; Richard J., \textit {Time Series Data Mining: Identifying Temporal patterns for characterization and prediction of time series events}, Milwaukee, Wisconsin
+December, 1999.
 \bibitem{t}Das G., Lin K.I., Mannila H., Ranganathan G., Smyth P., \textit{“Rule Discovery from Time series”}, Proc.
 ACM SIGKDD 1998, pp. 16-22, New York, New York (USA), August 1998.
 
 \bibitem{t}
-Povinelli; Richard J., \textit {Time Series Data Mining: Identifying Temporal patterns for characterization and prediction of time series events}
-\bibitem{t}
-Damle; Chaitanya, Yalcin; Ali - 
-\textit{Flood prediction using Time Series Data Mining}
-Journal of Hydrology, Volume 333, Issues 2–4, 15 February 2007, Pages 305 – 316.
+Ripley, B.D. Pattern recognition and neural networks. Cambridge University
+Press, Cambridge, UK, 1996.
+
 \bibitem{t}
 Hamilton, James 
-\textit{ TIME SERIES ANALYSIS published by Princeton University Press, 1994}
+\textit{ Time Series Analysis published by Princeton University Press, 1994}
+
 \bibitem{t}
- Robert H. Shumway, David S. Stoffer
- \textit{Time Series Analysis and Its Applications: With R Examples, Springer, 2011}
+Ann Ratanamahatana; Chotirat, Lin; Jessica, Gunopulos; Dimitrios, Keogh;Eamonn
+ Riverside, Vlachos;Michail, Das; Gautam -
+\textit{Mining Time Series Data}
+University of California,IBM T.J. Watson Research Center, University of Texas, Arlington.
 
 \end{thebibliography}
 
@@ -1506,69 +1545,69 @@ Hamilton, James
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
-\addcontentsline{toc}{section*}{APPENDICES}
-\section*{Appendices}
-%\section*{Appendix A : Source Code}
-\section*{Appendix A : Screen Shots}
-\begin{figure}[h!]
-
-  \centering
-    \includegraphics[scale=0.30]{./screenshots/welcome_screen.png}
-  \caption{TSDM Tool Window - Welcome Screen}
-\end{figure}
-
-\begin{figure}[h!]
-  
-  \centering
-    \includegraphics[scale=0.30]{./screenshots/sim_dtw.png}
-\caption{Similarity Detection with DTW Algorithm.}
-\end{figure}
-
-\begin{figure}[h!]
-  
-  \centering
-    \includegraphics[scale=0.40]{./screenshots/ft_narx.png}
-\caption{Time Series Prediction with NARX NN Model.}
-\end{figure}
-\begin{figure}[h!]
-  
-  \centering
-    \includegraphics[scale=0.400]{./screenshots/ft_mv_avg.png}
-\caption{Time Series Prediction with Moving Average Method.}
-\end{figure}
-
-\begin{figure}[h!]
-  
-  \centering
-    \includegraphics[scale=0.30]{./screenshots/ano_stat_app.png}
-\caption{Anomaly Detection using Statistical Approach.}
-\end{figure}
-
-\begin{figure}[h!]
-  
-  \centering
-    \includegraphics[scale=0.350]{./screenshots/ano_stat_app_2.png}
-\caption{Anomaly Detection using Cusum Algorithm.}
-\end{figure}
-
-\begin{figure}[h!]
-  
-  \centering
-    \includegraphics[scale=0.30]{./screenshots/temp_pattern.png}
-\caption{Temporal Pattern Detection using Phase space diagram.}
-\end{figure}
-\begin{figure}[h!]
-  
-  \centering
-    \includegraphics[scale=0.30]{./screenshots/about_us.png}
-\caption{About the Developers who did this project!}
-\end{figure}
-\begin{figure}[h!]
-  
-  \centering
-    \includegraphics[scale=0.30]{./screenshots/error_page.png}
-\caption{404 File not found error page.}
-\end{figure}
+%\addcontentsline{toc}{section*}{APPENDICES}
+%\section*{Appendices}
+%%\section*{Appendix A : Source Code}
+%\section*{Appendix A : Screen Shots}
+%\begin{figure}[h!]
+%
+%  \centering
+%    \includegraphics[scale=0.30]{./screenshots/welcome_screen.png}
+%  \caption{TSDM Tool Window - Welcome Screen}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%  
+%  \centering
+%    \includegraphics[scale=0.30]{./screenshots/sim_dtw.png}
+%\caption{Similarity Detection with DTW Algorithm.}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%  
+%  \centering
+%    \includegraphics[scale=0.40]{./screenshots/ft_narx.png}
+%\caption{Time Series Prediction with NARX NN Model.}
+%\end{figure}
+%\begin{figure}[h!]
+%  
+%  \centering
+%    \includegraphics[scale=0.400]{./screenshots/ft_mv_avg.png}
+%\caption{Time Series Prediction with Moving Average Method.}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%  
+%  \centering
+%    \includegraphics[scale=0.30]{./screenshots/ano_stat_app.png}
+%\caption{Anomaly Detection using Statistical Approach.}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%  
+%  \centering
+%    \includegraphics[scale=0.350]{./screenshots/ano_stat_app_2.png}
+%\caption{Anomaly Detection using Cusum Algorithm.}
+%\end{figure}
+%
+%\begin{figure}[h!]
+%  
+%  \centering
+%    \includegraphics[scale=0.30]{./screenshots/temp_pattern.png}
+%\caption{Temporal Pattern Detection using Phase space diagram.}
+%\end{figure}
+%\begin{figure}[h!]
+%  
+%  \centering
+%    \includegraphics[scale=0.30]{./screenshots/about_us.png}
+%\caption{About the Developers who did this project!}
+%\end{figure}
+%\begin{figure}[h!]
+%  
+%  \centering
+%    \includegraphics[scale=0.30]{./screenshots/error_page.png}
+%\caption{404 File not found error page.}
+%\end{figure}
 %\lstinputlisting[language=Java, caption=DecisionTreeConstructor.java, breaklines=true]{../../src/org/ck/dt/DecisionTreeConstructor.java}
 %\lstinputlisting[language=Java, caption=DecisionTreeClassifier.java, breaklines=true]{../../src/org/ck/dt/DecisionTreeClassifier.java}
 
