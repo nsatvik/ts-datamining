@@ -11,19 +11,23 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Similarity detection for two Samples using DTW Algorithm\relax }}{40}{figure.caption.87}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Similarity detection for two Samples using SAX Algorithm\relax }}{40}{figure.caption.90}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Anomaly detection using the Cumulative Sum Approach\relax }}{41}{figure.caption.94}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Anomaly detection using the Statistical Approach\relax }}{42}{figure.caption.97}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Forecasting/Estimation using NARX Neural Network Approach.\relax }}{43}{figure.caption.100}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Forecasting/Estimation using Moving Exponential Average Method.\relax }}{43}{figure.caption.103}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Temporal Patterns detected in the Rainfall/Water Data set.\relax }}{44}{figure.caption.105}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Similarity detection of two Samples of five years each using SAX and DTW Algorithm for Shidlaghatta Taluk.\relax }}{40}{figure.caption.87}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Similarity detection of two Samples of five years each using SAX and DTW Algorithm for Gowribidanur Taluk .\relax }}{40}{figure.caption.90}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Anomaly detection using the Cumulative Sum Approach for Rainfall data set of Bagepalli Taluk.\relax }}{41}{figure.caption.94}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Anomaly detection using the Statistical Approach for rainfall data set of Gowribidanuru taluk.\relax }}{42}{figure.caption.97}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Anomaly detection using the Statistical Approach for rainfall data set of Shidlaghatta taluk.\relax }}{43}{figure.caption.98}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Forecasting/Estimation using NARX Neural Network Approach for Rainfall data set of Bagepalli taluk.\relax }}{44}{figure.caption.101}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Forecasting/Estimation using NARX Neural Network Approach for Rainfall data set of Shidlaghatta taluk.\relax }}{44}{figure.caption.102}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Forecasting/Estimation using Moving Exponential Average Method for rainfall data set of Bagepalli Taluk.\relax }}{45}{figure.caption.105}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Forecasting/Estimation using Moving Exponential Average Method for rainfall data set of Gowribidanur Taluk.\relax }}{46}{figure.caption.106}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Temporal Patterns detected in the Rainfall/Water Data set of Bagepalli taluk.\relax }}{47}{figure.caption.108}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces TSDM Tool Window - Welcome Screen\relax }}{50}{figure.caption.110}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Similarity Detection with DTW Algorithm.\relax }}{50}{figure.caption.111}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Time Series Prediction with NARX NN Model.\relax }}{51}{figure.caption.112}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Time Series Prediction with Moving Average Method.\relax }}{52}{figure.caption.113}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Anomaly Detection using Statistical Approach.\relax }}{53}{figure.caption.114}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{54}{figure.caption.115}
-\contentsline {figure}{\numberline {8.7}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{54}{figure.caption.116}
-\contentsline {figure}{\numberline {8.8}{\ignorespaces About the Developers who did this project!\relax }}{55}{figure.caption.117}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces TSDM Tool Window - Welcome Screen\relax }}{52}{figure.caption.113}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Similarity Detection with DTW Algorithm.\relax }}{52}{figure.caption.114}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Time Series Prediction with NARX NN Model.\relax }}{53}{figure.caption.115}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Time Series Prediction with Moving Average Method.\relax }}{54}{figure.caption.116}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Anomaly Detection using Statistical Approach.\relax }}{55}{figure.caption.117}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Anomaly Detection using Cusum Algorithm.\relax }}{55}{figure.caption.118}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Temporal Pattern Detection using Phase space diagram.\relax }}{56}{figure.caption.119}
+\contentsline {figure}{\numberline {8.8}{\ignorespaces About the Developers who did this project!\relax }}{56}{figure.caption.120}
+\contentsline {figure}{\numberline {8.9}{\ignorespaces 404 File not found error page.\relax }}{56}{figure.caption.121}

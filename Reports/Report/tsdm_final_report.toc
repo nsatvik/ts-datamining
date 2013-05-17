@@ -3,7 +3,7 @@
 \contentsline {section}{ABSTRACT}{ii}{section*.7}
 \contentsline {section}{CONTENTS}{ii}{section*.7}
 \contentsline {section}{LIST OF FIGURES}{vi}{chapter*.8}
-\contentsline {section}{LIST OF TABLES}{vii}{chapter*.9}
+\contentsline {section}{LIST OF TABLES}{viii}{chapter*.9}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {paragraph}{}{1}{section*.11}
 \contentsline {section}{\numberline {1.1}Literature Survey}{1}{section.1.1}
@@ -115,22 +115,22 @@
 \contentsline {paragraph}{}{39}{section*.89}
 \contentsline {subsection}{\numberline {7.3.2}Anomaly Detection}{40}{subsection.7.3.2}
 \contentsline {paragraph}{}{40}{section*.91}
-\contentsline {subsubsection}{Cumulative Sum}{40}{section*.92}
-\contentsline {paragraph}{}{40}{section*.93}
+\contentsline {subsubsection}{Cumulative Sum}{41}{section*.92}
+\contentsline {paragraph}{}{41}{section*.93}
 \contentsline {subsubsection}{Statistical Approach Anomaly}{41}{section*.95}
 \contentsline {paragraph}{}{41}{section*.96}
 \contentsline {subsection}{\numberline {7.3.3}Prediction and Forecasting}{41}{subsection.7.3.3}
-\contentsline {subsubsection}{NARX Neural Network Approach}{41}{section*.98}
-\contentsline {paragraph}{}{41}{section*.99}
-\contentsline {subsubsection}{Moving Exponential Average Method}{42}{section*.101}
-\contentsline {paragraph}{}{42}{section*.102}
-\contentsline {subsection}{\numberline {7.3.4}Temporal Pattern Detection}{43}{subsection.7.3.4}
+\contentsline {subsubsection}{NARX Neural Network Approach}{41}{section*.99}
+\contentsline {paragraph}{}{41}{section*.100}
+\contentsline {subsubsection}{Moving Exponential Average Method}{43}{section*.103}
 \contentsline {paragraph}{}{43}{section*.104}
-\contentsline {section}{\numberline {7.4}Inference from the Results}{44}{section.7.4}
-\contentsline {chapter}{\numberline {8}CONCLUSION}{46}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{46}{section.8.1}
-\contentsline {paragraph}{}{46}{section*.106}
-\contentsline {section}{\numberline {8.2}Limitations}{47}{section.8.2}
-\contentsline {section}{\numberline {8.3}Future enhancements}{47}{section.8.3}
-\contentsline {section}{REFERENCES}{48}{Item.53}
-\contentsline {section*}{APPENDICES}{50}{chapter*.107}
+\contentsline {subsection}{\numberline {7.3.4}Temporal Pattern Detection}{44}{subsection.7.3.4}
+\contentsline {paragraph}{}{44}{section*.107}
+\contentsline {section}{\numberline {7.4}Inference from the Results}{45}{section.7.4}
+\contentsline {chapter}{\numberline {8}CONCLUSION}{48}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{48}{section.8.1}
+\contentsline {paragraph}{}{48}{section*.109}
+\contentsline {section}{\numberline {8.2}Limitations}{49}{section.8.2}
+\contentsline {section}{\numberline {8.3}Future enhancements}{49}{section.8.3}
+\contentsline {section}{REFERENCES}{50}{Item.52}
+\contentsline {section*}{APPENDICES}{52}{chapter*.110}

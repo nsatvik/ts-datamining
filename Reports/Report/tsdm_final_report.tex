@@ -204,12 +204,12 @@ USN:1RV09CS114\\
 
 
 
-This project mainly focuses on analyzing the sea and rainfall level time series. 
-The tool developed can be used to perform anomaly detection, forecasting, similarity detection. The tool has been developed and tested using these data sets.
+This project mainly focuses on analyzing the sea and rainfall level time series. The data sets considered belong to the  rainfall data collected over ten years in the six taluks of Chikkaballapura district of Karnataka.
+The tool developed can be used to perform anomaly detection, forecasting, similarity detection and temporal pattern detection. The performance of these algorithms were tested on the above data sets and the results are presented. 
 
-The tool consists of various algorithms categorized under anomaly detection, forecasting, similarity detection and temporal pattern recognition. The performance of these algorithms were tested on the above data sets and the results are presented. 
 
-Every algorithm in this tool requires a set of user-defined parameters that determine the accuracy of the results. The CUSUM and Statistical approach in the Anomaly-Detection module discover anomalies in the data sets. The Temporal Pattern Mining tool uses a fitness threshold set by the user and shows temporal patterns, and similarly, the Dynamic Time Warping tool in the Similarity Module shows similarities among the time series data sets. The Neural Network in the Forecasting module is the most accurate among the algorithms with 60\% accuracy. 
+
+The algorithms implemented in this tool requires a set of user-defined parameters that determine the accuracy of the results. The CUSUM and Statistical approach in the Anomaly-Detection module discover anomalies in the data sets. The Temporal Pattern Mining tool uses a fitness threshold set by the user and shows temporal patterns, and similarly, the Dynamic Time Warping tool in the Similarity Module shows similarities among the time series data sets. The Neural Network in the Forecasting module is the most accurate among the algorithms with 60\% accuracy. 
 
 
 %------Table Of Contents
@@ -221,12 +221,10 @@ Every algorithm in this tool requires a set of user-defined parameters that dete
 \listoffigures
 
 \newpage
+%\section*{Glossary}
+
 \addcontentsline{toc}{section}{LIST OF TABLES}
 \listoftables
-
-
-
-
 \newpage
 
 \pagenumbering{arabic}
@@ -942,7 +940,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & Home Page Opens                    \\ \hline
     Remarks                 & Test case passed                   \\ \hline
     \end{tabular}
-    \caption {Test Case 1 : System Test}
+    \caption {Test Case 1 - System Test}
 \end{table}
 
 
@@ -959,7 +957,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & Home Page Opens as expected                            \\ \hline
     Remarks                 & Test case passed                                       \\ \hline
     \end{tabular}
-    \caption {Test Case 2 : System Test}
+    \caption {Test Case 2 - System Test}
 \end{table}
 
 
@@ -977,7 +975,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & Charts are plotted                 \\ \hline
     Remarks                 & Test case passed                   \\ \hline
     \end{tabular}
-    \caption {Test Case 3 : System Test}
+    \caption {Test Case 3 - System Test}
 \end{table}
 
 
@@ -993,7 +991,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & Ping Data Obtained            \\ \hline
     Remarks                 & Test case passed              \\ \hline
     \end{tabular}
-    \caption {Test Case 4 : Integration Test}
+    \caption {Test Case 4 - Integration Test}
 \end{table}
 
 \begin{table}
@@ -1007,7 +1005,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & visualization graphs appear           \\ \hline
     Remarks                 & Test case passed              \\ \hline
     \end{tabular}
-    \caption {Test Case 5 : Performance Test}
+    \caption {Test Case 5 - Performance Test}
 \end{table}
 
 \begin{table}
@@ -1021,7 +1019,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & server computer handle multiple requests \\ \hline
     Remarks                 & Test case passed              \\ \hline
     \end{tabular}
-    \caption {Test Case 6 : Load Test}
+    \caption {Test Case 6 - Load Test}
 \end{table}
 
 \begin{table}
@@ -1035,7 +1033,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & A Java.NullPointer Exception is thrown \\ \hline
     Remarks                 & Test case failed              \\ \hline
     \end{tabular}
-    \caption {Test Case 7 : Similarity DTW Algorithm.}
+    \caption {Test Case 7 - Similarity DTW Algorithm.}
 \end{table}
 \begin{table}
     \begin{tabular}{|l|l|}
@@ -1048,7 +1046,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & Similarity distance of 0 \\ \hline
     Remarks                 & Test case passed              \\ \hline
     \end{tabular}
-    \caption {Test Case 8 : Similarity DTW Algorithm.}
+    \caption {Test Case 8 - Similarity DTW Algorithm.}
 \end{table}
 
 
@@ -1063,7 +1061,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & Similarity distance of 0 \\ \hline
     Remarks                 & Test case passed              \\ \hline
     \end{tabular}
-    \caption {Test Case 9 : Similarity SAX Algorithm.}
+    \caption {Test Case 9 - Similarity SAX Algorithm.}
 \end{table}
 
 \begin{table}
@@ -1090,7 +1088,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & Large number of anomalous points shown \\ \hline
     Remarks                 & Test case passed             \\ \hline
     \end{tabular}
-    \caption {Test Case 11 : Testing Anomaly Detection}
+    \caption {Test Case 11 - Testing Anomaly Detection}
 \end{table}
 \begin{table}
     \begin{tabular}{|l|l|}
@@ -1103,7 +1101,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & Number of anomalous points reduce \\ \hline
     Remarks                 & Test case passed             \\ \hline
     \end{tabular}
-    \caption {Test Case 12 : Testing Anomaly Detection}
+    \caption {Test Case 12 - Testing Anomaly Detection}
 \end{table}
 \begin{table}
     \begin{tabular}{|l|l|}
@@ -1116,7 +1114,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & Similarity distance of 0 \\ \hline
     Remarks                 & Test case passed              \\ \hline
     \end{tabular}
-    \caption {Test Case 13 : Testing Anomaly Detection.}
+    \caption {Test Case 13 - Testing Anomaly Detection.}
 \end{table}
 
 \begin{table}
@@ -1130,7 +1128,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & predictions match \\ \hline
     Remarks                 & Test case passed              \\ \hline
     \end{tabular}
-    \caption {Test Case 14 : Forecasting Moving Exponential Average.}
+    \caption {Test Case 14 - Forecasting Moving Exponential Average.}
 \end{table}
 \begin{table}
     \begin{tabular}{|l|l|}
@@ -1143,7 +1141,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & NullPointer Exception is thrown \\ \hline
     Remarks                 & Test case failed              \\ \hline
     \end{tabular}
-    \caption {Test Case 15 : Forecasting Moving Exponential Average.}
+    \caption {Test Case 15 - Forecasting Moving Exponential Average.}
 \end{table}
 \begin{table}
     \begin{tabular}{|l|l|}
@@ -1156,7 +1154,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & predictions match \\ \hline
     Remarks                 & Test case passed              \\ \hline
     \end{tabular}
-    \caption {Test Case 16 : Forecasting Moving Geometric Average.}
+    \caption {Test Case 16 - Forecasting Moving Geometric Average.}
 \end{table}
 \begin{table}
     \begin{tabular}{|l|l|}
@@ -1183,7 +1181,7 @@ The testing of the modules was done on machine with the following features.
     Output                  & Prediction accuracy is 20\% \\ \hline
     Remarks                 & Test case failed.             \\ \hline
     \end{tabular}
-    \caption {Test Case 18 : Forecasting with NARX Neural Network.}
+    \caption {Test Case 18 - Forecasting with NARX Neural Network.}
 \end{table}
 
 \pagestyle{fancy}
@@ -1275,51 +1273,57 @@ All the experiment analysis and results are presented using the \textbf{Water Le
 \paragraph{} In the previous section, the evaluations metrics for different modules depending on the algorithm were explained. Performance analysis of different modules implemented in this project are explained in the following sub sections
 \subsection{Similarity Detection}
 \subsubsection{DTW Algorithm }
-\paragraph{} The working of the DTW algorithm for comparing two samples of same size in different intervals is shown in the figure 7.1. The algorithm shows a DTW distance of 34.17. 
+\paragraph{} The working of the DTW algorithm for comparing two samples of same size in different intervals is shown in the figure 7.1. The data sets compared are the rainfall levels in the period 2001 to 2010. The former five years data is compared with the latter five years. The algorithm shows a DTW distance of 17.32. Lower the DTW distance, more similar are the data sets under consideration.
 
 
 The key inference is lesser the distance (closer to 0) more similar the two series are.
 \begin{figure}[h!]
 
   \centering
-    \includegraphics[scale=0.35]{./screenshots/result_sim_dtw.png}
-  \caption{Similarity detection for two Samples using DTW Algorithm}
+    \includegraphics[scale=0.35]{./screenshots/result_sim_sax.png}
+  \caption{Similarity detection of two Samples of five years each using SAX and DTW  Algorithm for Shidlaghatta Taluk.}
 \end{figure}
 \subsubsection{SAX Algorithm }
 \paragraph{} In SAX algorithm the time series is converted to a string. The working of this algorithm is shown in the figure 7.2 . The algorithms shows an SAX string representation of the sample and the corresponding similarity between the series.
 \begin{figure}[h!]
 
   \centering
-    \includegraphics[scale=0.35]{./screenshots/result_sim_sax.png}
-  \caption{Similarity detection for two Samples using SAX Algorithm}
+    \includegraphics[scale=0.35]{./screenshots/result_sim_sax_2.png}
+  \caption{Similarity detection of two Samples of five years each using SAX and DTW  Algorithm for Gowribidanur Taluk .}
 \end{figure}
 \subsection{Anomaly Detection}
 \paragraph{} The anomaly detection algorithms require the user to specify a threshold value. This threshold value  determines the number of anomalous points discovered.
 \subsubsection{Cumulative Sum}
-\paragraph{} Figure 7.3 shows the anomalous points determined by the CUSUM (Cumulative Sum) Algorithm. These points are shown in red. The threshold value set is 3.0 as shown in the figure.
+\paragraph{} Figure 7.3 shows the anomalous points determined by the CUSUM (Cumulative Sum) Algorithm. These points are shown in red. The threshold value set is -4.0 as shown in the figure.
 \begin{figure}[h!]
 
   \centering
-    \includegraphics[scale=0.5]{./screenshots/result_ano_cusum.png}
-  \caption{Anomaly detection using the Cumulative Sum Approach}
+    \includegraphics[scale=0.5]{./screenshots/result_ano_cusum_Bag.png}
+  \caption{Anomaly detection using the Cumulative Sum Approach for Rainfall data set of Bagepalli Taluk.}
 \end{figure}
 
 \subsubsection{Statistical Approach Anomaly}
-\paragraph{} In this approach a moving average of the time series is calculated. Then an upper and lower limit is defined as boundary. These limits are basically defined using the standard deviation of the data points. This boundary determines the number of anomalous data points discovered. The figure 7.4 shows the mean, upper limit and lower limit in the top graph and the anomalous data points discovered in the bottom graph.
+\paragraph{} In this approach a moving average of the time series is calculated. Then an upper and lower limit is defined as boundary. These limits are basically defined using the standard deviation of the data points. This boundary determines the number of anomalous data points discovered. The figures 7.4 and 7.5 show the mean, upper limit and lower limit in the top graph and the anomalous data points discovered in the bottom graph for the rainfall data sets of Shidlaghatta and Gowribidanur taluks.
 \begin{figure}[h!]
 
   \centering
-    \includegraphics[scale=0.5]{./screenshots/result_ano_stat.png}
-  \caption{Anomaly detection using the Statistical Approach}
+    \includegraphics[scale=0.5]{./screenshots/result_ano_stat_Gow.png}
+  \caption{Anomaly detection using the Statistical Approach for rainfall data set of Gowribidanuru taluk.}
 \end{figure}
 
+\begin{figure}[h!]
+
+  \centering
+    \includegraphics[scale=0.5]{./screenshots/result_ano_stat_Sid.png}
+  \caption{Anomaly detection using the Statistical Approach for rainfall data set of Shidlaghatta taluk.}
+\end{figure}
 
 \subsection{Prediction and Forecasting}
 \subsubsection{NARX Neural Network Approach}
 \paragraph{} NARX is Non-Linear Auto Regressive model with Extraneous Inputs. This is basically a neural network which predicts one time series which depends on another time series. A feed forward network with backpropogation algorithm is implemented. 
 
 
-The results obtained by the neural network are shown in Figure 7.5. The accuracy obtained is around 60\% and it is different for different data sets.
+The results obtained by the neural network are shown in Figures 7.6 and 7.7. The accuracy obtained is around 60\% and it is for the rainfall data sets of Gowribidanuru and Shidlaghatta taluks estimated over  1 year and 2 years span respectively.
 
 Various neural network parameters are :
 \begin{itemize}
@@ -1331,30 +1335,45 @@ Various neural network parameters are :
 \begin{figure}[h!]
 
   \centering
-    \includegraphics[scale=0.35]{./screenshots/result_fort_NN.png}
-  \caption{Forecasting/Estimation using NARX Neural Network Approach.}
+    \includegraphics[scale=0.35]{./screenshots/result_fort_NN_Bag.png}
+  \caption{Forecasting/Estimation using NARX Neural Network Approach for Rainfall data set of Bagepalli taluk.}
 \end{figure}
 
+
+\begin{figure}[h!]
+
+  \centering
+    \includegraphics[scale=0.35]{./screenshots/result_fort_NN_Sid.png}
+  \caption{Forecasting/Estimation using NARX Neural Network Approach for Rainfall data set of Shidlaghatta taluk.}
+\end{figure}
 \subsubsection{Moving Exponential Average Method}
-\paragraph{} This method computes a moving exponential average and this value computed is the predicted value of the time series. The results obtained are shown in the figure 7.6.
+\paragraph{} This method computes a moving exponential average and this value computed is the predicted value of the time series. The results obtained are shown in the figures 7.8 and 7.9 for rainfall data sets of Bagepalli and Gowribidanur taluks respectively.
+
+
 
 
 This is not a conventional approach, the value predicted by this algorithm is just an estimation and not an actual prediction. The accuracy of this approach is around 50\%.
 \begin{figure}[h!]
   \centering
-    \includegraphics[scale=0.55]{./screenshots/result_fort_MEA.png}
-  \caption{Forecasting/Estimation using Moving Exponential Average Method.}
+    \includegraphics[scale=0.55]{./screenshots/result_fort_MEA_Bag.png}
+  \caption{Forecasting/Estimation using Moving Exponential Average Method for rainfall data set of Bagepalli Taluk.}
 \end{figure}
 
-\subsection{Temporal Pattern Detection}
-\paragraph{} Temporal Patterns are hidden patterns which occur very rarely. These patterns are basically the indications of periodic trends. In this project, the temporal pattern finder module is implemented using a genetic algorithm. A fitness value is to set for the algorithm, depending on this value, the patterns are discovered. 
 
-Figure 7.8 shows the patterns discovered in the water data set. Eventually it is upto the user to interpret these patterns.
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=0.55]{./screenshots/result_fort_MEA_Gow.png}
+  \caption{Forecasting/Estimation using Moving Exponential Average Method for rainfall data set of Gowribidanur Taluk.}
+\end{figure}
+\subsection{Temporal Pattern Detection}
+\paragraph{} Temporal Patterns are hidden patterns which occur very rarely. These patterns are basically the indications of periodic trends. In this project, the temporal pattern finder module is implemented using a genetic algorithm. A fitness value is to be set for the algorithm, depending on this value, the patterns are discovered. 
+
+Figure 7.10 shows the patterns discovered in the rain fall data set of Bagepalli taluk.  The patterns are highlighted with red dots in the graphs shown in figure in 7.10.
 \begin{figure}[h!]
 
   \centering
-    \includegraphics[scale=0.35]{./screenshots/result_tmp_pattern.png}
-  \caption{Temporal Patterns detected in the Rainfall/Water Data set.}
+    \includegraphics[scale=0.35]{./screenshots/result_tmp_pattern_Bag.png}
+  \caption{Temporal Patterns detected in the Rainfall/Water Data set of Bagepalli taluk.}
 \end{figure}
 \section{Inference from the Results}
 \begin{enumerate}
@@ -1438,7 +1457,7 @@ Some of the future enhancements are :
 \item{Efficient algorithms using Support Vector Models (SVMs) for forecasting, Hidden Markov Model for anomaly detection can be implemented.}
 \item{This application uses static time series data, enhancements can be made to use real time data.(In finance applications)}
 
-\item{This application can be converted into an mobile application (android, iPhone, iPad) where the users can analyze the time series data on the go and share the results on facebook}
+%\item{This application can be converted into an mobile application (android, iPhone, iPad) where the users can analyze the time series data on the go and share the results on facebook}
 
 \end{enumerate}
 
@@ -1494,14 +1513,14 @@ Hamilton, James
 \begin{figure}[h!]
 
   \centering
-    \includegraphics[scale=0.35]{./screenshots/welcome_screen.png}
+    \includegraphics[scale=0.30]{./screenshots/welcome_screen.png}
   \caption{TSDM Tool Window - Welcome Screen}
 \end{figure}
 
 \begin{figure}[h!]
   
   \centering
-    \includegraphics[scale=0.35]{./screenshots/sim_dtw.png}
+    \includegraphics[scale=0.30]{./screenshots/sim_dtw.png}
 \caption{Similarity Detection with DTW Algorithm.}
 \end{figure}
 
@@ -1521,7 +1540,7 @@ Hamilton, James
 \begin{figure}[h!]
   
   \centering
-    \includegraphics[scale=0.350]{./screenshots/ano_stat_app.png}
+    \includegraphics[scale=0.30]{./screenshots/ano_stat_app.png}
 \caption{Anomaly Detection using Statistical Approach.}
 \end{figure}
 
@@ -1535,16 +1554,21 @@ Hamilton, James
 \begin{figure}[h!]
   
   \centering
-    \includegraphics[scale=0.350]{./screenshots/temp_pattern.png}
-\caption{Anomaly Detection using Cusum Algorithm.}
+    \includegraphics[scale=0.30]{./screenshots/temp_pattern.png}
+\caption{Temporal Pattern Detection using Phase space diagram.}
 \end{figure}
 \begin{figure}[h!]
   
   \centering
-    \includegraphics[scale=0.35]{./screenshots/about_us.png}
+    \includegraphics[scale=0.30]{./screenshots/about_us.png}
 \caption{About the Developers who did this project!}
 \end{figure}
-
+\begin{figure}[h!]
+  
+  \centering
+    \includegraphics[scale=0.30]{./screenshots/error_page.png}
+\caption{404 File not found error page.}
+\end{figure}
 %\lstinputlisting[language=Java, caption=DecisionTreeConstructor.java, breaklines=true]{../../src/org/ck/dt/DecisionTreeConstructor.java}
 %\lstinputlisting[language=Java, caption=DecisionTreeClassifier.java, breaklines=true]{../../src/org/ck/dt/DecisionTreeClassifier.java}
 
