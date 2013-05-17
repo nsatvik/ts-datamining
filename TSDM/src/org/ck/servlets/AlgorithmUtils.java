@@ -222,18 +222,18 @@ public class AlgorithmUtils implements Constants
 		String output = "[";
 		Random random = new Random();
 		double error = 0;
-		int year = 2010, month = 1, day =1;
+		int year = 2001, month = 1, day =1;
 		//List<String> timeData = sample.getTimeData();
 		for(int i=0;i<sample.getNumOfValues();++i)
 		{
 			double predictedValue = sample.getValue(i)+random.nextDouble()-random.nextDouble();
 			error += (predictedValue-sample.getValue(i))*(predictedValue-sample.getValue(i));
-			output += "[ new Date("+year+","+month+","+day+"),"+sample.getValue(i)+","+predictedValue+"],";
-			day += 1;
-			if(day==28) {
-				month += 1;
-				day = 1;
-			}
+			output += "[ new Date("+year+","+ month +", 1),"+sample.getValue(i)+","+predictedValue+"],";
+			month += 1;
+//			if(day==28) {
+//				month += 1;
+//				day = 1;
+//			}
 			if(month==12)
 			{
 				year += 1;

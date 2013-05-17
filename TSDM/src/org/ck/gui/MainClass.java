@@ -28,8 +28,8 @@ public class MainClass
 		//Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
 		
 		//use your respective methods for testing
-		//satvik();
-		vaishakh();
+		satvik();
+		//vaishakh();
 		//samir();
 		
 		
@@ -85,10 +85,10 @@ public class MainClass
 
 	private static void satvik()
 	{
-		DataHolder.setDataset(DatasetOptions.FINANCE_NIFTY_DATASET);
+		DataHolder.setDataset(DatasetOptions.RAIN_SIDLAGHATTA);
 		Sample seaSample = new Sample(DataHolder.TRAINING_FILE_NAME,DataHolder.SAMPLE_NAME);	
 		//testNeuralNetwork(seaSample);
-		testCusum(seaSample);
+		//testCusum(seaSample);
 		
 		
 	}
