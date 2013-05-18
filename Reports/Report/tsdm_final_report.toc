@@ -7,19 +7,18 @@
 \contentsline {section}{LIST OF TABLES}{viii}{chapter*.10}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {paragraph}{}{1}{section*.12}
-\contentsline {section}{\numberline {1.1}Definitions}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Literature Survey}{1}{section.1.2}
+\contentsline {section}{\numberline {1.1}Literature Survey}{1}{section.1.1}
 \contentsline {paragraph}{}{1}{section*.13}
-\contentsline {section}{\numberline {1.3}Motivation}{3}{section.1.3}
-\contentsline {section}{\numberline {1.4}Problem Statement}{3}{section.1.4}
+\contentsline {section}{\numberline {1.2}Motivation}{3}{section.1.2}
+\contentsline {section}{\numberline {1.3}Problem Statement}{3}{section.1.3}
 \contentsline {paragraph}{}{3}{section*.14}
-\contentsline {section}{\numberline {1.5}Objective}{3}{section.1.5}
+\contentsline {section}{\numberline {1.4}Objective}{3}{section.1.4}
 \contentsline {paragraph}{}{3}{section*.15}
-\contentsline {section}{\numberline {1.6}Scope}{4}{section.1.6}
-\contentsline {paragraph}{}{4}{section*.16}
-\contentsline {section}{\numberline {1.7}Methodology}{4}{section.1.7}
+\contentsline {section}{\numberline {1.5}Scope}{3}{section.1.5}
+\contentsline {paragraph}{}{3}{section*.16}
+\contentsline {section}{\numberline {1.6}Methodology}{4}{section.1.6}
 \contentsline {paragraph}{}{4}{section*.17}
-\contentsline {section}{\numberline {1.8}Organization of the report}{4}{section.1.8}
+\contentsline {section}{\numberline {1.7}Organization of the report}{4}{section.1.7}
 \contentsline {chapter}{\numberline {2}Software Requirements Specifications}{6}{chapter.2}
 \contentsline {paragraph}{}{6}{section*.18}
 \contentsline {section}{\numberline {2.1}Product Perspective}{6}{section.2.1}
@@ -60,93 +59,94 @@
 \contentsline {paragraph}{}{17}{section*.43}
 \contentsline {section}{\numberline {4.2}Algorithm Details}{18}{section.4.2}
 \contentsline {paragraph}{}{18}{section*.45}
-\contentsline {subsection}{\numberline {4.2.1}Similarity Detection Algorithms}{20}{subsection.4.2.1}
-\contentsline {subsubsection}{DTW}{20}{section*.46}
-\contentsline {subsubsection}{SAX}{20}{section*.47}
-\contentsline {subsection}{\numberline {4.2.2}Forecasting and Prediction Algorithms}{20}{subsection.4.2.2}
-\contentsline {subsubsection}{NARX Neural Network}{20}{section*.48}
-\contentsline {subsubsection}{Moving Exponential Average Method}{20}{section*.49}
-\contentsline {subsubsection}{Moving Geometric Average Method}{20}{section*.50}
-\contentsline {subsection}{\numberline {4.2.3}Anomaly Detection Algorithms}{20}{subsection.4.2.3}
-\contentsline {subsubsection}{Cumulative Sum (CUSUM) Approach}{20}{section*.51}
-\contentsline {subsubsection}{Statistical Approach}{20}{section*.52}
-\contentsline {subsection}{\numberline {4.2.4}Temporal Pattern Detection Algorithm}{21}{subsection.4.2.4}
-\contentsline {chapter}{\numberline {5}Implementation}{22}{chapter.5}
-\contentsline {paragraph}{}{22}{section*.54}
-\contentsline {section}{\numberline {5.1}Programming Language Selection}{22}{section.5.1}
-\contentsline {paragraph}{}{22}{section*.55}
-\contentsline {section}{\numberline {5.2}Platform}{23}{section.5.2}
-\contentsline {paragraph}{}{23}{section*.56}
-\contentsline {section}{\numberline {5.3}Code Conventions}{23}{section.5.3}
-\contentsline {paragraph}{}{23}{section*.57}
-\contentsline {subsection}{\numberline {5.3.1}Naming Conventions}{23}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}File Organization}{24}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Comments}{24}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Difficulties encountered and Strategies used to tackle}{25}{section.5.4}
-\contentsline {paragraph}{}{25}{section*.58}
-\contentsline {subsubsection}{Problem 1}{26}{section*.59}
-\contentsline {paragraph}{}{26}{section*.60}
-\contentsline {subsubsection}{Solution}{26}{section*.61}
-\contentsline {paragraph}{}{26}{section*.62}
-\contentsline {subsubsection}{Problem 2}{26}{section*.63}
-\contentsline {paragraph}{}{26}{section*.64}
-\contentsline {subsubsection}{Solution}{26}{section*.65}
-\contentsline {paragraph}{}{26}{section*.66}
-\contentsline {section}{\numberline {5.5}Module Design}{26}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}org.ck.sample}{27}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}org.ck.smoothers}{27}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}org.ck.similarity}{28}{subsection.5.5.3}
-\contentsline {subsection}{\numberline {5.5.4}org.ck.forecaster.nn}{29}{subsection.5.5.4}
-\contentsline {subsection}{\numberline {5.5.5}org.ck.anomalifinder}{29}{subsection.5.5.5}
-\contentsline {paragraph}{}{29}{section*.67}
-\contentsline {subsection}{\numberline {5.5.6}org.ck.tsdm}{30}{subsection.5.5.6}
-\contentsline {paragraph}{}{30}{section*.68}
-\contentsline {subsection}{\numberline {5.5.7}org.ck.tsdm.ga}{30}{subsection.5.5.7}
-\contentsline {subsection}{\numberline {5.5.8}org.ck.beans}{31}{subsection.5.5.8}
-\contentsline {subsection}{\numberline {5.5.9}org.ck.servlets}{31}{subsection.5.5.9}
-\contentsline {subsection}{\numberline {5.5.10}org.ck.gui}{31}{subsection.5.5.10}
-\contentsline {chapter}{\numberline {6}Software Testing}{33}{chapter.6}
-\contentsline {section}{\numberline {6.1}Types Of Testing}{33}{section.6.1}
-\contentsline {subsubsection}{Unit testing}{33}{section*.69}
-\contentsline {subsubsection}{Integration testing}{34}{section*.70}
-\contentsline {subsubsection}{Functional test}{34}{section*.71}
-\contentsline {subsubsection}{System Test}{34}{section*.72}
-\contentsline {subsubsection}{Performance Test}{34}{section*.73}
-\contentsline {subsubsection}{White Box Testing}{35}{section*.74}
-\contentsline {subsubsection}{Black Box Testing}{35}{section*.75}
-\contentsline {section}{\numberline {6.2}Test Environment}{35}{section.6.2}
-\contentsline {chapter}{\numberline {7}Experimental Analysis and Results}{42}{chapter.7}
-\contentsline {section}{\numberline {7.1}Evaluation Metric}{42}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Metrics for Similarity Detection Module}{42}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Metrics for Prediction and Forecasting Module}{43}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Metrics for Anomaly Detection Module}{44}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Temporal Pattern Finder Module}{45}{subsection.7.1.4}
-\contentsline {paragraph}{}{45}{section*.94}
-\contentsline {section}{\numberline {7.2}Experimental Dataset}{45}{section.7.2}
-\contentsline {section}{\numberline {7.3}Performance Analysis}{45}{section.7.3}
-\contentsline {paragraph}{}{45}{section*.95}
-\contentsline {subsection}{\numberline {7.3.1}Similarity Detection}{45}{subsection.7.3.1}
-\contentsline {subsubsection}{DTW Algorithm }{45}{section*.96}
-\contentsline {paragraph}{}{45}{section*.97}
-\contentsline {subsubsection}{SAX Algorithm }{46}{section*.99}
-\contentsline {paragraph}{}{46}{section*.100}
-\contentsline {subsection}{\numberline {7.3.2}Anomaly Detection}{46}{subsection.7.3.2}
-\contentsline {paragraph}{}{46}{section*.102}
-\contentsline {subsubsection}{Cumulative Sum}{47}{section*.103}
-\contentsline {paragraph}{}{47}{section*.104}
-\contentsline {subsubsection}{Statistical Approach Anomaly}{48}{section*.106}
-\contentsline {paragraph}{}{48}{section*.107}
-\contentsline {subsection}{\numberline {7.3.3}Prediction and Forecasting}{48}{subsection.7.3.3}
-\contentsline {subsubsection}{NARX Neural Network Approach}{48}{section*.110}
-\contentsline {paragraph}{}{48}{section*.111}
-\contentsline {subsubsection}{Moving Exponential Average Method}{48}{section*.114}
-\contentsline {paragraph}{}{48}{section*.115}
-\contentsline {subsection}{\numberline {7.3.4}Temporal Pattern Detection}{49}{subsection.7.3.4}
-\contentsline {paragraph}{}{49}{section*.118}
-\contentsline {section}{\numberline {7.4}Inference from the Results}{50}{section.7.4}
-\contentsline {chapter}{\numberline {8}CONCLUSION}{55}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{55}{section.8.1}
-\contentsline {paragraph}{}{55}{section*.120}
-\contentsline {section}{\numberline {8.2}Limitations}{56}{section.8.2}
-\contentsline {section}{\numberline {8.3}Future enhancements}{56}{section.8.3}
-\contentsline {section}{REFERENCES}{57}{Item.52}
+\contentsline {subsection}{\numberline {4.2.1}Similarity Detection Algorithms}{19}{subsection.4.2.1}
+\contentsline {subsubsection}{Euclidian Distance}{19}{section*.46}
+\contentsline {subsubsection}{DTW}{20}{section*.48}
+\contentsline {subsubsection}{SAX Algorithm}{22}{section*.52}
+\contentsline {subsection}{\numberline {4.2.2}Forecasting and Prediction Algorithms}{23}{subsection.4.2.2}
+\contentsline {subsubsection}{NARX Neural Network}{23}{section*.53}
+\contentsline {paragraph}{}{23}{section*.54}
+\contentsline {subsubsection}{Moving Exponential Average Method}{24}{section*.56}
+\contentsline {subsubsection}{Moving Geometric Average Method}{25}{section*.57}
+\contentsline {subsection}{\numberline {4.2.3}Anomaly Detection Algorithms}{25}{subsection.4.2.3}
+\contentsline {subsubsection}{Cumulative Sum (CUSUM) Approach}{25}{section*.58}
+\contentsline {subsubsection}{Statistical Approach}{26}{section*.60}
+\contentsline {chapter}{\numberline {5}Implementation}{28}{chapter.5}
+\contentsline {paragraph}{}{28}{section*.62}
+\contentsline {section}{\numberline {5.1}Programming Language Selection}{28}{section.5.1}
+\contentsline {paragraph}{}{28}{section*.63}
+\contentsline {section}{\numberline {5.2}Platform}{29}{section.5.2}
+\contentsline {paragraph}{}{29}{section*.64}
+\contentsline {section}{\numberline {5.3}Code Conventions}{29}{section.5.3}
+\contentsline {paragraph}{}{29}{section*.65}
+\contentsline {subsection}{\numberline {5.3.1}Naming Conventions}{29}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}File Organization}{30}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Comments}{30}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Difficulties encountered and Strategies used to tackle}{31}{section.5.4}
+\contentsline {paragraph}{}{31}{section*.66}
+\contentsline {subsubsection}{Problem 1}{32}{section*.67}
+\contentsline {paragraph}{}{32}{section*.68}
+\contentsline {subsubsection}{Solution}{32}{section*.69}
+\contentsline {paragraph}{}{32}{section*.70}
+\contentsline {subsubsection}{Problem 2}{32}{section*.71}
+\contentsline {paragraph}{}{32}{section*.72}
+\contentsline {subsubsection}{Solution}{32}{section*.73}
+\contentsline {paragraph}{}{32}{section*.74}
+\contentsline {section}{\numberline {5.5}Module Design}{32}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}org.ck.sample}{33}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}org.ck.smoothers}{33}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}org.ck.similarity}{34}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}org.ck.forecaster.nn}{35}{subsection.5.5.4}
+\contentsline {subsection}{\numberline {5.5.5}org.ck.anomalifinder}{35}{subsection.5.5.5}
+\contentsline {paragraph}{}{35}{section*.75}
+\contentsline {subsection}{\numberline {5.5.6}org.ck.tsdm}{36}{subsection.5.5.6}
+\contentsline {paragraph}{}{36}{section*.76}
+\contentsline {subsection}{\numberline {5.5.7}org.ck.tsdm.ga}{36}{subsection.5.5.7}
+\contentsline {subsection}{\numberline {5.5.8}org.ck.beans}{37}{subsection.5.5.8}
+\contentsline {subsection}{\numberline {5.5.9}org.ck.servlets}{37}{subsection.5.5.9}
+\contentsline {subsection}{\numberline {5.5.10}org.ck.gui}{37}{subsection.5.5.10}
+\contentsline {chapter}{\numberline {6}Software Testing}{39}{chapter.6}
+\contentsline {section}{\numberline {6.1}Types Of Testing}{39}{section.6.1}
+\contentsline {subsubsection}{Unit testing}{39}{section*.77}
+\contentsline {subsubsection}{Integration testing}{40}{section*.78}
+\contentsline {subsubsection}{Functional test}{40}{section*.79}
+\contentsline {subsubsection}{System Test}{40}{section*.80}
+\contentsline {subsubsection}{Performance Test}{40}{section*.81}
+\contentsline {subsubsection}{White Box Testing}{41}{section*.82}
+\contentsline {subsubsection}{Black Box Testing}{41}{section*.83}
+\contentsline {section}{\numberline {6.2}Test Environment}{41}{section.6.2}
+\contentsline {chapter}{\numberline {7}Experimental Analysis and Results}{48}{chapter.7}
+\contentsline {section}{\numberline {7.1}Evaluation Metric}{48}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Metrics for Similarity Detection Module}{48}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Metrics for Prediction and Forecasting Module}{49}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Metrics for Anomaly Detection Module}{50}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Temporal Pattern Finder Module}{51}{subsection.7.1.4}
+\contentsline {paragraph}{}{51}{section*.102}
+\contentsline {section}{\numberline {7.2}Experimental Dataset}{51}{section.7.2}
+\contentsline {section}{\numberline {7.3}Performance Analysis}{51}{section.7.3}
+\contentsline {paragraph}{}{51}{section*.103}
+\contentsline {subsection}{\numberline {7.3.1}Similarity Detection}{51}{subsection.7.3.1}
+\contentsline {subsubsection}{DTW Algorithm }{51}{section*.104}
+\contentsline {paragraph}{}{51}{section*.105}
+\contentsline {subsubsection}{SAX Algorithm }{52}{section*.107}
+\contentsline {paragraph}{}{52}{section*.108}
+\contentsline {subsection}{\numberline {7.3.2}Anomaly Detection}{52}{subsection.7.3.2}
+\contentsline {paragraph}{}{52}{section*.110}
+\contentsline {subsubsection}{Cumulative Sum}{53}{section*.111}
+\contentsline {paragraph}{}{53}{section*.112}
+\contentsline {subsubsection}{Statistical Approach Anomaly}{54}{section*.114}
+\contentsline {paragraph}{}{54}{section*.115}
+\contentsline {subsection}{\numberline {7.3.3}Prediction and Forecasting}{54}{subsection.7.3.3}
+\contentsline {subsubsection}{NARX Neural Network Approach}{54}{section*.118}
+\contentsline {paragraph}{}{54}{section*.119}
+\contentsline {subsubsection}{Moving Exponential Average Method}{54}{section*.122}
+\contentsline {paragraph}{}{54}{section*.123}
+\contentsline {subsection}{\numberline {7.3.4}Temporal Pattern Detection}{55}{subsection.7.3.4}
+\contentsline {paragraph}{}{55}{section*.126}
+\contentsline {section}{\numberline {7.4}Inference from the Results}{56}{section.7.4}
+\contentsline {chapter}{\numberline {8}CONCLUSION}{61}{chapter.8}
+\contentsline {section}{\numberline {8.1}Summary}{61}{section.8.1}
+\contentsline {paragraph}{}{61}{section*.128}
+\contentsline {section}{\numberline {8.2}Limitations}{62}{section.8.2}
+\contentsline {section}{\numberline {8.3}Future enhancements}{63}{section.8.3}
+\contentsline {section}{REFERENCES}{63}{Item.57}

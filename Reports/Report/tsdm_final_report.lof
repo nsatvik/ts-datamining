@@ -8,18 +8,24 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Data Flow Diagram Level 2\relax }}{16}{figure.caption.40}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Structed Chart for the TSDM Tool \relax }}{19}{figure.caption.44}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Statistical approach of anomaly detection.\relax }}{21}{figure.caption.53}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces The intuition behind the Euclidean distance metric\relax }}{20}{figure.caption.47}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Time alignment of two time-dependent sequences.\relax }}{20}{figure.caption.49}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Cost matrix of the two real-valued sequences X (vertical axis) and Y (horizontal axis) using the Manhattan distance (absolute value of the difference) as local cost measure c. Regions of low cost are indicated by dark colors and regions of high cost are indicated by light colors\relax }}{21}{figure.caption.50}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Illustration of paths of index pairs for some sequence X of length N = 9 and some sequence Y of length M = 7. (a) Admissible warping path satisfying the conditions (i), (ii), and (iii) of Definition 4.1. (b) Boundary condition (i) is violated. (c) Monotonicity condition (ii) is violated. (d) Step size condition (iii) is violated\relax }}{22}{figure.caption.51}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces NARX network with $d_u$ delayed inputs and $d_y $delayed outputs\relax }}{24}{figure.caption.55}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Sample V-Mask demonstrating an out of control process.\relax }}{26}{figure.caption.59}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Statistical approach of anomaly detection.\relax }}{27}{figure.caption.61}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Similarity detection of two Samples of five years each using SAX and DTW Algorithm for Shidlaghatta Taluk.\relax }}{46}{figure.caption.98}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Similarity detection of two Samples of five years each using SAX and DTW Algorithm for Gowribidanur Taluk .\relax }}{47}{figure.caption.101}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Anomaly detection using the Cumulative Sum Approach for Rainfall data set of Bagepalli Taluk.\relax }}{47}{figure.caption.105}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Anomaly detection using the Statistical Approach for rainfall data set of Gowribidanuru taluk.\relax }}{49}{figure.caption.108}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Anomaly detection using the Statistical Approach for rainfall data set of Shidlaghatta taluk.\relax }}{50}{figure.caption.109}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Forecasting/Estimation using NARX Neural Network Approach for Rainfall data set of Bagepalli taluk.\relax }}{51}{figure.caption.112}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Forecasting/Estimation using NARX Neural Network Approach for Rainfall data set of Shidlaghatta taluk.\relax }}{51}{figure.caption.113}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Forecasting/Estimation using Moving Exponential Average Method for rainfall data set of Bagepalli Taluk.\relax }}{52}{figure.caption.116}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Forecasting/Estimation using Moving Exponential Average Method for rainfall data set of Gowribidanur Taluk.\relax }}{53}{figure.caption.117}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Temporal Patterns detected in the Rainfall/Water Data set of Bagepalli taluk.\relax }}{54}{figure.caption.119}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Similarity detection of two Samples of five years each using SAX and DTW Algorithm for Shidlaghatta Taluk.\relax }}{52}{figure.caption.106}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Similarity detection of two Samples of five years each using SAX and DTW Algorithm for Gowribidanur Taluk .\relax }}{53}{figure.caption.109}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Anomaly detection using the Cumulative Sum Approach for Rainfall data set of Bagepalli Taluk.\relax }}{53}{figure.caption.113}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Anomaly detection using the Statistical Approach for rainfall data set of Gowribidanuru taluk.\relax }}{55}{figure.caption.116}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Anomaly detection using the Statistical Approach for rainfall data set of Shidlaghatta taluk.\relax }}{56}{figure.caption.117}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Forecasting/Estimation using NARX Neural Network Approach for Rainfall data set of Bagepalli taluk.\relax }}{57}{figure.caption.120}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Forecasting/Estimation using NARX Neural Network Approach for Rainfall data set of Shidlaghatta taluk.\relax }}{57}{figure.caption.121}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Forecasting/Estimation using Moving Exponential Average Method for rainfall data set of Bagepalli Taluk.\relax }}{58}{figure.caption.124}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Forecasting/Estimation using Moving Exponential Average Method for rainfall data set of Gowribidanur Taluk.\relax }}{59}{figure.caption.125}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Temporal Patterns detected in the Rainfall/Water Data set of Bagepalli taluk.\relax }}{60}{figure.caption.127}
 \addvspace {10\p@ }

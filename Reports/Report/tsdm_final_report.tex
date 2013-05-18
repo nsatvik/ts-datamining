@@ -244,13 +244,13 @@ The algorithms implemented in this tool require a set of user-defined parameters
 \renewcommand{\footrulewidth}{0.4pt}
 \linespread{1.5}
 \chapter{Introduction}
-\paragraph{} A time series is a set of observations $X_t$ , each one being recorded at a specific time t. Discrete-time time series is one in which the set T of times at which observations are made is a discrete set. Continuous-time time series are obtained when observations are recorded continuously over some time interval, e.g., when $T_0$ belongs [0,1]. Examples of time series are the daily closing value of the stock market points and the annual flow volume of the Nile River at Aswan. Time series are very frequently plotted via line charts.
+\paragraph{} A time series is a set of observations $X_t$ , each one being recorded at a specific time t. Discrete-time time series is one in which the set T of times at which observations are made is a discrete set. Continuous-time time series are obtained when observations are recorded continuously over some time interval, e.g., when $T_0$ belongs [0,1]. Examples of time series are the daily closing value of the stock market points and the annual flow volume of the Nile River at Aswan. Time series are very frequently plotted via line charts.[1,4]
 
 
- Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data. Time series forecasting is the use of a model to predict future values based on previously observed values.  
-\section{Definitions}
-Definition of Time Series: An ordered sequence of values of a variable at equally spaced time intervals.
-TSDM : Time Series Data Mining tool.
+ Time series analysis comprises methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data. Time series forecasting is the use of a model to predict future values based on previously observed values. [1] 
+%\section{Definitions}
+%Definition of Time Series: An ordered sequence of values of a variable at equally spaced time intervals.
+%TSDM : Time Series Data Mining tool.
 %@TODO ADD DETAILS OF THIS SECTION
 %-----------------------literature survey--------------------------------------------
 \section{Literature Survey}
@@ -270,7 +270,7 @@ The most common tasks of time series data mining methods are: indexing, clusteri
 \textbf{Rule discovery:} Infer rules from one or more time series describing the most possible behavior that they might present at a specific time point (or interval).\\
 
 
-  The temporal aspect of data arises some special issues to be considered and imposes some restrictions in the corresponding applications$^{[3]}$. First, it is necessary to define a similarity measure between two time series and this issue is very important in TSDM since it involves a degree of subjectivity that might affect the final result. Second, it is necessary to apply a representation scheme on the time series data. Since the amount of data may range from a few kilobytes to megabytes, an appropriate representation of the time series is necessary in order to manipulate and analyze it efficiently.$^{[3,4]}$ The desirable properties that this approach should hold are: 
+  The temporal aspect of data arises some special issues to be considered and imposes some restrictions in the corresponding applications[3]. First, it is necessary to define a similarity measure between two time series and this issue is very important in TSDM since it involves a degree of subjectivity that might affect the final result. Second, it is necessary to apply a representation scheme on the time series data. Since the amount of data may range from a few kilobytes to megabytes, an appropriate representation of the time series is necessary in order to manipulate and analyze it efficiently.[3,4] The desirable properties that this approach should hold are: 
   \begin{itemize}
   \item the completeness of feature extraction 
   \item the reduction of the dimensionality. 
@@ -543,7 +543,7 @@ The output categories are :
 \end{itemize}
 \begin{figure}[h!]
 	\centering
-		\includegraphics[scale=0.7]{screenshots/structured_chart.png}
+		\includegraphics[scale=0.6]{screenshots/structured_chart.png}
 		\caption{Structed Chart for the TSDM Tool }
 \end{figure}
 
@@ -559,10 +559,129 @@ The modules are as below :
 \item Temporal Pattern Finder 
 \end{itemize}
 \subsection{Similarity Detection Algorithms}
+\subsubsection{Euclidian Distance}
+One of the simplest similarity measures for time series is the Euclidean distance
+measure.[1] Assume that both time sequences are of the same length n, this sequence can be viewed as a point in n-dimensional Euclidean space, and define
+the dissimilarity between sequences C and Q and D(C;Q) = $L_p(C;Q)$
+i.e. the distance between the two points measured by the $L_p$ norm (when p = 2, it reduces to the familiar Euclidean distance). Figure 4.2 shows a visual intuition
+behind the Euclidean distance metric.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=0.6]{screenshots/euclid.png}
+    \caption{The intuition behind the Euclidean distance metric}
+\end{figure}
+Such a measure is simple to understand and easy to compute, which has ensured that the Euclidean distance is the most widely used distance measure for similarity search. However, one major disadvantage is that it is very brittle; it does not allow
+for a situation where two sequences are alike, but one has been ``stretched" or ``compressed" in the Y -axis.
 \subsubsection{DTW}
-\subsubsection{SAX}
+Dynamic time warping (DTW) is a well-known technique to find an optimal
+alignment between two given (time-dependent) sequences under certain restrictions. Intuitively, the sequences are warped in a nonlinear fashion
+to match each other. Originally, DTW has been used to compare different
+speech patterns in automatic speech recognition. In fields such as
+data mining and information retrieval, DTW has been successfully applied
+to automatically cope with time deformations and different speeds associated
+with time-dependent data.
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.7]{screenshots/dtw/time_alignment.png}
+		\caption{Time alignment of two time-dependent sequences.}
+\end{figure}
+The objective of DTW is to compare two (time-dependent) sequences 
+$X := (x_1, x_2, . . . , x_N) $ of length $N \in N$ and $Y := (y_1, y_2, . . . , y_M)$ of length $M  \in N$.\\
+These sequences may be discrete signals (time-series) or, more generally, feature
+sequences sampled at equidistant points in time. Fix a
+feature space denoted by F. Then $x_n, y_m  \in F$ for $n  \in [1 : N]$ and  $m  \in [1 : M].$\\
+To compare two different features $x, y  \in F$, one needs a local cost measure,
+sometimes also referred to as local distance measure, which is defined to be a
+function
+c : $F  \times F  \rightarrow R. $
+Typically, $c(x, y)$ is small (low cost) if x and y are similar to each other, and
+otherwise $c(x, y$) is large (high cost).\\
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.6]{screenshots/dtw/cost_matrix.png}
+		\caption{Cost matrix of the two real-valued sequences X (vertical axis) and Y
+(horizontal axis) using the Manhattan distance (absolute value of the difference) as
+local cost measure c. Regions of low cost are indicated by dark colors and regions
+of high cost are indicated by light colors}
+\end{figure}
+Evaluating the local cost measure for each pair of elements of the sequences X and Y , one obtains the cost matrix
+$C  \in R^{N  \times M}$ defined by $C(n,m) := c(x_n, y_m)$. Then the goal is to
+find an alignment between X and Y having minimal overall cost. Intuitively,
+such an optimal alignment runs along a "valley" of low cost within the cost
+matrix C.
+\\
+Basic Conditions to be satisfied:
+An (N,M)-warping path (or simply referred to as warping
+path if N and M are clear from the context) is a sequence $p = (p_1, . . . , p_L)$
+with $p_l = (n_l,m_l) \in [1 : N] \times [1 : M] for l \in [1 : L]$ satisfying the following
+three conditions.
+\begin{enumerate}
+\item{Boundary condition: $p_1 = (1, 1)$ and $p_L = (N,M).$}
+\item{Monotonicity condition: $n_1 \leq n_2 \leq . . .  \leq n_L$ and $m_1 \leq m_2 \leq . . . \leq m_L.$}
+\item{Step size condition:$ p_{l+1} − p_l \in {(1, 0), (0, 1), (1, 1)} $ for $l \in [1 : L − 1].$}
+\end{enumerate}
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.6]{screenshots/dtw/conditions.png}
+		\caption{Illustration of paths of index pairs for some sequence X of length N = 9
+and some sequence Y of length M = 7. (a) Admissible warping path satisfying the
+conditions (i), (ii), and (iii) of Definition 4.1. (b) Boundary condition (i) is violated.
+(c) Monotonicity condition (ii) is violated. (d) Step size condition (iii) is violated}
+\end{figure}
+\subsubsection{SAX Algorithm}
+Many high level representations of time series have been proposed for data mining, including
+Fourier transforms, wavelets, eigenwaves, piecewise polynomial models etc.
+While many symbolic representations of time series have been introduced over
+the past decades, they all suffer from two fatal flaws. Firstly, the dimensionality of the symbolic
+representation is the same as the original data, and virtually all data mining algorithms scale poorly with
+dimensionality. Secondly, although distance measures can be defined on the symbolic approaches, these
+distance measures have little correlation with distance measures defined on the original time series.
+SAX allows a time series of arbitrary length n to be reduced to a string of arbitrary length w, ($w \textless n$, typically
+$w \textless\textless n$). The alphabet size is also an arbitrary integer a, where a $\textgreater$ 2.
+It uses an intermediate representation between the raw time
+series and the symbolic strings.
+\begin{enumerate}
+\item{\textbf{Dimensionality Reduction Via PAA} - A time series C of length n can be represented in a w-dimensional space by a vector C,cw = 1 K . The i th
+element of C is calculated by the following equation:\\
+$\bar{c_i} = \frac{w}{n}  \sum_{j=\frac{n}{w}(i-1) + 1}^{\frac{n}{w}i}c_j$}
+\item{\textbf{Discretization} - Having transformed a time series database into the PAA we can apply a further transformation to obtain a
+discrete representation. It is desirable to have a discretization technique that will produce symbols with
+equiprobability. This is easily achieved since normalized time series have a Gaussian distribution.}
+\end{enumerate}
 \subsection{Forecasting and Prediction Algorithms}
 \subsubsection{NARX Neural Network}
+The Nonlinear Autoregressive model with Exogenous inputs (NARX) [11,14]
+is an important class of discrete-time nonlinear systems that can be mathematically
+represented as
+$$y(n + 1)=f [y(n),...,y(n-d_y+1);u(n),u(n-1),...,u(n-d_u+1)] $$
+
+where $u(n) \in R$ and $y(n)\in R$ denote, respectively, the input and output of the model at discrete time step n, while $du  \geq 1$ and $dy \geq 1$, $du \leq dy$, are the
+input-memory and output-memory orders. In a compact vector form,  
+the above equation can be written as
+$$y(n + 1) = f[y(n); u(n)]; $$
+where the vectors y(n) and u(n) denote the output and input regressors, respectively.
+\paragraph{} 
+The nonlinear mapping f(.) is generally unknown and can be approximated,
+for example, by a standard multilayer Perceptron (MLP) network. The resulting connectionist architecture is then called a NARX network [11], a powerful class of dynamical models which has been shown to be computationally equivalent to Turing machines . In what concern training the NARX
+network, it can be carried out in one out of two modes: [15]
+
+\begin{itemize}
+\item \textit{Series-Parallel (SP) Mode} - In this case, the output's regressor is formed
+only by actual values of the system's output:
+$$y_b(n + 1)=f_b[y_{sp}(n); u(n)];$$
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{screenshots/sp_nn.png}
+		\caption{NARX network with $d_u$ delayed inputs and $d_y $delayed outputs}
+\end{figure}
+\item \textit{Parallel (P) Mode} - In this case, estimated outputs are fed back and
+included in the output's regressor:
+$$y_b(n + 1)=f[y_p(n); u(n)];$$
+$$y_b(n + 1)=f[y(n),...,y(n-d_y + 1); u(n),u(n-1),..., u(n-d_u+1);$$
+\end{itemize}
+
+In this tool, the SP mode of the NARX neural network is implemented. The implementation details are provided in the next chapter.
 \subsubsection{Moving Exponential Average Method}
 Moving Exponential average,  is a technique that can be applied to time series data to produce smoothed data for presentation, or to make forecasts. Exponential smoothing is commonly applied to discrete set of repeated measurements. This makes it a method feasible for usage in the TSDM tool. Exponential smoothing was first suggested by Robert Goodell Brown in 1956, the one used in this tool is known as `` Brown's simple exponential smoothing".[14]
 The algorithm is a trivial and the forecasting accuracy is not as good as the Neural network approach.
@@ -570,10 +689,30 @@ The algorithm is a trivial and the forecasting accuracy is not as good as the Ne
 A moving average of order k, MA(k) is the value of k consecutive observations. A moving geometric  average is commonly used with time series data to smooth out short-term fluctuations and highlight longer-term trends or cycles. The method has  disadvantages. One of the important  disadvantage is that it is tough to extrapolate the values. This makes prediction inaccurate. [15]
 \subsection{Anomaly Detection Algorithms}
 \subsubsection{Cumulative Sum (CUSUM) Approach}
-\subsubsection{Statistical Approach}
-This approach is mainly dealt with by Statistical Quality Control process. In this approach the mean and standard deviation of the time series values of the process is recorded up to the the current time. If the time series value goes outside 3 sigmas (standard deviation) then an anomaly is signaled.
+CUSUM algorithm works as follows [13]: A set of  m samples, each of size n is collected, and compute the mean of each sample. Then the cumulative sum (CUSUM) control chart is formed by plotting the following quantity:
 
-This approach is explained in the figure 4.4.
+$$S_m= \sum_{i=1}^{m}(x_i- \mu_0)$$
+
+against the sample number m, where   is the estimate of the in-control mean and   is the known (or estimated) standard deviation of the sample means. The choice of which of these two quantities is plotted is usually determined by the statistical software package. In either case, as long as the process remains in control centered at , the CUSUM plot will show variation in a random pattern centered about zero. If the process mean shifts upward, the charted CUSUM points will eventually drift upwards, and vice versa if the process mean decreases.[10]
+
+A visual procedure proposed by Barnard in 1959, known as the V-Mask, is sometimes used to determine whether a process is out of control. 
+
+
+A V-Mask is an overlay shape in the form of a V on its side that is superimposed on the graph of the cumulative sums. The origin point of the V-Mask (see diagram below) is placed on top of the latest cumulative sum point and past points are examined to see if any fall above or below the sides of the V. As long as all the previous points lie between the sides of the V, the process is in control. Otherwise (even if one point lies outside) the process is suspected of being out of control.
+
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.6]{screenshots/vmask.png}
+		\caption{Sample V-Mask demonstrating an out of control process.}
+\end{figure}
+
+
+In the figure above, the V-Mask shows an out of control situation because of the point that lies above the upper arm. By sliding the V-Mask backwards so that the origin point covers other cumulative sum data points, we can determine the first point that signaled an out-of-control situation. This is useful for diagnosing what might have caused the process to go out of control.
+\subsubsection{Statistical Approach}
+This approach is mainly dealt with by Statistical Quality Control process. In this approach the mean and standard deviation of the time series values of the process is recorded up to the the current time. If the time series value goes outside 3 sigmas (standard deviation) then an anomaly is signaled. [7]
+
+This approach is explained in the figure 4.8.
 \begin{figure}[h!]
 	\centering
 		\includegraphics[scale=0.6]{screenshots/control_chart.png}
@@ -581,7 +720,7 @@ This approach is explained in the figure 4.4.
 \end{figure}
 
 
-\subsection{Temporal Pattern Detection Algorithm}
+%\subsection{Temporal Pattern Detection Algorithm}
 
 
 \chapter{Implementation}
@@ -960,6 +1099,7 @@ The testing of the modules was done on machine with the following features.
 
 \begin{table}
     \begin{tabular}{|l|l|}
+    
     \hline
     Sl. Number of Test Case & 1                                  \\ \hline
     Name Of the test        & Connection between Tomcat and JDK. \\ \hline
@@ -1458,7 +1598,7 @@ The description of the modules are below :
 Initially this project mainly focused on analyzing the sea and water level time series. Later this application was extended to any uni-variate time series data. Users can upload the time series data to be analyzed and get the results instantly. Major data sets used were :
 \begin{itemize}
 \item Sea Level Dataset : Indicating the sea level at various times of a day.
-\item Water Level : Ground Water level data, indicating the ground water level during various months of an year for upto 5 years.
+\item Water/Rainfall Level : Ground Water level data, indicating the ground water level during various months of an year for upto 5 years. The rainfall data consists of data collected over ten years in the six taluks of Chikkaballapura district of Karnataka.
 \item Finance Dataset : Consisting of stock index values of  Nifty and Vix collected every minuted for a week.(5 days,during market hours).
 \item ECG Dataset : The ECG  voltage values of patients collected every 4ms.(for 10 patients).
 \end{itemize}
@@ -1473,7 +1613,7 @@ Some of the shortcomings in our project are :
 
 \item{} The application hangs when analyzing very large data sets (more than 500 MB).
 \item{} The application does not support multi-variate time series.
-\item{}Some algorithms efficient for a particular data set and may not be efficient for other data set. So user intervention is required in selecting an algorithm for a data set.
+\item{}Some algorithms are efficient for a particular data set, may not be efficient for other data sets. So user intervention is required in selecting an algorithm and setting the parameters required for a data set.
 \end{enumerate}
 
 \section{Future enhancements}
