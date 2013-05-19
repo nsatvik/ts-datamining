@@ -629,7 +629,7 @@ and some sequence Y of length M = 7. (a) Admissible warping path satisfying the
 conditions (i), (ii), and (iii) of Definition 4.1. (b) Boundary condition (i) is violated.
 (c) Monotonicity condition (ii) is violated. (d) Step size condition (iii) is violated}
 \end{figure}
-\subsubsection{SAX Algorithm}
+\subsubsection{SAX (Symbolic Aggregate approXimation) - Representation}
 Many high level representations of time series have been proposed for data mining, including
 Fourier transforms, wavelets, eigenwaves, piecewise polynomial models etc.
 While many symbolic representations of time series have been introduced over
@@ -644,10 +644,72 @@ series and the symbolic strings.
 \begin{enumerate}
 \item{\textbf{Dimensionality Reduction Via PAA} - A time series C of length n can be represented in a w-dimensional space by a vector C,cw = 1 K . The i th
 element of C is calculated by the following equation:\\
-$\bar{c_i} = \frac{w}{n}  \sum_{j=\frac{n}{w}(i-1) + 1}^{\frac{n}{w}i}c_j$}
-\item{\textbf{Discretization} - Having transformed a time series database into the PAA we can apply a further transformation to obtain a
+$\bar{c_i} = \frac{w}{n}  \sum_{j=\frac{n}{w}(i-1) + 1}^{\frac{n}{w}i}c_j$
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{screenshots/sax/paa.png}
+		\caption{The PAA representation can be visualized as an
+attempt to model a time series with a linear combination of
+box basis functions. In this case, a sequence of length 128 is
+reduced to 8 dimensions}
+\end{figure}
+}
+\item{\textbf{Obtaining Breakpoints} - Having transformed a time series database into the PAA we can apply a further transformation to obtain a
 discrete representation. It is desirable to have a discretization technique that will produce symbols with
-equiprobability. This is easily achieved since normalized time series have a Gaussian distribution.}
+equiprobability. This is easily achieved since normalized time series have a Gaussian distribution. \\ 
+We can simply determine the
+“breakpoints” that will produce a equal-sized areas under Gaussian curve.
+Breakpoints are a sorted list of numbers $Β = \beta _1,…,\beta _{a-1}$ such that the area
+under a N(0,1) Gaussian curve from $\beta
+_i to \beta _{i+1} = 1/a ( \beta _0$ and $\beta _a$ are defined as $-\infty$ and $\infty $, respectively). \\
+These breakpoints may be determined by looking them up in a statistical table shown in Figure 4.7
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{screenshots/sax/breakpoint_table.png}
+		\caption{A lookup table that contains the breakpoints that divide a Gaussian
+distribution in an arbitrary number (from 3 to 10) of equiprobable regions}
+\end{figure}}
+
+\item{\textbf{Discretization }- Once the breakpoints have been obtained we can discretize a time series in the following manner. We
+first obtain a PAA of the time series. All PAA coefficients that are below the smallest breakpoint are mapped
+to the symbol “a”, all coefficients greater than or equal to the smallest breakpoint and less than the second
+smallest breakpoint are mapped to the symbol “b”, etc, as shown in Figure 4.8
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{screenshots/sax/discretization.png}
+		\caption{A time series is discretized by first obtaining a PAA approximation and
+then using predetermined breakpoints to map the PAA coefficients into SAX
+symbols.}
+\end{figure}
+
+}
+
+\item{\textbf{Distance Measure} - Having introduced the new representation of time series, we can now define a distance measure on it. The distance between
+two SAX representations of a time series requires looking up the distances
+between each pair of symbols, squaring them, summing them, taking the square
+root and finally multiplying by the square root of the compression rate. 
+
+$MINDIST(\hat{Q}, \hat{C}) \equiv \sqrt{\frac{n}{w}} \sqrt{\sum_{i=1}^{w} (dist(\hat{q_i}, \hat{c_i}))^{2}} $
+
+The dist() function can be implemented using a table lookup, where the value in cell (r,c) for any lookup table can be calculated by the following expression.
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{screenshots/sax/dist.png}
+		\caption{The value in cell (r,c) for any lookup table can be calculated by the above expression}
+\end{figure}
+
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[scale=0.8]{screenshots/sax/distance.png}
+		\caption{A visual intuition of the distance measures.}
+\end{figure}
+}
+
 \end{enumerate}
 \subsection{Forecasting and Prediction Algorithms}
 \subsubsection{NARX Neural Network}
