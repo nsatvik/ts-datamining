@@ -23,14 +23,14 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Similarity detection of two Samples of five years each using SAX and DTW Algorithm for Shidlaghatta Taluk.\relax }}{55}{figure.caption.111}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Similarity detection of two Samples of five years each using SAX and DTW Algorithm for Gowribidanur Taluk .\relax }}{56}{figure.caption.114}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Anomaly detection using the Cumulative Sum Approach for Rainfall data set of Bagepalli Taluk.\relax }}{56}{figure.caption.118}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Anomaly detection using the Statistical Approach for rainfall data set of Gowribidanuru taluk.\relax }}{58}{figure.caption.121}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Anomaly detection using the Statistical Approach for rainfall data set of Shidlaghatta taluk.\relax }}{59}{figure.caption.122}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Forecasting/Estimation using NARX Neural Network Approach for Rainfall data set of Bagepalli taluk.\relax }}{60}{figure.caption.125}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Forecasting/Estimation using NARX Neural Network Approach for Rainfall data set of Shidlaghatta taluk.\relax }}{60}{figure.caption.126}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Forecasting/Estimation using Moving Exponential Average Method for rainfall data set of Bagepalli Taluk.\relax }}{61}{figure.caption.129}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Forecasting/Estimation using Moving Exponential Average Method for rainfall data set of Gowribidanur Taluk.\relax }}{62}{figure.caption.130}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Temporal Patterns detected in the Rainfall/Water Data set of Bagepalli taluk.\relax }}{63}{figure.caption.132}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Similarity detection of two Samples of five years each using SAX and DTW Algorithm for Shidlaghatta Taluk.\relax }}{55}{figure.caption.112}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Similarity detection of two Samples of five years each using SAX and DTW Algorithm for Gowribidanur Taluk .\relax }}{56}{figure.caption.115}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Anomaly detection using the Cumulative Sum Approach for Rainfall data set of Bagepalli Taluk.\relax }}{56}{figure.caption.119}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Anomaly detection using the Statistical Approach for rainfall data set of Gowribidanuru taluk.\relax }}{58}{figure.caption.122}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Anomaly detection using the Statistical Approach for rainfall data set of Shidlaghatta taluk.\relax }}{59}{figure.caption.123}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Forecasting/Estimation using NARX Neural Network Approach for Rainfall data set of Bagepalli taluk.\relax }}{60}{figure.caption.126}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Forecasting/Estimation using NARX Neural Network Approach for Rainfall data set of Shidlaghatta taluk.\relax }}{60}{figure.caption.127}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Forecasting/Estimation using Moving Exponential Average Method for rainfall data set of Bagepalli Taluk.\relax }}{61}{figure.caption.130}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Forecasting/Estimation using Moving Exponential Average Method for rainfall data set of Gowribidanur Taluk.\relax }}{62}{figure.caption.131}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Temporal Patterns detected in the Rainfall/Water Data set of Bagepalli taluk.\relax }}{63}{figure.caption.133}
 \addvspace {10\p@ }
