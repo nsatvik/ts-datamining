@@ -3,8 +3,8 @@
 \contentsline {section}{ABSTRACT}{ii}{section*.7}
 \contentsline {paragraph}{}{ii}{section*.8}
 \contentsline {section}{CONTENTS}{ii}{section*.8}
-\contentsline {section}{LIST OF FIGURES}{vi}{chapter*.9}
-\contentsline {section}{LIST OF TABLES}{viii}{chapter*.10}
+\contentsline {section}{LIST OF FIGURES}{iv}{chapter*.9}
+\contentsline {section}{LIST OF TABLES}{v}{chapter*.10}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {paragraph}{}{1}{section*.12}
 \contentsline {section}{\numberline {1.1}Literature Survey}{1}{section.1.1}

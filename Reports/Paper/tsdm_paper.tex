@@ -285,6 +285,82 @@ This project is not yet complete and is currently under development. The descrip
 \item \textbf{Temporal Pattern Finder } : This module helps in finding hidden temporal patterns in a time series. This module can be further extended to implement clustering techniques.
 \end{itemize}
 
+\section{Experimental Analysis and Results}
+As explained earlier, major module present in the project are as follows :
+\begin{itemize}
+\item Similarity Detection Module
+\item Prediction and Forecasting Module
+\item Anomaly Detection Module
+\item Temporal Pattern Finder Module
+\end{itemize}
+
+Since these modules are independent of each other, they have different evaluation metrics. The evaluation metrics used for performance analysis of each module is explained in the following sub sections.
+
+\subsection{Metrics for Similarity Detection Module}
+The algorithms implemented under this module are :
+\begin{itemize}
+\item \textbf{Dynamic Time Wrapping (DTW) Algorithm}
+\item \textbf{SAX Algorithms}
+\end{itemize}
+The evaluation metrics are :
+\begin{itemize}
+\item \textbf{Euclidean Distance} In mathematics, the Euclidean distance or Euclidean metric is the ``ordinary" distance between two points that one would measure with a ruler, and is given by the Pythagorean formula. By using this formula as distance, Euclidean space (or even any inner product space) becomes a metric space. The associated norm is called the Euclidean norm. Older literature refers to the metric as Pythagorean metric.
+
+
+
+In Cartesian coordinates, if p = $(p_1, p_2,..., p_n)$ and q = $(q_1, q_2,..., q_n)$ are two points in Euclidean n-space, then the distance from p to q, or from q to p is given by:
+$$d(p,q)=d(q,p)=\sqrt{(p_1-q_1)^2+(p_2-q_2)^2+....+(p_n-q_n)^2} $$
+$$d(p,q)=d(q,p)=\sqrt{\sum_{i=0}^{n}{(p_i-q_i)^2}}$$
+
+
+In the project, p and q can be visualized as two time series to be compared, where $p_i$\'s and $q_i$\'s are the time series values.
+Depending on the distance, the similarity of two or more time series with a give base series is found out. This metric is used in the DTW approach.
+\item \textbf{String Comparison} In SAX Algorithm, the time series is converted into a string of character as explained. Given two or more time series, which are represented by strings, a string comparison algorithm is run and the similarity is found out. There are various string comparison algorithms. In this project KMP algorithm has been used.
+\end{itemize}
+\subsection{Metrics for Prediction and Forecasting Module}
+The algorithms implemented under this module for modeling and forecasting time series are :
+\begin{itemize}
+\item NARX-Neural Network
+\item Moving Average Forecaster
+\item Moving Geometric Average Forecaster
+\item Moving Exponential Average Forecaster
+\end{itemize}
+Modeling a time series is an regression problem, the evaluation metrics are :
+\begin{itemize}
+\item \textbf{Root-Mean-Square Deviation} - The root-mean-square deviation (RMSD) or root-mean-square error (RMSE) is a frequently used measure of the differences between values predicted by a model or an estimator and the values actually observed. These individual differences are called residuals when the calculations are performed over the data sample that was used for estimation, and are called prediction errors when computed out-of-sample. The RMSD serves to aggregate the magnitudes of the errors in predictions for various times into a single measure of predictive power. RMSD is a good measure of accuracy, but only to compare forecasting errors of different models for a particular variable and not between variables, as it is scale-dependent.
+
+
+
+
+The RMSD of predicted values $y_p$ for times t of a regression's dependent variable $y$ is computed for n different predictions as the square root of the mean of the squares of the deviations:
+$$RMSD=\sqrt{\sum_{i=0}^{n}{(y_p-y)^2/n}}$$
+
+The accuracies  of different algorithms are compared and presented in the next section.
+\end{itemize}
+
+\subsection{Metrics for Anomaly Detection  Module}
+The anomaly detection algorithms require the controller/user to specify various parameters which determine the anomalous points in the time series.
+
+
+Algorithms implemented under this module are :
+\begin{itemize}
+\item \textbf{Cumulative Sum Approach (CUSUM)}
+\item \textbf{Statistical Approach}
+\end{itemize}
+
+These algorithms require a \textbf{threshold value} to be specified by the user and depending on this value, anomalous data points are determined.
+\subsection{Temporal Pattern Finder Module}
+\paragraph{} In this module, a Genetic Algorithm has been implemented to optimize the algorithm. The fitness function used in the GA determine the accuracies of the patterns found. But eventually user intervention is required to interpret the resulting patterns detected by the algorithm. The results are documented in the next section.
+\section{Experimental Dataset}
+The data sets considered in this project are
+\begin{itemize}
+\item Sea Level Dataset : Indicating the sea level at various times of a day.
+\item Water Level : Ground Water level data, indicating the ground water level during various moths of an year for upto 5 years.
+\item Finance Dataset : Consisting of stock index values of  Nifty and Vix collected every minuted for a week.(5 days,during market hours).
+\item ECG Dataset : The ECG  voltage values of patients collected every 4ms.(for 10 patients).
+\end{itemize}
+All the experiment analysis and results are presented using the \textbf{Water Level} data set. As explained earlier, some algorithms require certain parameters which determine their accuracies.
+
 \section{Conclusion}
 \subsection{Summary}
 In this project, we were able to successfully implement the Time Series Data Mining Tool for analyzing the time series and test its performance. This tool mainly contains four modules, they are - \textbf{Similarity Detection, Forecasting and Prediction, Anomaly Detection and Temporal Pattern Finder}, which we were successful in implementing and testing. The results obtained were presented in the previous section.
@@ -350,10 +426,25 @@ throughout the development of this tool.
 \bibitem{test}Agrawal R., Lin K.-I., Sawhney H. S., Shim K.,\textit{“Fast Similarity Search in the Presence of Noise,Scaling, and Translation in Time-Series Databases”}
 \bibitem{t}Genetic Algorithm for constructing DT - \url{http://www.jprr.org/index.php/jprr/article/viewFile/44/25}
 \bibitem{te}Decision Trees - \url{http://web.cecs.pdx.edu/~mm/MachineLearningWinter2010/pdfslides/DecisionTrees.pdf}
-\bibitem{t} Project brief for the DT  using Horse data sets  - \url{https://cs.uwaterloo.ca/~ppoupart/teaching/cs486-spring06/assignments/asst4/asst4.pdf}
-\bibitem{t}Supervised and Unsupervised Discretization of Continous Features - \url{http://robotics.stanford.edu/users/sahami/papers-dir/disc.pdf}
-\bibitem{t}Naming Convention -\textit{Wikipedia} :  \url{http://en.wikipedia.org/wiki/Naming_convention_(programming)}
-\bibitem{t}Code Conventions for the Java Programming Language - \url{http://www.oracle.com/technetwork/java/codeconv-138413.html}
+\bibitem{t} Project brief for the DT  using Horse data sets  - \bibitem{t}
+Hamilton, James 
+\textit{ Time Series Analysis published by Princeton University Press, 1994}
+
+\bibitem{t}
+Ann Ratanamahatana; Chotirat, Lin; Jessica, Gunopulos; Dimitrios, Keogh;Eamonn
+ Riverside, Vlachos;Michail, Das; Gautam -
+\textit{Mining Time Series Data}
+University of California,IBM T.J. Watson Research Center, University of Texas, Arlington.
+\bibitem{t}
+Brown, Robert Goodell (1963).
+\textit{Smoothing Forecasting and Prediction of Discrete Time Series. }
+Englewood Cliffs, NJ: Prentice-Hall.
+\bibitem{t}
+Kurt Pohlen
+\textit{The Review of Economics and Statistics}
+Vol. 11, No. 3 (Aug., 1929), pp. 149-151
+Published by: The MIT Press
+
 
 \end{thebibliography}
 

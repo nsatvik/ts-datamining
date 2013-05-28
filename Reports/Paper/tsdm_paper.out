@@ -20,7 +20,13 @@
 \BOOKMARK [2][-]{subsection.4.1}{Programming Language Selection}{section.4}% 20
 \BOOKMARK [2][-]{subsection.4.2}{Platform}{section.4}% 21
 \BOOKMARK [2][-]{subsection.4.3}{Modules}{section.4}% 22
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 23
-\BOOKMARK [2][-]{subsection.5.1}{Summary}{section.5}% 24
-\BOOKMARK [1][-]{section.6}{Future enhancements}{}% 25
-\BOOKMARK [1][-]{section*.2}{References}{}% 26
+\BOOKMARK [1][-]{section.5}{Experimental Analysis and Results}{}% 23
+\BOOKMARK [2][-]{subsection.5.1}{Metrics for Similarity Detection Module}{section.5}% 24
+\BOOKMARK [2][-]{subsection.5.2}{Metrics for Prediction and Forecasting Module}{section.5}% 25
+\BOOKMARK [2][-]{subsection.5.3}{Metrics for Anomaly Detection Module}{section.5}% 26
+\BOOKMARK [2][-]{subsection.5.4}{Temporal Pattern Finder Module}{section.5}% 27
+\BOOKMARK [1][-]{section.6}{Experimental Dataset}{}% 28
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 29
+\BOOKMARK [2][-]{subsection.7.1}{Summary}{section.7}% 30
+\BOOKMARK [1][-]{section.8}{Future enhancements}{}% 31
+\BOOKMARK [1][-]{section*.2}{References}{}% 32
