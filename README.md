@@ -13,6 +13,8 @@ recognition and machine learning time series analysis can be used for clustering
 classication, query by content, anomaly detection as well as forecasting.
 This project is aimed making a time series data mining tool which can be
 used to accomplish the above goals.
+
+
 This project mainly focuses on analyzing the sea and rainfall level time
 series. The data sets considered belong to the rainfall data collected over
 ten years in the six taluks of Chikkaballapura district of Karnataka. The
@@ -25,6 +27,8 @@ based interface with chart visualisation is provided for the end user. This is
 done using Java Server pages and Servlets. The aid of Google Charts API
 is taken for plotting graphs. The tool used Git revision control system and
 Github for online collaboration and code hosting.
+
+
 The algorithms implemented in this tool require a set of user-dened
 parameters that determine the accuracy of the results. The CUSUM and
 Statistical approach in the Anomaly-Detection module discover anomalies in
